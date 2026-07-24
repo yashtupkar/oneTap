@@ -219,11 +219,11 @@ function updateOverlayStatus(fingerprint, newStatus) {
 }
 
 function handleApply(field, idx, suggestion) {
-  applyFill(field, suggestion.value);
+  applyFill(field, suggestion.value, suggestion);
 }
 
 function handleEdit(field, idx, suggestion, newValue) {
-  applyFill(field, newValue);
+  applyFill(field, newValue, suggestion);
 }
 
 // ── Boot ──────────────────────────────────────────────────────────────────────

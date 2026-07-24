@@ -134,9 +134,12 @@ function fillCheckbox(el, value) {
  * @param {import('./FormDetector.js').FormField} field
  * @param {string} value
  */
-export function applyFill(field, value) {
+export async function applyFill(field, value, suggestion = null) {
   const el = field.element;
-  if (!el || !value) return;
+  if (!el) return;
+
+  // We allow value to be null/undefined for file inputs, so only abort if both are missing
+  if (!value && field.type !== 'file') return;
 
   switch (field.type) {
     case 'select':
@@ -151,7 +154,26 @@ export function applyFill(field, value) {
       fillCheckbox(el, value);
       break;
     case 'file':
-      // File inputs cannot be filled programmatically — handled by overlay UI
+      if (suggestion?.document?.downloadUrl) {
+        try {
+          // Fetch settings to get the correct serverUrl
+          const stored = await chrome.storage.local.get('settings');
+          const serverUrl = stored?.settings?.serverUrl || 'http://localhost:3001';
+          
+          const res = await fetch(`${serverUrl}${suggestion.document.downloadUrl}`);
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          const blob = await res.blob();
+          
+          const file = new File([blob], suggestion.document.originalName, { type: suggestion.document.mimeType });
+          const dataTransfer = new DataTransfer();
+          dataTransfer.items.add(file);
+          el.files = dataTransfer.files;
+          
+          el.dispatchEvent(new Event('change', { bubbles: true }));
+        } catch (e) {
+          console.error('[AI Autofill] Failed to download and attach file:', e);
+        }
+      }
       break;
     default:
       fillTextInput(el, value);
@@ -190,7 +212,7 @@ export async function processSuggestions(fields, suggestions, settings, onFilled
       if (!confirmed) continue;
     }
 
-    applyFill(field, suggestion.value);
+    await applyFill(field, suggestion.value, suggestion);
     onFilled?.(i, suggestion.value, suggestion);
   }
 }

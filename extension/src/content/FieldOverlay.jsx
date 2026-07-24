@@ -79,7 +79,8 @@ export function FieldOverlay({ suggestion, field, rect, onEdit, onApply }) {
 
   const handleApplyClick = async (e) => {
     e.preventDefault();
-    if (suggestion?.value && (localStatus === 'suggested' || localStatus === 'filled')) {
+    const canApply = suggestion?.value || suggestion?.isFileInput;
+    if (canApply && (localStatus === 'suggested' || localStatus === 'filled')) {
       onApply?.();
       setLocalStatus('filled');
     } else if (localStatus === 'missing' && hasValue) {
@@ -241,8 +242,19 @@ export function FieldOverlay({ suggestion, field, rect, onEdit, onApply }) {
             </div>
           )}
 
+          {/* File Input Document Details */}
+          {suggestion?.isFileInput && suggestion?.document && (
+            <div style={{ marginBottom: '8px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <span style={{ color: '#e2e8f0', fontSize: '11px', overflow: 'hidden', textOverflow: 'ellipsis', maxWidth: '200px', whiteSpace: 'nowrap' }}>
+                  📄 {suggestion.document.originalName}
+                </span>
+              </div>
+            </div>
+          )}
+
           {/* Apply button inside popover */}
-          {suggestion?.value && !suggestion.isFileInput && !isEditing && localStatus !== 'filled' && (
+          {(suggestion?.value || suggestion?.isFileInput) && !isEditing && localStatus !== 'filled' && (
             <button
               onClick={(e) => { handleApplyClick(e); }}
               style={{
@@ -252,7 +264,7 @@ export function FieldOverlay({ suggestion, field, rect, onEdit, onApply }) {
                 padding: '6px',
               }}
             >
-              ⚡ Fill This Field
+              ⚡ {suggestion?.isFileInput ? 'Attach Document' : 'Fill This Field'}
             </button>
           )}
 
