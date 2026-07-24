@@ -379,3 +379,4 @@
     at router.process_params (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\express\lib\router\index.js:346:12)
     at next (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\express\lib\router\index.js:280:10)
     at internalNext (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\helmet\index.cjs:537:6)
+2026-07-24 23:55:30 [error]: AI classification error:

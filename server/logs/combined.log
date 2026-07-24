@@ -1194,3 +1194,12 @@
     at next (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\express\lib\router\index.js:280:10)
     at internalNext (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\helmet\index.cjs:537:6)
 2026-07-24 23:21:15 [http]: ::1 - - [24/Jul/2026:17:51:15 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-24 23:53:55 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-01.r0rqul9.mongodb.net
+2026-07-24 23:53:55 [info]: 🚀 Server running on http://localhost:3001
+2026-07-24 23:53:55 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
+2026-07-24 23:55:02 [http]: ::1 - - [24/Jul/2026:18:25:02 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-24 23:55:04 [http]: ::1 - - [24/Jul/2026:18:25:04 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-24 23:55:08 [http]: ::1 - - [24/Jul/2026:18:25:08 +0000] "GET /uploads/d838f28c-a820-4f21-93cd-2a1dafd58897/3570bb8f-c5eb-4b79-9e55-31def844f0d0.pdf HTTP/1.1" 304 - "http://127.0.0.1:5500/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-24 23:55:28 [debug]: Falling back to AI for field: Go to file
+2026-07-24 23:55:30 [error]: AI classification error:
+2026-07-24 23:55:30 [http]: ::1 - - [24/Jul/2026:18:25:30 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 272 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
