@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Application Portal — Test Form</title>
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f17;
+      --card-bg: #111827;
+      --border: #1f2937;
+      --text: #f3f4f6;
+      --text-muted: #9ca3af;
+      --primary: #6366f1;
+      --primary-hover: #4f46e5;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-h-screen: 100vh;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 650px;
+      width: 100%;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    header {
+      margin-bottom: 28px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      background: linear-gradient(to right, #a5b4fc, #818cf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p.subtitle {
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 6px;
+      color: var(--text-muted);
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px 14px;
+      background: #090d16;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 14px;
+      transition: all 0.15s ease;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .radio-group,
+    .checkbox-group {
+      display: flex;
+      gap: 16px;
+      margin-top: 6px;
+    }
+
+    .radio-item,
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      accent-color: var(--primary);
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+    }
+
+    input[type="file"] {
+      width: 100%;
+      padding: 8px 10px;
+      background: #090d16;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text-muted);
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    input[type="file"]::file-selector-button {
+      background: var(--primary);
+      color: white;
+      border: 0;
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+      margin-right: 12px;
+      transition: background 0.15s;
+    }
+
+    input[type="file"]::file-selector-button:hover {
+      background: var(--primary-hover);
+    }
+
+    .section-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--primary);
+      margin: 28px 0 16px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 6px;
+    }
+
+    button[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s, transform 0.1s;
+      margin-top: 10px;
+    }
+
+    button[type="submit"]:hover {
+      background: var(--primary-hover);
+    }
+
+    button[type="submit"]:active {
+      transform: scale(0.98);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <header>
+      <h1>TechCorp Job Application</h1>
+      <p class="subtitle">Test your AI Form Autofill extension on this sample application form.</p>
+    </header>
+
+    <form id="application-form" action="#" method="POST"
+      onsubmit="alert('Form submitted! Snapshot captured by extension.'); return false;">
+
+      <!-- Personal Info -->
+      <div class="section-title">Personal Details</div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="first-name">First Name</label>
+          <input type="text" id="first-name" name="first_name" placeholder="John" required>
+        </div>
+        <div class="form-group">
+          <label for="last-name">Last Name</label>
+          <input type="text" id="last-name" name="last_name" placeholder="Doe" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="email-addr">Email Address</label>
+          <input type="email" id="email-addr" name="email" placeholder="john.doe@example.com" required>
+        </div>
+        <div class="form-group">
+          <label for="phone-no">Phone Number</label>
+          <input type="tel" id="phone-no" name="phone" placeholder="+1 (555) 000-0000" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="linkedin-url">LinkedIn Profile</label>
+          <input type="url" id="linkedin-url" name="linkedin" placeholder="https://linkedin.com/in/johndoe">
+        </div>
+        <div class="form-group">
+          <label for="github-url">GitHub Profile</label>
+          <input type="url" id="github-url" name="github" placeholder="https://github.com/johndoe">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="dob-field">Date of Birth</label>
+          <input type="text" id="dob-field" name="dob" placeholder="YYYY-MM-DD">
+        </div>
+        <div class="form-group">
+          <label>Gender</label>
+          <div class="radio-group">
+            <label class="radio-item">
+              <input type="radio" name="gender" value="Male"> Male
+            </label>
+            <label class="radio-item">
+              <input type="radio" name="gender" value="Female"> Female
+            </label>
+            <label class="radio-item">
+              <input type="radio" name="gender" value="Other"> Other
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Professional Info -->
+      <div class="section-title">Professional Information</div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="job-title">Current Job Title</label>
+          <input type="text" id="job-title" name="job_title" placeholder="Software Engineer">
+        </div>
+        <div class="form-group">
+          <label for="company-name">Current Company</label>
+          <input type="text" id="company-name" name="company" placeholder="Acme Corp">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="highest-degree">Highest Degree</label>
+          <input type="text" id="highest-degree" name="degree" placeholder="e.g. B.Tech">
+        </div>
+        <div class="form-group">
+          <label for="grad-year">Graduation Year</label>
+          <input type="number" id="grad-year" name="graduation_year" placeholder="2020">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="years-exp">Years of Experience</label>
+          <input type="number" id="years-exp" name="experience" placeholder="3" min="0" max="50">
+        </div>
+        <div class="form-group">
+          <label for="expected-ctc">Expected Salary (Annual)</label>
+          <input type="text" id="expected-ctc" name="expected_salary" placeholder="$120,000">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="skills-input">Skills (comma-separated)</label>
+        <input type="text" id="skills-input" name="skills" placeholder="React, Node.js, MongoDB, JavaScript">
+      </div>
+
+      <div class="form-group">
+        <label for="summary-text">Professional Summary</label>
+        <textarea id="summary-text" name="summary"
+          placeholder="Briefly describe your career history and skills..."></textarea>
+      </div>
+
+      <!-- Verification / Identity (Sensitive) -->
+      <div class="section-title">Identity & Verification</div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="passport-field">Passport Number</label>
+          <input type="text" id="passport-field" name="passport_number" placeholder="Enter Passport No.">
+        </div>
+        <div class="form-group">
+          <label for="aadhaar-field">Aadhaar Card Number</label>
+          <input type="text" id="aadhaar-field" name="aadhaar_number" placeholder="Enter 12-digit Aadhaar">
+        </div>
+      </div>
+
+      <!-- Miscellaneous Details -->
+      <div class="section-title">Miscellaneous Details</div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="favorite-color">Favorite Color</label>
+          <input type="text" id="favorite-color" name="favorite_color" placeholder="e.g. Blue">
+        </div>
+        <div class="form-group">
+          <label for="pet-name">Pet's Name</label>
+          <input type="text" id="pet-name" name="pet_name" placeholder="e.g. Fluffy">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="blood-group">Blood Group</label>
+          <input type="text" id="blood-group" name="blood_group" placeholder="e.g. O+">
+        </div>
+        <div class="form-group">
+          <label for="fav-movie">Favorite Movie</label>
+          <input type="text" id="fav-movie" name="favorite_movie" placeholder="e.g. Inception">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="zodiac-sign">Zodiac Sign</label>
+          <input type="text" id="zodiac-sign" name="zodiac_sign" placeholder="e.g. Aries">
+        </div>
+        <div class="form-group">
+          <label for="shoe-size">Shoe Size</label>
+          <input type="number" id="shoe-size" name="shoe_size" placeholder="e.g. 10">
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="superpower">If you had a superpower, what would it be?</label>
+        <textarea id="superpower" name="superpower_choice" placeholder="Describe your ideal superpower..."></textarea>
+      </div>
+
+      <!-- File Attachment -->
+      <div class="section-title">Attachments</div>
+
+      <div class="form-group">
+        <label for="resume-upload">Upload Resume / CV</label>
+        <input type="file" id="resume-upload" name="resume" accept=".pdf,.doc,.docx">
+      </div>
+
+      <button type="submit">Submit Application</button>
+    </form>
+  </div>
+
+</body>
+
+</html>

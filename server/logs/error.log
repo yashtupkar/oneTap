@@ -1,0 +1,348 @@
+2026-07-24 00:35:20 [error]: MongoServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+    at Topology.selectServer (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\sdam\topology.js:327:38)
+    at async Topology._connect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\sdam\topology.js:200:28)
+    at async Topology.connect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\sdam\topology.js:152:13)
+    at async topologyConnect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\mongo_client.js:264:17)
+    at async MongoClient._connect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\mongo_client.js:277:13)
+    at async MongoClient.connect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\mongo_client.js:202:13)
+    at async NativeConnection.createClient (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongoose\lib\drivers\node-mongodb-native\connection.js:351:3)
+    at async NativeConnection.openUri (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongoose\lib\connection.js:1098:5)
+    at async connectDB (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\config\db.js:13:7)
+    at async bootstrap (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\index.js:79:5)
+2026-07-24 00:35:26 [error]: MongoServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+    at Topology.selectServer (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\sdam\topology.js:327:38)
+    at async Topology._connect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\sdam\topology.js:200:28)
+    at async Topology.connect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\sdam\topology.js:152:13)
+    at async topologyConnect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\mongo_client.js:264:17)
+    at async MongoClient._connect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\mongo_client.js:277:13)
+    at async MongoClient.connect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\mongo_client.js:202:13)
+    at async NativeConnection.createClient (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongoose\lib\drivers\node-mongodb-native\connection.js:351:3)
+    at async NativeConnection.openUri (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongoose\lib\connection.js:1098:5)
+    at async connectDB (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\config\db.js:13:7)
+    at async bootstrap (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\index.js:79:5)
+2026-07-24 00:41:02 [error]: MongoServerSelectionError: 04410000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:openssl\ssl\record\rec_layer_s3.c:916:SSL alert number 80
+
+    at Topology.selectServer (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\sdam\topology.js:327:38)
+    at async Topology._connect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\sdam\topology.js:200:28)
+    at async Topology.connect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\sdam\topology.js:152:13)
+    at async topologyConnect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\mongo_client.js:264:17)
+    at async MongoClient._connect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\mongo_client.js:277:13)
+    at async MongoClient.connect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\mongo_client.js:202:13)
+    at async NativeConnection.createClient (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongoose\lib\drivers\node-mongodb-native\connection.js:351:3)
+    at async NativeConnection.openUri (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongoose\lib\connection.js:1098:5)
+    at async connectDB (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\config\db.js:13:7)
+    at async bootstrap (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\index.js:79:5)
+2026-07-24 00:41:09 [error]: MongoServerSelectionError: 04410000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:openssl\ssl\record\rec_layer_s3.c:916:SSL alert number 80
+
+    at Topology.selectServer (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\sdam\topology.js:327:38)
+    at async Topology._connect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\sdam\topology.js:200:28)
+    at async Topology.connect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\sdam\topology.js:152:13)
+    at async topologyConnect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\mongo_client.js:264:17)
+    at async MongoClient._connect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\mongo_client.js:277:13)
+    at async MongoClient.connect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\mongo_client.js:202:13)
+    at async NativeConnection.createClient (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongoose\lib\drivers\node-mongodb-native\connection.js:351:3)
+    at async NativeConnection.openUri (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongoose\lib\connection.js:1098:5)
+    at async connectDB (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\config\db.js:13:7)
+    at async bootstrap (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\index.js:79:5)
+2026-07-24 00:41:16 [error]: MongoServerSelectionError: 04410000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:openssl\ssl\record\rec_layer_s3.c:916:SSL alert number 80
+
+    at Topology.selectServer (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\sdam\topology.js:327:38)
+    at async Topology._connect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\sdam\topology.js:200:28)
+    at async Topology.connect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\sdam\topology.js:152:13)
+    at async topologyConnect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\mongo_client.js:264:17)
+    at async MongoClient._connect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\mongo_client.js:277:13)
+    at async MongoClient.connect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\mongo_client.js:202:13)
+    at async NativeConnection.createClient (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongoose\lib\drivers\node-mongodb-native\connection.js:351:3)
+    at async NativeConnection.openUri (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongoose\lib\connection.js:1098:5)
+    at async connectDB (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\config\db.js:13:7)
+    at async bootstrap (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\index.js:79:5)
+2026-07-24 00:41:25 [error]: MongoServerSelectionError: 04410000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:openssl\ssl\record\rec_layer_s3.c:916:SSL alert number 80
+
+    at Topology.selectServer (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\sdam\topology.js:327:38)
+    at async Topology._connect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\sdam\topology.js:200:28)
+    at async Topology.connect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\sdam\topology.js:152:13)
+    at async topologyConnect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\mongo_client.js:264:17)
+    at async MongoClient._connect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\mongo_client.js:277:13)
+    at async MongoClient.connect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\mongo_client.js:202:13)
+    at async NativeConnection.createClient (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongoose\lib\drivers\node-mongodb-native\connection.js:351:3)
+    at async NativeConnection.openUri (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongoose\lib\connection.js:1098:5)
+    at async connectDB (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\config\db.js:13:7)
+    at async bootstrap (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\index.js:79:5)
+2026-07-24 00:41:38 [error]: Error: Failed to connect after 5 attempts
+    at connectDB (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\config\db.js:22:15)
+    at async bootstrap (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\index.js:79:5)
+2026-07-24 01:55:21 [error]: AI classification error:
+2026-07-24 01:55:21 [error]: AI classification error:
+2026-07-24 01:55:21 [error]: AI classification error:
+2026-07-24 01:55:21 [error]: AI classification error:
+2026-07-24 01:55:21 [error]: AI classification error:
+2026-07-24 01:55:21 [error]: AI classification error:
+2026-07-24 01:55:21 [error]: AI classification error:
+2026-07-24 01:55:21 [error]: AI classification error:
+2026-07-24 01:55:21 [error]: AI classification error:
+2026-07-24 01:55:21 [error]: AI classification error:
+2026-07-24 01:55:21 [error]: AI classification error:
+2026-07-24 01:55:21 [error]: AI classification error:
+2026-07-24 01:55:21 [error]: AI classification error:
+2026-07-24 01:55:21 [error]: AI classification error:
+2026-07-24 01:55:21 [error]: AI classification error:
+2026-07-24 01:55:21 [error]: AI classification error:
+2026-07-24 01:55:21 [error]: AI classification error:
+2026-07-24 01:55:21 [error]: AI classification error:
+2026-07-24 01:55:21 [error]: AI classification error:
+2026-07-24 01:55:21 [error]: AI classification error:
+2026-07-24 01:55:21 [error]: AI classification error:
+2026-07-24 01:55:21 [error]: AI classification error:
+2026-07-24 01:55:55 [error]: AI classification error:
+2026-07-24 02:00:22 [error]: AI classification error:
+2026-07-24 02:00:22 [error]: AI classification error:
+2026-07-24 02:00:22 [error]: AI classification error:
+2026-07-24 02:00:22 [error]: AI classification error:
+2026-07-24 02:00:22 [error]: AI classification error:
+2026-07-24 02:00:22 [error]: AI classification error:
+2026-07-24 02:00:22 [error]: AI classification error:
+2026-07-24 02:00:22 [error]: AI classification error:
+2026-07-24 02:00:22 [error]: AI classification error:
+2026-07-24 02:00:22 [error]: AI classification error:
+2026-07-24 02:00:22 [error]: AI classification error:
+2026-07-24 02:00:22 [error]: AI classification error:
+2026-07-24 02:00:22 [error]: AI classification error:
+2026-07-24 02:00:22 [error]: AI classification error:
+2026-07-24 02:00:22 [error]: AI classification error:
+2026-07-24 02:00:22 [error]: AI classification error:
+2026-07-24 02:00:22 [error]: AI classification error:
+2026-07-24 02:00:22 [error]: AI classification error:
+2026-07-24 02:00:22 [error]: AI classification error:
+2026-07-24 02:00:22 [error]: AI classification error:
+2026-07-24 02:00:22 [error]: AI classification error:
+2026-07-24 02:00:24 [error]: AI classification error:
+2026-07-24 02:03:32 [error]: AI classification error:
+2026-07-24 02:03:32 [error]: AI classification error:
+2026-07-24 02:03:32 [error]: AI classification error:
+2026-07-24 02:03:32 [error]: AI classification error:
+2026-07-24 02:03:32 [error]: AI classification error:
+2026-07-24 02:03:32 [error]: AI classification error:
+2026-07-24 02:03:32 [error]: AI classification error:
+2026-07-24 02:03:32 [error]: AI classification error:
+2026-07-24 02:03:32 [error]: AI classification error:
+2026-07-24 02:03:32 [error]: AI classification error:
+2026-07-24 02:03:32 [error]: AI classification error:
+2026-07-24 02:03:32 [error]: AI classification error:
+2026-07-24 02:03:32 [error]: AI classification error:
+2026-07-24 02:03:32 [error]: AI classification error:
+2026-07-24 02:03:32 [error]: AI classification error:
+2026-07-24 02:03:32 [error]: AI classification error:
+2026-07-24 02:03:32 [error]: AI classification error:
+2026-07-24 02:03:32 [error]: AI classification error:
+2026-07-24 02:03:32 [error]: AI classification error:
+2026-07-24 02:03:32 [error]: AI classification error:
+2026-07-24 02:03:32 [error]: AI classification error:
+2026-07-24 02:03:32 [error]: AI classification error:
+2026-07-24 02:03:55 [error]: AI classification error:
+2026-07-24 02:03:55 [error]: AI classification error:
+2026-07-24 02:03:55 [error]: AI classification error:
+2026-07-24 02:03:55 [error]: AI classification error:
+2026-07-24 02:03:55 [error]: AI classification error:
+2026-07-24 02:03:55 [error]: AI classification error:
+2026-07-24 02:03:55 [error]: AI classification error:
+2026-07-24 02:03:55 [error]: AI classification error:
+2026-07-24 02:03:55 [error]: AI classification error:
+2026-07-24 02:03:55 [error]: AI classification error:
+2026-07-24 02:03:55 [error]: AI classification error:
+2026-07-24 02:03:55 [error]: AI classification error:
+2026-07-24 02:03:55 [error]: AI classification error:
+2026-07-24 02:03:55 [error]: AI classification error:
+2026-07-24 02:03:55 [error]: AI classification error:
+2026-07-24 02:03:55 [error]: AI classification error:
+2026-07-24 02:03:55 [error]: AI classification error:
+2026-07-24 02:03:55 [error]: AI classification error:
+2026-07-24 02:03:55 [error]: AI classification error:
+2026-07-24 02:03:55 [error]: AI classification error:
+2026-07-24 02:03:55 [error]: AI classification error:
+2026-07-24 02:03:55 [error]: AI classification error:
+2026-07-24 18:49:26 [error]: AI classification error:
+2026-07-24 18:49:26 [error]: AI classification error:
+2026-07-24 18:49:26 [error]: AI classification error:
+2026-07-24 18:49:26 [error]: AI classification error:
+2026-07-24 18:49:26 [error]: AI classification error:
+2026-07-24 18:49:26 [error]: AI classification error:
+2026-07-24 18:49:26 [error]: AI classification error:
+2026-07-24 18:49:26 [error]: AI classification error:
+2026-07-24 18:49:26 [error]: AI classification error:
+2026-07-24 18:49:26 [error]: AI classification error:
+2026-07-24 18:49:26 [error]: AI classification error:
+2026-07-24 18:49:26 [error]: AI classification error:
+2026-07-24 18:49:26 [error]: AI classification error:
+2026-07-24 18:49:26 [error]: AI classification error:
+2026-07-24 18:49:26 [error]: AI classification error:
+2026-07-24 18:49:26 [error]: AI classification error:
+2026-07-24 18:49:26 [error]: AI classification error:
+2026-07-24 18:49:26 [error]: AI classification error:
+2026-07-24 18:49:26 [error]: AI classification error:
+2026-07-24 18:49:26 [error]: AI classification error:
+2026-07-24 18:49:26 [error]: AI classification error:
+2026-07-24 18:49:26 [error]: AI classification error:
+2026-07-24 18:49:37 [error]: AI classification error:
+2026-07-24 18:49:37 [error]: AI classification error:
+2026-07-24 18:49:37 [error]: AI classification error:
+2026-07-24 18:49:37 [error]: AI classification error:
+2026-07-24 18:49:37 [error]: AI classification error:
+2026-07-24 18:49:37 [error]: AI classification error:
+2026-07-24 18:49:37 [error]: AI classification error:
+2026-07-24 18:49:37 [error]: AI classification error:
+2026-07-24 18:49:37 [error]: AI classification error:
+2026-07-24 18:49:37 [error]: AI classification error:
+2026-07-24 18:49:37 [error]: AI classification error:
+2026-07-24 18:49:37 [error]: AI classification error:
+2026-07-24 18:49:37 [error]: AI classification error:
+2026-07-24 18:49:37 [error]: AI classification error:
+2026-07-24 18:49:37 [error]: AI classification error:
+2026-07-24 18:49:37 [error]: AI classification error:
+2026-07-24 18:49:37 [error]: AI classification error:
+2026-07-24 18:49:37 [error]: AI classification error:
+2026-07-24 18:49:37 [error]: AI classification error:
+2026-07-24 18:49:37 [error]: AI classification error:
+2026-07-24 18:49:37 [error]: AI classification error:
+2026-07-24 18:49:39 [error]: AI classification error:
+2026-07-24 18:50:51 [error]: AI classification error:
+2026-07-24 18:51:21 [error]: AI classification error:
+2026-07-24 18:51:21 [error]: AI classification error:
+2026-07-24 18:51:21 [error]: AI classification error:
+2026-07-24 18:52:46 [error]: AI classification error:
+2026-07-24 18:55:58 [error]: AI classification error:
+2026-07-24 18:58:07 [error]: AI classification error:
+2026-07-24 18:58:07 [error]: AI classification error:
+2026-07-24 18:58:07 [error]: AI classification error:
+2026-07-24 19:07:05 [error]: AI classification error:
+2026-07-24 19:07:05 [error]: AI classification error:
+2026-07-24 19:07:05 [error]: AI classification error:
+2026-07-24 19:07:05 [error]: AI classification error:
+2026-07-24 19:07:05 [error]: AI classification error:
+2026-07-24 19:07:05 [error]: AI classification error:
+2026-07-24 19:07:05 [error]: AI classification error:
+2026-07-24 19:07:05 [error]: AI classification error:
+2026-07-24 19:07:05 [error]: AI classification error:
+2026-07-24 19:07:05 [error]: AI classification error:
+2026-07-24 19:07:05 [error]: AI classification error:
+2026-07-24 19:07:05 [error]: AI classification error:
+2026-07-24 19:07:05 [error]: AI classification error:
+2026-07-24 19:07:05 [error]: AI classification error:
+2026-07-24 19:07:05 [error]: AI classification error:
+2026-07-24 19:07:05 [error]: AI classification error:
+2026-07-24 19:07:05 [error]: AI classification error:
+2026-07-24 19:07:05 [error]: AI classification error:
+2026-07-24 19:07:06 [error]: AI classification error:
+2026-07-24 19:07:06 [error]: AI classification error:
+2026-07-24 19:07:06 [error]: AI classification error:
+2026-07-24 19:07:06 [error]: AI classification error:
+2026-07-24 19:07:28 [error]: AI classification error:
+2026-07-24 19:07:28 [error]: AI classification error:
+2026-07-24 19:07:28 [error]: AI classification error:
+2026-07-24 19:07:28 [error]: AI classification error:
+2026-07-24 19:07:28 [error]: AI classification error:
+2026-07-24 19:07:28 [error]: AI classification error:
+2026-07-24 19:07:28 [error]: AI classification error:
+2026-07-24 19:07:28 [error]: AI classification error:
+2026-07-24 19:07:28 [error]: AI classification error:
+2026-07-24 19:07:28 [error]: AI classification error:
+2026-07-24 19:07:28 [error]: AI classification error:
+2026-07-24 19:07:28 [error]: AI classification error:
+2026-07-24 19:07:28 [error]: AI classification error:
+2026-07-24 19:07:28 [error]: AI classification error:
+2026-07-24 19:07:28 [error]: AI classification error:
+2026-07-24 19:07:28 [error]: AI classification error:
+2026-07-24 19:07:28 [error]: AI classification error:
+2026-07-24 19:07:28 [error]: AI classification error:
+2026-07-24 19:07:28 [error]: AI classification error:
+2026-07-24 19:07:28 [error]: AI classification error:
+2026-07-24 19:07:28 [error]: AI classification error:
+2026-07-24 19:07:28 [error]: AI classification error:
+2026-07-24 19:15:52 [error]: AI classification error:
+2026-07-24 19:15:52 [error]: AI classification error:
+2026-07-24 19:15:52 [error]: AI classification error:
+2026-07-24 19:15:53 [error]: AI classification error:
+2026-07-24 19:16:15 [error]: AI classification error:
+2026-07-24 19:16:15 [error]: AI classification error:
+2026-07-24 19:16:15 [error]: AI classification error:
+2026-07-24 19:16:15 [error]: AI classification error:
+2026-07-24 19:17:41 [error]: AI classification error:
+2026-07-24 19:17:41 [error]: AI classification error:
+2026-07-24 19:17:41 [error]: AI classification error:
+2026-07-24 19:17:41 [error]: AI classification error:
+2026-07-24 19:22:34 [error]: AI classification error:
+2026-07-24 19:22:34 [error]: AI classification error:
+2026-07-24 19:22:34 [error]: AI classification error:
+2026-07-24 19:22:34 [error]: AI classification error:
+2026-07-24 19:22:57 [error]: AI classification error:
+2026-07-24 19:22:57 [error]: AI classification error:
+2026-07-24 19:22:57 [error]: AI classification error:
+2026-07-24 19:22:58 [error]: AI classification error:
+2026-07-24 19:23:48 [error]: AI classification error:
+2026-07-24 19:24:00 [error]: AI classification error:
+2026-07-24 19:24:00 [error]: AI classification error:
+2026-07-24 19:24:00 [error]: AI classification error:
+2026-07-24 19:24:00 [error]: AI classification error:
+2026-07-24 19:24:00 [error]: AI classification error:
+2026-07-24 19:24:01 [error]: AI classification error:
+2026-07-24 19:24:01 [error]: AI classification error:
+2026-07-24 19:24:02 [error]: AI classification error:
+2026-07-24 19:24:13 [error]: AI classification error:
+2026-07-24 19:24:33 [error]: AI classification error:
+2026-07-24 19:24:33 [error]: AI classification error:
+2026-07-24 19:24:33 [error]: AI classification error:
+2026-07-24 19:24:33 [error]: AI classification error:
+2026-07-24 19:24:59 [error]: AI classification error:
+2026-07-24 19:24:59 [error]: AI classification error:
+2026-07-24 19:24:59 [error]: AI classification error:
+2026-07-24 19:24:59 [error]: AI classification error:
+2026-07-24 19:25:37 [error]: AI classification error:
+2026-07-24 19:25:37 [error]: AI classification error:
+2026-07-24 19:25:37 [error]: AI classification error:
+2026-07-24 19:25:37 [error]: AI classification error:
+2026-07-24 19:29:29 [error]: AI classification error:
+2026-07-24 19:29:29 [error]: AI classification error:
+2026-07-24 19:29:29 [error]: AI classification error:
+2026-07-24 19:29:29 [error]: AI classification error:
+2026-07-24 19:31:43 [error]: AI classification error:
+2026-07-24 19:31:43 [error]: AI classification error:
+2026-07-24 19:31:43 [error]: AI classification error:
+2026-07-24 19:31:44 [error]: AI classification error:
+2026-07-24 19:33:16 [error]: AI classification error:
+2026-07-24 19:33:16 [error]: AI classification error:
+2026-07-24 19:33:16 [error]: AI classification error:
+2026-07-24 19:33:16 [error]: AI classification error:
+2026-07-24 19:35:07 [error]: AI classification error:
+2026-07-24 19:35:07 [error]: AI classification error:
+2026-07-24 19:35:07 [error]: AI classification error:
+2026-07-24 19:35:08 [error]: AI classification error:
+2026-07-24 19:35:15 [error]: AI classification error:
+2026-07-24 19:35:15 [error]: AI classification error:
+2026-07-24 19:35:15 [error]: AI classification error:
+2026-07-24 19:35:15 [error]: AI classification error:
+2026-07-24 19:35:43 [error]: AI classification error:
+2026-07-24 19:35:44 [error]: AI classification error:
+2026-07-24 19:35:44 [error]: AI classification error:
+2026-07-24 19:35:44 [error]: AI classification error:
+2026-07-24 19:35:56 [error]: AI classification error:
+2026-07-24 19:35:56 [error]: AI classification error:
+2026-07-24 19:35:56 [error]: AI classification error:
+2026-07-24 19:35:56 [error]: AI classification error:
+2026-07-24 19:40:01 [error]: AI classification error:
+2026-07-24 19:40:01 [error]: AI classification error:
+2026-07-24 19:40:01 [error]: AI classification error:
+2026-07-24 19:40:01 [error]: AI classification error:
+2026-07-24 19:40:08 [error]: AI classification error:
+2026-07-24 19:40:11 [error]: AI classification error:
+2026-07-24 19:40:11 [error]: AI classification error:
+2026-07-24 19:40:11 [error]: AI classification error:
+2026-07-24 19:40:11 [error]: AI classification error:
+2026-07-24 19:41:45 [error]: AI classification error:
+2026-07-24 19:41:45 [error]: AI classification error:
+2026-07-24 19:41:45 [error]: AI classification error:
+2026-07-24 19:41:45 [error]: AI classification error:
+2026-07-24 19:44:46 [error]: AI classification error:
+2026-07-24 19:44:46 [error]: AI classification error:
+2026-07-24 19:44:46 [error]: AI classification error:
+2026-07-24 19:44:46 [error]: AI classification error:
+2026-07-24 19:51:30 [error]: AI classification error:
+2026-07-24 19:52:15 [error]: AI classification error:

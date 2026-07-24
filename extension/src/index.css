@@ -1,0 +1,104 @@
+ @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html, body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: #0f1117;
+    color: #e2e8f0;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0f1117;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #2e3248;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #4e52e8;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-surface-card border border-surface-border rounded-xl p-4;
+  }
+
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-700 text-white font-semibold px-4 py-2 rounded-lg
+           transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-primary-500
+           focus:ring-offset-2 focus:ring-offset-surface active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply bg-surface-elevated hover:bg-surface-border text-slate-300 hover:text-white
+           font-medium px-4 py-2 rounded-lg transition-all duration-150
+           border border-surface-border focus:outline-none;
+  }
+
+  .btn-danger {
+    @apply bg-red-600/20 hover:bg-red-600/30 text-red-400 hover:text-red-300
+           font-medium px-3 py-1.5 rounded-lg transition-all duration-150
+           border border-red-500/20 text-sm;
+  }
+
+  .input {
+    @apply w-full bg-surface border border-surface-border rounded-lg px-3 py-2.5
+           text-slate-200 placeholder-slate-600 text-sm
+           focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent
+           transition-all duration-150;
+  }
+
+  .label {
+    @apply text-xs font-medium text-slate-400 mb-1.5 block;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold;
+  }
+
+  .badge-filled {
+    @apply badge bg-emerald-500/15 text-emerald-400 border border-emerald-500/20;
+  }
+
+  .badge-suggested {
+    @apply badge bg-amber-500/15 text-amber-400 border border-amber-500/20;
+  }
+
+  .badge-missing {
+    @apply badge bg-red-500/15 text-red-400 border border-red-500/20;
+  }
+
+  .section-title {
+    @apply text-xs font-semibold text-slate-500 uppercase tracking-widest mb-3;
+  }
+
+  .nav-item {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium
+           text-slate-400 hover:text-white hover:bg-surface-elevated
+           transition-all duration-150 cursor-pointer;
+  }
+
+  .nav-item.active {
+    @apply text-white bg-primary-600/20 text-primary-400;
+  }
+}

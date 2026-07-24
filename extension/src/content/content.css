@@ -1,0 +1,215 @@
+/* AI Form Autofill — Content Script Styles
+   Injected into all pages to style overlays and dialogs.
+   Uses a namespaced prefix to avoid conflicts with page styles.
+*/
+
+/* ── Keyframes ─────────────────────────────────────────────────────────────── */
+@keyframes ai-af-slide-up {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes ai-af-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── Confirmation Dialog ───────────────────────────────────────────────────── */
+#ai-autofill-confirm-dialog .ai-af-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483647;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: ai-af-fade-in 0.15s ease-out;
+}
+
+#ai-autofill-confirm-dialog .ai-af-dialog {
+  background: #1a1d27;
+  border: 1px solid #2e3248;
+  border-radius: 14px;
+  padding: 20px;
+  width: 320px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+  animation: ai-af-slide-up 0.2s ease-out;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #e2e8f0;
+}
+
+#ai-autofill-confirm-dialog .ai-af-dialog-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+#ai-autofill-confirm-dialog .ai-af-dialog-icon {
+  font-size: 20px;
+}
+
+#ai-autofill-confirm-dialog .ai-af-dialog-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #f1f5f9;
+  margin: 0;
+}
+
+#ai-autofill-confirm-dialog .ai-af-dialog-field {
+  font-size: 13px;
+  color: #94a3b8;
+  margin: 0 0 10px;
+}
+
+#ai-autofill-confirm-dialog .ai-af-dialog-field strong {
+  color: #e2e8f0;
+}
+
+#ai-autofill-confirm-dialog .ai-af-dialog-value {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  background: #0f1117;
+  border: 1px solid #2e3248;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+#ai-autofill-confirm-dialog .ai-af-dialog-value-label {
+  font-size: 11px;
+  color: #6b7280;
+  flex-shrink: 0;
+}
+
+#ai-autofill-confirm-dialog .ai-af-dialog-value-text {
+  font-size: 13px;
+  color: #e2e8f0;
+  font-family: 'JetBrains Mono', monospace;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#ai-autofill-confirm-dialog .ai-af-masked {
+  letter-spacing: 2px;
+}
+
+#ai-autofill-confirm-dialog .ai-af-dialog-confidence {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+#ai-autofill-confirm-dialog .ai-af-conf-bar-bg {
+  flex: 1;
+  height: 4px;
+  background: #2e3248;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+#ai-autofill-confirm-dialog .ai-af-conf-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #4e52e8, #6172f3);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+#ai-autofill-confirm-dialog .ai-af-conf-pct {
+  font-size: 11px;
+  color: #a5bbfc;
+  flex-shrink: 0;
+  font-weight: 600;
+}
+
+#ai-autofill-confirm-dialog .ai-af-dialog-reason {
+  font-size: 11px;
+  color: #6b7280;
+  margin: 0 0 14px;
+  line-height: 1.5;
+}
+
+#ai-autofill-confirm-dialog .ai-af-dialog-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+#ai-autofill-confirm-dialog .ai-af-btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: 'Inter', system-ui, sans-serif;
+  transition: all 0.15s ease;
+  outline: none;
+}
+
+#ai-autofill-confirm-dialog .ai-af-btn:focus-visible {
+  box-shadow: 0 0 0 2px #6172f3;
+}
+
+#ai-autofill-confirm-dialog .ai-af-btn-deny {
+  background: #22263a;
+  color: #94a3b8;
+  border: 1px solid #2e3248;
+}
+
+#ai-autofill-confirm-dialog .ai-af-btn-deny:hover {
+  background: #2e3248;
+  color: #e2e8f0;
+}
+
+#ai-autofill-confirm-dialog .ai-af-btn-confirm {
+  background: linear-gradient(135deg, #4e52e8, #6172f3);
+  color: #fff;
+}
+
+#ai-autofill-confirm-dialog .ai-af-btn-confirm:hover {
+  background: linear-gradient(135deg, #3f3fcb, #4e52e8);
+  box-shadow: 0 0 12px rgba(97, 114, 243, 0.4);
+}
+
+/* ── Toast Notifications ───────────────────────────────────────────────────── */
+.ai-af-toast {
+  background: #1a1d27;
+  border: 1px solid #2e3248;
+  border-left: 4px solid #4e52e8;
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: #e2e8f0;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  transform: translateX(120%);
+  opacity: 0;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
+  pointer-events: auto;
+}
+
+.ai-af-toast.ai-af-toast-visible {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.ai-af-toast-success { border-left-color: #10b981; }
+.ai-af-toast-save { border-left-color: #3b82f6; }
+.ai-af-toast-info { border-left-color: #4e52e8; }
+
+.ai-af-toast-icon {
+  font-size: 16px;
+}
+
+.ai-af-toast-message {
+  font-weight: 500;
+}
+

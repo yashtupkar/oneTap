@@ -1,0 +1,70 @@
+{
+  "manifest_version": 3,
+  "name": "AI Form Autofill",
+  "version": "1.0.0",
+  "description": "AI-powered form autofill that learns from your submissions and fills future forms automatically.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_popup": "popup/index.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_title": "AI Form Autofill"
+  },
+  "options_ui": {
+    "page": "options/index.html",
+    "open_in_tab": true
+  },
+  "background": {
+    "service_worker": "service-worker-loader.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "assets/index.jsx-loader-BJZsstXj.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ],
+      "run_at": "document_idle",
+      "all_frames": false,
+      "css": [
+        "assets/index-D6mmBFxb.css"
+      ]
+    }
+  ],
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "contextMenus"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  },
+  "web_accessible_resources": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "resources": [
+        "assets/*",
+        "icons/*",
+        "assets/client-DhEz86-d.js",
+        "assets/api-DIHikcqA.js",
+        "assets/index.jsx-DPEqZVoj.js"
+      ],
+      "use_dynamic_url": false
+    }
+  ]
+}
