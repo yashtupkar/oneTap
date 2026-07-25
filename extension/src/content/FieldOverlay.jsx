@@ -121,9 +121,9 @@ export function FieldOverlay({ suggestion, field, rect, onEdit, onApply }) {
     return null; 
   }
 
-  const top = rect ? rect.top + window.scrollY : 0;
-  // Position inside the right edge of the input
-  const left = rect ? rect.right + window.scrollX - 28 : 0;
+  const top = rect ? rect.top + window.scrollY - 24 : 0;
+  // Position top right, just outside the field vertically, aligned to the right edge
+  const left = rect ? rect.right + window.scrollX - 22 : 0;
 
   const displayValue = suggestion?.isSensitive 
     ? suggestion.value?.slice(0, 2) + '••••' + suggestion.value?.slice(-2)
@@ -137,9 +137,9 @@ export function FieldOverlay({ suggestion, field, rect, onEdit, onApply }) {
       onMouseLeave={() => setExpanded(false)}
       style={{
         position: 'absolute',
-        top: `${top + (rect ? rect.height / 2 : 0) - 12}px`,
+        top: `${top}px`,
         left: `${left}px`,
-        zIndex: 2147483640,
+        zIndex: expanded ? 2147483645 : 2147483640,
         fontFamily: "'Inter', system-ui, sans-serif",
         fontSize: '11px',
         lineHeight: 1.2,

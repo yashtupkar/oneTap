@@ -35,20 +35,16 @@ async function init() {
   }
 
   allFields = detectAllFields();
-  if (allFields.length === 0) return;
 
-  console.log(`[AI Autofill] Detected ${allFields.length} form fields`);
-
-  // Start submission capture immediately (read-only)
-  captureFormSubmissions(allFields);
-
-  // Fetch autofill suggestions from backend
-  await loadAndApplySuggestions(allFields);
+  if (allFields.length > 0) {
+    console.log(`[AI Autofill] Detected ${allFields.length} form fields initially`);
+    // Start submission capture immediately (read-only)
+    captureFormSubmissions(allFields);
+  }
 
   // Watch for dynamically added fields
   watchForNewFields(async (newFields) => {
     allFields = [...allFields, ...newFields];
-    await loadAndApplySuggestions(newFields);
   });
 
   if (settings.showOverlays) {
@@ -61,18 +57,36 @@ import { SaveFieldsModal } from './SaveFieldsModal.jsx';
 
 function GlobalUI() {
   const [fieldsToSave, setFieldsToSave] = React.useState(null);
+  const [isLoading, setIsLoading] = React.useState(false);
 
   return (
     <>
       <GlobalFillButton 
+        isLoading={isLoading}
         onFillAll={async () => {
+          if (allFields.length === 0) {
+            showToast('No form fields detected on this page.', 'info');
+            return;
+          }
+          setIsLoading(true);
+          
+          const fieldsToAnalyze = allFields.slice(suggestions.length);
+          if (fieldsToAnalyze.length > 0) {
+            showToast('✨ Analyzing form fields...', 'info');
+            await loadAndApplySuggestions(fieldsToAnalyze);
+          }
+          
           let filledCount = 0;
           await processSuggestions(allFields, suggestions, settings, (fieldIdx, value, suggestion) => {
             updateOverlayStatus(allFields[fieldIdx]?.fingerprint, 'filled');
             filledCount++;
           });
+          setIsLoading(false);
+          
           if (filledCount > 0) {
             showToast(`✨ OneTap: Auto-filled ${filledCount} field${filledCount > 1 ? 's' : ''}. Review changes.`, 'success');
+          } else if (fieldsToAnalyze.length > 0) {
+            showToast('No fields could be auto-filled.', 'info');
           }
         }} 
         onSaveAll={() => {

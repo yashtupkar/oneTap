@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export function GlobalFillButton({ onFillAll, onSaveAll }) {
+export function GlobalFillButton({ onFillAll, onSaveAll, isLoading = false }) {
   const [showHelp, setShowHelp] = useState(false);
   const [hoveredBtn, setHoveredBtn] = useState(null);
 
@@ -69,30 +69,31 @@ export function GlobalFillButton({ onFillAll, onSaveAll }) {
         {/* Auto-fill Button */}
         <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
           <button
-            onClick={onFillAll}
+            onClick={isLoading ? undefined : onFillAll}
             onMouseEnter={() => setHoveredBtn('fill')}
             onMouseLeave={() => setHoveredBtn(null)}
             style={{
               width: '40px',
               height: '40px',
               borderRadius: '50%',
-              background: 'linear-gradient(135deg, #6366f1, #4f46e5)',
+              background: isLoading ? '#64748b' : 'linear-gradient(135deg, #6366f1, #4f46e5)',
               color: 'white',
               border: 'none',
-              boxShadow: '0 4px 12px rgba(99, 102, 241, 0.4)',
-              cursor: 'pointer',
+              boxShadow: isLoading ? 'none' : '0 4px 12px rgba(99, 102, 241, 0.4)',
+              cursor: isLoading ? 'wait' : 'pointer',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               fontSize: '20px',
               transition: 'all 0.2s ease',
+              opacity: isLoading ? 0.7 : 1,
             }}
-            onMouseOver={(e) => { e.currentTarget.style.transform = 'scale(1.1)'; }}
-            onMouseOut={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
+            onMouseOver={(e) => { if (!isLoading) e.currentTarget.style.transform = 'scale(1.1)'; }}
+            onMouseOut={(e) => { if (!isLoading) e.currentTarget.style.transform = 'scale(1)'; }}
           >
-            ✨
+            {isLoading ? '⏳' : '✨'}
           </button>
-          <Tooltip text="Auto-fill Form" show={hoveredBtn === 'fill'} />
+          <Tooltip text={isLoading ? "Analyzing..." : "Auto-fill Form"} show={hoveredBtn === 'fill'} />
         </div>
 
         {/* Save Button */}
