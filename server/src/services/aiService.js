@@ -144,4 +144,142 @@ function clearCache() {
   inMemoryCache.clear();
 }
 
-module.exports = { classifyField, clearCache };
+/**
+ * Calls the OpenRouter API to classify multiple form fields at once.
+ *
+ * @param {object[]} fieldsDescriptors
+ * @param {string} apiKey
+ * @param {string[]} fingerprints
+ * @param {string[]} [customKeys]
+ * @returns {Promise<Array<{ profileKey: string | null, confidence: number, reason: string, fromCache?: boolean }>>}
+ */
+async function classifyFieldsBatch(fieldsDescriptors, apiKey, fingerprints, customKeys = []) {
+  const results = new Array(fieldsDescriptors.length).fill(null);
+  const fieldsToClassify = [];
+  const indicesMap = [];
+
+  for (let i = 0; i < fieldsDescriptors.length; i++) {
+    const fingerprint = fingerprints[i];
+    if (fingerprint && inMemoryCache.has(fingerprint)) {
+      results[i] = { ...inMemoryCache.get(fingerprint), fromCache: true };
+      logger.debug(`AI cache hit for fingerprint: ${fingerprint.slice(0, 8)}...`);
+    } else {
+      fieldsToClassify.push(fieldsDescriptors[i]);
+      indicesMap.push(i);
+    }
+  }
+
+  if (fieldsToClassify.length === 0) return results;
+
+  const prompt = buildBatchPrompt(fieldsToClassify, customKeys);
+  const key = apiKey || process.env.OPENROUTER_API_KEY;
+
+  if (!key) {
+    logger.warn('No OpenRouter API key provided — skipping AI classification');
+    for (const idx of indicesMap) {
+      results[idx] = { profileKey: null, confidence: 0, reason: 'No API key configured' };
+    }
+    return results;
+  }
+
+  try {
+    const response = await fetch(`${OPENROUTER_BASE}/chat/completions`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${key}`,
+        'Content-Type': 'application/json',
+        'HTTP-Referer': '',
+        'X-Title': '',
+      },
+      body: JSON.stringify({
+        model: DEFAULT_MODEL,
+        messages: [
+          { role: 'system', content: BATCH_SYSTEM_PROMPT },
+          { role: 'user', content: prompt },
+        ],
+        max_tokens: 2500,
+        temperature: 0.1,
+      }),
+    });
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      throw new Error(`OpenRouter API error ${response.status}: ${errorText}`);
+    }
+
+    const data = await response.json();
+    const content = data.choices?.[0]?.message?.content?.trim() || '';
+    const batchResults = parseAIBatchResponse(content, customKeys, fieldsToClassify.length);
+
+    for (let i = 0; i < batchResults.length; i++) {
+      const origIdx = indicesMap[i];
+      const result = batchResults[i];
+      results[origIdx] = result;
+      const fingerprint = fingerprints[origIdx];
+      if (fingerprint) {
+        inMemoryCache.set(fingerprint, result);
+      }
+      logger.debug(`AI classified field "${fieldsDescriptors[origIdx].label || fieldsDescriptors[origIdx].name}" → ${result.profileKey} (${result.confidence})`);
+    }
+
+  } catch (err) {
+    logger.error(`AI batch classification error: ${err.message}\\n${err.stack}`);
+    for (const idx of indicesMap) {
+      results[idx] = { profileKey: null, confidence: 0, reason: `AI error: ${err.message}` };
+    }
+  }
+
+  return results;
+}
+
+function buildBatchPrompt(fields, customKeys = []) {
+  const allKeys = [...VALID_PROFILE_KEYS, ...customKeys];
+  let prompt = `Classify the following HTML form fields to profile keys.\n\nFields:\n`;
+  fields.forEach((field, i) => {
+    prompt += `[Field ${i}]: name="${field.name || ''}", id="${field.id || ''}", label="${field.label || ''}", placeholder="${field.placeholder || ''}", type="${field.type || 'text'}"\n`;
+  });
+  
+  prompt += `\nValid profile keys:\n${allKeys.map(k => `- ${k}`).join('\n')}
+
+Respond ONLY with a JSON array containing exactly ${fields.length} objects in the same order.
+Example format:
+[
+  {"profileKey": "firstName", "confidence": 0.9, "reason": "brief explanation"},
+  {"profileKey": "none", "confidence": 0.9, "reason": "could not match"}
+]`;
+  return prompt;
+}
+
+const BATCH_SYSTEM_PROMPT = `You are a form field classifier for an autofill extension. 
+Your job is to map HTML form fields to structured user profile keys.
+Always respond with valid JSON array only. No markdown, no explanation outside JSON.
+Be conservative — use "none" if unsure. Never guess at sensitive fields like passport or PAN unless very clear.
+CRITICAL: Do NOT map 'Customer Service' or support text to Credit Card fields. Only map actual Credit Card number fields to creditCardNumber.`;
+
+function parseAIBatchResponse(content, customKeys, expectedLength) {
+  try {
+    const cleaned = content.replace(/```json?\n?/g, '').replace(/```/g, '').trim();
+    const parsed = JSON.parse(cleaned);
+    const allKeys = [...VALID_PROFILE_KEYS, ...customKeys];
+    
+    if (!Array.isArray(parsed)) throw new Error('Response is not an array');
+    
+    return Array.from({ length: expectedLength }).map((_, i) => {
+      const item = parsed[i] || {};
+      const profileKey = allKeys.includes(item.profileKey)
+        ? (item.profileKey === 'none' ? null : item.profileKey)
+        : null;
+      return {
+        profileKey,
+        confidence: Math.min(1, Math.max(0, parseFloat(item.confidence) || 0)),
+        reason: item.reason || 'AI classified',
+      };
+    });
+  } catch (err) {
+    const { logger } = require('../utils/logger');
+    logger.error(`AI batch parse error: ${err.message}\nRaw content was: ${content}`);
+    return Array(expectedLength).fill({ profileKey: null, confidence: 0, reason: 'AI returned invalid JSON' });
+  }
+}
+
+module.exports = { classifyField, classifyFieldsBatch, clearCache };

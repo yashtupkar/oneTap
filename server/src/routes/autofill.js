@@ -9,7 +9,7 @@ const {
   computeFieldFingerprint,
   SENSITIVE_KEYS,
 } = require('../services/matchingService');
-const { classifyField } = require('../services/aiService');
+const { classifyField, classifyFieldsBatch } = require('../services/aiService');
 const { decryptProfileSensitiveFields } = require('../services/encryptionService');
 const { logger } = require('../utils/logger');
 
@@ -56,6 +56,41 @@ router.post('/suggest', async (req, res, next) => {
 
     // ── Step 1: Rule-based matching ──────────────────────────────────────────
     const ruleMatches = matchFields(fields);
+
+    // ── Step 1.5: Batch AI Classification ────────────────────────────────────
+    const apiKey = openrouterApiKey || process.env.OPENROUTER_API_KEY;
+    const customKeys = profile.customFields ? Object.keys(profile.customFields).map(k => `customFields.${k}`) : [];
+    
+    const aiIndices = [];
+    for (let i = 0; i < fields.length; i++) {
+      const field = fields[i];
+      if (field.type === 'file') continue;
+      
+      let customKey = field.name || field.id;
+      if (!customKey && field.label) {
+        customKey = field.label.toLowerCase().trim().replace(/[\\s\\W]+/g, '_');
+      }
+      if (customKey && profile.customFields && profile.customFields[customKey]) continue;
+      
+      const learned = learnedMap.get(fingerprints[i]);
+      if (learned && learned.confidence >= RULE_CONFIDENCE_THRESHOLD) continue;
+      
+      const ruleMatch = ruleMatches[i];
+      if (ruleMatch.confidence < AI_FALLBACK_THRESHOLD && !ruleMatch.profileKey) {
+        aiIndices.push(i);
+      }
+    }
+
+    const aiResultsMap = new Map();
+    if (aiIndices.length > 0 && apiKey) {
+      logger.debug(`Batching ${aiIndices.length} fields for AI classification...`);
+      const fieldsForAI = aiIndices.map(i => fields[i]);
+      const fingerprintsForAI = aiIndices.map(i => fingerprints[i]);
+      const batchResults = await classifyFieldsBatch(fieldsForAI, apiKey, fingerprintsForAI, customKeys);
+      for (let j = 0; j < aiIndices.length; j++) {
+        aiResultsMap.set(aiIndices[j], batchResults[j]);
+      }
+    }
 
     // ── Step 2: Build suggestions ────────────────────────────────────────────
     const suggestions = await Promise.all(
@@ -112,17 +147,12 @@ router.post('/suggest', async (req, res, next) => {
 
         // Fall back to AI if rule confidence is low
         if (confidence < AI_FALLBACK_THRESHOLD && !ruleMatch.profileKey) {
-          const apiKey = openrouterApiKey || process.env.OPENROUTER_API_KEY;
-          if (apiKey) {
-            logger.debug(`Falling back to AI for field: ${field.label || field.name}`);
-            const customKeys = profile.customFields ? Object.keys(profile.customFields).map(k => `customFields.${k}`) : [];
-            const aiResult = await classifyField(field, apiKey, fingerprint, customKeys);
-            if (aiResult.profileKey && aiResult.confidence > confidence) {
-              profileKey = aiResult.profileKey;
-              confidence = aiResult.confidence;
-              source = aiResult.fromCache ? 'ai_cache' : 'ai';
-              reason = aiResult.reason;
-            }
+          const aiResult = aiResultsMap.get(idx);
+          if (aiResult && aiResult.profileKey && aiResult.confidence > confidence) {
+            profileKey = aiResult.profileKey;
+            confidence = aiResult.confidence;
+            source = aiResult.fromCache ? 'ai_cache' : 'ai';
+            reason = aiResult.reason;
           }
         }
 
