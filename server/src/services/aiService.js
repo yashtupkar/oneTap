@@ -25,16 +25,17 @@ const VALID_PROFILE_KEYS = [
  * @param {object} fieldDescriptor - { name, id, label, placeholder, type }
  * @param {string} apiKey - OpenRouter API key
  * @param {string} [fingerprint] - Cache key (optional)
+ * @param {string[]} [customKeys] - Additional custom keys (optional)
  * @returns {Promise<{ profileKey: string | null, confidence: number, reason: string }>}
  */
-async function classifyField(fieldDescriptor, apiKey, fingerprint) {
+async function classifyField(fieldDescriptor, apiKey, fingerprint, customKeys = []) {
   // Check in-memory cache first
   if (fingerprint && inMemoryCache.has(fingerprint)) {
     logger.debug(`AI cache hit for fingerprint: ${fingerprint.slice(0, 8)}...`);
     return { ...inMemoryCache.get(fingerprint), fromCache: true };
   }
 
-  const prompt = buildPrompt(fieldDescriptor);
+  const prompt = buildPrompt(fieldDescriptor, customKeys);
   const key = apiKey || process.env.OPENROUTER_API_KEY;
 
   if (!key) {
@@ -48,8 +49,8 @@ async function classifyField(fieldDescriptor, apiKey, fingerprint) {
       headers: {
         'Authorization': `Bearer ${key}`,
         'Content-Type': 'application/json',
-        'HTTP-Referer': 'https://ai-form-autofill.local',
-        'X-Title': 'AI Form Autofill Extension',
+        'HTTP-Referer': '',
+        'X-Title': '',
       },
       body: JSON.stringify({
         model: DEFAULT_MODEL,
@@ -69,7 +70,7 @@ async function classifyField(fieldDescriptor, apiKey, fingerprint) {
 
     const data = await response.json();
     const content = data.choices?.[0]?.message?.content?.trim() || '';
-    const result = parseAIResponse(content);
+    const result = parseAIResponse(content, customKeys);
 
     // Cache the result in memory
     if (fingerprint) {
@@ -80,7 +81,7 @@ async function classifyField(fieldDescriptor, apiKey, fingerprint) {
     return result;
 
   } catch (err) {
-    logger.error('AI classification error:', err.message);
+    logger.error(`AI classification error: ${err.message}\\n${err.stack}`);
     return { profileKey: null, confidence: 0, reason: `AI error: ${err.message}` };
   }
 }
@@ -88,7 +89,8 @@ async function classifyField(fieldDescriptor, apiKey, fingerprint) {
 /**
  * Builds the user prompt for AI field classification.
  */
-function buildPrompt(field) {
+function buildPrompt(field, customKeys = []) {
+  const allKeys = [...VALID_PROFILE_KEYS, ...customKeys];
   return `Classify this HTML form field to a profile key.
 
 Field details:
@@ -99,7 +101,7 @@ Field details:
 - input type: "${field.type || 'text'}"
 
 Valid profile keys:
-${VALID_PROFILE_KEYS.map(k => `- ${k}`).join('\n')}
+${allKeys.map(k => `- ${k}`).join('\n')}
 
 Respond ONLY with valid JSON in this exact format:
 {"profileKey": "keyName", "confidence": 0.9, "reason": "brief explanation"}
@@ -110,17 +112,19 @@ Use "none" as profileKey if you cannot match it. Confidence should be 0-1.`;
 const SYSTEM_PROMPT = `You are a form field classifier for an autofill extension. 
 Your job is to map HTML form fields to structured user profile keys.
 Always respond with valid JSON only. No markdown, no explanation outside JSON.
-Be conservative — use "none" if unsure. Never guess at sensitive fields like passport or PAN unless very clear.`;
+Be conservative — use "none" if unsure. Never guess at sensitive fields like passport or PAN unless very clear.
+CRITICAL: Do NOT map 'Customer Service' or support text to Credit Card fields. Only map actual Credit Card number fields to creditCardNumber.`;
 
 /**
  * Parses the AI JSON response.
  */
-function parseAIResponse(content) {
+function parseAIResponse(content, customKeys = []) {
   try {
     // Strip any markdown code fences
     const cleaned = content.replace(/```json?\n?/g, '').replace(/```/g, '').trim();
     const parsed = JSON.parse(cleaned);
-    const profileKey = VALID_PROFILE_KEYS.includes(parsed.profileKey)
+    const allKeys = [...VALID_PROFILE_KEYS, ...customKeys];
+    const profileKey = allKeys.includes(parsed.profileKey)
       ? (parsed.profileKey === 'none' ? null : parsed.profileKey)
       : null;
     return {
@@ -128,7 +132,9 @@ function parseAIResponse(content) {
       confidence: Math.min(1, Math.max(0, parseFloat(parsed.confidence) || 0)),
       reason: parsed.reason || 'AI classified',
     };
-  } catch {
+  } catch (err) {
+    const { logger } = require('../utils/logger');
+    logger.error(`AI parse error: ${err.message}\\nRaw content was: ${content}`);
     return { profileKey: null, confidence: 0, reason: 'AI returned invalid JSON' };
   }
 }

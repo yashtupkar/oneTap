@@ -28,7 +28,7 @@
   "content_scripts": [
     {
       "js": [
-        "assets/index.jsx-loader-5Mdid7ri.js"
+        "assets/index.jsx-loader-C3CN0cDo.js"
       ],
       "matches": [
         "<all_urls>"
@@ -62,7 +62,7 @@
         "icons/*",
         "assets/client-DhEz86-d.js",
         "assets/api-DIHikcqA.js",
-        "assets/index.jsx-CJqqzkLf.js"
+        "assets/index.jsx-Hvx4CSSB.js"
       ],
       "use_dynamic_url": false
     }

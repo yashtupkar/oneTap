@@ -25,6 +25,9 @@ export function FieldOverlay({ suggestion, field, rect, onEdit, onApply }) {
   const [expanded, setExpanded] = useState(false);
   const [editValue, setEditValue] = useState(suggestion?.value || '');
   const [isEditing, setIsEditing] = useState(false);
+  const [showNamePrompt, setShowNamePrompt] = useState(false);
+  const [customName, setCustomName] = useState(field?.label || field?.name || '');
+  const [isSensitive, setIsSensitive] = useState(false);
   const overlayRef = useRef(null);
 
   // Default to suggested if it has a value, but index.jsx will pass status down. 
@@ -56,6 +59,7 @@ export function FieldOverlay({ suggestion, field, rect, onEdit, onApply }) {
       if (overlayRef.current && !overlayRef.current.contains(e.target)) {
         setExpanded(false);
         setIsEditing(false);
+        setShowNamePrompt(false);
       }
     };
     document.addEventListener('mousedown', handler, true);
@@ -84,15 +88,25 @@ export function FieldOverlay({ suggestion, field, rect, onEdit, onApply }) {
       onApply?.();
       setLocalStatus('filled');
     } else if (localStatus === 'missing' && hasValue) {
-      // Save this specific field
-      const val = collectFieldValues([field]);
-      if (val.length > 0) {
-        try {
-          await saveSubmission(window.location.href, window.location.hostname, val);
-          setLocalStatus('filled');
-        } catch (err) {
-          console.error('[AI Autofill] Failed to save field', err);
-        }
+      if (!expanded) {
+        setExpanded(true);
+        return;
+      }
+      setShowNamePrompt(true);
+    }
+  };
+
+  const handleSaveConfirm = async () => {
+    const val = collectFieldValues([field]);
+    if (val.length > 0) {
+      try {
+        const fieldData = { ...val[0], customName, isSensitive };
+        await saveSubmission(window.location.href, window.location.hostname, [fieldData]);
+        setLocalStatus('filled');
+        setShowNamePrompt(false);
+        setExpanded(false);
+      } catch (err) {
+        console.error('[AI Autofill] Failed to save field', err);
       }
     }
   };
@@ -266,6 +280,47 @@ export function FieldOverlay({ suggestion, field, rect, onEdit, onApply }) {
             >
               ⚡ {suggestion?.isFileInput ? 'Attach Document' : 'Fill This Field'}
             </button>
+          )}
+
+          {/* Save New Field UI */}
+          {isSaveMode && !showNamePrompt && (
+            <button
+              onClick={(e) => { handleApplyClick(e); }}
+              style={{ ...btnStyle('#2e3248'), width: '100%', justifyContent: 'center', padding: '6px', marginTop: '8px' }}
+            >
+              💾 Save New Field
+            </button>
+          )}
+
+          {isSaveMode && showNamePrompt && (
+            <div style={{ marginTop: '8px', padding: '8px', background: '#0f1117', borderRadius: '8px', border: '1px solid #2e3248' }}>
+              <div style={{ marginBottom: '6px', fontSize: '10px', color: '#9ca3af' }}>Name this field to save it:</div>
+              <input
+                value={customName}
+                onChange={e => setCustomName(e.target.value)}
+                placeholder="e.g. Secret Code"
+                style={{
+                  width: '100%', padding: '5px 8px', borderRadius: '6px',
+                  border: '1px solid #4e52e8', background: '#1a1d27',
+                  color: '#e2e8f0', fontSize: '11px', outline: 'none',
+                  boxSizing: 'border-box', marginBottom: '8px'
+                }}
+                autoFocus
+              />
+              <label style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '10px', color: '#a0a8c0', cursor: 'pointer', marginBottom: '8px' }}>
+                <input 
+                  type="checkbox" 
+                  checked={isSensitive} 
+                  onChange={e => setIsSensitive(e.target.checked)} 
+                  style={{ cursor: 'pointer' }}
+                />
+                Encrypt this field
+              </label>
+              <div style={{ display: 'flex', gap: '4px' }}>
+                <button onClick={handleSaveConfirm} style={{ ...btnStyle('#10b981'), flex: 1, justifyContent: 'center' }}>Save</button>
+                <button onClick={() => setShowNamePrompt(false)} style={{ ...btnStyle('#2e3248'), flex: 1, justifyContent: 'center' }}>Cancel</button>
+              </div>
+            </div>
           )}
 
         </div>

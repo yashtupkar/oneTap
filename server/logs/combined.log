@@ -316,3 +316,941 @@
 2026-07-25 10:22:25 [debug]: Falling back to AI for field: Favorite Movie
 2026-07-25 10:22:25 [debug]: AI cache hit for fingerprint: 6c0a2474...
 2026-07-25 10:22:25 [http]: ::1 - - [25/Jul/2026:04:52:25 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:33:09 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-00.r0rqul9.mongodb.net
+2026-07-25 10:33:09 [info]: 🚀 Server running on http://localhost:3001
+2026-07-25 10:33:09 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
+2026-07-25 10:33:27 [http]: ::1 - - [25/Jul/2026:05:03:27 +0000] "POST /api/submissions HTTP/1.1" 201 561 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:33:31 [http]: ::1 - - [25/Jul/2026:05:03:31 +0000] "GET /api/profile HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:34:30 [debug]: Falling back to AI for field: Middle Initial
+2026-07-25 10:34:30 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 10:34:30 [debug]: Falling back to AI for field: Birth Place
+2026-07-25 10:34:30 [debug]: Falling back to AI for field: Custom Message
+2026-07-25 10:34:30 [debug]: Falling back to AI for field: Comments
+2026-07-25 10:34:31 [error]: AI classification error:
+2026-07-25 10:34:31 [error]: AI classification error:
+2026-07-25 10:34:31 [error]: AI classification error:
+2026-07-25 10:34:31 [error]: AI classification error:
+2026-07-25 10:34:31 [error]: AI classification error:
+2026-07-25 10:34:31 [http]: ::1 - - [25/Jul/2026:05:04:31 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:34:51 [http]: ::1 - - [25/Jul/2026:05:04:51 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:35:05 [http]: ::1 - - [25/Jul/2026:05:05:05 +0000] "PATCH /api/profile HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:35:10 [debug]: Falling back to AI for field: Middle Initial
+2026-07-25 10:35:10 [debug]: Falling back to AI for field: User ID
+2026-07-25 10:35:10 [debug]: Falling back to AI for field: Password
+2026-07-25 10:35:10 [debug]: Falling back to AI for field: Credit Card Type
+2026-07-25 10:35:10 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 10:35:10 [debug]: Falling back to AI for field: Card Verification Code
+2026-07-25 10:35:10 [debug]: Falling back to AI for field: Card Expiration Date
+2026-07-25 10:35:10 [debug]: Falling back to AI for field: Card Expiration Date
+2026-07-25 10:35:10 [debug]: Falling back to AI for field: Card User Name
+2026-07-25 10:35:10 [debug]: Falling back to AI for field: Card Issuing Bank
+2026-07-25 10:35:10 [debug]: Falling back to AI for field: Social Security Number
+2026-07-25 10:35:10 [debug]: Falling back to AI for field: Age
+2026-07-25 10:35:10 [debug]: Falling back to AI for field: Birth Place
+2026-07-25 10:35:10 [debug]: Falling back to AI for field: Income
+2026-07-25 10:35:10 [debug]: Falling back to AI for field: Custom Message
+2026-07-25 10:35:10 [debug]: Falling back to AI for field: Comments
+2026-07-25 10:35:11 [error]: AI classification error:
+2026-07-25 10:35:11 [error]: AI classification error:
+2026-07-25 10:35:11 [error]: AI classification error:
+2026-07-25 10:35:11 [error]: AI classification error:
+2026-07-25 10:35:11 [error]: AI classification error:
+2026-07-25 10:35:11 [error]: AI classification error:
+2026-07-25 10:35:11 [error]: AI classification error:
+2026-07-25 10:35:11 [error]: AI classification error:
+2026-07-25 10:35:11 [error]: AI classification error:
+2026-07-25 10:35:11 [error]: AI classification error:
+2026-07-25 10:35:11 [error]: AI classification error:
+2026-07-25 10:35:11 [error]: AI classification error:
+2026-07-25 10:35:11 [error]: AI classification error:
+2026-07-25 10:35:11 [error]: AI classification error:
+2026-07-25 10:35:11 [error]: AI classification error:
+2026-07-25 10:35:11 [error]: AI classification error:
+2026-07-25 10:35:11 [http]: ::1 - - [25/Jul/2026:05:05:11 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:35:45 [http]: ::1 - - [25/Jul/2026:05:05:45 +0000] "GET /api/profile HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:35:45 [http]: ::1 - - [25/Jul/2026:05:05:45 +0000] "GET /api/documents HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:35:47 [http]: ::1 - - [25/Jul/2026:05:05:47 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:36:04 [http]: ::1 - - [25/Jul/2026:05:06:04 +0000] "PATCH /api/profile HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:36:11 [debug]: Falling back to AI for field: Middle Initial
+2026-07-25 10:36:11 [debug]: Falling back to AI for field: User ID
+2026-07-25 10:36:11 [debug]: Falling back to AI for field: Password
+2026-07-25 10:36:11 [debug]: Falling back to AI for field: Credit Card Type
+2026-07-25 10:36:11 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 10:36:11 [debug]: Falling back to AI for field: Card Verification Code
+2026-07-25 10:36:11 [debug]: Falling back to AI for field: Card Expiration Date
+2026-07-25 10:36:11 [debug]: Falling back to AI for field: Card Expiration Date
+2026-07-25 10:36:11 [debug]: Falling back to AI for field: Card User Name
+2026-07-25 10:36:11 [debug]: Falling back to AI for field: Card Issuing Bank
+2026-07-25 10:36:11 [debug]: Falling back to AI for field: Social Security Number
+2026-07-25 10:36:11 [debug]: Falling back to AI for field: Age
+2026-07-25 10:36:11 [debug]: Falling back to AI for field: Birth Place
+2026-07-25 10:36:11 [debug]: Falling back to AI for field: Income
+2026-07-25 10:36:11 [debug]: Falling back to AI for field: Custom Message
+2026-07-25 10:36:11 [debug]: Falling back to AI for field: Comments
+2026-07-25 10:36:12 [error]: AI classification error:
+2026-07-25 10:36:12 [error]: AI classification error:
+2026-07-25 10:36:12 [error]: AI classification error:
+2026-07-25 10:36:12 [error]: AI classification error:
+2026-07-25 10:36:12 [error]: AI classification error:
+2026-07-25 10:36:12 [error]: AI classification error:
+2026-07-25 10:36:12 [error]: AI classification error:
+2026-07-25 10:36:12 [error]: AI classification error:
+2026-07-25 10:36:12 [error]: AI classification error:
+2026-07-25 10:36:12 [error]: AI classification error:
+2026-07-25 10:36:12 [error]: AI classification error:
+2026-07-25 10:36:12 [error]: AI classification error:
+2026-07-25 10:36:12 [error]: AI classification error:
+2026-07-25 10:36:12 [error]: AI classification error:
+2026-07-25 10:36:12 [error]: AI classification error:
+2026-07-25 10:36:12 [error]: AI classification error:
+2026-07-25 10:36:12 [http]: ::1 - - [25/Jul/2026:05:06:12 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:36:51 [http]: ::1 - - [25/Jul/2026:05:06:51 +0000] "PATCH /api/profile HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:37:01 [debug]: Falling back to AI for field: Middle Initial
+2026-07-25 10:37:01 [debug]: Falling back to AI for field: User ID
+2026-07-25 10:37:01 [debug]: Falling back to AI for field: Password
+2026-07-25 10:37:01 [debug]: Falling back to AI for field: Credit Card Type
+2026-07-25 10:37:01 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 10:37:01 [debug]: Falling back to AI for field: Card Verification Code
+2026-07-25 10:37:01 [debug]: Falling back to AI for field: Card Expiration Date
+2026-07-25 10:37:01 [debug]: Falling back to AI for field: Card Expiration Date
+2026-07-25 10:37:01 [debug]: Falling back to AI for field: Card User Name
+2026-07-25 10:37:01 [debug]: Falling back to AI for field: Card Issuing Bank
+2026-07-25 10:37:01 [debug]: Falling back to AI for field: Social Security Number
+2026-07-25 10:37:01 [debug]: Falling back to AI for field: Age
+2026-07-25 10:37:01 [debug]: Falling back to AI for field: Birth Place
+2026-07-25 10:37:01 [debug]: Falling back to AI for field: Income
+2026-07-25 10:37:01 [debug]: Falling back to AI for field: Custom Message
+2026-07-25 10:37:01 [debug]: Falling back to AI for field: Comments
+2026-07-25 10:37:01 [error]: AI classification error:
+2026-07-25 10:37:01 [error]: AI classification error:
+2026-07-25 10:37:01 [error]: AI classification error:
+2026-07-25 10:37:01 [error]: AI classification error:
+2026-07-25 10:37:01 [error]: AI classification error:
+2026-07-25 10:37:01 [error]: AI classification error:
+2026-07-25 10:37:01 [error]: AI classification error:
+2026-07-25 10:37:01 [error]: AI classification error:
+2026-07-25 10:37:01 [error]: AI classification error:
+2026-07-25 10:37:01 [error]: AI classification error:
+2026-07-25 10:37:01 [error]: AI classification error:
+2026-07-25 10:37:01 [error]: AI classification error:
+2026-07-25 10:37:01 [error]: AI classification error:
+2026-07-25 10:37:02 [error]: AI classification error:
+2026-07-25 10:37:02 [error]: AI classification error:
+2026-07-25 10:37:02 [error]: AI classification error:
+2026-07-25 10:37:02 [http]: ::1 - - [25/Jul/2026:05:07:02 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:37:03 [debug]: Falling back to AI for field: Middle Initial
+2026-07-25 10:37:03 [debug]: Falling back to AI for field: User ID
+2026-07-25 10:37:03 [debug]: Falling back to AI for field: Password
+2026-07-25 10:37:03 [debug]: Falling back to AI for field: Credit Card Type
+2026-07-25 10:37:03 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 10:37:03 [debug]: Falling back to AI for field: Card Verification Code
+2026-07-25 10:37:03 [debug]: Falling back to AI for field: Card Expiration Date
+2026-07-25 10:37:03 [debug]: Falling back to AI for field: Card Expiration Date
+2026-07-25 10:37:03 [debug]: Falling back to AI for field: Card User Name
+2026-07-25 10:37:03 [debug]: Falling back to AI for field: Card Issuing Bank
+2026-07-25 10:37:03 [debug]: Falling back to AI for field: Social Security Number
+2026-07-25 10:37:03 [debug]: Falling back to AI for field: Age
+2026-07-25 10:37:03 [debug]: Falling back to AI for field: Birth Place
+2026-07-25 10:37:03 [debug]: Falling back to AI for field: Income
+2026-07-25 10:37:03 [debug]: Falling back to AI for field: Custom Message
+2026-07-25 10:37:03 [debug]: Falling back to AI for field: Comments
+2026-07-25 10:37:04 [error]: AI classification error:
+2026-07-25 10:37:04 [error]: AI classification error:
+2026-07-25 10:37:04 [error]: AI classification error:
+2026-07-25 10:37:04 [error]: AI classification error:
+2026-07-25 10:37:04 [error]: AI classification error:
+2026-07-25 10:37:04 [error]: AI classification error:
+2026-07-25 10:37:04 [error]: AI classification error:
+2026-07-25 10:37:04 [error]: AI classification error:
+2026-07-25 10:37:04 [error]: AI classification error:
+2026-07-25 10:37:04 [error]: AI classification error:
+2026-07-25 10:37:04 [error]: AI classification error:
+2026-07-25 10:37:04 [error]: AI classification error:
+2026-07-25 10:37:04 [error]: AI classification error:
+2026-07-25 10:37:04 [error]: AI classification error:
+2026-07-25 10:37:04 [error]: AI classification error:
+2026-07-25 10:37:04 [error]: AI classification error:
+2026-07-25 10:37:04 [http]: ::1 - - [25/Jul/2026:05:07:04 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:37:33 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 10:37:33 [debug]: Falling back to AI for field: CCV
+2026-07-25 10:37:33 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 10:37:34 [error]: AI classification error:
+2026-07-25 10:37:34 [error]: AI classification error:
+2026-07-25 10:37:34 [error]: AI classification error:
+2026-07-25 10:37:34 [http]: ::1 - - [25/Jul/2026:05:07:34 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:56:58 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-02.r0rqul9.mongodb.net
+2026-07-25 10:56:58 [info]: 🚀 Server running on http://localhost:3001
+2026-07-25 10:56:58 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
+2026-07-25 10:56:59 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 10:56:59 [debug]: Falling back to AI for field: CCV
+2026-07-25 10:56:59 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 10:57:00 [error]: AI classification error:
+2026-07-25 10:57:00 [error]: AI classification error:
+2026-07-25 10:57:00 [error]: AI classification error:
+2026-07-25 10:57:00 [http]: ::ffff:127.0.0.1 - - [25/Jul/2026:05:27:00 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:57:21 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 10:57:21 [debug]: Falling back to AI for field: CCV
+2026-07-25 10:57:21 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 10:57:22 [error]: AI classification error:
+2026-07-25 10:57:22 [error]: AI classification error:
+2026-07-25 10:57:22 [error]: AI classification error:
+2026-07-25 10:57:22 [http]: ::ffff:127.0.0.1 - - [25/Jul/2026:05:27:22 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:59:17 [debug]: Falling back to AI for field: Middle Initial
+2026-07-25 10:59:17 [debug]: Falling back to AI for field: User ID
+2026-07-25 10:59:17 [debug]: Falling back to AI for field: Password
+2026-07-25 10:59:17 [debug]: Falling back to AI for field: Credit Card Type
+2026-07-25 10:59:17 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 10:59:17 [debug]: Falling back to AI for field: Card Verification Code
+2026-07-25 10:59:17 [debug]: Falling back to AI for field: Card Expiration Date
+2026-07-25 10:59:17 [debug]: Falling back to AI for field: Card Expiration Date
+2026-07-25 10:59:17 [debug]: Falling back to AI for field: Card User Name
+2026-07-25 10:59:17 [debug]: Falling back to AI for field: Card Issuing Bank
+2026-07-25 10:59:17 [debug]: Falling back to AI for field: Social Security Number
+2026-07-25 10:59:17 [debug]: Falling back to AI for field: Age
+2026-07-25 10:59:17 [debug]: Falling back to AI for field: Birth Place
+2026-07-25 10:59:17 [debug]: Falling back to AI for field: Income
+2026-07-25 10:59:17 [debug]: Falling back to AI for field: Custom Message
+2026-07-25 10:59:17 [debug]: Falling back to AI for field: Comments
+2026-07-25 10:59:18 [error]: AI classification error:
+2026-07-25 10:59:18 [error]: AI classification error:
+2026-07-25 10:59:18 [error]: AI classification error:
+2026-07-25 10:59:18 [error]: AI classification error:
+2026-07-25 10:59:18 [error]: AI classification error:
+2026-07-25 10:59:18 [error]: AI classification error:
+2026-07-25 10:59:18 [error]: AI classification error:
+2026-07-25 10:59:18 [error]: AI classification error:
+2026-07-25 10:59:18 [error]: AI classification error:
+2026-07-25 10:59:18 [error]: AI classification error:
+2026-07-25 10:59:18 [error]: AI classification error:
+2026-07-25 10:59:18 [error]: AI classification error:
+2026-07-25 10:59:18 [error]: AI classification error:
+2026-07-25 10:59:18 [error]: AI classification error:
+2026-07-25 10:59:18 [error]: AI classification error:
+2026-07-25 10:59:18 [error]: AI classification error:
+2026-07-25 10:59:18 [http]: ::1 - - [25/Jul/2026:05:29:18 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:59:25 [debug]: Falling back to AI for field: Name this field to save it:
+2026-07-25 10:59:25 [debug]: Falling back to AI for field: Encrypt this field
+2026-07-25 10:59:26 [error]: AI classification error:
+2026-07-25 10:59:26 [error]: AI classification error:
+2026-07-25 10:59:26 [http]: ::1 - - [25/Jul/2026:05:29:26 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 516 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:59:30 [http]: ::1 - - [25/Jul/2026:05:29:30 +0000] "POST /api/submissions HTTP/1.1" 201 113 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:59:44 [http]: ::1 - - [25/Jul/2026:05:29:44 +0000] "POST /api/submissions HTTP/1.1" 201 115 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:00:14 [http]: ::1 - - [25/Jul/2026:05:30:14 +0000] "POST /api/submissions HTTP/1.1" 201 117 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:00:21 [http]: ::1 - - [25/Jul/2026:05:30:21 +0000] "POST /api/submissions HTTP/1.1" 201 117 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:00:33 [http]: ::1 - - [25/Jul/2026:05:30:33 +0000] "POST /api/submissions HTTP/1.1" 201 119 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:00:56 [http]: ::1 - - [25/Jul/2026:05:30:56 +0000] "POST /api/submissions HTTP/1.1" 201 111 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:01:05 [http]: ::1 - - [25/Jul/2026:05:31:05 +0000] "GET /api/profile HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:01:05 [http]: ::1 - - [25/Jul/2026:05:31:05 +0000] "GET /api/documents HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:01:12 [http]: ::1 - - [25/Jul/2026:05:31:12 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:01:34 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:01:34 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:01:34 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:01:35 [error]: AI classification error:
+2026-07-25 11:01:35 [error]: AI classification error:
+2026-07-25 11:01:35 [error]: AI classification error:
+2026-07-25 11:01:35 [http]: ::1 - - [25/Jul/2026:05:31:35 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:01:48 [http]: ::1 - - [25/Jul/2026:05:31:48 +0000] "GET /uploads/d838f28c-a820-4f21-93cd-2a1dafd58897/3570bb8f-c5eb-4b79-9e55-31def844f0d0.pdf HTTP/1.1" 304 - "http://127.0.0.1:5500/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:01:57 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:01:57 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:01:57 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:01:58 [error]: AI classification error:
+2026-07-25 11:01:58 [error]: AI classification error:
+2026-07-25 11:01:58 [error]: AI classification error:
+2026-07-25 11:01:58 [http]: ::1 - - [25/Jul/2026:05:31:58 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:03:35 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:03:35 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:03:35 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:03:36 [error]: AI classification error:
+2026-07-25 11:03:36 [error]: AI classification error:
+2026-07-25 11:03:36 [error]: AI classification error:
+2026-07-25 11:03:36 [http]: ::1 - - [25/Jul/2026:05:33:36 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:04:26 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-02.r0rqul9.mongodb.net
+2026-07-25 11:04:26 [info]: 🚀 Server running on http://localhost:3001
+2026-07-25 11:04:26 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
+2026-07-25 11:04:26 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:04:26 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:04:26 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:04:27 [error]: AI classification error:
+2026-07-25 11:04:28 [error]: AI classification error:
+2026-07-25 11:04:28 [error]: AI classification error:
+2026-07-25 11:04:28 [http]: ::1 - - [25/Jul/2026:05:34:28 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:04:40 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-02.r0rqul9.mongodb.net
+2026-07-25 11:04:40 [info]: 🚀 Server running on http://localhost:3001
+2026-07-25 11:04:40 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
+2026-07-25 11:04:40 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:04:40 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:04:40 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:04:41 [error]: AI classification error:
+2026-07-25 11:04:41 [error]: AI classification error:
+2026-07-25 11:04:41 [error]: AI classification error:
+2026-07-25 11:04:41 [http]: ::1 - - [25/Jul/2026:05:34:41 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:04:58 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:04:58 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:04:58 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:04:58 [error]: AI classification error:
+2026-07-25 11:04:58 [error]: AI classification error:
+2026-07-25 11:04:59 [error]: AI classification error:
+2026-07-25 11:04:59 [http]: ::ffff:127.0.0.1 - - [25/Jul/2026:05:34:59 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:07:59 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:07:59 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:07:59 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:07:59 [error]: AI classification error:
+2026-07-25 11:07:59 [error]: AI classification error:
+2026-07-25 11:07:59 [error]: AI classification error:
+2026-07-25 11:07:59 [http]: ::1 - - [25/Jul/2026:05:37:59 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:11:00 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:11:00 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:11:00 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:11:01 [error]: AI classification error:
+2026-07-25 11:11:01 [error]: AI classification error:
+2026-07-25 11:11:01 [error]: AI classification error:
+2026-07-25 11:11:01 [http]: ::1 - - [25/Jul/2026:05:41:01 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:14:02 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:14:02 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:14:02 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:14:02 [error]: AI classification error:
+2026-07-25 11:14:03 [error]: AI classification error:
+2026-07-25 11:14:03 [error]: AI classification error:
+2026-07-25 11:14:03 [http]: ::1 - - [25/Jul/2026:05:44:03 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:17:03 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:17:03 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:17:03 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:17:04 [error]: AI classification error:
+2026-07-25 11:17:04 [error]: AI classification error:
+2026-07-25 11:17:04 [error]: AI classification error:
+2026-07-25 11:17:04 [http]: ::1 - - [25/Jul/2026:05:47:04 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:20:05 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:20:05 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:20:05 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:20:06 [error]: AI classification error:
+2026-07-25 11:20:06 [error]: AI classification error:
+2026-07-25 11:20:06 [error]: AI classification error:
+2026-07-25 11:20:06 [http]: ::1 - - [25/Jul/2026:05:50:06 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:23:06 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:23:06 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:23:06 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:23:06 [error]: AI classification error:
+2026-07-25 11:23:06 [error]: AI classification error:
+2026-07-25 11:23:06 [error]: AI classification error:
+2026-07-25 11:23:06 [http]: ::1 - - [25/Jul/2026:05:53:06 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:26:07 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:26:07 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:26:07 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:26:08 [error]: AI classification error:
+2026-07-25 11:26:08 [error]: AI classification error:
+2026-07-25 11:26:08 [error]: AI classification error:
+2026-07-25 11:26:08 [http]: ::1 - - [25/Jul/2026:05:56:08 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:26:58 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:26:58 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:26:58 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:26:59 [error]: AI classification error:
+2026-07-25 11:26:59 [error]: AI classification error:
+2026-07-25 11:26:59 [error]: AI classification error:
+2026-07-25 11:26:59 [http]: ::1 - - [25/Jul/2026:05:56:59 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:27:01 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-00.r0rqul9.mongodb.net
+2026-07-25 11:27:03 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:27:03 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:27:03 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:27:03 [error]: AI classification error:
+2026-07-25 11:27:03 [error]: AI classification error:
+2026-07-25 11:27:03 [error]: AI classification error:
+2026-07-25 11:27:03 [http]: ::1 - - [25/Jul/2026:05:57:03 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:27:07 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:27:07 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:27:07 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:27:07 [error]: AI classification error:
+2026-07-25 11:27:07 [error]: AI classification error:
+2026-07-25 11:27:07 [error]: AI classification error:
+2026-07-25 11:27:07 [http]: ::1 - - [25/Jul/2026:05:57:07 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:27:09 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:27:09 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:27:09 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:27:09 [error]: AI classification error:
+2026-07-25 11:27:09 [error]: AI classification error:
+2026-07-25 11:27:09 [error]: AI classification error:
+2026-07-25 11:27:09 [http]: ::1 - - [25/Jul/2026:05:57:09 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:27:14 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:27:14 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:27:14 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:27:14 [error]: AI classification error:
+2026-07-25 11:27:14 [error]: AI classification error:
+2026-07-25 11:27:14 [error]: AI classification error:
+2026-07-25 11:27:14 [http]: ::1 - - [25/Jul/2026:05:57:14 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:27:19 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:27:19 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:27:19 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:27:19 [error]: AI classification error:
+2026-07-25 11:27:19 [error]: AI classification error:
+2026-07-25 11:27:19 [error]: AI classification error:
+2026-07-25 11:27:19 [http]: ::1 - - [25/Jul/2026:05:57:19 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:27:24 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:27:24 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:27:24 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:27:24 [error]: AI classification error:
+2026-07-25 11:27:24 [error]: AI classification error:
+2026-07-25 11:27:24 [error]: AI classification error:
+2026-07-25 11:27:24 [http]: ::1 - - [25/Jul/2026:05:57:24 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:27:30 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:27:30 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:27:30 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:27:30 [error]: AI classification error:
+2026-07-25 11:27:30 [error]: AI classification error:
+2026-07-25 11:27:30 [error]: AI classification error:
+2026-07-25 11:27:30 [http]: ::1 - - [25/Jul/2026:05:57:30 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:27:35 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:27:35 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:27:35 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:27:35 [error]: AI classification error:
+2026-07-25 11:27:35 [error]: AI classification error:
+2026-07-25 11:27:35 [error]: AI classification error:
+2026-07-25 11:27:35 [http]: ::1 - - [25/Jul/2026:05:57:35 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:27:45 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-01.r0rqul9.mongodb.net
+2026-07-25 11:27:45 [info]: 🚀 Server running on http://localhost:3001
+2026-07-25 11:27:45 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
+2026-07-25 11:28:01 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:28:01 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:28:01 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:28:02 [error]: AI classification error:
+2026-07-25 11:28:02 [error]: AI classification error:
+2026-07-25 11:28:02 [error]: AI classification error:
+2026-07-25 11:28:02 [http]: ::1 - - [25/Jul/2026:05:58:02 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:29:08 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:29:08 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:29:08 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:29:09 [error]: AI classification error:
+2026-07-25 11:29:09 [error]: AI classification error:
+2026-07-25 11:29:09 [error]: AI classification error:
+2026-07-25 11:29:09 [http]: ::1 - - [25/Jul/2026:05:59:09 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:29:47 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-01.r0rqul9.mongodb.net
+2026-07-25 11:29:47 [info]: 🚀 Server running on http://localhost:3001
+2026-07-25 11:29:47 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
+2026-07-25 11:30:01 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:30:01 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:30:01 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:30:02 [error]: AI classification error:
+2026-07-25 11:30:02 [error]: AI classification error:
+2026-07-25 11:30:02 [error]: AI classification error:
+2026-07-25 11:30:02 [http]: ::1 - - [25/Jul/2026:06:00:02 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:30:15 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:30:15 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:30:15 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:30:15 [error]: AI classification error:
+2026-07-25 11:30:15 [error]: AI classification error:
+2026-07-25 11:30:15 [error]: AI classification error:
+2026-07-25 11:30:16 [http]: ::1 - - [25/Jul/2026:06:00:16 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:30:18 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:30:18 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:30:18 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:30:18 [error]: AI classification error:
+2026-07-25 11:30:18 [error]: AI classification error:
+2026-07-25 11:30:18 [error]: AI classification error:
+2026-07-25 11:30:18 [http]: ::1 - - [25/Jul/2026:06:00:18 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:30:22 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:30:22 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:30:22 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:30:22 [error]: AI classification error:
+2026-07-25 11:30:22 [error]: AI classification error:
+2026-07-25 11:30:22 [error]: AI classification error:
+2026-07-25 11:30:22 [http]: ::1 - - [25/Jul/2026:06:00:22 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:30:27 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:30:27 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:30:27 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:30:27 [error]: AI classification error:
+2026-07-25 11:30:27 [error]: AI classification error:
+2026-07-25 11:30:28 [error]: AI classification error:
+2026-07-25 11:30:28 [http]: ::1 - - [25/Jul/2026:06:00:28 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:30:32 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:30:32 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:30:32 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:30:32 [error]: AI classification error:
+2026-07-25 11:30:32 [error]: AI classification error:
+2026-07-25 11:30:32 [error]: AI classification error:
+2026-07-25 11:30:32 [http]: ::1 - - [25/Jul/2026:06:00:32 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:30:37 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:30:37 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:30:37 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:30:37 [error]: AI classification error:
+2026-07-25 11:30:37 [error]: AI classification error:
+2026-07-25 11:30:37 [error]: AI classification error:
+2026-07-25 11:30:37 [http]: ::1 - - [25/Jul/2026:06:00:37 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:30:42 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:30:42 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:30:42 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:30:42 [error]: AI classification error:
+2026-07-25 11:30:42 [error]: AI classification error:
+2026-07-25 11:30:42 [error]: AI classification error:
+2026-07-25 11:30:42 [http]: ::1 - - [25/Jul/2026:06:00:42 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:30:47 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:30:47 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:30:47 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:30:47 [error]: AI classification error:
+2026-07-25 11:30:47 [error]: AI classification error:
+2026-07-25 11:30:47 [error]: AI classification error:
+2026-07-25 11:30:47 [http]: ::1 - - [25/Jul/2026:06:00:47 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:30:54 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:30:54 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:30:54 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:30:55 [error]: AI classification error:
+2026-07-25 11:30:55 [error]: AI classification error:
+2026-07-25 11:30:55 [error]: AI classification error:
+2026-07-25 11:30:55 [http]: ::1 - - [25/Jul/2026:06:00:55 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:30:56 [http]: ::1 - - [25/Jul/2026:06:00:56 +0000] "POST /api/autofill/suggest HTTP/1.1" 429 42 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:31:19 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-00.r0rqul9.mongodb.net
+2026-07-25 11:31:19 [info]: 🚀 Server running on http://localhost:3001
+2026-07-25 11:31:19 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
+2026-07-25 11:31:55 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-02.r0rqul9.mongodb.net
+2026-07-25 11:31:55 [info]: 🚀 Server running on http://localhost:3001
+2026-07-25 11:31:55 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
+2026-07-25 11:31:59 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:31:59 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:31:59 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:32:00 [error]: AI classification error:
+2026-07-25 11:32:00 [error]: AI classification error:
+2026-07-25 11:32:00 [error]: AI classification error:
+2026-07-25 11:32:00 [http]: ::1 - - [25/Jul/2026:06:02:00 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:32:07 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:32:07 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:32:07 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:32:08 [error]: AI classification error:
+2026-07-25 11:32:08 [error]: AI classification error:
+2026-07-25 11:32:08 [error]: AI classification error:
+2026-07-25 11:32:08 [http]: ::1 - - [25/Jul/2026:06:02:08 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:32:10 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:32:10 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:32:10 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:32:10 [error]: AI classification error:
+2026-07-25 11:32:10 [error]: AI classification error:
+2026-07-25 11:32:10 [error]: AI classification error:
+2026-07-25 11:32:10 [http]: ::1 - - [25/Jul/2026:06:02:10 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:33:09 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:33:09 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:33:09 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:33:10 [error]: AI classification error:
+2026-07-25 11:33:10 [error]: AI classification error:
+2026-07-25 11:33:10 [error]: AI classification error:
+2026-07-25 11:33:10 [http]: ::1 - - [25/Jul/2026:06:03:10 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:33:11 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:33:11 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:33:11 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:33:11 [error]: AI classification error:
+2026-07-25 11:33:11 [error]: AI classification error:
+2026-07-25 11:33:11 [error]: AI classification error:
+2026-07-25 11:33:11 [http]: ::1 - - [25/Jul/2026:06:03:11 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:33:19 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-00.r0rqul9.mongodb.net
+2026-07-25 11:33:19 [info]: 🚀 Server running on http://localhost:3001
+2026-07-25 11:33:19 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
+2026-07-25 11:33:55 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:33:55 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:33:55 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:33:55 [error]: AI classification error: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null,"previous_errors":[{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"}]}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}\nError: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null,"previous_errors":[{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"}]}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}
+    at classifyField (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\services\aiService.js:68:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:119:30
+    at async Promise.all (index 25)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:61:25
+2026-07-25 11:33:56 [error]: AI classification error: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null,"previous_errors":[{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"}]}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}\nError: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null,"previous_errors":[{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"}]}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}
+    at classifyField (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\services\aiService.js:68:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:119:30
+    at async Promise.all (index 21)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:61:25
+2026-07-25 11:33:56 [error]: AI classification error: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null,"previous_errors":[{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"}]}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}\nError: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null,"previous_errors":[{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"}]}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}
+    at classifyField (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\services\aiService.js:68:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:119:30
+    at async Promise.all (index 20)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:61:25
+2026-07-25 11:33:56 [http]: ::1 - - [25/Jul/2026:06:03:56 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:34:43 [http]: ::1 - - [25/Jul/2026:06:04:43 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 306 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:35:13 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:35:13 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:35:13 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:35:15 [error]: AI classification error: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null,"previous_errors":[{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"}]}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}\nError: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null,"previous_errors":[{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"}]}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}
+    at classifyField (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\services\aiService.js:68:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:119:30
+    at async Promise.all (index 20)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:61:25
+2026-07-25 11:35:15 [error]: AI classification error: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null,"previous_errors":[{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"}]}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}\nError: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null,"previous_errors":[{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"}]}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}
+    at classifyField (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\services\aiService.js:68:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:119:30
+    at async Promise.all (index 25)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:61:25
+2026-07-25 11:35:15 [error]: AI classification error: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null,"previous_errors":[{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"}]}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}\nError: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null,"previous_errors":[{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"}]}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}
+    at classifyField (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\services\aiService.js:68:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:119:30
+    at async Promise.all (index 21)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:61:25
+2026-07-25 11:35:15 [http]: ::1 - - [25/Jul/2026:06:05:15 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:35:47 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:35:47 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:35:47 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:35:48 [error]: AI classification error: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null,"previous_errors":[{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"}]}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}\nError: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null,"previous_errors":[{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"}]}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}
+    at classifyField (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\services\aiService.js:68:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:119:30
+    at async Promise.all (index 21)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:61:25
+2026-07-25 11:35:48 [error]: AI classification error: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null,"previous_errors":[{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"}]}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}\nError: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null,"previous_errors":[{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"}]}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}
+    at classifyField (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\services\aiService.js:68:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:119:30
+    at async Promise.all (index 20)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:61:25
+2026-07-25 11:35:48 [error]: AI classification error: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null,"previous_errors":[{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"}]}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}\nError: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null,"previous_errors":[{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"}]}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}
+    at classifyField (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\services\aiService.js:68:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:119:30
+    at async Promise.all (index 25)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:61:25
+2026-07-25 11:35:48 [http]: ::1 - - [25/Jul/2026:06:05:48 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:35:49 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:35:49 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:35:49 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:35:50 [error]: AI classification error: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null,"previous_errors":[{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"}]}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}\nError: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null,"previous_errors":[{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"}]}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}
+    at classifyField (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\services\aiService.js:68:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:119:30
+    at async Promise.all (index 21)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:61:25
+2026-07-25 11:35:50 [error]: AI classification error: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null,"previous_errors":[{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"}]}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}\nError: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null,"previous_errors":[{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"}]}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}
+    at classifyField (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\services\aiService.js:68:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:119:30
+    at async Promise.all (index 20)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:61:25
+2026-07-25 11:35:50 [error]: AI classification error: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null,"previous_errors":[{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"}]}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}\nError: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null,"previous_errors":[{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"},{"code":429,"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day"}]}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}
+    at classifyField (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\services\aiService.js:68:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:119:30
+    at async Promise.all (index 25)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:61:25
+2026-07-25 11:35:50 [http]: ::1 - - [25/Jul/2026:06:05:50 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:35:56 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-01.r0rqul9.mongodb.net
+2026-07-25 11:35:56 [info]: 🚀 Server running on http://localhost:3001
+2026-07-25 11:35:56 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
+2026-07-25 11:36:01 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:36:01 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:36:01 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:36:02 [error]: AI classification error: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}\nError: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}
+    at classifyField (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\services\aiService.js:68:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:119:30
+    at async Promise.all (index 21)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:61:25
+2026-07-25 11:36:02 [error]: AI classification error: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}\nError: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}
+    at classifyField (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\services\aiService.js:68:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:119:30
+    at async Promise.all (index 20)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:61:25
+2026-07-25 11:36:02 [error]: AI classification error: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}\nError: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}
+    at classifyField (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\services\aiService.js:68:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:119:30
+    at async Promise.all (index 25)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:61:25
+2026-07-25 11:36:02 [http]: ::1 - - [25/Jul/2026:06:06:02 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:37:39 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-00.r0rqul9.mongodb.net
+2026-07-25 11:37:39 [info]: 🚀 Server running on http://localhost:3001
+2026-07-25 11:37:39 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
+2026-07-25 11:37:42 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:37:43 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:37:43 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:37:43 [error]: AI classification error: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}\nError: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}
+    at classifyField (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\services\aiService.js:68:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:119:30
+    at async Promise.all (index 21)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:61:25
+2026-07-25 11:37:43 [error]: AI classification error: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}\nError: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}
+    at classifyField (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\services\aiService.js:68:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:119:30
+    at async Promise.all (index 20)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:61:25
+2026-07-25 11:37:43 [error]: AI classification error: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}\nError: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}
+    at classifyField (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\services\aiService.js:68:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:119:30
+    at async Promise.all (index 25)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:61:25
+2026-07-25 11:37:43 [http]: ::1 - - [25/Jul/2026:06:07:43 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:38:13 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-02.r0rqul9.mongodb.net
+2026-07-25 11:38:13 [info]: 🚀 Server running on http://localhost:3001
+2026-07-25 11:38:13 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
+2026-07-25 11:38:25 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:38:25 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:38:25 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:38:26 [error]: AI classification error: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}\nError: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}
+    at classifyField (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\services\aiService.js:68:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:119:30
+    at async Promise.all (index 21)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:61:25
+2026-07-25 11:38:26 [error]: AI classification error: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}\nError: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}
+    at classifyField (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\services\aiService.js:68:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:119:30
+    at async Promise.all (index 20)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:61:25
+2026-07-25 11:38:26 [error]: AI classification error: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}\nError: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}
+    at classifyField (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\services\aiService.js:68:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:119:30
+    at async Promise.all (index 25)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:61:25
+2026-07-25 11:38:26 [http]: ::1 - - [25/Jul/2026:06:08:26 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:38:48 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:38:48 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:38:48 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:38:51 [error]: AI classification error: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}\nError: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}
+    at classifyField (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\services\aiService.js:68:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:119:30
+    at async Promise.all (index 20)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:61:25
+2026-07-25 11:38:51 [error]: AI classification error: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}\nError: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}
+    at classifyField (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\services\aiService.js:68:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:119:30
+    at async Promise.all (index 25)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:61:25
+2026-07-25 11:38:51 [error]: AI classification error: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}\nError: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}
+    at classifyField (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\services\aiService.js:68:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:119:30
+    at async Promise.all (index 21)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:61:25
+2026-07-25 11:38:51 [http]: ::1 - - [25/Jul/2026:06:08:51 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:38:54 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:38:54 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:38:54 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:38:54 [error]: AI classification error: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}\nError: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}
+    at classifyField (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\services\aiService.js:68:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:119:30
+    at async Promise.all (index 20)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:61:25
+2026-07-25 11:38:55 [error]: AI classification error: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}\nError: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}
+    at classifyField (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\services\aiService.js:68:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:119:30
+    at async Promise.all (index 25)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:61:25
+2026-07-25 11:38:56 [error]: AI classification error: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}\nError: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}
+    at classifyField (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\services\aiService.js:68:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:119:30
+    at async Promise.all (index 21)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:61:25
+2026-07-25 11:38:56 [http]: ::1 - - [25/Jul/2026:06:08:56 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:39:03 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:39:03 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:39:03 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:39:05 [error]: AI classification error: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}\nError: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}
+    at classifyField (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\services\aiService.js:68:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:119:30
+    at async Promise.all (index 21)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:61:25
+2026-07-25 11:39:05 [error]: AI classification error: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}\nError: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}
+    at classifyField (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\services\aiService.js:68:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:119:30
+    at async Promise.all (index 20)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:61:25
+2026-07-25 11:39:05 [error]: AI classification error: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}\nError: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}
+    at classifyField (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\services\aiService.js:68:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:119:30
+    at async Promise.all (index 25)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:61:25
+2026-07-25 11:39:05 [http]: ::1 - - [25/Jul/2026:06:09:05 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:39:08 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:39:08 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:39:08 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:39:09 [error]: AI classification error: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}\nError: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}
+    at classifyField (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\services\aiService.js:68:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:119:30
+    at async Promise.all (index 21)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:61:25
+2026-07-25 11:39:09 [error]: AI classification error: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}\nError: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}
+    at classifyField (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\services\aiService.js:68:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:119:30
+    at async Promise.all (index 20)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:61:25
+2026-07-25 11:39:09 [error]: AI classification error: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}\nError: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}
+    at classifyField (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\services\aiService.js:68:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:119:30
+    at async Promise.all (index 25)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:61:25
+2026-07-25 11:39:09 [http]: ::1 - - [25/Jul/2026:06:09:09 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:39:21 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-01.r0rqul9.mongodb.net
+2026-07-25 11:39:21 [info]: 🚀 Server running on http://localhost:3001
+2026-07-25 11:39:21 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
+2026-07-25 11:39:34 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:39:34 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:39:34 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:39:35 [error]: AI classification error: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}\nError: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}
+    at classifyField (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\services\aiService.js:68:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:119:30
+    at async Promise.all (index 20)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:61:25
+2026-07-25 11:39:35 [error]: AI classification error: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}\nError: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}
+    at classifyField (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\services\aiService.js:68:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:119:30
+    at async Promise.all (index 21)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:61:25
+2026-07-25 11:39:36 [error]: AI classification error: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}\nError: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}
+    at classifyField (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\services\aiService.js:68:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:119:30
+    at async Promise.all (index 25)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:61:25
+2026-07-25 11:39:36 [http]: ::1 - - [25/Jul/2026:06:09:36 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:39:54 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:39:54 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:39:54 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:39:54 [error]: AI classification error: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}\nError: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}
+    at classifyField (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\services\aiService.js:68:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:119:30
+    at async Promise.all (index 25)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:61:25
+2026-07-25 11:39:54 [error]: AI classification error: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}\nError: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}
+    at classifyField (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\services\aiService.js:68:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:119:30
+    at async Promise.all (index 21)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:61:25
+2026-07-25 11:39:54 [error]: AI classification error: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}\nError: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}
+    at classifyField (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\services\aiService.js:68:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:119:30
+    at async Promise.all (index 20)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:61:25
+2026-07-25 11:39:54 [http]: ::1 - - [25/Jul/2026:06:09:54 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:39:59 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:39:59 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:39:59 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:39:59 [error]: AI classification error: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}\nError: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}
+    at classifyField (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\services\aiService.js:68:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:119:30
+    at async Promise.all (index 21)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:61:25
+2026-07-25 11:39:59 [error]: AI classification error: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}\nError: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}
+    at classifyField (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\services\aiService.js:68:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:119:30
+    at async Promise.all (index 20)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:61:25
+2026-07-25 11:39:59 [error]: AI classification error: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}\nError: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}
+    at classifyField (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\services\aiService.js:68:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:119:30
+    at async Promise.all (index 25)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:61:25
+2026-07-25 11:39:59 [http]: ::1 - - [25/Jul/2026:06:09:59 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:41:16 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:41:16 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:41:16 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:41:17 [error]: AI classification error: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}\nError: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}
+    at classifyField (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\services\aiService.js:68:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:119:30
+    at async Promise.all (index 20)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:61:25
+2026-07-25 11:41:17 [error]: AI classification error: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}\nError: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}
+    at classifyField (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\services\aiService.js:68:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:119:30
+    at async Promise.all (index 25)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:61:25
+2026-07-25 11:41:17 [error]: AI classification error: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}\nError: OpenRouter API error 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 5 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1785024000000"},"provider_name":null}},"user_id":"user_2vAj0cQHCGkujZAgFlQ28Jbaa10"}
+    at classifyField (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\services\aiService.js:68:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:119:30
+    at async Promise.all (index 21)
+    at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:61:25
+2026-07-25 11:41:17 [http]: ::1 - - [25/Jul/2026:06:11:17 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:43:33 [http]: ::1 - - [25/Jul/2026:06:13:33 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:43:33 [http]: ::1 - - [25/Jul/2026:06:13:33 +0000] "GET /api/documents HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:43:34 [http]: ::1 - - [25/Jul/2026:06:13:34 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:43:58 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:43:58 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:43:58 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:44:06 [debug]: AI classified field "Credit Card Number" → customFields.Credit Card Number (0.95)
+2026-07-25 11:44:07 [debug]: AI classified field "Favorite Movie" → null (0.95)
+2026-07-25 11:44:08 [debug]: AI classified field "CCV" → customFields.Card Verification Code (0.95)
+2026-07-25 11:44:08 [http]: ::1 - - [25/Jul/2026:06:14:08 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:44:17 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:44:17 [debug]: AI cache hit for fingerprint: 6726c9d4...
+2026-07-25 11:44:17 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:44:17 [debug]: AI cache hit for fingerprint: c1d2b1a6...
+2026-07-25 11:44:17 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:44:17 [debug]: AI cache hit for fingerprint: 6c0a2474...
+2026-07-25 11:44:17 [http]: ::1 - - [25/Jul/2026:06:14:17 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:44:19 [http]: ::1 - - [25/Jul/2026:06:14:19 +0000] "GET /uploads/d838f28c-a820-4f21-93cd-2a1dafd58897/3570bb8f-c5eb-4b79-9e55-31def844f0d0.pdf HTTP/1.1" 304 - "http://127.0.0.1:5500/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:49:30 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:49:30 [debug]: AI cache hit for fingerprint: 6726c9d4...
+2026-07-25 11:49:30 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:49:30 [debug]: AI cache hit for fingerprint: c1d2b1a6...
+2026-07-25 11:49:30 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:49:30 [debug]: AI cache hit for fingerprint: 6c0a2474...
+2026-07-25 11:49:30 [http]: ::1 - - [25/Jul/2026:06:19:30 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:49:36 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:49:36 [debug]: AI cache hit for fingerprint: 6726c9d4...
+2026-07-25 11:49:36 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:49:36 [debug]: AI cache hit for fingerprint: c1d2b1a6...
+2026-07-25 11:49:36 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:49:36 [debug]: AI cache hit for fingerprint: 6c0a2474...
+2026-07-25 11:49:36 [http]: ::1 - - [25/Jul/2026:06:19:36 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:49:39 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:49:39 [debug]: AI cache hit for fingerprint: 6726c9d4...
+2026-07-25 11:49:39 [debug]: Falling back to AI for field: CCV
+2026-07-25 11:49:39 [debug]: AI cache hit for fingerprint: c1d2b1a6...
+2026-07-25 11:49:39 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 11:49:39 [debug]: AI cache hit for fingerprint: 6c0a2474...
+2026-07-25 11:49:39 [http]: ::1 - - [25/Jul/2026:06:19:39 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 11:50:10 [debug]: Falling back to AI for field: Middle Initial
+2026-07-25 11:50:10 [debug]: Falling back to AI for field: User ID
+2026-07-25 11:50:10 [debug]: Falling back to AI for field: Password
+2026-07-25 11:50:10 [debug]: Falling back to AI for field: Credit Card Type
+2026-07-25 11:50:10 [debug]: Falling back to AI for field: Credit Card Number
+2026-07-25 11:50:10 [debug]: Falling back to AI for field: Card Verification Code
+2026-07-25 11:50:10 [debug]: Falling back to AI for field: Card Expiration Date
+2026-07-25 11:50:10 [debug]: Falling back to AI for field: Card Expiration Date
+2026-07-25 11:50:10 [debug]: Falling back to AI for field: Card User Name
+2026-07-25 11:50:10 [debug]: Falling back to AI for field: Card Issuing Bank
+2026-07-25 11:50:10 [debug]: Falling back to AI for field: Social Security Number
+2026-07-25 11:50:10 [debug]: Falling back to AI for field: Age
+2026-07-25 11:50:10 [debug]: Falling back to AI for field: Birth Place
+2026-07-25 11:50:10 [debug]: Falling back to AI for field: Income
+2026-07-25 11:50:10 [debug]: Falling back to AI for field: Custom Message
+2026-07-25 11:50:10 [debug]: Falling back to AI for field: Comments
+2026-07-25 11:50:15 [debug]: AI classified field "Custom Message" → null (0.95)
+2026-07-25 11:50:15 [debug]: AI classified field "Password" → null (0.95)
+2026-07-25 11:50:15 [debug]: AI classified field "Middle Initial" → middleName (0.95)
+2026-07-25 11:50:16 [debug]: AI classified field "Card Verification Code" → customFields.Card Verification Code (0.95)
+2026-07-25 11:50:16 [debug]: AI classified field "User ID" → null (0.95)
+2026-07-25 11:50:17 [debug]: AI classified field "Comments" → null (0.95)
+2026-07-25 11:50:18 [debug]: AI classified field "Credit Card Type" → customFields.Credit Card Type (0.95)
+2026-07-25 11:50:19 [debug]: AI classified field "Age" → null (0.95)
+2026-07-25 11:50:19 [debug]: AI classified field "Credit Card Number" → customFields.Credit Card Number (0.95)
+2026-07-25 11:50:19 [debug]: AI classified field "Card Expiration Date" → customFields.Card Expiration Date (0.95)
+2026-07-25 11:50:19 [debug]: AI classified field "Income" → expectedSalary (0.8)
+2026-07-25 11:50:19 [debug]: AI classified field "Card Issuing Bank" → null (0.8)
+2026-07-25 11:50:20 [debug]: AI classified field "Card Expiration Date" → customFields.Card Expiration Date (0.95)
+2026-07-25 11:50:20 [debug]: AI classified field "Social Security Number" → null (0.95)
+2026-07-25 11:50:23 [debug]: AI classified field "Card User Name" → null (0.95)
+2026-07-25 11:50:23 [debug]: AI classified field "Birth Place" → null (0.9)
+2026-07-25 11:50:23 [http]: ::1 - - [25/Jul/2026:06:20:23 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"

@@ -72,12 +72,18 @@ router.post('/', async (req, res, next) => {
         }
       } else if (!field.profileKey || field.confidence < 0.65) {
         // Novel or low-confidence field -> save in customFields
-        let customKey = field.name || field.id;
+        let customKey = field.customName ? field.customName.trim() : (field.name || field.id);
         if (!customKey && field.label) {
           customKey = field.label.toLowerCase().trim().replace(/[\s\W]+/g, '_');
         }
         if (customKey) {
-          profileUpdates[`customFields.${customKey}`] = { value: field.value, type: field.type || 'text', sensitive: false };
+          // Remove dots or dollars from key to prevent MongoDB errors
+          customKey = customKey.replace(/[.$]/g, '');
+          profileUpdates[`customFields.${customKey}`] = { 
+            value: field.value, 
+            type: field.type || 'text', 
+            sensitive: !!field.isSensitive 
+          };
         }
       }
     }

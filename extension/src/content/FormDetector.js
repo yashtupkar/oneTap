@@ -78,8 +78,19 @@ export function getFieldLabel(el) {
   // Previous sibling text / label-like element
   const prev = el.previousElementSibling;
   if (prev && ['LABEL', 'SPAN', 'DIV', 'P'].includes(prev.tagName)) {
-    const text = prev.textContent?.trim();
-    if (text && text.length < 100) return text;
+    if (!prev.querySelector('input, select, textarea, button')) {
+      const text = prev.textContent?.trim();
+      if (text && text.length < 100) return text;
+    }
+  }
+
+  // Parent's previous sibling (common in grid layouts like Bootstrap row > col + col)
+  const parentPrev = el.parentElement?.previousElementSibling;
+  if (parentPrev && ['LABEL', 'SPAN', 'DIV', 'P'].includes(parentPrev.tagName)) {
+    if (!parentPrev.querySelector('input, select, textarea, button')) {
+      const text = parentPrev.textContent?.trim();
+      if (text && text.length < 100) return text;
+    }
   }
 
   // title attribute

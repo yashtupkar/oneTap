@@ -115,7 +115,8 @@ router.post('/suggest', async (req, res, next) => {
           const apiKey = openrouterApiKey || process.env.OPENROUTER_API_KEY;
           if (apiKey) {
             logger.debug(`Falling back to AI for field: ${field.label || field.name}`);
-            const aiResult = await classifyField(field, apiKey, fingerprint);
+            const customKeys = profile.customFields ? Object.keys(profile.customFields).map(k => `customFields.${k}`) : [];
+            const aiResult = await classifyField(field, apiKey, fingerprint, customKeys);
             if (aiResult.profileKey && aiResult.confidence > confidence) {
               profileKey = aiResult.profileKey;
               confidence = aiResult.confidence;
@@ -129,8 +130,20 @@ router.post('/suggest', async (req, res, next) => {
           return buildSuggestion({ field, profileKey: null, value: null, confidence: 0, source, reason: 'No matching profile key found' });
         }
 
-        const value = profile[profileKey];
-        const isSensitive = SENSITIVE_KEYS.has(profileKey);
+        let value = null;
+        let isSensitive = false;
+
+        if (profileKey.startsWith('customFields.')) {
+          const cfKey = profileKey.replace('customFields.', '');
+          const cf = profile.customFields?.[cfKey];
+          if (cf) {
+            value = typeof cf === 'object' ? cf.value : cf;
+            isSensitive = typeof cf === 'object' ? !!cf.sensitive : false;
+          }
+        } else {
+          value = profile[profileKey];
+          isSensitive = SENSITIVE_KEYS.has(profileKey);
+        }
         const requiresConfirmation = isSensitive
           ? confidence < SENSITIVE_THRESHOLD
           : confidence < RULE_CONFIDENCE_THRESHOLD;

@@ -57,41 +57,51 @@ async function init() {
 }
 
 
+import { SaveFieldsModal } from './SaveFieldsModal.jsx';
+
+function GlobalUI() {
+  const [fieldsToSave, setFieldsToSave] = React.useState(null);
+
+  return (
+    <>
+      <GlobalFillButton 
+        onFillAll={async () => {
+          let filledCount = 0;
+          await processSuggestions(allFields, suggestions, settings, (fieldIdx, value, suggestion) => {
+            updateOverlayStatus(allFields[fieldIdx]?.fingerprint, 'filled');
+            filledCount++;
+          });
+          if (filledCount > 0) {
+            showToast(`✨ OneTap: Auto-filled ${filledCount} field${filledCount > 1 ? 's' : ''}. Review changes.`, 'success');
+          }
+        }} 
+        onSaveAll={() => {
+          const vals = collectFieldValues(allFields);
+          if (vals.length > 0) {
+            setFieldsToSave(vals);
+          } else {
+            showToast('No filled fields to save', 'info');
+          }
+        }}
+      />
+      {fieldsToSave && (
+        <SaveFieldsModal 
+          fields={fieldsToSave}
+          onComplete={() => setFieldsToSave(null)}
+          onCancel={() => setFieldsToSave(null)}
+        />
+      )}
+    </>
+  );
+}
+
 function renderGlobalButton() {
   if (globalButtonRoot) return;
   const container = document.createElement('div');
   container.id = 'ai-autofill-global-btn-container';
   document.body.appendChild(container);
   globalButtonRoot = createRoot(container);
-  globalButtonRoot.render(
-    <GlobalFillButton 
-      onFillAll={async () => {
-        let filledCount = 0;
-        await processSuggestions(allFields, suggestions, settings, (fieldIdx, value, suggestion) => {
-          updateOverlayStatus(allFields[fieldIdx]?.fingerprint, 'filled');
-          filledCount++;
-        });
-        if (filledCount > 0) {
-          showToast(`✨ OneTap: Auto-filled ${filledCount} field${filledCount > 1 ? 's' : ''}. Review changes.`, 'success');
-        }
-      }} 
-      onSaveAll={async () => {
-        const vals = collectFieldValues(allFields);
-        if (vals.length > 0) {
-          try {
-            showToast('💾 OneTap: Saving new fields...', 'save', 2000);
-            await saveSubmission(window.location.href, window.location.hostname, vals);
-            showToast('✅ Saved successfully!', 'success');
-          } catch (err) {
-            console.error('[AI Autofill] Failed to save all new fields', err);
-            showToast('❌ Failed to save fields', 'error');
-          }
-        } else {
-          showToast('No filled fields to save', 'info');
-        }
-      }}
-    />
-  );
+  globalButtonRoot.render(<GlobalUI />);
 }
 
 /**
