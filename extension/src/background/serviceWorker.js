@@ -166,6 +166,11 @@ async function handleMessage(message, sender) {
       }
     }
 
+    case 'OPEN_OPTIONS': {
+      chrome.runtime.openOptionsPage();
+      return { success: true };
+    }
+
     default:
       return { error: `Unknown message type: ${type}` };
   }

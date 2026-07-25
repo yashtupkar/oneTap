@@ -25,7 +25,7 @@
     ]
   },
   "index.jsx-loader.js": {
-    "file": "assets/index.jsx-loader-D7lUD_BF.js",
+    "file": "assets/index.jsx-loader-5Mdid7ri.js",
     "src": "index.jsx-loader.js"
   },
   "options/index.html": {
@@ -51,7 +51,7 @@
     ]
   },
   "src/background/serviceWorker.js": {
-    "file": "assets/serviceWorker.js-PI0wnFJG.js",
+    "file": "assets/serviceWorker.js-DwPWmBBG.js",
     "name": "serviceWorker.js",
     "src": "src/background/serviceWorker.js",
     "isEntry": true,
@@ -60,7 +60,7 @@
     ]
   },
   "src/content/index.jsx": {
-    "file": "assets/index.jsx-D9BycKFY.js",
+    "file": "assets/index.jsx-CJqqzkLf.js",
     "name": "index.jsx",
     "src": "src/content/index.jsx",
     "isEntry": true,

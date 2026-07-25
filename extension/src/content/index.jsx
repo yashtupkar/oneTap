@@ -11,7 +11,7 @@ import { detectAllFields, watchForNewFields } from './FormDetector.js';
 import { processSuggestions, applyFill } from './AutofillEngine.js';
 import { captureFormSubmissions, collectFieldValues } from './SubmissionCapture.js';
 import { FieldOverlay } from './FieldOverlay.jsx';
-import { HelpWidget } from './HelpWidget.jsx';
+
 import { GlobalFillButton } from './GlobalFillButton.jsx';
 import { fetchSuggestions, getSettings, saveSubmission } from '../shared/api.js';
 import { showToast } from './Toast.js';
@@ -21,7 +21,7 @@ import './content.css';
 let allFields = [];
 let suggestions = [];
 let overlayRoots = new Map(); // fieldFingerprint → { container, root }
-let helpWidgetRoot = null;
+
 let globalButtonRoot = null;
 let settings = null;
 
@@ -52,19 +52,10 @@ async function init() {
   });
 
   if (settings.showOverlays) {
-    renderHelpWidget();
     renderGlobalButton();
   }
 }
 
-function renderHelpWidget() {
-  if (helpWidgetRoot) return;
-  const container = document.createElement('div');
-  container.id = 'ai-autofill-help-widget-container';
-  document.body.appendChild(container);
-  helpWidgetRoot = createRoot(container);
-  helpWidgetRoot.render(<HelpWidget />);
-}
 
 function renderGlobalButton() {
   if (globalButtonRoot) return;
