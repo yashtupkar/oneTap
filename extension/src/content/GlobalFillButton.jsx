@@ -91,7 +91,7 @@ export function GlobalFillButton({ onFillAll, onSaveAll, isLoading = false }) {
             onMouseOver={(e) => { if (!isLoading) e.currentTarget.style.transform = 'scale(1.1)'; }}
             onMouseOut={(e) => { if (!isLoading) e.currentTarget.style.transform = 'scale(1)'; }}
           >
-            {isLoading ? '⏳' : '✨'}
+            {isLoading ? '⏳' : <img src={chrome.runtime.getURL('icons/icon32.png')} alt="OneTap" style={{ width: '24px', height: '24px' }} />}
           </button>
           <Tooltip text={isLoading ? "Analyzing..." : "Auto-fill Form"} show={hoveredBtn === 'fill'} />
         </div>
