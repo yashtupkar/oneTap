@@ -28,7 +28,7 @@
   "content_scripts": [
     {
       "js": [
-        "assets/index.jsx-loader-WtJSPBTO.js"
+        "assets/index.jsx-loader-CbfppBD5.js"
       ],
       "matches": [
         "<all_urls>"
@@ -44,7 +44,8 @@
     "storage",
     "activeTab",
     "scripting",
-    "contextMenus"
+    "contextMenus",
+    "clipboardWrite"
   ],
   "host_permissions": [
     "<all_urls>"
@@ -61,8 +62,8 @@
         "assets/*",
         "icons/*",
         "assets/client-DhEz86-d.js",
-        "assets/api-BF4rsrnm.js",
-        "assets/index.jsx-hZTD-h87.js"
+        "assets/api-BFNnCebU.js",
+        "assets/index.jsx-DLKdMJOP.js"
       ],
       "use_dynamic_url": false
     }

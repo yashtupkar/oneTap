@@ -1468,3 +1468,223 @@
 2026-07-25 13:18:43 [http]: ::1 - - [25/Jul/2026:07:48:43 +0000] "GET /uploads/6a6467241d4d7d5e933c1899/44076f79-4057-4599-b119-4817c50771a5.pdf HTTP/1.1" 200 164636 "http://127.0.0.1:5500/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
 2026-07-25 13:18:50 [http]: ::1 - - [25/Jul/2026:07:48:50 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
 2026-07-25 13:18:50 [http]: ::1 - - [25/Jul/2026:07:48:50 +0000] "GET /api/documents HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 15:11:16 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-01.r0rqul9.mongodb.net
+2026-07-25 15:11:16 [info]: 🚀 Server running on http://localhost:3001
+2026-07-25 15:11:16 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
+2026-07-25 15:11:34 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-02.r0rqul9.mongodb.net
+2026-07-25 15:11:34 [info]: 🚀 Server running on http://localhost:3001
+2026-07-25 15:11:34 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
+2026-07-25 15:12:02 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-02.r0rqul9.mongodb.net
+2026-07-25 15:12:02 [info]: 🚀 Server running on http://localhost:3001
+2026-07-25 15:12:02 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
+2026-07-25 15:12:34 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-01.r0rqul9.mongodb.net
+2026-07-25 15:12:34 [info]: 🚀 Server running on http://localhost:3001
+2026-07-25 15:12:34 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
+2026-07-25 15:12:35 [http]: ::1 - - [25/Jul/2026:09:42:35 +0000] "GET /api/profile HTTP/1.1" 200 663 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 15:12:35 [http]: ::1 - - [25/Jul/2026:09:42:35 +0000] "GET /api/documents HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 15:12:45 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-00.r0rqul9.mongodb.net
+2026-07-25 15:12:45 [info]: 🚀 Server running on http://localhost:3001
+2026-07-25 15:12:45 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
+2026-07-25 15:13:37 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-01.r0rqul9.mongodb.net
+2026-07-25 15:13:37 [info]: 🚀 Server running on http://localhost:3001
+2026-07-25 15:13:37 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
+2026-07-25 15:15:30 [http]: ::1 - - [25/Jul/2026:09:45:30 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 15:15:32 [http]: ::1 - - [25/Jul/2026:09:45:32 +0000] "GET /api/documents HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 15:15:34 [http]: ::1 - - [25/Jul/2026:09:45:34 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 15:17:22 [http]: ::1 - - [25/Jul/2026:09:47:22 +0000] "PATCH /api/profile HTTP/1.1" 200 887 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 15:17:25 [http]: ::1 - - [25/Jul/2026:09:47:25 +0000] "PATCH /api/profile HTTP/1.1" 200 887 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 15:17:33 [http]: ::1 - - [25/Jul/2026:09:47:33 +0000] "PATCH /api/profile HTTP/1.1" 200 887 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 15:17:34 [http]: ::1 - - [25/Jul/2026:09:47:34 +0000] "PATCH /api/profile HTTP/1.1" 200 887 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 15:17:35 [http]: ::1 - - [25/Jul/2026:09:47:35 +0000] "PATCH /api/profile HTTP/1.1" 200 887 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 15:17:39 [http]: ::1 - - [25/Jul/2026:09:47:39 +0000] "PATCH /api/profile HTTP/1.1" 200 887 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 15:17:40 [http]: ::1 - - [25/Jul/2026:09:47:40 +0000] "PATCH /api/profile HTTP/1.1" 200 887 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 15:17:40 [http]: ::1 - - [25/Jul/2026:09:47:40 +0000] "PATCH /api/profile HTTP/1.1" 200 887 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 15:17:40 [http]: ::1 - - [25/Jul/2026:09:47:40 +0000] "PATCH /api/profile HTTP/1.1" 200 887 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 15:17:51 [http]: ::1 - - [25/Jul/2026:09:47:51 +0000] "GET /api/profile HTTP/1.1" 200 887 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 15:19:05 [http]: ::1 - - [25/Jul/2026:09:49:05 +0000] "PATCH /api/profile HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 15:19:10 [http]: ::1 - - [25/Jul/2026:09:49:10 +0000] "GET /api/profile HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 15:19:10 [http]: ::1 - - [25/Jul/2026:09:49:10 +0000] "GET /api/documents HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 15:19:28 [http]: ::1 - - [25/Jul/2026:09:49:28 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 15:19:33 [http]: ::1 - - [25/Jul/2026:09:49:33 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 15:19:33 [http]: ::1 - - [25/Jul/2026:09:49:33 +0000] "GET /api/documents HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 15:21:12 [http]: ::1 - - [25/Jul/2026:09:51:12 +0000] "PATCH /api/profile HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 15:21:24 [http]: ::1 - - [25/Jul/2026:09:51:24 +0000] "GET /api/profile HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 15:21:24 [http]: ::1 - - [25/Jul/2026:09:51:24 +0000] "GET /api/documents HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 15:22:41 [http]: ::1 - - [25/Jul/2026:09:52:41 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 15:22:41 [http]: ::1 - - [25/Jul/2026:09:52:41 +0000] "GET /api/documents HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 15:23:52 [http]: ::1 - - [25/Jul/2026:09:53:52 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 15:23:52 [http]: ::1 - - [25/Jul/2026:09:53:52 +0000] "GET /api/documents HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 15:24:10 [http]: ::1 - - [25/Jul/2026:09:54:10 +0000] "PATCH /api/profile HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 15:24:27 [http]: ::1 - - [25/Jul/2026:09:54:27 +0000] "GET /api/profile HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 15:24:27 [http]: ::1 - - [25/Jul/2026:09:54:27 +0000] "GET /api/documents HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 15:28:33 [http]: ::1 - - [25/Jul/2026:09:58:33 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 15:28:33 [http]: ::1 - - [25/Jul/2026:09:58:33 +0000] "GET /api/documents HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 15:29:33 [http]: ::1 - - [25/Jul/2026:09:59:33 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 15:29:33 [http]: ::1 - - [25/Jul/2026:09:59:33 +0000] "GET /api/documents HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 16:44:06 [http]: ::1 - - [25/Jul/2026:11:14:06 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 16:44:07 [http]: ::1 - - [25/Jul/2026:11:14:07 +0000] "GET /api/documents HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 19:24:02 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-00.r0rqul9.mongodb.net
+2026-07-25 19:24:02 [info]: 🚀 Server running on http://localhost:3001
+2026-07-25 19:24:02 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
+2026-07-25 19:24:15 [http]: ::1 - - [25/Jul/2026:13:54:15 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 19:24:15 [http]: ::1 - - [25/Jul/2026:13:54:15 +0000] "GET /api/documents HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 19:27:03 [http]: ::1 - - [25/Jul/2026:13:57:03 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 19:27:03 [http]: ::1 - - [25/Jul/2026:13:57:03 +0000] "GET /api/documents HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 19:29:21 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-02.r0rqul9.mongodb.net
+2026-07-25 19:29:21 [info]: 🚀 Server running on http://localhost:3001
+2026-07-25 19:29:21 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
+2026-07-25 19:31:40 [http]: ::1 - - [25/Jul/2026:14:01:40 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 19:31:40 [http]: ::1 - - [25/Jul/2026:14:01:40 +0000] "GET /api/documents HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 19:33:31 [debug]: Batching 20 fields for AI classification...
+2026-07-25 19:34:24 [debug]: AI classified field "Job Title" → workExperience.0.jobTitle (0.95)
+2026-07-25 19:34:24 [debug]: AI classified field "Company Name" → workExperience.0.company (0.95)
+2026-07-25 19:34:24 [debug]: AI classified field "Start Date" → workExperience.0.startDate (0.95)
+2026-07-25 19:34:24 [debug]: AI classified field "End Date" → workExperience.0.endDate (0.95)
+2026-07-25 19:34:24 [debug]: AI classified field "Job Description" → workExperience.0.description (0.95)
+2026-07-25 19:34:24 [debug]: AI classified field "Degree" → educationHistory.0.degree (0.95)
+2026-07-25 19:34:24 [debug]: AI classified field "Field of Study" → educationHistory.0.fieldOfStudy (0.95)
+2026-07-25 19:34:24 [debug]: AI classified field "University" → educationHistory.0.university (0.95)
+2026-07-25 19:34:24 [debug]: AI classified field "Marks/GPA" → educationHistory.0.marks (0.95)
+2026-07-25 19:34:24 [debug]: AI classified field "Start Date" → educationHistory.0.startDate (0.95)
+2026-07-25 19:34:24 [debug]: AI classified field "End Date" → educationHistory.0.endDate (0.95)
+2026-07-25 19:34:24 [debug]: AI classified field "Credit Card Number" → null (0.9)
+2026-07-25 19:34:24 [debug]: AI classified field "CCV" → null (0.9)
+2026-07-25 19:34:24 [debug]: AI classified field "Favorite Color" → null (0.9)
+2026-07-25 19:34:24 [debug]: AI classified field "Pet's Name" → null (0.9)
+2026-07-25 19:34:24 [debug]: AI classified field "Blood Group" → null (0.9)
+2026-07-25 19:34:24 [debug]: AI classified field "Favorite Movie" → null (0.9)
+2026-07-25 19:34:24 [debug]: AI classified field "Zodiac Sign" → null (0.9)
+2026-07-25 19:34:24 [debug]: AI classified field "Shoe Size" → null (0.9)
+2026-07-25 19:34:24 [debug]: AI classified field "If you had a superpower, what would it be?" → null (0.9)
+2026-07-25 19:34:24 [http]: ::1 - - [25/Jul/2026:14:04:24 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 19:38:15 [http]: ::1 - - [25/Jul/2026:14:08:15 +0000] "GET /uploads/6a6467241d4d7d5e933c1899/44076f79-4057-4599-b119-4817c50771a5.pdf HTTP/1.1" 304 - "http://127.0.0.1:5500/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 19:38:23 [http]: ::1 - - [25/Jul/2026:14:08:23 +0000] "POST /api/submissions HTTP/1.1" 201 676 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 19:38:48 [http]: ::1 - - [25/Jul/2026:14:08:48 +0000] "GET /api/profile HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 19:38:48 [http]: ::1 - - [25/Jul/2026:14:08:48 +0000] "GET /api/documents HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 19:39:35 [http]: ::1 - - [25/Jul/2026:14:09:35 +0000] "PATCH /api/profile HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 19:44:28 [http]: ::1 - - [25/Jul/2026:14:14:28 +0000] "GET /api/profile HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 19:44:28 [http]: ::1 - - [25/Jul/2026:14:14:28 +0000] "GET /api/documents HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 19:44:34 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-02.r0rqul9.mongodb.net
+2026-07-25 19:44:34 [info]: 🚀 Server running on http://localhost:3001
+2026-07-25 19:44:34 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
+2026-07-25 19:44:35 [http]: ::1 - - [25/Jul/2026:14:14:35 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 19:45:16 [http]: ::1 - - [25/Jul/2026:14:15:16 +0000] "PATCH /api/profile HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 19:49:26 [http]: ::1 - - [25/Jul/2026:14:19:26 +0000] "GET /api/profile HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 19:49:39 [debug]: Batching 14 fields for AI classification...
+2026-07-25 19:49:56 [debug]: AI classified field "Job Title" → workExperience.0.jobTitle (0.95)
+2026-07-25 19:49:56 [debug]: AI classified field "Company Name" → workExperience.0.company (0.95)
+2026-07-25 19:49:56 [debug]: AI classified field "Start Date" → workExperience.0.startDate (0.95)
+2026-07-25 19:49:56 [debug]: AI classified field "End Date" → workExperience.0.endDate (0.95)
+2026-07-25 19:49:56 [debug]: AI classified field "Job Description" → workExperience.0.description (0.95)
+2026-07-25 19:49:56 [debug]: AI classified field "Degree" → educationHistory.0.degree (0.95)
+2026-07-25 19:49:56 [debug]: AI classified field "Field of Study" → educationHistory.0.fieldOfStudy (0.95)
+2026-07-25 19:49:56 [debug]: AI classified field "University" → educationHistory.0.university (0.95)
+2026-07-25 19:49:56 [debug]: AI classified field "Marks/GPA" → educationHistory.0.marks (0.95)
+2026-07-25 19:49:56 [debug]: AI classified field "Start Date" → educationHistory.0.startDate (0.95)
+2026-07-25 19:49:56 [debug]: AI classified field "End Date" → educationHistory.0.endDate (0.95)
+2026-07-25 19:49:56 [debug]: AI classified field "Credit Card Number" → null (0.9)
+2026-07-25 19:49:56 [debug]: AI classified field "CCV" → null (0.9)
+2026-07-25 19:49:56 [debug]: AI classified field "Blood Group" → null (0.9)
+2026-07-25 19:49:56 [http]: ::1 - - [25/Jul/2026:14:19:56 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 19:51:21 [http]: ::1 - - [25/Jul/2026:14:21:21 +0000] "GET /uploads/6a6467241d4d7d5e933c1899/44076f79-4057-4599-b119-4817c50771a5.pdf HTTP/1.1" 304 - "http://127.0.0.1:5500/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 19:51:29 [http]: ::1 - - [25/Jul/2026:14:21:29 +0000] "POST /api/submissions HTTP/1.1" 201 686 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 19:51:31 [http]: ::1 - - [25/Jul/2026:14:21:31 +0000] "GET /api/profile HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 19:51:31 [http]: ::1 - - [25/Jul/2026:14:21:31 +0000] "GET /api/documents HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 19:56:02 [debug]: Batching 4 fields for AI classification...
+2026-07-25 19:56:02 [debug]: AI cache hit for fingerprint: fb88ae87...
+2026-07-25 19:56:02 [debug]: AI cache hit for fingerprint: 6726c9d4...
+2026-07-25 19:56:02 [debug]: AI cache hit for fingerprint: c1d2b1a6...
+2026-07-25 19:56:02 [debug]: AI cache hit for fingerprint: bc606236...
+2026-07-25 19:56:02 [http]: ::1 - - [25/Jul/2026:14:26:02 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 19:56:29 [http]: ::1 - - [25/Jul/2026:14:26:29 +0000] "GET /uploads/6a6467241d4d7d5e933c1899/44076f79-4057-4599-b119-4817c50771a5.pdf HTTP/1.1" 304 - "http://127.0.0.1:5500/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 19:59:09 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-01.r0rqul9.mongodb.net
+2026-07-25 19:59:09 [info]: 🚀 Server running on http://localhost:3001
+2026-07-25 19:59:09 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
+2026-07-25 19:59:38 [debug]: Batching 4 fields for AI classification...
+2026-07-25 19:59:56 [debug]: AI classified field "Job Description" → workExperience.0.description (0.95)
+2026-07-25 19:59:56 [debug]: AI classified field "Credit Card Number" → null (0.9)
+2026-07-25 19:59:56 [debug]: AI classified field "CCV" → null (0.9)
+2026-07-25 19:59:56 [debug]: AI classified field "Blood Group" → null (0.9)
+2026-07-25 19:59:56 [http]: ::1 - - [25/Jul/2026:14:29:56 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 20:00:20 [http]: ::1 - - [25/Jul/2026:14:30:20 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 20:00:20 [http]: ::1 - - [25/Jul/2026:14:30:20 +0000] "GET /api/documents HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 20:00:51 [http]: ::1 - - [25/Jul/2026:14:30:51 +0000] "GET /uploads/6a6467241d4d7d5e933c1899/44076f79-4057-4599-b119-4817c50771a5.pdf HTTP/1.1" 304 - "http://127.0.0.1:5500/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 20:01:11 [http]: ::1 - - [25/Jul/2026:14:31:11 +0000] "POST /api/submissions HTTP/1.1" 201 108 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 20:04:14 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-01.r0rqul9.mongodb.net
+2026-07-25 20:04:14 [info]: 🚀 Server running on http://localhost:3001
+2026-07-25 20:04:14 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
+2026-07-25 20:05:01 [debug]: Batching 4 fields for AI classification...
+2026-07-25 20:05:18 [debug]: AI classified field "Job Description" → workExperience.0.description (0.95)
+2026-07-25 20:05:18 [debug]: AI classified field "Credit Card Number" → null (0.99)
+2026-07-25 20:05:18 [debug]: AI classified field "CCV" → null (0.99)
+2026-07-25 20:05:18 [debug]: AI classified field "Blood Group" → customFields.Blood Group (0.9)
+2026-07-25 20:05:18 [http]: ::1 - - [25/Jul/2026:14:35:18 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 20:08:32 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-01.r0rqul9.mongodb.net
+2026-07-25 20:08:32 [info]: 🚀 Server running on http://localhost:3001
+2026-07-25 20:08:32 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
+2026-07-25 20:08:41 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-01.r0rqul9.mongodb.net
+2026-07-25 20:08:41 [info]: 🚀 Server running on http://localhost:3001
+2026-07-25 20:08:41 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
+2026-07-25 20:09:11 [debug]: Batching 4 fields for AI classification...
+2026-07-25 20:09:29 [debug]: AI classified field "Job Description" → workExperience.0.description (0.95)
+2026-07-25 20:09:29 [debug]: AI classified field "Credit Card Number" → null (0.99)
+2026-07-25 20:09:29 [debug]: AI classified field "CCV" → null (0.99)
+2026-07-25 20:09:29 [debug]: AI classified field "Blood Group" → customFields.Blood Group (0.95)
+2026-07-25 20:09:29 [http]: ::1 - - [25/Jul/2026:14:39:29 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 20:09:48 [http]: ::1 - - [25/Jul/2026:14:39:48 +0000] "GET /api/profile HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 20:09:48 [http]: ::1 - - [25/Jul/2026:14:39:48 +0000] "GET /api/documents HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 20:09:52 [http]: ::1 - - [25/Jul/2026:14:39:52 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 20:11:30 [http]: ::1 - - [25/Jul/2026:14:41:30 +0000] "PATCH /api/profile HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 20:11:38 [debug]: Batching 4 fields for AI classification...
+2026-07-25 20:11:38 [debug]: AI cache hit for fingerprint: fb88ae87...
+2026-07-25 20:11:38 [debug]: AI cache hit for fingerprint: 6726c9d4...
+2026-07-25 20:11:38 [debug]: AI cache hit for fingerprint: c1d2b1a6...
+2026-07-25 20:11:38 [debug]: AI cache hit for fingerprint: bc606236...
+2026-07-25 20:11:38 [http]: ::1 - - [25/Jul/2026:14:41:38 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 20:12:45 [http]: ::1 - - [25/Jul/2026:14:42:45 +0000] "GET /api/profile HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 20:12:46 [http]: ::1 - - [25/Jul/2026:14:42:46 +0000] "GET /api/documents HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 20:12:48 [http]: ::1 - - [25/Jul/2026:14:42:48 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 20:12:50 [http]: ::1 - - [25/Jul/2026:14:42:50 +0000] "GET /api/autofill/mappings HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 20:13:28 [debug]: Batching 4 fields for AI classification...
+2026-07-25 20:13:28 [debug]: AI cache hit for fingerprint: fb88ae87...
+2026-07-25 20:13:28 [debug]: AI cache hit for fingerprint: 6726c9d4...
+2026-07-25 20:13:28 [debug]: AI cache hit for fingerprint: c1d2b1a6...
+2026-07-25 20:13:28 [debug]: AI cache hit for fingerprint: bc606236...
+2026-07-25 20:13:28 [http]: ::1 - - [25/Jul/2026:14:43:28 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 20:13:52 [http]: ::1 - - [25/Jul/2026:14:43:52 +0000] "GET /uploads/6a6467241d4d7d5e933c1899/44076f79-4057-4599-b119-4817c50771a5.pdf HTTP/1.1" 304 - "http://127.0.0.1:5500/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 20:14:27 [http]: ::1 - - [25/Jul/2026:14:44:27 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 20:14:28 [http]: ::1 - - [25/Jul/2026:14:44:28 +0000] "GET /api/documents HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 20:14:31 [http]: ::1 - - [25/Jul/2026:14:44:31 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 20:14:41 [http]: ::1 - - [25/Jul/2026:14:44:41 +0000] "GET /api/autofill/mappings HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 20:14:44 [http]: ::1 - - [25/Jul/2026:14:44:44 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 20:16:11 [http]: ::1 - - [25/Jul/2026:14:46:11 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 20:16:39 [http]: ::1 - - [25/Jul/2026:14:46:39 +0000] "PATCH /api/profile HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 20:16:46 [http]: ::1 - - [25/Jul/2026:14:46:46 +0000] "PATCH /api/profile HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 20:17:36 [http]: ::1 - - [25/Jul/2026:14:47:36 +0000] "GET /api/profile HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 20:17:37 [http]: ::1 - - [25/Jul/2026:14:47:37 +0000] "GET /api/documents HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 20:17:51 [http]: ::1 - - [25/Jul/2026:14:47:51 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 20:17:51 [http]: ::1 - - [25/Jul/2026:14:47:51 +0000] "GET /api/documents HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 20:18:37 [http]: ::1 - - [25/Jul/2026:14:48:37 +0000] "GET /api/documents HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 20:19:05 [http]: ::1 - - [25/Jul/2026:14:49:05 +0000] "POST /api/documents HTTP/1.1" 201 408 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 20:19:05 [http]: ::1 - - [25/Jul/2026:14:49:05 +0000] "GET /api/documents HTTP/1.1" 200 815 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 20:19:45 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-00.r0rqul9.mongodb.net
+2026-07-25 20:19:45 [info]: 🚀 Server running on http://localhost:3001
+2026-07-25 20:19:45 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
+2026-07-25 20:19:48 [http]: ::1 - - [25/Jul/2026:14:49:48 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 20:19:48 [http]: ::1 - - [25/Jul/2026:14:49:48 +0000] "GET /api/documents HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 20:19:49 [http]: ::1 - - [25/Jul/2026:14:49:49 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 20:20:01 [http]: ::1 - - [25/Jul/2026:14:50:01 +0000] "PATCH /api/profile HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 20:20:10 [debug]: Batching 4 fields for AI classification...
+2026-07-25 20:20:24 [debug]: AI classified field "Job Description" → workExperience.0.description (0.95)
+2026-07-25 20:20:24 [debug]: AI classified field "Credit Card Number" → null (0.99)
+2026-07-25 20:20:24 [debug]: AI classified field "CCV" → null (0.99)
+2026-07-25 20:20:24 [debug]: AI classified field "Blood Group" → customFields.Blood Group (0.95)
+2026-07-25 20:20:24 [http]: ::1 - - [25/Jul/2026:14:50:24 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 20:22:32 [debug]: Batching 4 fields for AI classification...
+2026-07-25 20:22:32 [debug]: AI cache hit for fingerprint: fb88ae87...
+2026-07-25 20:22:32 [debug]: AI cache hit for fingerprint: 6726c9d4...
+2026-07-25 20:22:32 [debug]: AI cache hit for fingerprint: c1d2b1a6...
+2026-07-25 20:22:32 [debug]: AI cache hit for fingerprint: bc606236...
+2026-07-25 20:22:32 [http]: ::1 - - [25/Jul/2026:14:52:32 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 20:23:17 [http]: ::1 - - [25/Jul/2026:14:53:17 +0000] "POST /api/submissions HTTP/1.1" 201 101 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 20:23:25 [http]: ::1 - - [25/Jul/2026:14:53:25 +0000] "GET /uploads/6a6467241d4d7d5e933c1899/44076f79-4057-4599-b119-4817c50771a5.pdf HTTP/1.1" 304 - "http://127.0.0.1:5500/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"

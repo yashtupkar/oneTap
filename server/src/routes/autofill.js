@@ -61,6 +61,17 @@ router.post('/suggest', async (req, res, next) => {
     const apiKey = openrouterApiKey || process.env.OPENROUTER_API_KEY;
     const customKeys = profile.customFields ? Object.keys(profile.customFields).map(k => `customFields.${k}`) : [];
     
+    if (Array.isArray(profile.educationHistory)) {
+      profile.educationHistory.forEach((_, i) => {
+        customKeys.push(`educationHistory.${i}.degree`, `educationHistory.${i}.fieldOfStudy`, `educationHistory.${i}.university`, `educationHistory.${i}.startDate`, `educationHistory.${i}.endDate`, `educationHistory.${i}.marks`);
+      });
+    }
+    if (Array.isArray(profile.workExperience)) {
+      profile.workExperience.forEach((_, i) => {
+        customKeys.push(`workExperience.${i}.jobTitle`, `workExperience.${i}.company`, `workExperience.${i}.location`, `workExperience.${i}.startDate`, `workExperience.${i}.endDate`, `workExperience.${i}.description`, `workExperience.${i}.skillsUsed`);
+      });
+    }
+    
     const aiIndices = [];
     for (let i = 0; i < fields.length; i++) {
       const field = fields[i];
@@ -128,7 +139,7 @@ router.post('/suggest', async (req, res, next) => {
         // Check learned mappings first (user-confirmed = highest priority)
         const learned = learnedMap.get(fingerprint);
         if (learned && learned.confidence >= RULE_CONFIDENCE_THRESHOLD) {
-          const value = profile[learned.profileKey];
+          const value = getNestedValue(profile, learned.profileKey);
           return buildSuggestion({
             field,
             profileKey: learned.profileKey,
@@ -136,6 +147,7 @@ router.post('/suggest', async (req, res, next) => {
             confidence: learned.confidence,
             source: 'learned',
             reason: `Previously learned mapping (${learned.confirmations} confirmations)`,
+            profile
           });
         }
 
@@ -171,14 +183,14 @@ router.post('/suggest', async (req, res, next) => {
             isSensitive = typeof cf === 'object' ? !!cf.sensitive : false;
           }
         } else {
-          value = profile[profileKey];
+          value = getNestedValue(profile, profileKey);
           isSensitive = SENSITIVE_KEYS.has(profileKey);
         }
         const requiresConfirmation = isSensitive
           ? confidence < SENSITIVE_THRESHOLD
           : confidence < RULE_CONFIDENCE_THRESHOLD;
 
-        return buildSuggestion({ field, profileKey, value: value || null, confidence, source, reason, isSensitive, requiresConfirmation });
+        return buildSuggestion({ field, profileKey, value: value || null, confidence, source, reason, isSensitive, requiresConfirmation, profile });
       })
     );
 
@@ -274,14 +286,51 @@ router.delete('/mappings/:id', async (req, res, next) => {
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
-function buildSuggestion({ field, profileKey, value, confidence, source, reason, isSensitive = false, requiresConfirmation = false }) {
-  const status = !profileKey ? 'missing' : !value ? 'missing' : confidence >= 0.8 ? 'filled' : 'suggested';
+function buildSuggestion({ field, profileKey, value, confidence, source, reason, isSensitive = false, requiresConfirmation = false, profile = null }) {
+  let status = !profileKey ? 'missing' : !value ? 'missing' : confidence >= 0.8 ? 'filled' : 'suggested';
+  let options = null;
+
+  if (profile && profileKey && typeof profileKey === 'string') {
+    const isEdu = profileKey.startsWith('educationHistory.');
+    const isWork = profileKey.startsWith('workExperience.');
+    
+    if (isEdu || isWork) {
+      const parts = profileKey.split('.');
+      if (parts.length >= 3) {
+        const arrayName = parts[0];
+        const fieldName = parts[2];
+        const arr = profile[arrayName];
+        
+        if (Array.isArray(arr) && arr.length > 0) {
+          status = 'suggested'; // Prevent auto-filling
+          const uniqueOpts = new Map();
+          arr.forEach((item, index) => {
+             const label = isEdu ? (item.degree || item.university || `Education ${index + 1}`) 
+                                 : (item.jobTitle || item.company || `Work ${index + 1}`);
+             const val = item[fieldName] || '';
+             const key = `${label}|${val}`;
+             if (!uniqueOpts.has(key)) {
+               uniqueOpts.set(key, { 
+                 label, 
+                 value: val, 
+                 entryIndex: index,
+                 data: item
+               });
+             }
+          });
+          options = Array.from(uniqueOpts.values());
+        }
+      }
+    }
+  }
+
   return {
     fieldName: field.name,
     fieldId: field.id,
     fieldType: field.type,
     profileKey,
     value,
+    options,
     confidence: Math.round(confidence * 100) / 100,
     status,
     source,
@@ -338,6 +387,14 @@ function buildFileInputSuggestion(field, documents) {
     isFileInput: true,
     requiresConfirmation: true,  // Always confirm file uploads
   };
+}
+
+function getNestedValue(obj, path) {
+  if (!path) return undefined;
+  if (path.includes('.')) {
+    return path.split('.').reduce((acc, part) => (acc && acc[part] !== undefined ? acc[part] : undefined), obj);
+  }
+  return obj[path];
 }
 
 module.exports = router;

@@ -36,8 +36,6 @@ const FIELD_RULES = [
   { key: 'country',           keywords: ['country', 'nation'] },
 
   // Professional
-  { key: 'currentJobTitle',   keywords: ['job title', 'designation', 'title', 'position', 'role', 'current role', 'current title'] },
-  { key: 'currentCompany',    keywords: ['company', 'employer', 'organization', 'organisation', 'current company', 'current employer', 'workplace'] },
   { key: 'yearsOfExperience', keywords: ['years of experience', 'experience', 'total experience', 'work experience', 'years exp'] },
   { key: 'skills',            keywords: ['skills', 'technologies', 'tech stack', 'expertise', 'competencies'] },
   { key: 'summary',           keywords: ['summary', 'about', 'bio', 'introduction', 'profile summary', 'about me', 'professional summary'] },
@@ -45,10 +43,6 @@ const FIELD_RULES = [
   { key: 'noticePeriod',      keywords: ['notice period', 'notice', 'available from', 'joining date', 'availability'] },
 
   // Education
-  { key: 'highestDegree',     keywords: ['degree', 'qualification', 'highest qualification', 'education level', 'highest degree'] },
-  { key: 'fieldOfStudy',      keywords: ['field of study', 'major', 'specialization', 'branch', 'discipline', 'stream'] },
-  { key: 'university',        keywords: ['university', 'college', 'institution', 'school', 'alma mater'] },
-  { key: 'graduationYear',    keywords: ['graduation year', 'passed out', 'batch', 'year of graduation', 'passing year'] },
 
   // Identity (sensitive — high threshold enforced in autofill route)
   { key: 'passportNumber',    keywords: ['passport', 'passport number', 'passport no'] },

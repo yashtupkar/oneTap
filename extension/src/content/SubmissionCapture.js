@@ -16,14 +16,18 @@ import { showToast } from './Toast.js';
 export function collectFieldValues(fields) {
   return fields
     .filter(f => f.type !== 'file' && f.type !== 'submit' && f.type !== 'button')
-    .map(f => ({
-      name: f.name,
-      id: f.id,
-      label: f.label || getFieldLabel(f.element),
-      placeholder: f.placeholder,
-      type: f.type,
-      value: f.element.value || '',
-    }))
+    .map(f => {
+      const profileKey = f.element.getAttribute('data-ai-profile-key');
+      return {
+        name: f.name,
+        id: f.id,
+        label: f.label || getFieldLabel(f.element),
+        placeholder: f.placeholder,
+        type: f.type,
+        value: f.element.value || '',
+        profileKey: profileKey || undefined,
+      };
+    })
     .filter(f => f.value.trim() !== '');
 }
 

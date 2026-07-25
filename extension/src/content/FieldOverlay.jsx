@@ -29,6 +29,7 @@ export function FieldOverlay({ suggestion, field, rect, onEdit, onApply }) {
   const [customName, setCustomName] = useState(field?.label || field?.name || '');
   const [isSensitive, setIsSensitive] = useState(false);
   const overlayRef = useRef(null);
+  const isHovered = useRef(false);
 
   // Default to suggested if it has a value, but index.jsx will pass status down. 
   // Wait, index.jsx currently sets status in `suggestions` object?
@@ -45,10 +46,27 @@ export function FieldOverlay({ suggestion, field, rect, onEdit, onApply }) {
     if (!field || !field.element) return;
 
     const handleInput = () => setHasValue(!!field.element.value.trim());
+    
+    const handleFocus = () => setExpanded(true);
+    const handleBlur = () => {
+      if (isHovered.current) return;
+      setExpanded(false);
+      setIsEditing(false);
+      setShowNamePrompt(false);
+    };
+
     field.element.addEventListener('input', handleInput);
+    field.element.addEventListener('focus', handleFocus);
+    field.element.addEventListener('blur', handleBlur);
+
+    if (document.activeElement === field.element) {
+      setExpanded(true);
+    }
 
     return () => {
       field.element.removeEventListener('input', handleInput);
+      field.element.removeEventListener('focus', handleFocus);
+      field.element.removeEventListener('blur', handleBlur);
     };
   }, [field]);
 
@@ -78,6 +96,12 @@ export function FieldOverlay({ suggestion, field, rect, onEdit, onApply }) {
       setLocalStatus('filled');
     }
     setIsEditing(false);
+    setExpanded(false);
+  };
+
+  const handleOptionSelect = (optValue) => {
+    onEdit?.(optValue);
+    setLocalStatus('filled');
     setExpanded(false);
   };
 
@@ -133,8 +157,16 @@ export function FieldOverlay({ suggestion, field, rect, onEdit, onApply }) {
     <div
       ref={overlayRef}
       className="ai-af-inline-btn"
-      onMouseEnter={() => setExpanded(true)}
-      onMouseLeave={() => setExpanded(false)}
+      onMouseEnter={() => {
+        isHovered.current = true;
+        setExpanded(true);
+      }}
+      onMouseLeave={() => {
+        isHovered.current = false;
+        if (document.activeElement !== field?.element) {
+          setExpanded(false);
+        }
+      }}
       style={{
         position: 'absolute',
         top: `${top}px`,
@@ -175,7 +207,7 @@ export function FieldOverlay({ suggestion, field, rect, onEdit, onApply }) {
         <div
           style={{
             position: 'absolute',
-            top: '100%',
+            top: `${(rect?.height || 0) + 24}px`,
             right: 0,
             marginTop: '8px',
             width: '240px',
@@ -209,21 +241,8 @@ export function FieldOverlay({ suggestion, field, rect, onEdit, onApply }) {
             </div>
           </div>
 
-          {/* Profile key */}
-          {suggestion?.profileKey && (
-            <div style={{ marginBottom: '6px' }}>
-              <span style={{ color: '#6b7280', fontSize: '10px' }}>Field: </span>
-              <span style={{ color: '#a5bbfc', fontSize: '10px', fontFamily: 'monospace' }}>{suggestion.profileKey}</span>
-            </div>
-          )}
-
-          {/* Reason */}
-          <div style={{ marginBottom: '8px', color: '#9ca3af', fontSize: '10px', lineHeight: 1.4 }}>
-            {suggestion?.reason || 'No match found'}
-          </div>
-
           {/* Value / Edit */}
-          {suggestion?.value && !suggestion.isFileInput && (
+          {suggestion?.value && !suggestion.isFileInput && !suggestion.options && (
             <div style={{ marginBottom: '8px' }}>
               {isEditing ? (
                 <div>
@@ -255,6 +274,46 @@ export function FieldOverlay({ suggestion, field, rect, onEdit, onApply }) {
             </div>
           )}
 
+          {/* Options Dropdown */}
+          {suggestion?.options && !isEditing && (
+            <div style={{ marginBottom: '8px' }}>
+              <div style={{ marginBottom: '8px', color: '#9ca3af', fontSize: '10px' }}>Select an entry:</div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', maxHeight: '180px', overflowY: 'auto' }}>
+                {suggestion.options.map((opt, i) => (
+                  <div
+                    key={i}
+                    onClick={() => handleOptionSelect(opt.value)}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.background = '#2e3248';
+                      e.currentTarget.style.borderColor = '#4e52e8';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.background = '#0f1117';
+                      e.currentTarget.style.borderColor = '#2e3248';
+                    }}
+                    style={{
+                      background: '#0f1117',
+                      border: '1px solid #2e3248',
+                      borderRadius: '6px',
+                      padding: '8px',
+                      cursor: 'pointer',
+                      transition: 'all 0.15s ease',
+                    }}
+                  >
+                    <div style={{ color: '#e2e8f0', fontSize: '11px', fontWeight: 600, marginBottom: '2px' }}>
+                      {opt.label}
+                    </div>
+                    {opt.value && (
+                      <div style={{ color: '#9ca3af', fontSize: '10px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                        Value: <span style={{ color: '#a5bbfc' }}>{opt.value}</span>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
           {/* File Input Document Details */}
           {suggestion?.isFileInput && suggestion?.document && (
             <div style={{ marginBottom: '8px' }}>
@@ -267,7 +326,7 @@ export function FieldOverlay({ suggestion, field, rect, onEdit, onApply }) {
           )}
 
           {/* Apply button inside popover */}
-          {(suggestion?.value || suggestion?.isFileInput) && !isEditing && localStatus !== 'filled' && (
+          {(suggestion?.value || suggestion?.isFileInput) && !suggestion?.options && !isEditing && localStatus !== 'filled' && (
             <button
               onClick={(e) => { handleApplyClick(e); }}
               style={{

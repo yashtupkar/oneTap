@@ -38,7 +38,6 @@ router.put(
   [
     body('email').optional().isEmail().withMessage('Invalid email'),
     body('phone').optional().isMobilePhone('any').withMessage('Invalid phone'),
-    body('graduationYear').optional().isInt({ min: 1950, max: 2100 }).withMessage('Invalid graduation year'),
     body('yearsOfExperience').optional().isFloat({ min: 0, max: 60 }).withMessage('Invalid experience'),
   ],
   async (req, res, next) => {

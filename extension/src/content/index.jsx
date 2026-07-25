@@ -39,7 +39,7 @@ async function init() {
   if (allFields.length > 0) {
     console.log(`[AI Autofill] Detected ${allFields.length} form fields initially`);
     // Start submission capture immediately (read-only)
-    captureFormSubmissions(allFields);
+    // captureFormSubmissions(allFields); // Disabled for now per user request
   }
 
   // Watch for dynamically added fields
@@ -166,6 +166,13 @@ function renderOverlays(fields, fieldSuggestions) {
   fields.forEach((field, idx) => {
     const suggestion = fieldSuggestions[idx];
     if (!suggestion) return;
+
+    if (suggestion.profileKey) {
+      field.element.setAttribute('data-ai-profile-key', suggestion.profileKey);
+    }
+    
+    // Disable default browser autofill to prevent overlapping our overlay
+    field.element.setAttribute('autocomplete', 'one-tap-off');
 
     const rect = field.element.getBoundingClientRect();
     if (!rect.width || !rect.height) return;

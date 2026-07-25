@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getSettings, updateSettings, getProfile, updateProfile, getDeviceId, getToken, login, register, logout } from '../shared/api.js';
+import { PROFILE_SECTIONS } from '../shared/constants.js';
 
 const STATUS_DOT = {
   connected: 'bg-emerald-400',
@@ -28,6 +29,8 @@ export default function Popup() {
   const [showAddField, setShowAddField] = useState(false);
   const [newFieldKey, setNewFieldKey] = useState('');
   const [newFieldValue, setNewFieldValue] = useState('');
+  const [newFieldCategory, setNewFieldCategory] = useState('Custom');
+  const [newFieldCustomCategory, setNewFieldCustomCategory] = useState('');
   
   // Doc Add state
   const [showAddDoc, setShowAddDoc] = useState(false);
@@ -35,6 +38,11 @@ export default function Popup() {
   const [docLabel, setDocLabel] = useState('');
   const [docCategory, setDocCategory] = useState('resume');
   const [docUploading, setDocUploading] = useState(false);
+  
+  // Search state
+  const [profileSearch, setProfileSearch] = useState('');
+  const [docSearch, setDocSearch] = useState('');
+  const [copiedField, setCopiedField] = useState(null);
   
   // Status stats mock
   const [fieldsResolved] = useState(3);
@@ -128,14 +136,16 @@ export default function Popup() {
     setDocuments([]);
   };
 
-  const handleUpdateField = async (key, value, isCustom = false) => {
+  const handleUpdateField = async (key, value, isCustom = false, category = null) => {
     if (!profile) return;
     try {
       let updatedProfile = { ...profile };
       if (isCustom) {
+        const existingCategory = profile.customFields?.[key]?.category;
+        const categoryToSave = category || existingCategory || 'Custom';
         updatedProfile.customFields = {
           ...updatedProfile.customFields,
-          [key]: { value, type: 'text', sensitive: false }
+          [key]: { value, type: 'text', sensitive: false, category: categoryToSave }
         };
       } else {
         updatedProfile[key] = value;
@@ -169,10 +179,45 @@ export default function Popup() {
   const handleAddField = async () => {
     if (!newFieldKey.trim() || !newFieldValue.trim()) return;
     const key = newFieldKey.toLowerCase().trim().replace(/[\s\W]+/g, '_');
-    await handleUpdateField(key, newFieldValue, true);
+    const categoryToSave = newFieldCategory === 'Custom' ? (newFieldCustomCategory.trim() || 'Custom') : newFieldCategory;
+    await handleUpdateField(key, newFieldValue, true, categoryToSave);
     setNewFieldKey('');
     setNewFieldValue('');
+    setNewFieldCategory('Custom');
+    setNewFieldCustomCategory('');
     setShowAddField(false);
+  };
+
+  const handleCopy = async (key, value) => {
+    try {
+      let success = false;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        try {
+          await navigator.clipboard.writeText(value);
+          success = true;
+        } catch (e) {
+          console.warn("Clipboard API failed, trying fallback...", e);
+        }
+      }
+      
+      if (!success) {
+        const textArea = document.createElement("textarea");
+        textArea.value = value;
+        textArea.style.position = "fixed";
+        textArea.style.left = "-999999px";
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        const res = document.execCommand('copy');
+        document.body.removeChild(textArea);
+        if (!res) throw new Error("Fallback copy failed");
+      }
+      
+      setCopiedField(key);
+      setTimeout(() => setCopiedField(null), 2000);
+    } catch (err) {
+      console.error('Failed to copy text', err);
+    }
   };
 
   const fetchDocs = async () => {
@@ -391,9 +436,32 @@ export default function Popup() {
     for (const [key, val] of Object.entries(profile)) {
       if (!skipKeys.includes(key) && val) {
         if (Array.isArray(val) && val.length > 0) {
-          filledFields.push({ rawKey: key, label: key, value: val.join(', ') });
+          if (typeof val[0] === 'object') {
+            const sectionDef = PROFILE_SECTIONS.find(s => s.arrayKey === key);
+            const fieldDefs = sectionDef ? sectionDef.fields : [];
+            
+            val.forEach((item, index) => {
+              for (const [subKey, subVal] of Object.entries(item)) {
+                if (subVal && typeof subVal === 'string' && subVal.trim() !== '') {
+                  const fieldDef = fieldDefs.find(f => f.key === subKey);
+                  const niceLabel = fieldDef ? fieldDef.label : subKey;
+                  
+                  filledFields.push({ 
+                    rawKey: key, 
+                    uniqueKey: `${key}_${index}_${subKey}`,
+                    label: niceLabel, 
+                    value: subVal, 
+                    isArrayObject: true,
+                    arrayIndex: index
+                  });
+                }
+              }
+            });
+          } else {
+            filledFields.push({ rawKey: key, uniqueKey: key, label: key, value: val.join(', ') });
+          }
         } else if (typeof val === 'string' && val.trim() !== '') {
-          filledFields.push({ rawKey: key, label: key, value: val });
+          filledFields.push({ rawKey: key, uniqueKey: key, label: key, value: val });
         }
       }
     }
@@ -404,7 +472,7 @@ export default function Popup() {
         const val = typeof cf === 'object' ? cf.value : cf;
         const isSensitive = typeof cf === 'object' ? cf.sensitive : false;
         if (val) {
-          customFields.push({ rawKey: key, label: key.replace(/_/g, ' '), value: val, sensitive: isSensitive });
+          customFields.push({ rawKey: key, uniqueKey: key, label: key.replace(/_/g, ' '), value: val, sensitive: isSensitive });
         }
       }
     }
@@ -412,7 +480,7 @@ export default function Popup() {
     const renderField = (f, isCustom) => {
       const isEditing = editingField === f.rawKey;
       return (
-        <div key={f.rawKey} className="bg-surface-card p-3 rounded-xl border border-surface-border flex items-center justify-between group  transition-all">
+        <div key={f.uniqueKey || f.rawKey} className="bg-surface-card p-3 rounded-xl border border-surface-border flex items-center justify-between group  transition-all">
           {isEditing ? (
             <div className="flex-1 flex gap-2 items-center">
               <input type="text" className="flex-1 bg-surface-elevated border border-primary-500 rounded px-2 py-1.5 text-[13px] text-zinc-200 outline-none" value={editFieldValue} onChange={e => setEditFieldValue(e.target.value)} autoFocus />
@@ -422,16 +490,30 @@ export default function Popup() {
           ) : (
             <>
               <div className="flex-1 min-w-0">
-                <div className="text-[10px] font-bold text-zinc-500 tracking-wider uppercase mb-0.5">{f.label.replace(/([A-Z])/g, ' $1').trim()}</div>
+                <div className="text-[10px] font-bold text-zinc-500 tracking-wider uppercase mb-0.5 flex items-center gap-2">
+                   {f.isArrayObject ? f.label : f.label.replace(/([A-Z])/g, ' $1').trim()}
+                   {isCustom && <span className="text-[8px] bg-indigo-500/20 text-indigo-400 px-1 py-0.5 rounded uppercase tracking-wider">Custom</span>}
+                </div>
                 <div className="text-[13px] text-zinc-200 truncate">{f.sensitive ? '••••••••' : f.value}</div>
               </div>
               <div className="flex items-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity pl-2">
-                <button onClick={() => { setEditingField(f.rawKey); setEditFieldValue(f.value); }} className="text-zinc-400 hover:text-primary-400 transition-colors" title="Edit">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                <button onClick={() => handleCopy(f.uniqueKey || f.rawKey, f.value)} className={`transition-colors ${copiedField === (f.uniqueKey || f.rawKey) ? 'text-emerald-400' : 'text-zinc-400 hover:text-blue-400'}`} title={copiedField === (f.uniqueKey || f.rawKey) ? 'Copied!' : 'Copy'}>
+                  {copiedField === (f.uniqueKey || f.rawKey) ? (
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  ) : (
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                  )}
                 </button>
-                <button onClick={() => handleDeleteField(f.rawKey, isCustom)} className="text-zinc-400 hover:text-red-400 transition-colors" title="Delete">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
-                </button>
+                {!f.isArrayObject && (
+                  <>
+                    <button onClick={() => { setEditingField(f.rawKey); setEditFieldValue(f.value); }} className="text-zinc-400 hover:text-primary-400 transition-colors" title="Edit">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                    </button>
+                    <button onClick={() => handleDeleteField(f.rawKey, isCustom)} className="text-zinc-400 hover:text-red-400 transition-colors" title="Delete">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                    </button>
+                  </>
+                )}
               </div>
             </>
           )}
@@ -439,36 +521,132 @@ export default function Popup() {
       );
     };
 
+    const uncategorizedCustomFields = customFields.filter(f => !PROFILE_SECTIONS.some(s => s.title === (f.category || 'Custom')));
+
     return (
       <div className="space-y-6 animate-fade-in pb-4">
+        {!showAddField && (
+          <div className="flex items-center justify-end px-1 -mb-2">
+            <button onClick={() => setShowAddField(true)} className="text-[10px] font-bold text-primary-500 hover:text-primary-400 uppercase tracking-widest">+ Add Field</button>
+          </div>
+        )}
+
         {showAddField && (
-           <div className="bg-surface-card p-4 rounded-xl   mb-4">
+           <div className="bg-surface-card p-4 rounded-xl mb-4 border border-surface-border">
              <h4 className="text-[13px] font-bold text-zinc-100 mb-3">Add Custom Field</h4>
-             <input type="text" placeholder="Field Name (e.g. Employee ID)" className="w-full bg-surface-elevated border border-surface-border rounded-lg p-2.5 mb-3 text-[13px] text-zinc-200 outline-none focus:border-primary-500" value={newFieldKey} onChange={e => setNewFieldKey(e.target.value)} />
-             <input type="text" placeholder="Value" className="w-full bg-surface-elevated border border-surface-border rounded-lg p-2.5 mb-4 text-[13px] text-zinc-200 outline-none focus:border-primary-500" value={newFieldValue} onChange={e => setNewFieldValue(e.target.value)} />
-             <div className="flex gap-3 justify-end items-center">
+             
+             <div className="space-y-3">
+               <div>
+                 <input type="text" placeholder="Field Name (e.g. Employee ID)" className="w-full bg-surface-elevated border border-surface-border rounded-lg p-2 text-[13px] text-zinc-200 outline-none focus:border-primary-500" value={newFieldKey} onChange={e => setNewFieldKey(e.target.value)} />
+               </div>
+               <div>
+                 <input type="text" placeholder="Value" className="w-full bg-surface-elevated border border-surface-border rounded-lg p-2 text-[13px] text-zinc-200 outline-none focus:border-primary-500" value={newFieldValue} onChange={e => setNewFieldValue(e.target.value)} />
+               </div>
+               <div className="flex flex-col gap-2">
+                 <select
+                   className="w-full bg-surface-elevated border border-surface-border rounded-lg p-2 text-[13px] text-zinc-200 outline-none focus:border-primary-500"
+                   value={newFieldCategory}
+                   onChange={e => setNewFieldCategory(e.target.value)}
+                 >
+                   <option value="Custom">Category: Custom</option>
+                   {PROFILE_SECTIONS.map(s => <option key={s.title} value={s.title}>Category: {s.title}</option>)}
+                 </select>
+                 {newFieldCategory === 'Custom' && (
+                   <input 
+                     type="text" 
+                     placeholder="New Category Name" 
+                     className="w-full bg-surface-elevated border border-surface-border rounded-lg p-2 text-[13px] text-zinc-200 outline-none focus:border-primary-500" 
+                     value={newFieldCustomCategory} 
+                     onChange={e => setNewFieldCustomCategory(e.target.value)} 
+                   />
+                 )}
+               </div>
+             </div>
+
+             <div className="flex gap-3 justify-end items-center mt-4 pt-3 border-t border-surface-border">
                <button onClick={() => setShowAddField(false)} className="text-xs font-semibold text-zinc-400 hover:text-zinc-200 transition-colors">Cancel</button>
                <button onClick={handleAddField} className="px-4 py-1.5 bg-primary-500 hover:bg-primary-600 text-white rounded-lg text-xs font-bold transition-colors">Save Field</button>
              </div>
            </div>
         )}
 
-        <div>
-          <div className="flex items-center justify-between mb-3 px-1">
-            <h3 className="text-[10px] font-bold text-zinc-500 tracking-widest uppercase">Standard Fields</h3>
-            {!showAddField && <button onClick={() => setShowAddField(true)} className="text-[10px] font-bold text-primary-500 hover:text-primary-400 uppercase tracking-widest">+ Add</button>}
+        {!showAddField && (
+          <div className="mb-4">
+            <input
+              type="text"
+              placeholder="Search fields..."
+              className="w-full bg-surface-elevated border border-surface-border rounded-lg p-2 text-[12px] text-zinc-200 outline-none focus:border-primary-500"
+              value={profileSearch}
+              onChange={e => setProfileSearch(e.target.value)}
+            />
           </div>
-          <div className="grid grid-cols-1 gap-2">
-            {filledFields.length > 0 ? filledFields.map(f => renderField(f, false)) : <p className="text-[11px] text-zinc-500 italic px-1">No standard fields filled.</p>}
-          </div>
-        </div>
+        )}
 
-        <div>
-          <h3 className="text-[10px] font-bold text-zinc-500 tracking-widest uppercase mb-3 px-1">Custom Fields</h3>
-          <div className="grid grid-cols-1 gap-2">
-            {customFields.length > 0 ? customFields.map(f => renderField(f, true)) : <p className="text-[11px] text-zinc-500 italic px-1">No custom fields added.</p>}
+        {PROFILE_SECTIONS.map(section => {
+          const searchLower = profileSearch.toLowerCase();
+          const sFields = filledFields.filter(f => 
+            (section.isArray && f.rawKey === section.arrayKey) || 
+            (!section.isArray && section.fields.some(sf => sf.key === f.rawKey))
+          ).filter(f => f.label.toLowerCase().includes(searchLower) || f.value.toLowerCase().includes(searchLower));
+          const cFields = customFields.filter(f => (f.category || 'Custom') === section.title).filter(f => f.label.toLowerCase().includes(searchLower) || f.value.toLowerCase().includes(searchLower));
+          
+          if (sFields.length === 0 && cFields.length === 0) return null;
+
+          if (section.isArray) {
+            const groups = {};
+            sFields.forEach(f => {
+               if (!groups[f.arrayIndex]) groups[f.arrayIndex] = [];
+               groups[f.arrayIndex].push(f);
+            });
+            
+            return (
+              <div key={section.title} className="mb-4">
+                <div className="flex items-center justify-between mb-3 px-1">
+                  <h3 className="text-[10px] font-bold text-zinc-500 tracking-widest uppercase flex items-center gap-2">
+                    <span>{section.icon}</span> {section.title}
+                  </h3>
+                </div>
+                <div className="flex flex-col gap-3">
+                  {Object.keys(groups).sort((a, b) => Number(a) - Number(b)).map(indexStr => (
+                    <div key={indexStr} className="bg-primary-500/5 border border-primary-500/20 rounded-xl p-2 relative">
+                      <div className="absolute -top-2 right-4 px-2 py-0.5 bg-surface text-primary-400 text-[9px] font-bold uppercase tracking-wider rounded-full border border-primary-500/20">
+                        Entry {Number(indexStr) + 1}
+                      </div>
+                      <div className="grid grid-cols-1 gap-2 mt-1">
+                        {groups[indexStr].map(f => renderField(f, false))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            );
+          }
+
+          return (
+            <div key={section.title} className="mb-4">
+              <div className="flex items-center justify-between mb-3 px-1">
+                <h3 className="text-[10px] font-bold text-zinc-500 tracking-widest uppercase flex items-center gap-2">
+                  <span>{section.icon}</span> {section.title}
+                </h3>
+              </div>
+              <div className="grid grid-cols-1 gap-2">
+                {sFields.map(f => renderField(f, false))}
+                {cFields.map(f => renderField(f, true))}
+              </div>
+            </div>
+          );
+        })}
+
+        {(uncategorizedCustomFields.length > 0 || (filledFields.length === 0 && customFields.length === 0)) && (
+          <div>
+            <h3 className="text-[10px] font-bold text-zinc-500 tracking-widest uppercase mb-3 px-1 flex items-center gap-2">
+              <span>✨</span> Uncategorized Custom Fields
+            </h3>
+            <div className="grid grid-cols-1 gap-2">
+              {uncategorizedCustomFields.filter(f => f.label.toLowerCase().includes(profileSearch.toLowerCase()) || f.value.toLowerCase().includes(profileSearch.toLowerCase())).length > 0 ? uncategorizedCustomFields.filter(f => f.label.toLowerCase().includes(profileSearch.toLowerCase()) || f.value.toLowerCase().includes(profileSearch.toLowerCase())).map(f => renderField(f, true)) : (profileSearch ? <p className="text-[11px] text-zinc-500 italic px-1">No matches found.</p> : <p className="text-[11px] text-zinc-500 italic px-1">No custom fields added.</p>)}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     );
   };
@@ -495,8 +673,20 @@ export default function Popup() {
           {!showAddDoc && <button onClick={() => setShowAddDoc(true)} className="text-[10px] font-bold text-primary-500 hover:text-primary-400 uppercase tracking-widest">+ Add</button>}
         </div>
 
+        {!showAddDoc && documents.length > 0 && (
+          <div className="mb-4">
+            <input
+              type="text"
+              placeholder="Search documents..."
+              className="w-full bg-surface-elevated border border-surface-border rounded-lg p-2 text-[12px] text-zinc-200 outline-none focus:border-primary-500"
+              value={docSearch}
+              onChange={e => setDocSearch(e.target.value)}
+            />
+          </div>
+        )}
+
         <div className="grid grid-cols-1 gap-2">
-          {documents.length > 0 ? documents.map(doc => {
+          {documents.length > 0 ? documents.filter(d => d.label.toLowerCase().includes(docSearch.toLowerCase()) || (d.originalName && d.originalName.toLowerCase().includes(docSearch.toLowerCase()))).map(doc => {
             const sizeKb = Math.round(doc.sizeBytes / 102.4) / 10;
             return (
               <div key={doc._id} className="bg-surface-card p-3 rounded-xl border border-surface-border flex items-center justify-between group  transition-all">

@@ -43,11 +43,22 @@ router.post('/', async (req, res, next) => {
     const matches = matchFields(fields);
 
     // Enrich fields with matched profile keys
-    const enrichedFields = fields.map((field, idx) => ({
-      ...field,
-      profileKey: matches[idx]?.profileKey || null,
-      confidence: matches[idx]?.confidence || 0,
-    }));
+    const enrichedFields = fields.map((field, idx) => {
+      let profileKey = matches[idx]?.profileKey || null;
+      let confidence = matches[idx]?.confidence || 0;
+      
+      // Trust the AI-matched profileKey from the frontend
+      if (!profileKey && field.profileKey) {
+        profileKey = field.profileKey;
+        confidence = 0.9;
+      }
+
+      return {
+        ...field,
+        profileKey,
+        confidence,
+      };
+    });
 
     // Save submission
     const submission = await FormSubmission.create({

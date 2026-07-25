@@ -12,9 +12,7 @@ const VALID_PROFILE_KEYS = [
   'firstName', 'middleName', 'lastName', 'fullName', 'dateOfBirth', 'gender', 'nationality',
   'email', 'phone', 'alternatePhone', 'linkedIn', 'website', 'github',
   'addressLine1', 'addressLine2', 'city', 'state', 'postalCode', 'country',
-  'currentJobTitle', 'currentCompany', 'yearsOfExperience', 'skills',
-  'summary', 'expectedSalary', 'noticePeriod',
-  'highestDegree', 'fieldOfStudy', 'university', 'graduationYear',
+  'yearsOfExperience', 'skills', 'summary', 'expectedSalary', 'noticePeriod',
   'passportNumber', 'panNumber', 'aadhaarNumber', 'drivingLicenseNumber',
   'none',
 ];

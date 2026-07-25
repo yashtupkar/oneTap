@@ -196,6 +196,7 @@ export async function processSuggestions(fields, suggestions, settings, onFilled
 
     if (!suggestion || !suggestion.value || suggestion.status === 'missing') continue;
     if (suggestion.isFileInput) continue; // Handled separately by overlay
+    if (suggestion.options) continue; // Skip auto-fill if multiple options are available
 
     const needsConfirm = suggestion.requiresConfirmation ||
       (suggestion.isSensitive && settings.askBeforeSensitiveFields);

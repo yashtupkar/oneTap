@@ -34,8 +34,18 @@ const userProfileSchema = new mongoose.Schema(
     country: String,
 
     // ── Professional ──────────────────────────────────────────────────────────
-    currentJobTitle: String,
-    currentCompany: String,
+    workExperience: {
+      type: [{
+        jobTitle: String,
+        company: String,
+        location: String,
+        startDate: String,
+        endDate: String,
+        description: String,
+        skillsUsed: String
+      }],
+      default: []
+    },
     yearsOfExperience: Number,
     skills: [String],
     summary: String,
@@ -43,10 +53,17 @@ const userProfileSchema = new mongoose.Schema(
     noticePeriod: String,
 
     // ── Education ─────────────────────────────────────────────────────────────
-    highestDegree: String,
-    fieldOfStudy: String,
-    university: String,
-    graduationYear: Number,
+    educationHistory: {
+      type: [{
+        degree: String,
+        fieldOfStudy: String,
+        university: String,
+        startDate: String,
+        endDate: String,
+        marks: String
+      }],
+      default: []
+    },
 
     // ── Identity (stored ENCRYPTED as hex strings) ────────────────────────────
     passportNumber: String,
