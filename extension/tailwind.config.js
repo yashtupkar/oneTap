@@ -7,22 +7,22 @@ export default {
     extend: {
       colors: {
         primary: {
-          50: '#f0f4ff',
-          100: '#e0e9ff',
-          200: '#c7d7fe',
-          300: '#a5bbfc',
-          400: '#8098f9',
-          500: '#6172f3',
-          600: '#4e52e8',
-          700: '#3f3fcb',
-          800: '#3636a5',
-          900: '#303082',
+          50: '#fff7ed',
+          100: '#ffedd5',
+          200: '#fed7aa',
+          300: '#fdba74',
+          400: '#fb923c',
+          500: '#f97316',
+          600: '#ea580c',
+          700: '#c2410c',
+          800: '#9a3412',
+          900: '#7c2d12',
         },
         surface: {
-          DEFAULT: '#0f1117',
-          card: '#1a1d27',
-          elevated: '#22263a',
-          border: '#2e3248',
+          DEFAULT: '#282828ff', // zinc-950
+          card: '#2b2b2dff', // zinc-900
+          elevated: '#323235ff', // zinc-800
+          border: '#3f3f46', // zinc-700
         },
         status: {
           filled: '#10b981',
@@ -39,8 +39,8 @@ export default {
         '2xl': '16px',
       },
       boxShadow: {
-        glow: '0 0 20px rgba(97, 114, 243, 0.3)',
-        card: '0 4px 24px rgba(0,0,0,0.4)',
+        glow: 'none',
+        card: 'none',
         overlay: '0 8px 32px rgba(0,0,0,0.6)',
       },
       animation: {

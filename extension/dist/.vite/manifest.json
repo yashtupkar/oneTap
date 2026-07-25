@@ -9,47 +9,71 @@
     "file": "assets/api-BF4rsrnm.js",
     "name": "api"
   },
-  "_api-fpKhR6d4.js": {
-    "file": "assets/api-fpKhR6d4.js",
-    "name": "api"
-  },
   "_client-DhEz86-d.js": {
     "file": "assets/client-DhEz86-d.js",
     "name": "client"
   },
   "_index-!~{004}~.js": {
-    "file": "assets/index-D-xsgeCV.css",
+    "file": "assets/index-0UjqyOnu.css",
     "src": "_index-!~{004}~.js"
   },
-  "_index-M96IXCYQ.js": {
-    "file": "assets/index-M96IXCYQ.js",
+  "_index-B4aky5GC.js": {
+    "file": "assets/index-B4aky5GC.js",
     "name": "index",
     "css": [
-      "assets/index-D-xsgeCV.css"
+      "assets/index-BPjEMns3.css"
+    ]
+  },
+  "_index-Bph4RAg-.js": {
+    "file": "assets/index-Bph4RAg-.js",
+    "name": "index",
+    "css": [
+      "assets/index-0UjqyOnu.css"
+    ]
+  },
+  "_index-Bq1YH5Ve.js": {
+    "file": "assets/index-Bq1YH5Ve.js",
+    "name": "index",
+    "css": [
+      "assets/index-CT1iyJdR.css"
+    ]
+  },
+  "_index-CZZIHeey.js": {
+    "file": "assets/index-CZZIHeey.js",
+    "name": "index",
+    "css": [
+      "assets/index-unwOHTHB.css"
+    ]
+  },
+  "_index-DrwY9ZhZ.js": {
+    "file": "assets/index-DrwY9ZhZ.js",
+    "name": "index",
+    "css": [
+      "assets/index-CJf_Uufz.css"
     ]
   },
   "index.jsx-loader.js": {
-    "file": "assets/index.jsx-loader-I67ZZTw6.js",
+    "file": "assets/index.jsx-loader-_NFLK6dX.js",
     "src": "index.jsx-loader.js"
   },
   "options/index.html": {
-    "file": "assets/index.html-sHhBtTNV.js",
+    "file": "assets/index.html-DyaYBHvV.js",
     "name": "index.html",
     "src": "options/index.html",
     "isEntry": true,
     "imports": [
-      "_index-M96IXCYQ.js",
+      "_index-Bph4RAg-.js",
       "_client-DhEz86-d.js",
       "_api-BF4rsrnm.js"
     ]
   },
   "popup/index.html": {
-    "file": "assets/index.html-BrWE6qzM.js",
+    "file": "assets/index.html-CEb3WVET.js",
     "name": "index.html",
     "src": "popup/index.html",
     "isEntry": true,
     "imports": [
-      "_index-M96IXCYQ.js",
+      "_index-Bph4RAg-.js",
       "_client-DhEz86-d.js",
       "_api-BF4rsrnm.js"
     ]
@@ -64,7 +88,7 @@
     ]
   },
   "src/content/index.jsx": {
-    "file": "assets/index.jsx-NXr-OQCV.js",
+    "file": "assets/index.jsx-hZTD-h87.js",
     "name": "index.jsx",
     "src": "src/content/index.jsx",
     "isEntry": true,

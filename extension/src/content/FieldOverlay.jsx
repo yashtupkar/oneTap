@@ -154,9 +154,8 @@ export function FieldOverlay({ suggestion, field, rect, onEdit, onApply }) {
           justifyContent: 'center',
           width: '22px',
           height: '22px',
-          borderRadius: '50%',
-          background: config.bg,
-          border: `1px solid ${config.border}`,
+  
+    
           color: config.color,
           cursor: 'pointer',
           userSelect: 'none',
