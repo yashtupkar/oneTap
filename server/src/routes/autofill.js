@@ -74,13 +74,19 @@ router.post('/suggest', async (req, res, next) => {
           customKey = field.label.toLowerCase().trim().replace(/[\s\W]+/g, '_');
         }
         if (customKey && profile.customFields && profile.customFields[customKey]) {
+          const cf = profile.customFields[customKey];
+          const value = typeof cf === 'object' ? cf.value : cf;
+          const isSensitive = typeof cf === 'object' ? !!cf.sensitive : false;
+
           return buildSuggestion({
             field,
             profileKey: `customFields.${customKey}`,
-            value: profile.customFields[customKey],
+            value: value,
             confidence: 0.9,
             source: 'custom_field',
             reason: `Matched custom field "${customKey}"`,
+            isSensitive,
+            requiresConfirmation: isSensitive
           });
         }
 

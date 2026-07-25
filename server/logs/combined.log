@@ -1,1249 +1,318 @@
-2026-07-24 00:35:20 [warn]: MongoDB disconnected
-2026-07-24 00:35:20 [warn]: MongoDB attempt 1/5 failed: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
-2026-07-24 00:35:20 [error]: MongoServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
-    at Topology.selectServer (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\sdam\topology.js:327:38)
-    at async Topology._connect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\sdam\topology.js:200:28)
-    at async Topology.connect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\sdam\topology.js:152:13)
-    at async topologyConnect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\mongo_client.js:264:17)
-    at async MongoClient._connect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\mongo_client.js:277:13)
-    at async MongoClient.connect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\mongo_client.js:202:13)
-    at async NativeConnection.createClient (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongoose\lib\drivers\node-mongodb-native\connection.js:351:3)
-    at async NativeConnection.openUri (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongoose\lib\connection.js:1098:5)
-    at async connectDB (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\config\db.js:13:7)
-    at async bootstrap (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\index.js:79:5)
-2026-07-24 00:35:26 [warn]: MongoDB disconnected
-2026-07-24 00:35:26 [warn]: MongoDB attempt 2/5 failed: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
-2026-07-24 00:35:26 [error]: MongoServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
-    at Topology.selectServer (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\sdam\topology.js:327:38)
-    at async Topology._connect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\sdam\topology.js:200:28)
-    at async Topology.connect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\sdam\topology.js:152:13)
-    at async topologyConnect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\mongo_client.js:264:17)
-    at async MongoClient._connect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\mongo_client.js:277:13)
-    at async MongoClient.connect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\mongo_client.js:202:13)
-    at async NativeConnection.createClient (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongoose\lib\drivers\node-mongodb-native\connection.js:351:3)
-    at async NativeConnection.openUri (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongoose\lib\connection.js:1098:5)
-    at async connectDB (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\config\db.js:13:7)
-    at async bootstrap (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\index.js:79:5)
-2026-07-24 00:41:02 [warn]: MongoDB disconnected
-2026-07-24 00:41:02 [warn]: MongoDB attempt 1/5 failed: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
-2026-07-24 00:41:02 [error]: MongoServerSelectionError: 04410000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:openssl\ssl\record\rec_layer_s3.c:916:SSL alert number 80
-
-    at Topology.selectServer (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\sdam\topology.js:327:38)
-    at async Topology._connect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\sdam\topology.js:200:28)
-    at async Topology.connect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\sdam\topology.js:152:13)
-    at async topologyConnect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\mongo_client.js:264:17)
-    at async MongoClient._connect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\mongo_client.js:277:13)
-    at async MongoClient.connect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\mongo_client.js:202:13)
-    at async NativeConnection.createClient (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongoose\lib\drivers\node-mongodb-native\connection.js:351:3)
-    at async NativeConnection.openUri (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongoose\lib\connection.js:1098:5)
-    at async connectDB (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\config\db.js:13:7)
-    at async bootstrap (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\index.js:79:5)
-2026-07-24 00:41:09 [warn]: MongoDB disconnected
-2026-07-24 00:41:09 [warn]: MongoDB attempt 2/5 failed: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
-2026-07-24 00:41:09 [error]: MongoServerSelectionError: 04410000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:openssl\ssl\record\rec_layer_s3.c:916:SSL alert number 80
-
-    at Topology.selectServer (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\sdam\topology.js:327:38)
-    at async Topology._connect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\sdam\topology.js:200:28)
-    at async Topology.connect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\sdam\topology.js:152:13)
-    at async topologyConnect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\mongo_client.js:264:17)
-    at async MongoClient._connect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\mongo_client.js:277:13)
-    at async MongoClient.connect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\mongo_client.js:202:13)
-    at async NativeConnection.createClient (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongoose\lib\drivers\node-mongodb-native\connection.js:351:3)
-    at async NativeConnection.openUri (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongoose\lib\connection.js:1098:5)
-    at async connectDB (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\config\db.js:13:7)
-    at async bootstrap (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\index.js:79:5)
-2026-07-24 00:41:16 [warn]: MongoDB disconnected
-2026-07-24 00:41:16 [warn]: MongoDB attempt 3/5 failed: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
-2026-07-24 00:41:16 [error]: MongoServerSelectionError: 04410000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:openssl\ssl\record\rec_layer_s3.c:916:SSL alert number 80
-
-    at Topology.selectServer (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\sdam\topology.js:327:38)
-    at async Topology._connect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\sdam\topology.js:200:28)
-    at async Topology.connect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\sdam\topology.js:152:13)
-    at async topologyConnect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\mongo_client.js:264:17)
-    at async MongoClient._connect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\mongo_client.js:277:13)
-    at async MongoClient.connect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\mongo_client.js:202:13)
-    at async NativeConnection.createClient (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongoose\lib\drivers\node-mongodb-native\connection.js:351:3)
-    at async NativeConnection.openUri (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongoose\lib\connection.js:1098:5)
-    at async connectDB (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\config\db.js:13:7)
-    at async bootstrap (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\index.js:79:5)
-2026-07-24 00:41:25 [warn]: MongoDB disconnected
-2026-07-24 00:41:25 [warn]: MongoDB attempt 4/5 failed: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
-2026-07-24 00:41:25 [error]: MongoServerSelectionError: 04410000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:openssl\ssl\record\rec_layer_s3.c:916:SSL alert number 80
-
-    at Topology.selectServer (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\sdam\topology.js:327:38)
-    at async Topology._connect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\sdam\topology.js:200:28)
-    at async Topology.connect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\sdam\topology.js:152:13)
-    at async topologyConnect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\mongo_client.js:264:17)
-    at async MongoClient._connect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\mongo_client.js:277:13)
-    at async MongoClient.connect (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongodb\lib\mongo_client.js:202:13)
-    at async NativeConnection.createClient (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongoose\lib\drivers\node-mongodb-native\connection.js:351:3)
-    at async NativeConnection.openUri (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\mongoose\lib\connection.js:1098:5)
-    at async connectDB (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\config\db.js:13:7)
-    at async bootstrap (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\index.js:79:5)
-2026-07-24 00:41:38 [warn]: MongoDB disconnected
-2026-07-24 00:41:50 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-01.r0rqul9.mongodb.net
-2026-07-24 00:41:50 [info]: 🚀 Server running on http://localhost:3001
-2026-07-24 00:41:50 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
-2026-07-24 00:45:25 [http]: ::1 - - [23/Jul/2026:19:15:25 +0000] "GET /api/profile HTTP/1.1" 200 226 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 00:45:37 [http]: ::1 - - [23/Jul/2026:19:15:37 +0000] "GET /api/profile HTTP/1.1" 200 226 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 00:45:52 [http]: ::1 - - [23/Jul/2026:19:15:52 +0000] "GET /api/documents HTTP/1.1" 200 31 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 00:45:56 [http]: ::1 - - [23/Jul/2026:19:15:56 +0000] "GET /api/autofill/mappings HTTP/1.1" 200 30 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 00:45:58 [http]: ::1 - - [23/Jul/2026:19:15:58 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 00:47:32 [http]: ::1 - - [23/Jul/2026:19:17:32 +0000] "PATCH /api/profile HTTP/1.1" 200 447 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 00:48:28 [http]: ::1 - - [23/Jul/2026:19:18:28 +0000] "GET /api/documents HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 00:48:53 [http]: ::1 - - [23/Jul/2026:19:18:53 +0000] "POST /api/documents HTTP/1.1" 201 445 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 00:48:53 [http]: ::1 - - [23/Jul/2026:19:18:53 +0000] "GET /api/documents HTTP/1.1" 200 448 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 00:50:45 [http]: ::1 - - [23/Jul/2026:19:20:45 +0000] "GET /api/autofill/mappings HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 00:50:48 [http]: ::1 - - [23/Jul/2026:19:20:48 +0000] "GET /api/documents HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 00:50:54 [http]: ::1 - - [23/Jul/2026:19:20:54 +0000] "GET /api/profile HTTP/1.1" 200 447 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 00:51:08 [http]: ::1 - - [23/Jul/2026:19:21:08 +0000] "PATCH /api/profile HTTP/1.1" 200 479 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 00:51:18 [http]: ::1 - - [23/Jul/2026:19:21:18 +0000] "GET /api/profile HTTP/1.1" 200 479 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 00:55:11 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-02.r0rqul9.mongodb.net
-2026-07-24 00:55:11 [info]: 🚀 Server running on http://localhost:3001
-2026-07-24 00:55:11 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
-2026-07-24 00:55:35 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-01.r0rqul9.mongodb.net
-2026-07-24 00:55:35 [info]: 🚀 Server running on http://localhost:3001
-2026-07-24 00:55:35 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
-2026-07-24 00:56:06 [http]: ::1 - - [23/Jul/2026:19:26:06 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 00:58:01 [http]: ::1 - - [23/Jul/2026:19:28:01 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 00:58:08 [http]: ::1 - - [23/Jul/2026:19:28:08 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 00:58:12 [http]: ::1 - - [23/Jul/2026:19:28:12 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 00:58:12 [http]: ::1 - - [23/Jul/2026:19:28:12 +0000] "GET /api/documents HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 00:58:17 [http]: ::1 - - [23/Jul/2026:19:28:17 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 00:59:12 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-02.r0rqul9.mongodb.net
-2026-07-24 00:59:12 [info]: 🚀 Server running on http://localhost:3001
-2026-07-24 00:59:12 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
-2026-07-24 00:59:51 [http]: ::1 - - [23/Jul/2026:19:29:51 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 00:59:54 [http]: ::1 - - [23/Jul/2026:19:29:54 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:08:40 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-02.r0rqul9.mongodb.net
-2026-07-24 01:08:40 [info]: 🚀 Server running on http://localhost:3001
-2026-07-24 01:08:40 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
-2026-07-24 01:08:57 [http]: ::1 - - [23/Jul/2026:19:38:57 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:09:18 [http]: ::1 - - [23/Jul/2026:19:39:18 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:12:19 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-01.r0rqul9.mongodb.net
-2026-07-24 01:12:28 [http]: ::1 - - [23/Jul/2026:19:42:28 +0000] "GET /api/profile HTTP/1.1" 200 226 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:13:41 [http]: ::1 - - [23/Jul/2026:19:43:41 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:13:44 [http]: ::1 - - [23/Jul/2026:19:43:44 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:14:23 [http]: ::1 - - [23/Jul/2026:19:44:23 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:14:27 [http]: ::1 - - [23/Jul/2026:19:44:27 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:14:36 [http]: ::1 - - [23/Jul/2026:19:44:36 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:15:19 [http]: ::1 - - [23/Jul/2026:19:45:19 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:19:10 [http]: ::1 - - [23/Jul/2026:19:49:10 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:19:30 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-02.r0rqul9.mongodb.net
-2026-07-24 01:19:30 [info]: 🚀 Server running on http://localhost:3001
-2026-07-24 01:19:30 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
-2026-07-24 01:19:34 [http]: ::1 - - [23/Jul/2026:19:49:34 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:19:48 [http]: ::1 - - [23/Jul/2026:19:49:48 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:19:48 [http]: ::1 - - [23/Jul/2026:19:49:48 +0000] "GET /api/documents HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:19:51 [http]: ::1 - - [23/Jul/2026:19:49:51 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:22:10 [http]: ::1 - - [23/Jul/2026:19:52:10 +0000] "PATCH /api/profile HTTP/1.1" 200 937 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:23:40 [http]: ::1 - - [23/Jul/2026:19:53:40 +0000] "GET /api/profile HTTP/1.1" 200 937 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:23:44 [http]: ::1 - - [23/Jul/2026:19:53:44 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:23:56 [http]: ::1 - - [23/Jul/2026:19:53:56 +0000] "GET /api/documents HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:24:01 [http]: ::1 - - [23/Jul/2026:19:54:01 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:24:04 [http]: ::1 - - [23/Jul/2026:19:54:04 +0000] "GET /api/documents HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:24:31 [http]: ::1 - - [23/Jul/2026:19:54:31 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:24:34 [http]: ::1 - - [23/Jul/2026:19:54:34 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:24:59 [http]: ::1 - - [23/Jul/2026:19:54:59 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:26:59 [http]: ::1 - - [23/Jul/2026:19:56:59 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:27:05 [http]: ::1 - - [23/Jul/2026:19:57:05 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:27:10 [http]: ::1 - - [23/Jul/2026:19:57:10 +0000] "GET /api/autofill/mappings HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:29:32 [http]: ::1 - - [23/Jul/2026:19:59:32 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:30:04 [http]: ::1 - - [23/Jul/2026:20:00:04 +0000] "PATCH /api/profile HTTP/1.1" 200 941 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:30:12 [http]: ::1 - - [23/Jul/2026:20:00:12 +0000] "GET /api/documents HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:32:58 [http]: ::1 - - [23/Jul/2026:20:02:58 +0000] "GET /api/profile HTTP/1.1" 200 226 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:33:09 [http]: ::1 - - [23/Jul/2026:20:03:09 +0000] "GET /api/profile HTTP/1.1" 200 226 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:33:24 [http]: ::1 - - [23/Jul/2026:20:03:24 +0000] "GET /api/profile HTTP/1.1" 200 226 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:35:59 [http]: ::1 - - [23/Jul/2026:20:05:59 +0000] "PATCH /api/profile HTTP/1.1" 200 841 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:36:02 [http]: ::1 - - [23/Jul/2026:20:06:02 +0000] "GET /api/profile HTTP/1.1" 200 841 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:36:06 [http]: ::1 - - [23/Jul/2026:20:06:06 +0000] "GET /api/documents HTTP/1.1" 200 31 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:36:18 [http]: ::1 - - [23/Jul/2026:20:06:18 +0000] "POST /api/documents HTTP/1.1" 201 455 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:36:18 [http]: ::1 - - [23/Jul/2026:20:06:18 +0000] "GET /api/documents HTTP/1.1" 200 458 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:36:24 [http]: ::1 - - [23/Jul/2026:20:06:24 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:36:26 [http]: ::1 - - [23/Jul/2026:20:06:26 +0000] "GET /api/documents HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:36:42 [http]: ::1 - - [23/Jul/2026:20:06:42 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:36:54 [http]: ::1 - - [23/Jul/2026:20:06:54 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:36:57 [http]: ::1 - - [23/Jul/2026:20:06:57 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:39:23 [http]: ::1 - - [23/Jul/2026:20:09:23 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:40:06 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-00.r0rqul9.mongodb.net
-2026-07-24 01:40:06 [info]: 🚀 Server running on http://localhost:3001
-2026-07-24 01:40:06 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
-2026-07-24 01:40:54 [http]: ::1 - - [23/Jul/2026:20:10:54 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:40:57 [http]: ::1 - - [23/Jul/2026:20:10:57 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:41:31 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-00.r0rqul9.mongodb.net
-2026-07-24 01:41:31 [info]: 🚀 Server running on http://localhost:3001
-2026-07-24 01:41:31 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
-2026-07-24 01:41:45 [http]: ::1 - - [23/Jul/2026:20:11:45 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:42:55 [http]: ::1 - - [23/Jul/2026:20:12:55 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:44:30 [http]: ::1 - - [23/Jul/2026:20:14:30 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:44:42 [http]: ::1 - - [23/Jul/2026:20:14:42 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:45:11 [http]: ::1 - - [23/Jul/2026:20:15:11 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:49:39 [warn]: MongoDB disconnected
-2026-07-24 01:50:36 [http]: ::1 - - [23/Jul/2026:20:20:36 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:51:27 [http]: ::1 - - [23/Jul/2026:20:21:27 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:51:30 [http]: ::1 - - [23/Jul/2026:20:21:30 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:51:31 [http]: ::1 - - [23/Jul/2026:20:21:31 +0000] "GET /api/documents HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:51:36 [http]: ::1 - - [23/Jul/2026:20:21:36 +0000] "GET /api/documents/6a62743adc63f13e169dbbf2/download?deviceId=d838f28c-a820-4f21-93cd-2a1dafd58897 HTTP/1.1" 401 51 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:51:42 [http]: ::1 - - [23/Jul/2026:20:21:42 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:51:42 [http]: ::1 - - [23/Jul/2026:20:21:42 +0000] "GET /api/documents HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:51:47 [http]: ::1 - - [23/Jul/2026:20:21:47 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:51:50 [http]: ::1 - - [23/Jul/2026:20:21:50 +0000] "GET /api/autofill/mappings HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:54:19 [http]: ::1 - - [23/Jul/2026:20:24:19 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:54:46 [http]: ::1 - - [23/Jul/2026:20:24:46 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:54:49 [http]: ::1 - - [23/Jul/2026:20:24:49 +0000] "GET /api/documents HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:54:49 [http]: ::1 - - [23/Jul/2026:20:24:49 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:55:10 [http]: ::1 - - [23/Jul/2026:20:25:10 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 306 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:55:20 [debug]: Falling back to AI for field: 03middle_i
-2026-07-24 01:55:20 [debug]: Falling back to AI for field: 20homephon
-2026-07-24 01:55:20 [debug]: Falling back to AI for field: 21workphon
-2026-07-24 01:55:20 [debug]: Falling back to AI for field: 30_user_id
-2026-07-24 01:55:20 [debug]: Falling back to AI for field: 31password
-2026-07-24 01:55:20 [debug]: Falling back to AI for field: 40cc__type
-2026-07-24 01:55:20 [debug]: Falling back to AI for field: 41ccnumber
-2026-07-24 01:55:20 [debug]: Falling back to AI for field: 43cvc
-2026-07-24 01:55:20 [debug]: Falling back to AI for field: 42ccexp_mm
-2026-07-24 01:55:20 [debug]: Falling back to AI for field: 43ccexp_yy
-2026-07-24 01:55:20 [debug]: Falling back to AI for field: 45ccissuer
-2026-07-24 01:55:20 [debug]: Falling back to AI for field: 46cccstsvc
-2026-07-24 01:55:20 [debug]: Falling back to AI for field: 61pers_ssn
-2026-07-24 01:55:20 [debug]: Falling back to AI for field: 62driv_lic
-2026-07-24 01:55:20 [debug]: Falling back to AI for field: 66mm
-2026-07-24 01:55:20 [debug]: Falling back to AI for field: 67dd
-2026-07-24 01:55:20 [debug]: Falling back to AI for field: 68yy
-2026-07-24 01:55:20 [debug]: Falling back to AI for field: 66pers_age
-2026-07-24 01:55:20 [debug]: Falling back to AI for field: 67birth_pl
-2026-07-24 01:55:20 [debug]: Falling back to AI for field: 68__income
-2026-07-24 01:55:20 [debug]: Falling back to AI for field: 71__custom
-2026-07-24 01:55:20 [debug]: Falling back to AI for field: 72__commnt
-2026-07-24 01:55:21 [error]: AI classification error:
-2026-07-24 01:55:21 [error]: AI classification error:
-2026-07-24 01:55:21 [error]: AI classification error:
-2026-07-24 01:55:21 [error]: AI classification error:
-2026-07-24 01:55:21 [error]: AI classification error:
-2026-07-24 01:55:21 [error]: AI classification error:
-2026-07-24 01:55:21 [error]: AI classification error:
-2026-07-24 01:55:21 [error]: AI classification error:
-2026-07-24 01:55:21 [error]: AI classification error:
-2026-07-24 01:55:21 [error]: AI classification error:
-2026-07-24 01:55:21 [error]: AI classification error:
-2026-07-24 01:55:21 [error]: AI classification error:
-2026-07-24 01:55:21 [error]: AI classification error:
-2026-07-24 01:55:21 [error]: AI classification error:
-2026-07-24 01:55:21 [error]: AI classification error:
-2026-07-24 01:55:21 [error]: AI classification error:
-2026-07-24 01:55:21 [error]: AI classification error:
-2026-07-24 01:55:21 [error]: AI classification error:
-2026-07-24 01:55:21 [error]: AI classification error:
-2026-07-24 01:55:21 [error]: AI classification error:
-2026-07-24 01:55:21 [error]: AI classification error:
-2026-07-24 01:55:21 [error]: AI classification error:
-2026-07-24 01:55:21 [http]: ::1 - - [23/Jul/2026:20:25:21 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:55:54 [debug]: Falling back to AI for field: 
-2026-07-24 01:55:55 [error]: AI classification error:
-2026-07-24 01:55:55 [http]: ::1 - - [23/Jul/2026:20:25:55 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 272 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:58:12 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-00.r0rqul9.mongodb.net
-2026-07-24 01:58:12 [info]: 🚀 Server running on http://localhost:3001
-2026-07-24 01:58:12 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
-2026-07-24 01:58:13 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-02.r0rqul9.mongodb.net
-2026-07-24 01:58:57 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-01.r0rqul9.mongodb.net
-2026-07-24 01:59:15 [http]: ::1 - - [23/Jul/2026:20:29:15 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:59:34 [http]: ::1 - - [23/Jul/2026:20:29:34 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 01:59:58 [http]: ::1 - - [23/Jul/2026:20:29:58 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 306 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 02:00:17 [http]: ::1 - - [23/Jul/2026:20:30:17 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 306 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 02:00:20 [debug]: Falling back to AI for field: 03middle_i
-2026-07-24 02:00:20 [debug]: Falling back to AI for field: 20homephon
-2026-07-24 02:00:20 [debug]: Falling back to AI for field: 21workphon
-2026-07-24 02:00:20 [debug]: Falling back to AI for field: 30_user_id
-2026-07-24 02:00:20 [debug]: Falling back to AI for field: 31password
-2026-07-24 02:00:20 [debug]: Falling back to AI for field: 40cc__type
-2026-07-24 02:00:20 [debug]: Falling back to AI for field: 41ccnumber
-2026-07-24 02:00:20 [debug]: Falling back to AI for field: 43cvc
-2026-07-24 02:00:20 [debug]: Falling back to AI for field: 42ccexp_mm
-2026-07-24 02:00:20 [debug]: Falling back to AI for field: 43ccexp_yy
-2026-07-24 02:00:20 [debug]: Falling back to AI for field: 45ccissuer
-2026-07-24 02:00:20 [debug]: Falling back to AI for field: 46cccstsvc
-2026-07-24 02:00:20 [debug]: Falling back to AI for field: 61pers_ssn
-2026-07-24 02:00:21 [debug]: Falling back to AI for field: 62driv_lic
-2026-07-24 02:00:21 [debug]: Falling back to AI for field: 66mm
-2026-07-24 02:00:21 [debug]: Falling back to AI for field: 67dd
-2026-07-24 02:00:21 [debug]: Falling back to AI for field: 68yy
-2026-07-24 02:00:21 [debug]: Falling back to AI for field: 66pers_age
-2026-07-24 02:00:21 [debug]: Falling back to AI for field: 67birth_pl
-2026-07-24 02:00:21 [debug]: Falling back to AI for field: 68__income
-2026-07-24 02:00:21 [debug]: Falling back to AI for field: 71__custom
-2026-07-24 02:00:21 [debug]: Falling back to AI for field: 72__commnt
-2026-07-24 02:00:22 [error]: AI classification error:
-2026-07-24 02:00:22 [error]: AI classification error:
-2026-07-24 02:00:22 [error]: AI classification error:
-2026-07-24 02:00:22 [error]: AI classification error:
-2026-07-24 02:00:22 [error]: AI classification error:
-2026-07-24 02:00:22 [error]: AI classification error:
-2026-07-24 02:00:22 [error]: AI classification error:
-2026-07-24 02:00:22 [error]: AI classification error:
-2026-07-24 02:00:22 [error]: AI classification error:
-2026-07-24 02:00:22 [error]: AI classification error:
-2026-07-24 02:00:22 [error]: AI classification error:
-2026-07-24 02:00:22 [error]: AI classification error:
-2026-07-24 02:00:22 [error]: AI classification error:
-2026-07-24 02:00:22 [error]: AI classification error:
-2026-07-24 02:00:22 [error]: AI classification error:
-2026-07-24 02:00:22 [error]: AI classification error:
-2026-07-24 02:00:22 [error]: AI classification error:
-2026-07-24 02:00:22 [error]: AI classification error:
-2026-07-24 02:00:22 [error]: AI classification error:
-2026-07-24 02:00:22 [error]: AI classification error:
-2026-07-24 02:00:22 [error]: AI classification error:
-2026-07-24 02:00:24 [error]: AI classification error:
-2026-07-24 02:00:24 [http]: ::1 - - [23/Jul/2026:20:30:24 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 02:01:09 [http]: ::1 - - [23/Jul/2026:20:31:09 +0000] "POST /api/submissions HTTP/1.1" 201 267 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 02:01:12 [http]: ::1 - - [23/Jul/2026:20:31:12 +0000] "GET /api/profile HTTP/1.1" 200 873 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 02:01:13 [http]: ::1 - - [23/Jul/2026:20:31:13 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 02:01:13 [http]: ::1 - - [23/Jul/2026:20:31:13 +0000] "GET /api/documents HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 02:01:15 [http]: ::1 - - [23/Jul/2026:20:31:15 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 02:03:19 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-01.r0rqul9.mongodb.net
-2026-07-24 02:03:19 [info]: 🚀 Server running on http://localhost:3001
-2026-07-24 02:03:19 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
-2026-07-24 02:03:27 [http]: ::1 - - [23/Jul/2026:20:33:27 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 02:03:31 [debug]: Falling back to AI for field: 03middle_i
-2026-07-24 02:03:31 [debug]: Falling back to AI for field: 20homephon
-2026-07-24 02:03:31 [debug]: Falling back to AI for field: 21workphon
-2026-07-24 02:03:31 [debug]: Falling back to AI for field: 30_user_id
-2026-07-24 02:03:31 [debug]: Falling back to AI for field: 31password
-2026-07-24 02:03:31 [debug]: Falling back to AI for field: 40cc__type
-2026-07-24 02:03:31 [debug]: Falling back to AI for field: 41ccnumber
-2026-07-24 02:03:31 [debug]: Falling back to AI for field: 43cvc
-2026-07-24 02:03:31 [debug]: Falling back to AI for field: 42ccexp_mm
-2026-07-24 02:03:31 [debug]: Falling back to AI for field: 43ccexp_yy
-2026-07-24 02:03:31 [debug]: Falling back to AI for field: 45ccissuer
-2026-07-24 02:03:31 [debug]: Falling back to AI for field: 46cccstsvc
-2026-07-24 02:03:31 [debug]: Falling back to AI for field: 61pers_ssn
-2026-07-24 02:03:31 [debug]: Falling back to AI for field: 62driv_lic
-2026-07-24 02:03:31 [debug]: Falling back to AI for field: 66mm
-2026-07-24 02:03:31 [debug]: Falling back to AI for field: 67dd
-2026-07-24 02:03:31 [debug]: Falling back to AI for field: 68yy
-2026-07-24 02:03:31 [debug]: Falling back to AI for field: 66pers_age
-2026-07-24 02:03:31 [debug]: Falling back to AI for field: 67birth_pl
-2026-07-24 02:03:31 [debug]: Falling back to AI for field: 68__income
-2026-07-24 02:03:31 [debug]: Falling back to AI for field: 71__custom
-2026-07-24 02:03:31 [debug]: Falling back to AI for field: 72__commnt
-2026-07-24 02:03:32 [error]: AI classification error:
-2026-07-24 02:03:32 [error]: AI classification error:
-2026-07-24 02:03:32 [error]: AI classification error:
-2026-07-24 02:03:32 [error]: AI classification error:
-2026-07-24 02:03:32 [error]: AI classification error:
-2026-07-24 02:03:32 [error]: AI classification error:
-2026-07-24 02:03:32 [error]: AI classification error:
-2026-07-24 02:03:32 [error]: AI classification error:
-2026-07-24 02:03:32 [error]: AI classification error:
-2026-07-24 02:03:32 [error]: AI classification error:
-2026-07-24 02:03:32 [error]: AI classification error:
-2026-07-24 02:03:32 [error]: AI classification error:
-2026-07-24 02:03:32 [error]: AI classification error:
-2026-07-24 02:03:32 [error]: AI classification error:
-2026-07-24 02:03:32 [error]: AI classification error:
-2026-07-24 02:03:32 [error]: AI classification error:
-2026-07-24 02:03:32 [error]: AI classification error:
-2026-07-24 02:03:32 [error]: AI classification error:
-2026-07-24 02:03:32 [error]: AI classification error:
-2026-07-24 02:03:32 [error]: AI classification error:
-2026-07-24 02:03:32 [error]: AI classification error:
-2026-07-24 02:03:32 [error]: AI classification error:
-2026-07-24 02:03:32 [http]: ::1 - - [23/Jul/2026:20:33:32 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 02:03:37 [http]: ::1 - - [23/Jul/2026:20:33:37 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 02:03:52 [http]: ::1 - - [23/Jul/2026:20:33:52 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 306 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 02:03:54 [debug]: Falling back to AI for field: 03middle_i
-2026-07-24 02:03:54 [debug]: Falling back to AI for field: 20homephon
-2026-07-24 02:03:54 [debug]: Falling back to AI for field: 21workphon
-2026-07-24 02:03:54 [debug]: Falling back to AI for field: 30_user_id
-2026-07-24 02:03:54 [debug]: Falling back to AI for field: 31password
-2026-07-24 02:03:54 [debug]: Falling back to AI for field: 40cc__type
-2026-07-24 02:03:54 [debug]: Falling back to AI for field: 41ccnumber
-2026-07-24 02:03:54 [debug]: Falling back to AI for field: 43cvc
-2026-07-24 02:03:54 [debug]: Falling back to AI for field: 42ccexp_mm
-2026-07-24 02:03:54 [debug]: Falling back to AI for field: 43ccexp_yy
-2026-07-24 02:03:54 [debug]: Falling back to AI for field: 45ccissuer
-2026-07-24 02:03:54 [debug]: Falling back to AI for field: 46cccstsvc
-2026-07-24 02:03:54 [debug]: Falling back to AI for field: 61pers_ssn
-2026-07-24 02:03:54 [debug]: Falling back to AI for field: 62driv_lic
-2026-07-24 02:03:54 [debug]: Falling back to AI for field: 66mm
-2026-07-24 02:03:54 [debug]: Falling back to AI for field: 67dd
-2026-07-24 02:03:54 [debug]: Falling back to AI for field: 68yy
-2026-07-24 02:03:54 [debug]: Falling back to AI for field: 66pers_age
-2026-07-24 02:03:54 [debug]: Falling back to AI for field: 67birth_pl
-2026-07-24 02:03:54 [debug]: Falling back to AI for field: 68__income
-2026-07-24 02:03:54 [debug]: Falling back to AI for field: 71__custom
-2026-07-24 02:03:54 [debug]: Falling back to AI for field: 72__commnt
-2026-07-24 02:03:55 [error]: AI classification error:
-2026-07-24 02:03:55 [error]: AI classification error:
-2026-07-24 02:03:55 [error]: AI classification error:
-2026-07-24 02:03:55 [error]: AI classification error:
-2026-07-24 02:03:55 [error]: AI classification error:
-2026-07-24 02:03:55 [error]: AI classification error:
-2026-07-24 02:03:55 [error]: AI classification error:
-2026-07-24 02:03:55 [error]: AI classification error:
-2026-07-24 02:03:55 [error]: AI classification error:
-2026-07-24 02:03:55 [error]: AI classification error:
-2026-07-24 02:03:55 [error]: AI classification error:
-2026-07-24 02:03:55 [error]: AI classification error:
-2026-07-24 02:03:55 [error]: AI classification error:
-2026-07-24 02:03:55 [error]: AI classification error:
-2026-07-24 02:03:55 [error]: AI classification error:
-2026-07-24 02:03:55 [error]: AI classification error:
-2026-07-24 02:03:55 [error]: AI classification error:
-2026-07-24 02:03:55 [error]: AI classification error:
-2026-07-24 02:03:55 [error]: AI classification error:
-2026-07-24 02:03:55 [error]: AI classification error:
-2026-07-24 02:03:55 [error]: AI classification error:
-2026-07-24 02:03:55 [error]: AI classification error:
-2026-07-24 02:03:55 [http]: ::1 - - [23/Jul/2026:20:33:55 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 02:04:09 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-02.r0rqul9.mongodb.net
-2026-07-24 02:04:09 [info]: 🚀 Server running on http://localhost:3001
-2026-07-24 02:04:09 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
-2026-07-24 18:45:47 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-00.r0rqul9.mongodb.net
-2026-07-24 18:45:47 [info]: 🚀 Server running on http://localhost:3001
-2026-07-24 18:45:47 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
-2026-07-24 18:45:52 [http]: ::1 - - [24/Jul/2026:13:15:52 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 18:45:55 [http]: ::1 - - [24/Jul/2026:13:15:55 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 18:48:59 [http]: ::1 - - [24/Jul/2026:13:18:59 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 306 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 18:49:12 [http]: ::1 - - [24/Jul/2026:13:19:12 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 306 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 18:49:23 [http]: ::1 - - [24/Jul/2026:13:19:23 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 306 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 18:49:25 [debug]: Falling back to AI for field: 03middle_i
-2026-07-24 18:49:25 [debug]: Falling back to AI for field: 20homephon
-2026-07-24 18:49:25 [debug]: Falling back to AI for field: 21workphon
-2026-07-24 18:49:25 [debug]: Falling back to AI for field: 30_user_id
-2026-07-24 18:49:25 [debug]: Falling back to AI for field: 31password
-2026-07-24 18:49:25 [debug]: Falling back to AI for field: 40cc__type
-2026-07-24 18:49:25 [debug]: Falling back to AI for field: 41ccnumber
-2026-07-24 18:49:25 [debug]: Falling back to AI for field: 43cvc
-2026-07-24 18:49:25 [debug]: Falling back to AI for field: 42ccexp_mm
-2026-07-24 18:49:25 [debug]: Falling back to AI for field: 43ccexp_yy
-2026-07-24 18:49:25 [debug]: Falling back to AI for field: 45ccissuer
-2026-07-24 18:49:25 [debug]: Falling back to AI for field: 46cccstsvc
-2026-07-24 18:49:25 [debug]: Falling back to AI for field: 61pers_ssn
-2026-07-24 18:49:25 [debug]: Falling back to AI for field: 62driv_lic
-2026-07-24 18:49:25 [debug]: Falling back to AI for field: 66mm
-2026-07-24 18:49:25 [debug]: Falling back to AI for field: 67dd
-2026-07-24 18:49:25 [debug]: Falling back to AI for field: 68yy
-2026-07-24 18:49:25 [debug]: Falling back to AI for field: 66pers_age
-2026-07-24 18:49:25 [debug]: Falling back to AI for field: 67birth_pl
-2026-07-24 18:49:25 [debug]: Falling back to AI for field: 68__income
-2026-07-24 18:49:25 [debug]: Falling back to AI for field: 71__custom
-2026-07-24 18:49:25 [debug]: Falling back to AI for field: 72__commnt
-2026-07-24 18:49:26 [error]: AI classification error:
-2026-07-24 18:49:26 [error]: AI classification error:
-2026-07-24 18:49:26 [error]: AI classification error:
-2026-07-24 18:49:26 [error]: AI classification error:
-2026-07-24 18:49:26 [error]: AI classification error:
-2026-07-24 18:49:26 [error]: AI classification error:
-2026-07-24 18:49:26 [error]: AI classification error:
-2026-07-24 18:49:26 [error]: AI classification error:
-2026-07-24 18:49:26 [error]: AI classification error:
-2026-07-24 18:49:26 [error]: AI classification error:
-2026-07-24 18:49:26 [error]: AI classification error:
-2026-07-24 18:49:26 [error]: AI classification error:
-2026-07-24 18:49:26 [error]: AI classification error:
-2026-07-24 18:49:26 [error]: AI classification error:
-2026-07-24 18:49:26 [error]: AI classification error:
-2026-07-24 18:49:26 [error]: AI classification error:
-2026-07-24 18:49:26 [error]: AI classification error:
-2026-07-24 18:49:26 [error]: AI classification error:
-2026-07-24 18:49:26 [error]: AI classification error:
-2026-07-24 18:49:26 [error]: AI classification error:
-2026-07-24 18:49:26 [error]: AI classification error:
-2026-07-24 18:49:26 [error]: AI classification error:
-2026-07-24 18:49:26 [http]: ::1 - - [24/Jul/2026:13:19:26 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 18:49:36 [debug]: Falling back to AI for field: 03middle_i
-2026-07-24 18:49:36 [debug]: Falling back to AI for field: 20homephon
-2026-07-24 18:49:36 [debug]: Falling back to AI for field: 21workphon
-2026-07-24 18:49:36 [debug]: Falling back to AI for field: 30_user_id
-2026-07-24 18:49:36 [debug]: Falling back to AI for field: 31password
-2026-07-24 18:49:36 [debug]: Falling back to AI for field: 40cc__type
-2026-07-24 18:49:36 [debug]: Falling back to AI for field: 41ccnumber
-2026-07-24 18:49:36 [debug]: Falling back to AI for field: 43cvc
-2026-07-24 18:49:36 [debug]: Falling back to AI for field: 42ccexp_mm
-2026-07-24 18:49:36 [debug]: Falling back to AI for field: 43ccexp_yy
-2026-07-24 18:49:36 [debug]: Falling back to AI for field: 45ccissuer
-2026-07-24 18:49:36 [debug]: Falling back to AI for field: 46cccstsvc
-2026-07-24 18:49:36 [debug]: Falling back to AI for field: 61pers_ssn
-2026-07-24 18:49:36 [debug]: Falling back to AI for field: 62driv_lic
-2026-07-24 18:49:36 [debug]: Falling back to AI for field: 66mm
-2026-07-24 18:49:36 [debug]: Falling back to AI for field: 67dd
-2026-07-24 18:49:36 [debug]: Falling back to AI for field: 68yy
-2026-07-24 18:49:36 [debug]: Falling back to AI for field: 66pers_age
-2026-07-24 18:49:36 [debug]: Falling back to AI for field: 67birth_pl
-2026-07-24 18:49:36 [debug]: Falling back to AI for field: 68__income
-2026-07-24 18:49:36 [debug]: Falling back to AI for field: 71__custom
-2026-07-24 18:49:36 [debug]: Falling back to AI for field: 72__commnt
-2026-07-24 18:49:37 [error]: AI classification error:
-2026-07-24 18:49:37 [error]: AI classification error:
-2026-07-24 18:49:37 [error]: AI classification error:
-2026-07-24 18:49:37 [error]: AI classification error:
-2026-07-24 18:49:37 [error]: AI classification error:
-2026-07-24 18:49:37 [error]: AI classification error:
-2026-07-24 18:49:37 [error]: AI classification error:
-2026-07-24 18:49:37 [error]: AI classification error:
-2026-07-24 18:49:37 [error]: AI classification error:
-2026-07-24 18:49:37 [error]: AI classification error:
-2026-07-24 18:49:37 [error]: AI classification error:
-2026-07-24 18:49:37 [error]: AI classification error:
-2026-07-24 18:49:37 [error]: AI classification error:
-2026-07-24 18:49:37 [error]: AI classification error:
-2026-07-24 18:49:37 [error]: AI classification error:
-2026-07-24 18:49:37 [error]: AI classification error:
-2026-07-24 18:49:37 [error]: AI classification error:
-2026-07-24 18:49:37 [error]: AI classification error:
-2026-07-24 18:49:37 [error]: AI classification error:
-2026-07-24 18:49:37 [error]: AI classification error:
-2026-07-24 18:49:37 [error]: AI classification error:
-2026-07-24 18:49:39 [error]: AI classification error:
-2026-07-24 18:49:39 [http]: ::1 - - [24/Jul/2026:13:19:39 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 18:50:50 [debug]: Falling back to AI for field: 
-2026-07-24 18:50:51 [error]: AI classification error:
-2026-07-24 18:50:51 [http]: ::1 - - [24/Jul/2026:13:20:51 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 272 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 18:51:20 [debug]: Falling back to AI for field: Preferred IDE
-2026-07-24 18:51:20 [debug]: Falling back to AI for field: Hobbies & Interests
-2026-07-24 18:51:20 [debug]: Falling back to AI for field: Yes
-2026-07-24 18:51:21 [error]: AI classification error:
-2026-07-24 18:51:21 [error]: AI classification error:
-2026-07-24 18:51:21 [error]: AI classification error:
-2026-07-24 18:51:21 [http]: ::1 - - [24/Jul/2026:13:21:21 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 18:51:55 [http]: ::1 - - [24/Jul/2026:13:21:55 +0000] "POST /api/submissions HTTP/1.1" 201 282 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 18:51:57 [http]: ::1 - - [24/Jul/2026:13:21:57 +0000] "GET /api/profile HTTP/1.1" 200 871 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 18:51:59 [http]: ::1 - - [24/Jul/2026:13:21:59 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 18:52:34 [http]: ::1 - - [24/Jul/2026:13:22:34 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 306 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 18:52:42 [debug]: Falling back to AI for field: 
-2026-07-24 18:52:46 [error]: AI classification error:
-2026-07-24 18:52:46 [http]: ::1 - - [24/Jul/2026:13:22:46 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 272 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 18:55:55 [debug]: Falling back to AI for field: Chat with ChatGPT
-2026-07-24 18:55:58 [error]: AI classification error:
-2026-07-24 18:55:58 [http]: ::1 - - [24/Jul/2026:13:25:58 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 826 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 18:57:10 [http]: ::1 - - [24/Jul/2026:13:27:10 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 18:57:11 [http]: ::1 - - [24/Jul/2026:13:27:11 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 18:57:12 [http]: ::1 - - [24/Jul/2026:13:27:12 +0000] "GET /api/autofill/mappings HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 18:58:05 [debug]: Falling back to AI for field: Preferred IDE
-2026-07-24 18:58:05 [debug]: Falling back to AI for field: Hobbies & Interests
-2026-07-24 18:58:05 [debug]: Falling back to AI for field: Yes
-2026-07-24 18:58:07 [error]: AI classification error:
-2026-07-24 18:58:07 [error]: AI classification error:
-2026-07-24 18:58:07 [error]: AI classification error:
-2026-07-24 18:58:07 [http]: ::1 - - [24/Jul/2026:13:28:07 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 18:58:17 [http]: ::1 - - [24/Jul/2026:13:28:17 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 18:58:47 [http]: ::1 - - [24/Jul/2026:13:28:47 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:07:03 [debug]: Falling back to AI for field: 03middle_i
-2026-07-24 19:07:03 [debug]: Falling back to AI for field: 20homephon
-2026-07-24 19:07:03 [debug]: Falling back to AI for field: 21workphon
-2026-07-24 19:07:03 [debug]: Falling back to AI for field: 30_user_id
-2026-07-24 19:07:03 [debug]: Falling back to AI for field: 31password
-2026-07-24 19:07:03 [debug]: Falling back to AI for field: 40cc__type
-2026-07-24 19:07:03 [debug]: Falling back to AI for field: 41ccnumber
-2026-07-24 19:07:03 [debug]: Falling back to AI for field: 43cvc
-2026-07-24 19:07:03 [debug]: Falling back to AI for field: 42ccexp_mm
-2026-07-24 19:07:03 [debug]: Falling back to AI for field: 43ccexp_yy
-2026-07-24 19:07:03 [debug]: Falling back to AI for field: 45ccissuer
-2026-07-24 19:07:03 [debug]: Falling back to AI for field: 46cccstsvc
-2026-07-24 19:07:03 [debug]: Falling back to AI for field: 61pers_ssn
-2026-07-24 19:07:03 [debug]: Falling back to AI for field: 62driv_lic
-2026-07-24 19:07:03 [debug]: Falling back to AI for field: 66mm
-2026-07-24 19:07:03 [debug]: Falling back to AI for field: 67dd
-2026-07-24 19:07:03 [debug]: Falling back to AI for field: 68yy
-2026-07-24 19:07:03 [debug]: Falling back to AI for field: 66pers_age
-2026-07-24 19:07:03 [debug]: Falling back to AI for field: 67birth_pl
-2026-07-24 19:07:03 [debug]: Falling back to AI for field: 68__income
-2026-07-24 19:07:03 [debug]: Falling back to AI for field: 71__custom
-2026-07-24 19:07:03 [debug]: Falling back to AI for field: 72__commnt
-2026-07-24 19:07:05 [error]: AI classification error:
-2026-07-24 19:07:05 [error]: AI classification error:
-2026-07-24 19:07:05 [error]: AI classification error:
-2026-07-24 19:07:05 [error]: AI classification error:
-2026-07-24 19:07:05 [error]: AI classification error:
-2026-07-24 19:07:05 [error]: AI classification error:
-2026-07-24 19:07:05 [error]: AI classification error:
-2026-07-24 19:07:05 [error]: AI classification error:
-2026-07-24 19:07:05 [error]: AI classification error:
-2026-07-24 19:07:05 [error]: AI classification error:
-2026-07-24 19:07:05 [error]: AI classification error:
-2026-07-24 19:07:05 [error]: AI classification error:
-2026-07-24 19:07:05 [error]: AI classification error:
-2026-07-24 19:07:05 [error]: AI classification error:
-2026-07-24 19:07:05 [error]: AI classification error:
-2026-07-24 19:07:05 [error]: AI classification error:
-2026-07-24 19:07:05 [error]: AI classification error:
-2026-07-24 19:07:05 [error]: AI classification error:
-2026-07-24 19:07:06 [error]: AI classification error:
-2026-07-24 19:07:06 [error]: AI classification error:
-2026-07-24 19:07:06 [error]: AI classification error:
-2026-07-24 19:07:06 [error]: AI classification error:
-2026-07-24 19:07:06 [http]: ::1 - - [24/Jul/2026:13:37:06 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:07:27 [debug]: Falling back to AI for field: 03middle_i
-2026-07-24 19:07:27 [debug]: Falling back to AI for field: 20homephon
-2026-07-24 19:07:27 [debug]: Falling back to AI for field: 21workphon
-2026-07-24 19:07:27 [debug]: Falling back to AI for field: 30_user_id
-2026-07-24 19:07:27 [debug]: Falling back to AI for field: 31password
-2026-07-24 19:07:27 [debug]: Falling back to AI for field: 40cc__type
-2026-07-24 19:07:27 [debug]: Falling back to AI for field: 41ccnumber
-2026-07-24 19:07:27 [debug]: Falling back to AI for field: 43cvc
-2026-07-24 19:07:27 [debug]: Falling back to AI for field: 42ccexp_mm
-2026-07-24 19:07:27 [debug]: Falling back to AI for field: 43ccexp_yy
-2026-07-24 19:07:27 [debug]: Falling back to AI for field: 45ccissuer
-2026-07-24 19:07:27 [debug]: Falling back to AI for field: 46cccstsvc
-2026-07-24 19:07:27 [debug]: Falling back to AI for field: 61pers_ssn
-2026-07-24 19:07:27 [debug]: Falling back to AI for field: 62driv_lic
-2026-07-24 19:07:27 [debug]: Falling back to AI for field: 66mm
-2026-07-24 19:07:27 [debug]: Falling back to AI for field: 67dd
-2026-07-24 19:07:27 [debug]: Falling back to AI for field: 68yy
-2026-07-24 19:07:27 [debug]: Falling back to AI for field: 66pers_age
-2026-07-24 19:07:27 [debug]: Falling back to AI for field: 67birth_pl
-2026-07-24 19:07:27 [debug]: Falling back to AI for field: 68__income
-2026-07-24 19:07:27 [debug]: Falling back to AI for field: 71__custom
-2026-07-24 19:07:27 [debug]: Falling back to AI for field: 72__commnt
-2026-07-24 19:07:28 [error]: AI classification error:
-2026-07-24 19:07:28 [error]: AI classification error:
-2026-07-24 19:07:28 [error]: AI classification error:
-2026-07-24 19:07:28 [error]: AI classification error:
-2026-07-24 19:07:28 [error]: AI classification error:
-2026-07-24 19:07:28 [error]: AI classification error:
-2026-07-24 19:07:28 [error]: AI classification error:
-2026-07-24 19:07:28 [error]: AI classification error:
-2026-07-24 19:07:28 [error]: AI classification error:
-2026-07-24 19:07:28 [error]: AI classification error:
-2026-07-24 19:07:28 [error]: AI classification error:
-2026-07-24 19:07:28 [error]: AI classification error:
-2026-07-24 19:07:28 [error]: AI classification error:
-2026-07-24 19:07:28 [error]: AI classification error:
-2026-07-24 19:07:28 [error]: AI classification error:
-2026-07-24 19:07:28 [error]: AI classification error:
-2026-07-24 19:07:28 [error]: AI classification error:
-2026-07-24 19:07:28 [error]: AI classification error:
-2026-07-24 19:07:28 [error]: AI classification error:
-2026-07-24 19:07:28 [error]: AI classification error:
-2026-07-24 19:07:28 [error]: AI classification error:
-2026-07-24 19:07:28 [error]: AI classification error:
-2026-07-24 19:07:28 [http]: ::1 - - [24/Jul/2026:13:37:28 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:07:33 [http]: ::1 - - [24/Jul/2026:13:37:33 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:07:48 [http]: ::1 - - [24/Jul/2026:13:37:48 +0000] "POST /api/submissions HTTP/1.1" 201 267 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:07:50 [http]: ::1 - - [24/Jul/2026:13:37:50 +0000] "GET /api/profile HTTP/1.1" 200 871 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:07:51 [http]: ::1 - - [24/Jul/2026:13:37:51 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:07:54 [http]: ::1 - - [24/Jul/2026:13:37:54 +0000] "GET /api/documents HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:07:55 [http]: ::1 - - [24/Jul/2026:13:37:55 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:07:59 [http]: ::1 - - [24/Jul/2026:13:37:59 +0000] "GET /api/autofill/mappings HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:09:51 [http]: ::1 - - [24/Jul/2026:13:39:51 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:09:54 [http]: ::1 - - [24/Jul/2026:13:39:54 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:09:54 [http]: ::1 - - [24/Jul/2026:13:39:54 +0000] "GET /api/documents HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:11:39 [http]: ::1 - - [24/Jul/2026:13:41:39 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:11:41 [http]: ::1 - - [24/Jul/2026:13:41:41 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:13:12 [http]: ::1 - - [24/Jul/2026:13:43:12 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:13:58 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-02.r0rqul9.mongodb.net
-2026-07-24 19:13:58 [info]: 🚀 Server running on http://localhost:3001
-2026-07-24 19:13:58 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
-2026-07-24 19:14:12 [http]: ::1 - - [24/Jul/2026:13:44:12 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 860 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:14:26 [http]: ::1 - - [24/Jul/2026:13:44:26 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:15:52 [debug]: Falling back to AI for field: Favorite Color
-2026-07-24 19:15:52 [debug]: Falling back to AI for field: Zodiac Sign
-2026-07-24 19:15:52 [debug]: Falling back to AI for field: Shoe Size
-2026-07-24 19:15:52 [debug]: Falling back to AI for field: If you had a superpower, what would it be?
-2026-07-24 19:15:52 [error]: AI classification error:
-2026-07-24 19:15:52 [error]: AI classification error:
-2026-07-24 19:15:52 [error]: AI classification error:
-2026-07-24 19:15:53 [error]: AI classification error:
-2026-07-24 19:15:53 [http]: ::1 - - [24/Jul/2026:13:45:53 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:16:14 [debug]: Falling back to AI for field: Favorite Color
-2026-07-24 19:16:14 [debug]: Falling back to AI for field: Zodiac Sign
-2026-07-24 19:16:14 [debug]: Falling back to AI for field: Shoe Size
-2026-07-24 19:16:14 [debug]: Falling back to AI for field: If you had a superpower, what would it be?
-2026-07-24 19:16:15 [error]: AI classification error:
-2026-07-24 19:16:15 [error]: AI classification error:
-2026-07-24 19:16:15 [error]: AI classification error:
-2026-07-24 19:16:15 [error]: AI classification error:
-2026-07-24 19:16:15 [http]: ::1 - - [24/Jul/2026:13:46:15 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:16:55 [http]: ::1 - - [24/Jul/2026:13:46:55 +0000] "POST /api/submissions HTTP/1.1" 201 278 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:17:02 [http]: ::1 - - [24/Jul/2026:13:47:02 +0000] "GET /api/profile HTTP/1.1" 200 864 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:17:05 [http]: ::1 - - [24/Jul/2026:13:47:05 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:17:08 [http]: ::1 - - [24/Jul/2026:13:47:08 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:17:24 [http]: ::1 - - [24/Jul/2026:13:47:24 +0000] "GET /api/autofill/mappings HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:17:40 [debug]: Falling back to AI for field: Favorite Color
-2026-07-24 19:17:40 [debug]: Falling back to AI for field: Zodiac Sign
-2026-07-24 19:17:40 [debug]: Falling back to AI for field: Shoe Size
-2026-07-24 19:17:40 [debug]: Falling back to AI for field: If you had a superpower, what would it be?
-2026-07-24 19:17:41 [error]: AI classification error:
-2026-07-24 19:17:41 [error]: AI classification error:
-2026-07-24 19:17:41 [error]: AI classification error:
-2026-07-24 19:17:41 [error]: AI classification error:
-2026-07-24 19:17:41 [http]: ::1 - - [24/Jul/2026:13:47:41 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:20:05 [http]: ::1 - - [24/Jul/2026:13:50:05 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:20:10 [http]: ::1 - - [24/Jul/2026:13:50:10 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:20:13 [http]: ::1 - - [24/Jul/2026:13:50:13 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:20:13 [http]: ::1 - - [24/Jul/2026:13:50:13 +0000] "GET /api/documents HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:20:15 [http]: ::1 - - [24/Jul/2026:13:50:15 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:20:26 [http]: ::1 - - [24/Jul/2026:13:50:26 +0000] "PATCH /api/profile HTTP/1.1" 200 871 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:20:37 [http]: ::1 - - [24/Jul/2026:13:50:37 +0000] "PATCH /api/profile HTTP/1.1" 200 873 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:20:54 [http]: ::1 - - [24/Jul/2026:13:50:54 +0000] "PATCH /api/profile HTTP/1.1" 200 895 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:21:05 [http]: ::1 - - [24/Jul/2026:13:51:05 +0000] "GET /api/documents HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:21:10 [http]: ::1 - - [24/Jul/2026:13:51:10 +0000] "GET /api/autofill/mappings HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:22:21 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-00.r0rqul9.mongodb.net
-2026-07-24 19:22:21 [info]: 🚀 Server running on http://localhost:3001
-2026-07-24 19:22:21 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
-2026-07-24 19:22:28 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-01.r0rqul9.mongodb.net
-2026-07-24 19:22:28 [info]: 🚀 Server running on http://localhost:3001
-2026-07-24 19:22:28 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
-2026-07-24 19:22:31 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-01.r0rqul9.mongodb.net
-2026-07-24 19:22:31 [info]: 🚀 Server running on http://localhost:3001
-2026-07-24 19:22:31 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
-2026-07-24 19:22:33 [debug]: Falling back to AI for field: Favorite Color
-2026-07-24 19:22:33 [debug]: Falling back to AI for field: Zodiac Sign
-2026-07-24 19:22:33 [debug]: Falling back to AI for field: Shoe Size
-2026-07-24 19:22:33 [debug]: Falling back to AI for field: If you had a superpower, what would it be?
-2026-07-24 19:22:34 [error]: AI classification error:
-2026-07-24 19:22:34 [error]: AI classification error:
-2026-07-24 19:22:34 [error]: AI classification error:
-2026-07-24 19:22:34 [error]: AI classification error:
-2026-07-24 19:22:34 [http]: ::1 - - [24/Jul/2026:13:52:34 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:22:56 [debug]: Falling back to AI for field: Favorite Color
-2026-07-24 19:22:56 [debug]: Falling back to AI for field: Zodiac Sign
-2026-07-24 19:22:56 [debug]: Falling back to AI for field: Shoe Size
-2026-07-24 19:22:56 [debug]: Falling back to AI for field: If you had a superpower, what would it be?
-2026-07-24 19:22:57 [error]: AI classification error:
-2026-07-24 19:22:57 [error]: AI classification error:
-2026-07-24 19:22:57 [error]: AI classification error:
-2026-07-24 19:22:58 [error]: AI classification error:
-2026-07-24 19:22:58 [http]: ::ffff:127.0.0.1 - - [24/Jul/2026:13:52:58 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:23:25 [http]: ::1 - - [24/Jul/2026:13:53:25 +0000] "GET /api/profile HTTP/1.1" 200 913 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:23:27 [http]: ::1 - - [24/Jul/2026:13:53:27 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:23:27 [http]: ::1 - - [24/Jul/2026:13:53:27 +0000] "GET /api/documents HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:23:42 [http]: ::1 - - [24/Jul/2026:13:53:42 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 860 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:23:48 [debug]: Falling back to AI for field: 
-2026-07-24 19:23:48 [error]: AI classification error:
-2026-07-24 19:23:48 [http]: ::1 - - [24/Jul/2026:13:53:48 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 272 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:23:58 [debug]: Falling back to AI for field: Favorite Color
-2026-07-24 19:23:58 [debug]: Falling back to AI for field: Zodiac Sign
-2026-07-24 19:23:58 [debug]: Falling back to AI for field: Shoe Size
-2026-07-24 19:23:58 [debug]: Falling back to AI for field: If you had a superpower, what would it be?
-2026-07-24 19:24:00 [error]: AI classification error:
-2026-07-24 19:24:00 [debug]: Falling back to AI for field: Favorite Color
-2026-07-24 19:24:00 [debug]: Falling back to AI for field: Zodiac Sign
-2026-07-24 19:24:00 [debug]: Falling back to AI for field: Shoe Size
-2026-07-24 19:24:00 [debug]: Falling back to AI for field: If you had a superpower, what would it be?
-2026-07-24 19:24:00 [error]: AI classification error:
-2026-07-24 19:24:00 [error]: AI classification error:
-2026-07-24 19:24:00 [error]: AI classification error:
-2026-07-24 19:24:00 [http]: ::1 - - [24/Jul/2026:13:54:00 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:24:00 [error]: AI classification error:
-2026-07-24 19:24:01 [error]: AI classification error:
-2026-07-24 19:24:01 [error]: AI classification error:
-2026-07-24 19:24:02 [error]: AI classification error:
-2026-07-24 19:24:02 [http]: ::1 - - [24/Jul/2026:13:54:02 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:24:12 [debug]: Falling back to AI for field: 
-2026-07-24 19:24:13 [error]: AI classification error:
-2026-07-24 19:24:13 [http]: ::1 - - [24/Jul/2026:13:54:13 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 272 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:24:18 [http]: ::1 - - [24/Jul/2026:13:54:18 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:24:20 [http]: ::1 - - [24/Jul/2026:13:54:20 +0000] "GET /api/documents HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:24:20 [http]: ::1 - - [24/Jul/2026:13:54:20 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:24:21 [http]: ::1 - - [24/Jul/2026:13:54:21 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:24:27 [http]: ::1 - - [24/Jul/2026:13:54:27 +0000] "PATCH /api/profile HTTP/1.1" 200 912 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:24:32 [debug]: Falling back to AI for field: Favorite Color
-2026-07-24 19:24:32 [debug]: Falling back to AI for field: Zodiac Sign
-2026-07-24 19:24:32 [debug]: Falling back to AI for field: Shoe Size
-2026-07-24 19:24:32 [debug]: Falling back to AI for field: If you had a superpower, what would it be?
-2026-07-24 19:24:33 [error]: AI classification error:
-2026-07-24 19:24:33 [error]: AI classification error:
-2026-07-24 19:24:33 [error]: AI classification error:
-2026-07-24 19:24:33 [error]: AI classification error:
-2026-07-24 19:24:33 [http]: ::1 - - [24/Jul/2026:13:54:33 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:24:58 [debug]: Falling back to AI for field: Favorite Color
-2026-07-24 19:24:58 [debug]: Falling back to AI for field: Zodiac Sign
-2026-07-24 19:24:58 [debug]: Falling back to AI for field: Shoe Size
-2026-07-24 19:24:58 [debug]: Falling back to AI for field: If you had a superpower, what would it be?
-2026-07-24 19:24:59 [error]: AI classification error:
-2026-07-24 19:24:59 [error]: AI classification error:
-2026-07-24 19:24:59 [error]: AI classification error:
-2026-07-24 19:24:59 [error]: AI classification error:
-2026-07-24 19:24:59 [http]: ::1 - - [24/Jul/2026:13:54:59 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:25:37 [debug]: Falling back to AI for field: Favorite Color
-2026-07-24 19:25:37 [debug]: Falling back to AI for field: Zodiac Sign
-2026-07-24 19:25:37 [debug]: Falling back to AI for field: Shoe Size
-2026-07-24 19:25:37 [debug]: Falling back to AI for field: If you had a superpower, what would it be?
-2026-07-24 19:25:37 [error]: AI classification error:
-2026-07-24 19:25:37 [error]: AI classification error:
-2026-07-24 19:25:37 [error]: AI classification error:
-2026-07-24 19:25:37 [error]: AI classification error:
-2026-07-24 19:25:37 [http]: ::1 - - [24/Jul/2026:13:55:37 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:26:18 [http]: ::1 - - [24/Jul/2026:13:56:18 +0000] "POST /api/submissions HTTP/1.1" 201 406 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:26:22 [http]: ::1 - - [24/Jul/2026:13:56:22 +0000] "GET /api/profile HTTP/1.1" 200 913 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:26:24 [http]: ::1 - - [24/Jul/2026:13:56:24 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:26:25 [http]: ::1 - - [24/Jul/2026:13:56:25 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:26:29 [http]: ::1 - - [24/Jul/2026:13:56:29 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:26:31 [http]: ::1 - - [24/Jul/2026:13:56:31 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:26:32 [http]: ::1 - - [24/Jul/2026:13:56:32 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:26:32 [http]: ::1 - - [24/Jul/2026:13:56:32 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:29:28 [debug]: Falling back to AI for field: Favorite Color
-2026-07-24 19:29:28 [debug]: Falling back to AI for field: Zodiac Sign
-2026-07-24 19:29:28 [debug]: Falling back to AI for field: Shoe Size
-2026-07-24 19:29:28 [debug]: Falling back to AI for field: If you had a superpower, what would it be?
-2026-07-24 19:29:29 [error]: AI classification error:
-2026-07-24 19:29:29 [error]: AI classification error:
-2026-07-24 19:29:29 [error]: AI classification error:
-2026-07-24 19:29:29 [error]: AI classification error:
-2026-07-24 19:29:29 [http]: ::1 - - [24/Jul/2026:13:59:29 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:29:54 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-01.r0rqul9.mongodb.net
-2026-07-24 19:29:54 [info]: 🚀 Server running on http://localhost:3001
-2026-07-24 19:29:54 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
-2026-07-24 19:30:27 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-00.r0rqul9.mongodb.net
-2026-07-24 19:30:27 [info]: 🚀 Server running on http://localhost:3001
-2026-07-24 19:30:27 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
-2026-07-24 19:31:14 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-02.r0rqul9.mongodb.net
-2026-07-24 19:31:14 [info]: 🚀 Server running on http://localhost:3001
-2026-07-24 19:31:14 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
-2026-07-24 19:31:40 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-01.r0rqul9.mongodb.net
-2026-07-24 19:31:40 [info]: 🚀 Server running on http://localhost:3001
-2026-07-24 19:31:40 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
-2026-07-24 19:31:41 [debug]: Falling back to AI for field: Favorite Color
-2026-07-24 19:31:41 [debug]: Falling back to AI for field: Zodiac Sign
-2026-07-24 19:31:41 [debug]: Falling back to AI for field: Shoe Size
-2026-07-24 19:31:41 [debug]: Falling back to AI for field: If you had a superpower, what would it be?
-2026-07-24 19:31:43 [error]: AI classification error:
-2026-07-24 19:31:43 [error]: AI classification error:
-2026-07-24 19:31:43 [error]: AI classification error:
-2026-07-24 19:31:44 [error]: AI classification error:
-2026-07-24 19:31:44 [http]: ::1 - - [24/Jul/2026:14:01:44 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:32:22 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-01.r0rqul9.mongodb.net
-2026-07-24 19:32:22 [info]: 🚀 Server running on http://localhost:3001
-2026-07-24 19:32:22 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
-2026-07-24 19:32:44 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-02.r0rqul9.mongodb.net
-2026-07-24 19:32:44 [info]: 🚀 Server running on http://localhost:3001
-2026-07-24 19:32:44 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
-2026-07-24 19:33:13 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-02.r0rqul9.mongodb.net
-2026-07-24 19:33:13 [info]: 🚀 Server running on http://localhost:3001
-2026-07-24 19:33:13 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
-2026-07-24 19:33:14 [debug]: Falling back to AI for field: Favorite Color
-2026-07-24 19:33:14 [debug]: Falling back to AI for field: Zodiac Sign
-2026-07-24 19:33:14 [debug]: Falling back to AI for field: Shoe Size
-2026-07-24 19:33:14 [debug]: Falling back to AI for field: If you had a superpower, what would it be?
-2026-07-24 19:33:16 [error]: AI classification error:
-2026-07-24 19:33:16 [error]: AI classification error:
-2026-07-24 19:33:16 [error]: AI classification error:
-2026-07-24 19:33:16 [error]: AI classification error:
-2026-07-24 19:33:16 [http]: ::1 - - [24/Jul/2026:14:03:16 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:33:53 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-02.r0rqul9.mongodb.net
-2026-07-24 19:33:53 [info]: 🚀 Server running on http://localhost:3001
-2026-07-24 19:33:53 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
-2026-07-24 19:34:12 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-02.r0rqul9.mongodb.net
-2026-07-24 19:34:12 [info]: 🚀 Server running on http://localhost:3001
-2026-07-24 19:34:12 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
-2026-07-24 19:35:07 [debug]: Falling back to AI for field: Favorite Color
-2026-07-24 19:35:07 [debug]: Falling back to AI for field: Zodiac Sign
-2026-07-24 19:35:07 [debug]: Falling back to AI for field: Shoe Size
-2026-07-24 19:35:07 [debug]: Falling back to AI for field: If you had a superpower, what would it be?
-2026-07-24 19:35:07 [error]: AI classification error:
-2026-07-24 19:35:07 [error]: AI classification error:
-2026-07-24 19:35:07 [error]: AI classification error:
-2026-07-24 19:35:08 [error]: AI classification error:
-2026-07-24 19:35:08 [http]: ::1 - - [24/Jul/2026:14:05:08 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:35:14 [debug]: Falling back to AI for field: Favorite Color
-2026-07-24 19:35:14 [debug]: Falling back to AI for field: Zodiac Sign
-2026-07-24 19:35:14 [debug]: Falling back to AI for field: Shoe Size
-2026-07-24 19:35:14 [debug]: Falling back to AI for field: If you had a superpower, what would it be?
-2026-07-24 19:35:15 [error]: AI classification error:
-2026-07-24 19:35:15 [error]: AI classification error:
-2026-07-24 19:35:15 [error]: AI classification error:
-2026-07-24 19:35:15 [error]: AI classification error:
-2026-07-24 19:35:15 [http]: ::1 - - [24/Jul/2026:14:05:15 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:35:24 [http]: ::1 - - [24/Jul/2026:14:05:24 +0000] "GET /api/profile HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:35:26 [http]: ::1 - - [24/Jul/2026:14:05:26 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:35:38 [http]: ::1 - - [24/Jul/2026:14:05:38 +0000] "PATCH /api/profile HTTP/1.1" 200 1018 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:35:43 [debug]: Falling back to AI for field: Favorite Color
-2026-07-24 19:35:43 [debug]: Falling back to AI for field: Zodiac Sign
-2026-07-24 19:35:43 [debug]: Falling back to AI for field: Shoe Size
-2026-07-24 19:35:43 [debug]: Falling back to AI for field: If you had a superpower, what would it be?
-2026-07-24 19:35:43 [error]: AI classification error:
-2026-07-24 19:35:44 [error]: AI classification error:
-2026-07-24 19:35:44 [error]: AI classification error:
-2026-07-24 19:35:44 [error]: AI classification error:
-2026-07-24 19:35:44 [http]: ::1 - - [24/Jul/2026:14:05:44 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:35:55 [debug]: Falling back to AI for field: Favorite Color
-2026-07-24 19:35:55 [debug]: Falling back to AI for field: Zodiac Sign
-2026-07-24 19:35:55 [debug]: Falling back to AI for field: Shoe Size
-2026-07-24 19:35:55 [debug]: Falling back to AI for field: If you had a superpower, what would it be?
-2026-07-24 19:35:56 [error]: AI classification error:
-2026-07-24 19:35:56 [error]: AI classification error:
-2026-07-24 19:35:56 [error]: AI classification error:
-2026-07-24 19:35:56 [error]: AI classification error:
-2026-07-24 19:35:56 [http]: ::1 - - [24/Jul/2026:14:05:56 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:39:26 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-02.r0rqul9.mongodb.net
-2026-07-24 19:39:26 [info]: 🚀 Server running on http://localhost:3001
-2026-07-24 19:39:26 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
-2026-07-24 19:39:59 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-02.r0rqul9.mongodb.net
-2026-07-24 19:39:59 [info]: 🚀 Server running on http://localhost:3001
-2026-07-24 19:39:59 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
-2026-07-24 19:39:59 [debug]: Falling back to AI for field: Favorite Color
-2026-07-24 19:39:59 [debug]: Falling back to AI for field: Zodiac Sign
-2026-07-24 19:39:59 [debug]: Falling back to AI for field: Shoe Size
-2026-07-24 19:39:59 [debug]: Falling back to AI for field: If you had a superpower, what would it be?
-2026-07-24 19:40:01 [error]: AI classification error:
-2026-07-24 19:40:01 [error]: AI classification error:
-2026-07-24 19:40:01 [error]: AI classification error:
-2026-07-24 19:40:01 [error]: AI classification error:
-2026-07-24 19:40:01 [http]: ::1 - - [24/Jul/2026:14:10:01 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:40:08 [error]: AI classification error:
-2026-07-24 19:40:10 [debug]: Falling back to AI for field: Favorite Color
-2026-07-24 19:40:10 [debug]: Falling back to AI for field: Zodiac Sign
-2026-07-24 19:40:10 [debug]: Falling back to AI for field: Shoe Size
-2026-07-24 19:40:10 [debug]: Falling back to AI for field: If you had a superpower, what would it be?
-2026-07-24 19:40:11 [error]: AI classification error:
-2026-07-24 19:40:11 [error]: AI classification error:
-2026-07-24 19:40:11 [error]: AI classification error:
-2026-07-24 19:40:11 [error]: AI classification error:
-2026-07-24 19:40:11 [http]: ::ffff:127.0.0.1 - - [24/Jul/2026:14:10:11 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:40:26 [http]: ::1 - - [24/Jul/2026:14:10:26 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 306 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:41:43 [debug]: Falling back to AI for field: Favorite Color
-2026-07-24 19:41:43 [debug]: Falling back to AI for field: Zodiac Sign
-2026-07-24 19:41:43 [debug]: Falling back to AI for field: Shoe Size
-2026-07-24 19:41:43 [debug]: Falling back to AI for field: If you had a superpower, what would it be?
-2026-07-24 19:41:45 [error]: AI classification error:
-2026-07-24 19:41:45 [error]: AI classification error:
-2026-07-24 19:41:45 [error]: AI classification error:
-2026-07-24 19:41:45 [error]: AI classification error:
-2026-07-24 19:41:45 [http]: ::1 - - [24/Jul/2026:14:11:45 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:44:45 [debug]: Falling back to AI for field: Favorite Color
-2026-07-24 19:44:45 [debug]: Falling back to AI for field: Zodiac Sign
-2026-07-24 19:44:45 [debug]: Falling back to AI for field: Shoe Size
-2026-07-24 19:44:45 [debug]: Falling back to AI for field: If you had a superpower, what would it be?
-2026-07-24 19:44:46 [error]: AI classification error:
-2026-07-24 19:44:46 [error]: AI classification error:
-2026-07-24 19:44:46 [error]: AI classification error:
-2026-07-24 19:44:46 [error]: AI classification error:
-2026-07-24 19:44:46 [http]: ::1 - - [24/Jul/2026:14:14:46 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:51:27 [debug]: Falling back to AI for field: 
-2026-07-24 19:51:30 [error]: AI classification error:
-2026-07-24 19:51:30 [http]: ::1 - - [24/Jul/2026:14:21:30 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 272 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:52:15 [error]: AI classification error:
-2026-07-24 19:52:22 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-01.r0rqul9.mongodb.net
-2026-07-24 19:52:22 [info]: 🚀 Server running on http://localhost:3001
-2026-07-24 19:52:22 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
-2026-07-24 19:52:49 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-02.r0rqul9.mongodb.net
-2026-07-24 19:52:49 [info]: 🚀 Server running on http://localhost:3001
-2026-07-24 19:52:49 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
-2026-07-24 19:53:01 [debug]: AI classified field "Pet's Name" → null (1)
-2026-07-24 19:53:08 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-00.r0rqul9.mongodb.net
-2026-07-24 19:53:08 [info]: 🚀 Server running on http://localhost:3001
-2026-07-24 19:53:08 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
-2026-07-24 19:53:50 [http]: ::1 - - [24/Jul/2026:14:23:50 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:54:29 [http]: ::1 - - [24/Jul/2026:14:24:29 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:55:57 [debug]: Falling back to AI for field: 
-2026-07-24 19:56:02 [debug]: AI classified field "" → null (0.96)
-2026-07-24 19:56:02 [http]: ::1 - - [24/Jul/2026:14:26:02 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 284 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:56:03 [debug]: Falling back to AI for field: 
-2026-07-24 19:56:19 [debug]: AI classified field "" → null (0.9)
-2026-07-24 19:56:19 [http]: ::1 - - [24/Jul/2026:14:26:19 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 284 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:56:23 [http]: ::1 - - [24/Jul/2026:14:26:23 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:56:37 [http]: ::1 - - [24/Jul/2026:14:26:37 +0000] "POST /api/submissions HTTP/1.1" 201 406 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:56:41 [http]: ::1 - - [24/Jul/2026:14:26:41 +0000] "GET /api/profile HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:56:43 [http]: ::1 - - [24/Jul/2026:14:26:43 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:57:02 [http]: ::1 - - [24/Jul/2026:14:27:02 +0000] "PATCH /api/profile HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:57:05 [http]: ::1 - - [24/Jul/2026:14:27:05 +0000] "GET /api/profile HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:57:11 [http]: ::1 - - [24/Jul/2026:14:27:11 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:57:19 [http]: ::1 - - [24/Jul/2026:14:27:19 +0000] "POST /api/submissions HTTP/1.1" 201 406 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:57:22 [http]: ::1 - - [24/Jul/2026:14:27:22 +0000] "GET /api/autofill/mappings HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:57:28 [http]: ::1 - - [24/Jul/2026:14:27:28 +0000] "DELETE /api/autofill/mappings/6a627a08742ac406f4d5215c HTTP/1.1" 200 16 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:57:29 [http]: ::1 - - [24/Jul/2026:14:27:29 +0000] "DELETE /api/autofill/mappings/6a627a08742ac406f4d5215b HTTP/1.1" 200 16 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:57:30 [http]: ::1 - - [24/Jul/2026:14:27:30 +0000] "DELETE /api/autofill/mappings/6a627a08742ac406f4d5215a HTTP/1.1" 200 16 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:57:33 [http]: ::1 - - [24/Jul/2026:14:27:33 +0000] "DELETE /api/autofill/mappings/6a627a08742ac406f4d52159 HTTP/1.1" 200 16 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:57:34 [http]: ::1 - - [24/Jul/2026:14:27:34 +0000] "DELETE /api/autofill/mappings/6a627a08742ac406f4d52158 HTTP/1.1" 200 16 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:57:36 [http]: ::1 - - [24/Jul/2026:14:27:36 +0000] "DELETE /api/autofill/mappings/6a627a08742ac406f4d52157 HTTP/1.1" 200 16 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:57:38 [http]: ::1 - - [24/Jul/2026:14:27:38 +0000] "DELETE /api/autofill/mappings/6a627a08742ac406f4d52156 HTTP/1.1" 200 16 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:57:39 [http]: ::1 - - [24/Jul/2026:14:27:39 +0000] "DELETE /api/autofill/mappings/6a627a08742ac406f4d52155 HTTP/1.1" 200 16 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:57:41 [http]: ::1 - - [24/Jul/2026:14:27:41 +0000] "DELETE /api/autofill/mappings/6a627a08742ac406f4d52154 HTTP/1.1" 429 42 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:57:44 [http]: ::1 - - [24/Jul/2026:14:27:44 +0000] "DELETE /api/autofill/mappings/6a627a08742ac406f4d52154 HTTP/1.1" 429 42 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:57:46 [http]: ::1 - - [24/Jul/2026:14:27:46 +0000] "GET /api/profile HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:57:48 [http]: ::1 - - [24/Jul/2026:14:27:48 +0000] "GET /api/autofill/mappings HTTP/1.1" 429 42 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 19:59:49 [debug]: Falling back to AI for field: Chat with ChatGPT
-2026-07-24 19:59:52 [debug]: AI classified field "Chat with ChatGPT" → null (0.95)
-2026-07-24 19:59:52 [http]: ::1 - - [24/Jul/2026:14:29:52 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 826 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 20:16:54 [debug]: Falling back to AI for field: Blood Group
-2026-07-24 20:16:54 [debug]: Falling back to AI for field: Favorite Movie
-2026-07-24 20:17:01 [debug]: AI classified field "Blood Group" → null (0)
-2026-07-24 20:17:01 [debug]: AI classified field "Favorite Movie" → null (1)
-2026-07-24 20:17:01 [http]: ::1 - - [24/Jul/2026:14:47:01 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 20:18:03 [debug]: Falling back to AI for field: Blood Group
-2026-07-24 20:18:03 [debug]: AI cache hit for fingerprint: bc606236...
-2026-07-24 20:18:03 [debug]: Falling back to AI for field: Favorite Movie
-2026-07-24 20:18:03 [debug]: AI cache hit for fingerprint: 6c0a2474...
-2026-07-24 20:18:03 [http]: ::1 - - [24/Jul/2026:14:48:03 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 20:19:39 [http]: ::1 - - [24/Jul/2026:14:49:39 +0000] "POST /api/submissions HTTP/1.1" 201 507 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 20:19:41 [http]: ::1 - - [24/Jul/2026:14:49:41 +0000] "GET /api/profile HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 20:19:42 [http]: ::1 - - [24/Jul/2026:14:49:42 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 20:20:11 [http]: ::1 - - [24/Jul/2026:14:50:11 +0000] "PATCH /api/profile HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 20:23:24 [http]: ::1 - - [24/Jul/2026:14:53:24 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 306 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 20:25:14 [http]: ::1 - - [24/Jul/2026:14:55:14 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 20:25:15 [http]: ::1 - - [24/Jul/2026:14:55:15 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 20:26:24 [http]: ::1 - - [24/Jul/2026:14:56:24 +0000] "POST /api/submissions HTTP/1.1" 201 516 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 20:26:25 [http]: ::1 - - [24/Jul/2026:14:56:25 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 20:29:08 [debug]: Falling back to AI for field: 
-2026-07-24 20:29:11 [debug]: AI classified field "" → null (0.1)
-2026-07-24 20:29:11 [http]: ::1 - - [24/Jul/2026:14:59:11 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 272 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 20:42:42 [http]: ::1 - - [24/Jul/2026:15:12:42 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 21:43:25 [http]: ::1 - - [24/Jul/2026:16:13:25 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 22:19:34 [warn]: MongoDB disconnected
-2026-07-24 22:44:17 [http]: ::1 - - [24/Jul/2026:17:14:17 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 22:44:23 [http]: ::1 - - [24/Jul/2026:17:14:23 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 22:46:20 [http]: ::1 - - [24/Jul/2026:17:16:20 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 22:46:23 [http]: ::1 - - [24/Jul/2026:17:16:23 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 22:46:33 [http]: ::1 - - [24/Jul/2026:17:16:33 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 22:46:51 [http]: ::1 - - [24/Jul/2026:17:16:51 +0000] "GET /api/profile HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 22:46:53 [http]: ::1 - - [24/Jul/2026:17:16:53 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 22:47:09 [http]: ::1 - - [24/Jul/2026:17:17:09 +0000] "PATCH /api/profile HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 22:47:14 [http]: ::1 - - [24/Jul/2026:17:17:14 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 22:47:20 [http]: ::1 - - [24/Jul/2026:17:17:20 +0000] "POST /api/submissions HTTP/1.1" 201 90 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 22:52:32 [http]: ::1 - - [24/Jul/2026:17:22:32 +0000] "GET /api/profile HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 22:52:39 [http]: ::1 - - [24/Jul/2026:17:22:39 +0000] "PATCH /api/profile HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 22:53:30 [http]: ::1 - - [24/Jul/2026:17:23:30 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 22:53:46 [debug]: Falling back to AI for field: 
-2026-07-24 22:53:46 [debug]: AI cache hit for fingerprint: 4d542e1e...
-2026-07-24 22:53:46 [http]: ::1 - - [24/Jul/2026:17:23:46 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 272 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 22:56:33 [http]: ::1 - - [24/Jul/2026:17:26:33 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 22:57:12 [http]: ::1 - - [24/Jul/2026:17:27:12 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 22:59:16 [http]: ::1 - - [24/Jul/2026:17:29:16 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 23:01:01 [http]: ::1 - - [24/Jul/2026:17:31:01 +0000] "POST /api/submissions HTTP/1.1" - - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 23:01:01 [http]: ::1 - - [24/Jul/2026:17:31:01 +0000] "POST /api/autofill/suggest HTTP/1.1" - - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 23:01:01 [http]: ::1 - - [24/Jul/2026:17:31:01 +0000] "POST /api/autofill/suggest HTTP/1.1" - - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 23:01:18 [http]: ::1 - - [24/Jul/2026:17:31:18 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 23:01:21 [http]: ::1 - - [24/Jul/2026:17:31:21 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 23:01:29 [http]: ::1 - - [24/Jul/2026:17:31:29 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 23:02:01 [http]: ::1 - - [24/Jul/2026:17:32:01 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 306 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 23:02:28 [http]: ::1 - - [24/Jul/2026:17:32:28 +0000] "GET /api/profile HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 23:14:07 [http]: ::1 - - [24/Jul/2026:17:44:07 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 23:14:13 [debug]: Falling back to AI for field: 02frstname
-2026-07-24 23:14:13 [debug]: Falling back to AI for field: 03middle_i
-2026-07-24 23:14:13 [debug]: Falling back to AI for field: 20homephon
-2026-07-24 23:14:13 [debug]: Falling back to AI for field: 21workphon
-2026-07-24 23:14:13 [debug]: Falling back to AI for field: 23cellphon
-2026-07-24 23:14:13 [debug]: Falling back to AI for field: 25web_site
-2026-07-24 23:14:13 [debug]: Falling back to AI for field: 30_user_id
-2026-07-24 23:14:13 [debug]: Falling back to AI for field: 31password
-2026-07-24 23:14:13 [debug]: Falling back to AI for field: 40cc__type
-2026-07-24 23:14:13 [debug]: Falling back to AI for field: 41ccnumber
-2026-07-24 23:14:13 [debug]: Falling back to AI for field: 43cvc
-2026-07-24 23:14:13 [debug]: Falling back to AI for field: 42ccexp_mm
-2026-07-24 23:14:13 [debug]: Falling back to AI for field: 43ccexp_yy
-2026-07-24 23:14:13 [debug]: Falling back to AI for field: 44cc_uname
-2026-07-24 23:14:13 [debug]: Falling back to AI for field: 45ccissuer
-2026-07-24 23:14:13 [debug]: Falling back to AI for field: 46cccstsvc
-2026-07-24 23:14:13 [debug]: Falling back to AI for field: 61pers_ssn
-2026-07-24 23:14:13 [debug]: Falling back to AI for field: 62driv_lic
-2026-07-24 23:14:13 [debug]: Falling back to AI for field: 66mm
-2026-07-24 23:14:13 [debug]: Falling back to AI for field: 67dd
-2026-07-24 23:14:13 [debug]: Falling back to AI for field: 68yy
-2026-07-24 23:14:13 [debug]: Falling back to AI for field: 66pers_age
-2026-07-24 23:14:13 [debug]: Falling back to AI for field: 67birth_pl
-2026-07-24 23:14:13 [debug]: Falling back to AI for field: 68__income
-2026-07-24 23:14:13 [debug]: Falling back to AI for field: 71__custom
-2026-07-24 23:14:13 [debug]: Falling back to AI for field: 72__commnt
-2026-07-24 23:14:16 [debug]: AI classified field "23cellphon" → phone (0.85)
-2026-07-24 23:14:16 [debug]: AI classified field "66pers_age" → null (0.95)
-2026-07-24 23:14:16 [debug]: AI classified field "46cccstsvc" → null (0.1)
-2026-07-24 23:14:17 [debug]: AI classified field "43ccexp_yy" → null (0.1)
-2026-07-24 23:14:17 [debug]: AI classified field "30_user_id" → null (0)
-2026-07-24 23:14:17 [debug]: AI classified field "68__income" → null (0.1)
-2026-07-24 23:14:18 [debug]: AI classified field "31password" → null (0)
-2026-07-24 23:14:18 [debug]: AI classified field "41ccnumber" → null (0.95)
-2026-07-24 23:14:18 [debug]: AI classified field "02frstname" → firstName (0.9)
-2026-07-24 23:14:18 [debug]: AI classified field "20homephon" → null (0)
-2026-07-24 23:14:18 [debug]: AI classified field "62driv_lic" → drivingLicenseNumber (0.95)
-2026-07-24 23:14:19 [debug]: AI classified field "44cc_uname" → null (0)
-2026-07-24 23:14:19 [debug]: AI classified field "42ccexp_mm" → null (0.9)
-2026-07-24 23:14:19 [debug]: AI classified field "72__commnt" → null (0.9)
-2026-07-24 23:14:19 [debug]: AI classified field "43cvc" → null (0.9)
-2026-07-24 23:14:19 [debug]: AI classified field "25web_site" → null (0)
-2026-07-24 23:14:20 [debug]: AI classified field "03middle_i" → middleName (0.9)
-2026-07-24 23:14:20 [debug]: AI classified field "67dd" → null (0.1)
-2026-07-24 23:14:20 [debug]: AI classified field "21workphon" → null (0)
-2026-07-24 23:14:21 [debug]: AI classified field "45ccissuer" → null (0)
-2026-07-24 23:14:23 [debug]: AI classified field "66mm" → null (1)
-2026-07-24 23:14:23 [http]: ::1 - - [24/Jul/2026:17:44:23 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 23:14:24 [debug]: AI classified field "40cc__type" → null (0)
-2026-07-24 23:14:26 [debug]: AI classified field "71__custom" → null (0)
-2026-07-24 23:14:27 [debug]: AI classified field "67birth_pl" → null (0)
-2026-07-24 23:14:28 [debug]: AI classified field "68yy" → null (0.95)
-2026-07-24 23:14:28 [debug]: Falling back to AI for field: 02frstname
-2026-07-24 23:14:28 [debug]: AI cache hit for fingerprint: 56246d92...
-2026-07-24 23:14:28 [debug]: Falling back to AI for field: 03middle_i
-2026-07-24 23:14:28 [debug]: AI cache hit for fingerprint: 26dcf910...
-2026-07-24 23:14:28 [debug]: Falling back to AI for field: 20homephon
-2026-07-24 23:14:28 [debug]: AI cache hit for fingerprint: 66b2414c...
-2026-07-24 23:14:28 [debug]: Falling back to AI for field: 21workphon
-2026-07-24 23:14:28 [debug]: AI cache hit for fingerprint: 60b49ef4...
-2026-07-24 23:14:28 [debug]: Falling back to AI for field: 23cellphon
-2026-07-24 23:14:28 [debug]: AI cache hit for fingerprint: c9f5239e...
-2026-07-24 23:14:28 [debug]: Falling back to AI for field: 25web_site
-2026-07-24 23:14:28 [debug]: AI cache hit for fingerprint: 5a236c47...
-2026-07-24 23:14:28 [debug]: Falling back to AI for field: 30_user_id
-2026-07-24 23:14:28 [debug]: AI cache hit for fingerprint: a57d31e0...
-2026-07-24 23:14:28 [debug]: Falling back to AI for field: 31password
-2026-07-24 23:14:28 [debug]: AI cache hit for fingerprint: 2f4883a1...
-2026-07-24 23:14:28 [debug]: Falling back to AI for field: 40cc__type
-2026-07-24 23:14:28 [debug]: AI cache hit for fingerprint: 5ad7f448...
-2026-07-24 23:14:28 [debug]: Falling back to AI for field: 41ccnumber
-2026-07-24 23:14:28 [debug]: AI cache hit for fingerprint: 33ddf084...
-2026-07-24 23:14:28 [debug]: Falling back to AI for field: 43cvc
-2026-07-24 23:14:28 [debug]: AI cache hit for fingerprint: d23e4f3b...
-2026-07-24 23:14:28 [debug]: Falling back to AI for field: 42ccexp_mm
-2026-07-24 23:14:28 [debug]: AI cache hit for fingerprint: e15a2f5a...
-2026-07-24 23:14:28 [debug]: Falling back to AI for field: 43ccexp_yy
-2026-07-24 23:14:28 [debug]: AI cache hit for fingerprint: f0e53588...
-2026-07-24 23:14:28 [debug]: Falling back to AI for field: 44cc_uname
-2026-07-24 23:14:28 [debug]: AI cache hit for fingerprint: 5ffbf97d...
-2026-07-24 23:14:28 [debug]: Falling back to AI for field: 45ccissuer
-2026-07-24 23:14:28 [debug]: AI cache hit for fingerprint: 1388c28d...
-2026-07-24 23:14:28 [debug]: Falling back to AI for field: 46cccstsvc
-2026-07-24 23:14:28 [debug]: AI cache hit for fingerprint: 007c67ca...
-2026-07-24 23:14:28 [debug]: Falling back to AI for field: 61pers_ssn
-2026-07-24 23:14:28 [debug]: Falling back to AI for field: 62driv_lic
-2026-07-24 23:14:28 [debug]: AI cache hit for fingerprint: be671abf...
-2026-07-24 23:14:28 [debug]: Falling back to AI for field: 66mm
-2026-07-24 23:14:28 [debug]: AI cache hit for fingerprint: f38b3e7d...
-2026-07-24 23:14:28 [debug]: Falling back to AI for field: 67dd
-2026-07-24 23:14:28 [debug]: AI cache hit for fingerprint: ea2d8917...
-2026-07-24 23:14:28 [debug]: Falling back to AI for field: 68yy
-2026-07-24 23:14:28 [debug]: AI cache hit for fingerprint: bea669ad...
-2026-07-24 23:14:28 [debug]: Falling back to AI for field: 66pers_age
-2026-07-24 23:14:28 [debug]: AI cache hit for fingerprint: 378a63c3...
-2026-07-24 23:14:28 [debug]: Falling back to AI for field: 67birth_pl
-2026-07-24 23:14:28 [debug]: AI cache hit for fingerprint: 06454804...
-2026-07-24 23:14:28 [debug]: Falling back to AI for field: 68__income
-2026-07-24 23:14:28 [debug]: AI cache hit for fingerprint: 5f77c71f...
-2026-07-24 23:14:28 [debug]: Falling back to AI for field: 71__custom
-2026-07-24 23:14:28 [debug]: AI cache hit for fingerprint: 836eddc5...
-2026-07-24 23:14:28 [debug]: Falling back to AI for field: 72__commnt
-2026-07-24 23:14:28 [debug]: AI cache hit for fingerprint: 37ba5a97...
-2026-07-24 23:14:29 [debug]: AI classified field "61pers_ssn" → null (0)
-2026-07-24 23:14:29 [http]: ::1 - - [24/Jul/2026:17:44:29 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 23:14:31 [debug]: AI classified field "61pers_ssn" → null (0.95)
-2026-07-24 23:14:31 [http]: ::1 - - [24/Jul/2026:17:44:31 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 23:15:13 [http]: ::1 - - [24/Jul/2026:17:45:13 +0000] "POST /api/submissions HTTP/1.1" 201 101 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 23:15:16 [http]: ::1 - - [24/Jul/2026:17:45:16 +0000] "POST /api/submissions HTTP/1.1" 201 101 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 23:15:18 [http]: ::1 - - [24/Jul/2026:17:45:18 +0000] "POST /api/submissions HTTP/1.1" 201 101 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 23:15:31 [http]: ::1 - - [24/Jul/2026:17:45:31 +0000] "POST /api/submissions HTTP/1.1" 201 107 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 23:15:38 [http]: ::1 - - [24/Jul/2026:17:45:38 +0000] "POST /api/submissions HTTP/1.1" 201 102 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 23:15:42 [http]: ::1 - - [24/Jul/2026:17:45:42 +0000] "POST /api/submissions HTTP/1.1" 201 107 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 23:15:54 [http]: ::1 - - [24/Jul/2026:17:45:54 +0000] "POST /api/submissions HTTP/1.1" 201 107 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 23:15:55 [http]: ::1 - - [24/Jul/2026:17:45:55 +0000] "POST /api/submissions HTTP/1.1" 201 107 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 23:15:59 [http]: ::1 - - [24/Jul/2026:17:45:59 +0000] "POST /api/submissions HTTP/1.1" 201 465 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 23:16:05 [debug]: Falling back to AI for field: 03middle_i
-2026-07-24 23:16:05 [debug]: AI cache hit for fingerprint: 26dcf910...
-2026-07-24 23:16:05 [debug]: Falling back to AI for field: 20homephon
-2026-07-24 23:16:05 [debug]: AI cache hit for fingerprint: 66b2414c...
-2026-07-24 23:16:05 [debug]: Falling back to AI for field: 21workphon
-2026-07-24 23:16:05 [debug]: AI cache hit for fingerprint: 60b49ef4...
-2026-07-24 23:16:05 [debug]: Falling back to AI for field: 25web_site
-2026-07-24 23:16:05 [debug]: AI cache hit for fingerprint: 5a236c47...
-2026-07-24 23:16:05 [debug]: Falling back to AI for field: 44cc_uname
-2026-07-24 23:16:05 [debug]: AI cache hit for fingerprint: 5ffbf97d...
-2026-07-24 23:16:05 [debug]: Falling back to AI for field: 45ccissuer
-2026-07-24 23:16:05 [debug]: AI cache hit for fingerprint: 1388c28d...
-2026-07-24 23:16:05 [debug]: Falling back to AI for field: 46cccstsvc
-2026-07-24 23:16:05 [debug]: AI cache hit for fingerprint: 007c67ca...
-2026-07-24 23:16:05 [debug]: Falling back to AI for field: 61pers_ssn
-2026-07-24 23:16:05 [debug]: AI cache hit for fingerprint: a4c891e1...
-2026-07-24 23:16:05 [debug]: Falling back to AI for field: 62driv_lic
-2026-07-24 23:16:05 [debug]: AI cache hit for fingerprint: be671abf...
-2026-07-24 23:16:05 [debug]: Falling back to AI for field: 66pers_age
-2026-07-24 23:16:05 [debug]: AI cache hit for fingerprint: 378a63c3...
-2026-07-24 23:16:05 [debug]: Falling back to AI for field: 67birth_pl
-2026-07-24 23:16:05 [debug]: AI cache hit for fingerprint: 06454804...
-2026-07-24 23:16:05 [debug]: Falling back to AI for field: 68__income
-2026-07-24 23:16:05 [debug]: AI cache hit for fingerprint: 5f77c71f...
-2026-07-24 23:16:05 [debug]: Falling back to AI for field: 71__custom
-2026-07-24 23:16:05 [debug]: AI cache hit for fingerprint: 836eddc5...
-2026-07-24 23:16:05 [debug]: Falling back to AI for field: 72__commnt
-2026-07-24 23:16:05 [debug]: AI cache hit for fingerprint: 37ba5a97...
-2026-07-24 23:16:05 [http]: ::1 - - [24/Jul/2026:17:46:05 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 23:16:12 [http]: ::1 - - [24/Jul/2026:17:46:12 +0000] "GET /api/profile HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 23:16:14 [http]: ::1 - - [24/Jul/2026:17:46:14 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 23:17:50 [http]: ::1 - - [24/Jul/2026:17:47:50 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 23:17:54 [http]: ::1 - - [24/Jul/2026:17:47:54 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 23:19:47 [http]: ::1 - - [24/Jul/2026:17:49:47 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 23:19:55 [error]: Error: CORS: origin http://127.0.0.1:5500 not allowed
-    at origin (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\index.js:42:14)
-    at C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\cors\lib\index.js:219:13
-    at optionsCallback (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\cors\lib\index.js:199:9)
-    at corsMiddleware (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\cors\lib\index.js:204:7)
-    at Layer.handle [as handle_request] (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\express\lib\router\layer.js:95:5)
-    at trim_prefix (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\express\lib\router\index.js:328:13)
-    at C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\express\lib\router\index.js:286:9
-    at router.process_params (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\express\lib\router\index.js:346:12)
-    at next (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\express\lib\router\index.js:280:10)
-    at internalNext (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\helmet\index.cjs:537:6)
-2026-07-24 23:19:58 [error]: Error: CORS: origin http://127.0.0.1:5500 not allowed
-    at origin (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\index.js:42:14)
-    at C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\cors\lib\index.js:219:13
-    at optionsCallback (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\cors\lib\index.js:199:9)
-    at corsMiddleware (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\cors\lib\index.js:204:7)
-    at Layer.handle [as handle_request] (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\express\lib\router\layer.js:95:5)
-    at trim_prefix (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\express\lib\router\index.js:328:13)
-    at C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\express\lib\router\index.js:286:9
-    at router.process_params (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\express\lib\router\index.js:346:12)
-    at next (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\express\lib\router\index.js:280:10)
-    at internalNext (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\helmet\index.cjs:537:6)
-2026-07-24 23:20:04 [error]: Error: CORS: origin http://127.0.0.1:5500 not allowed
-    at origin (C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\index.js:42:14)
-    at C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\cors\lib\index.js:219:13
-    at optionsCallback (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\cors\lib\index.js:199:9)
-    at corsMiddleware (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\cors\lib\index.js:204:7)
-    at Layer.handle [as handle_request] (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\express\lib\router\layer.js:95:5)
-    at trim_prefix (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\express\lib\router\index.js:328:13)
-    at C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\express\lib\router\index.js:286:9
-    at router.process_params (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\express\lib\router\index.js:346:12)
-    at next (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\express\lib\router\index.js:280:10)
-    at internalNext (C:\Users\yasht\OneDrive\Desktop\oneTap\server\node_modules\helmet\index.cjs:537:6)
-2026-07-24 23:21:15 [http]: ::1 - - [24/Jul/2026:17:51:15 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 23:53:55 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-01.r0rqul9.mongodb.net
-2026-07-24 23:53:55 [info]: 🚀 Server running on http://localhost:3001
-2026-07-24 23:53:55 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
-2026-07-24 23:55:02 [http]: ::1 - - [24/Jul/2026:18:25:02 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 23:55:04 [http]: ::1 - - [24/Jul/2026:18:25:04 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 23:55:08 [http]: ::1 - - [24/Jul/2026:18:25:08 +0000] "GET /uploads/d838f28c-a820-4f21-93cd-2a1dafd58897/3570bb8f-c5eb-4b79-9e55-31def844f0d0.pdf HTTP/1.1" 304 - "http://127.0.0.1:5500/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 23:55:28 [debug]: Falling back to AI for field: Go to file
-2026-07-24 23:55:30 [error]: AI classification error:
-2026-07-24 23:55:30 [http]: ::1 - - [24/Jul/2026:18:25:30 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 272 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 23:55:51 [http]: ::1 - - [24/Jul/2026:18:25:51 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 23:55:56 [http]: ::1 - - [24/Jul/2026:18:25:56 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 23:56:09 [debug]: Falling back to AI for field: Go to file
-2026-07-24 23:56:10 [error]: AI classification error:
-2026-07-24 23:56:10 [http]: ::1 - - [24/Jul/2026:18:26:10 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 272 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 23:59:12 [http]: ::1 - - [24/Jul/2026:18:29:12 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 329 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-24 23:59:26 [http]: ::1 - - [24/Jul/2026:18:29:26 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-25 00:00:48 [http]: ::1 - - [24/Jul/2026:18:30:48 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-25 09:52:45 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-01.r0rqul9.mongodb.net
-2026-07-25 09:52:45 [info]: 🚀 Server running on http://localhost:3001
-2026-07-25 09:52:45 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
-2026-07-25 09:53:13 [http]: ::1 - - [25/Jul/2026:04:23:13 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-25 09:53:46 [http]: ::1 - - [25/Jul/2026:04:23:46 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-25 09:53:46 [http]: ::1 - - [25/Jul/2026:04:23:46 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-25 09:53:50 [http]: ::1 - - [25/Jul/2026:04:23:50 +0000] "GET /uploads/d838f28c-a820-4f21-93cd-2a1dafd58897/3570bb8f-c5eb-4b79-9e55-31def844f0d0.pdf HTTP/1.1" 304 - "http://127.0.0.1:5500/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-25 09:54:07 [http]: ::1 - - [25/Jul/2026:04:24:07 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-25 09:54:45 [http]: ::1 - - [25/Jul/2026:04:24:45 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-25 09:54:45 [http]: ::1 - - [25/Jul/2026:04:24:45 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-25 09:55:23 [http]: ::1 - - [25/Jul/2026:04:25:23 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 306 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-25 09:55:54 [debug]: Falling back to AI for field: Go to file
-2026-07-25 09:55:57 [debug]: AI classified field "Go to file" → null (0)
-2026-07-25 09:55:57 [http]: ::1 - - [25/Jul/2026:04:25:57 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 272 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-25 09:55:57 [http]: ::1 - - [25/Jul/2026:04:25:57 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 301 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-25 09:56:08 [debug]: Falling back to AI for field: Filter files…
-2026-07-25 09:56:09 [debug]: Falling back to AI for field: Search within code
-2026-07-25 09:56:10 [debug]: AI classified field "Filter files…" → null (0.9)
-2026-07-25 09:56:10 [http]: ::1 - - [25/Jul/2026:04:26:10 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 272 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-25 09:56:13 [debug]: AI classified field "Search within code" → null (0.9)
-2026-07-25 09:56:13 [http]: ::1 - - [25/Jul/2026:04:26:13 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 292 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-25 09:56:56 [debug]: Falling back to AI for field: Go to file
-2026-07-25 09:56:56 [debug]: AI cache hit for fingerprint: 5a39e778...
-2026-07-25 09:56:56 [http]: ::1 - - [25/Jul/2026:04:26:56 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 272 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-25 09:59:40 [http]: ::1 - - [25/Jul/2026:04:29:40 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-25 09:59:40 [http]: ::1 - - [25/Jul/2026:04:29:40 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-25 09:59:50 [http]: ::1 - - [25/Jul/2026:04:29:50 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-25 10:00:10 [debug]: Falling back to AI for field: Chat with ChatGPT
-2026-07-25 10:00:13 [debug]: AI classified field "Chat with ChatGPT" → null (0)
-2026-07-25 10:00:13 [http]: ::1 - - [25/Jul/2026:04:30:13 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 826 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-25 10:02:23 [http]: ::1 - - [25/Jul/2026:04:32:23 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-25 10:02:54 [http]: ::1 - - [25/Jul/2026:04:32:54 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-25 10:03:27 [http]: ::1 - - [25/Jul/2026:04:33:27 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-25 10:03:36 [http]: ::1 - - [25/Jul/2026:04:33:36 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-25 10:03:56 [http]: ::1 - - [25/Jul/2026:04:33:56 +0000] "GET /uploads/d838f28c-a820-4f21-93cd-2a1dafd58897/3570bb8f-c5eb-4b79-9e55-31def844f0d0.pdf HTTP/1.1" 304 - "http://127.0.0.1:5500/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-2026-07-25 10:04:41 [http]: ::1 - - [25/Jul/2026:04:34:41 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:13:06 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-02.r0rqul9.mongodb.net
+2026-07-25 10:13:06 [info]: 🚀 Server running on http://localhost:3001
+2026-07-25 10:13:06 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
+2026-07-25 10:13:07 [http]: ::1 - - [25/Jul/2026:04:43:07 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:13:08 [http]: ::1 - - [25/Jul/2026:04:43:08 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:13:29 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-01.r0rqul9.mongodb.net
+2026-07-25 10:13:29 [info]: 🚀 Server running on http://localhost:3001
+2026-07-25 10:13:29 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
+2026-07-25 10:13:47 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-00.r0rqul9.mongodb.net
+2026-07-25 10:13:47 [info]: 🚀 Server running on http://localhost:3001
+2026-07-25 10:13:47 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
+2026-07-25 10:14:00 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-01.r0rqul9.mongodb.net
+2026-07-25 10:14:00 [info]: 🚀 Server running on http://localhost:3001
+2026-07-25 10:14:00 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
+2026-07-25 10:14:43 [http]: ::1 - - [25/Jul/2026:04:44:43 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:14:45 [http]: ::1 - - [25/Jul/2026:04:44:45 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:14:48 [http]: ::1 - - [25/Jul/2026:04:44:48 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:14:51 [http]: ::1 - - [25/Jul/2026:04:44:51 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:14:54 [http]: ::1 - - [25/Jul/2026:04:44:54 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:15:40 [http]: ::1 - - [25/Jul/2026:04:45:40 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:15:42 [http]: ::1 - - [25/Jul/2026:04:45:42 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:15:45 [http]: ::1 - - [25/Jul/2026:04:45:45 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:15:51 [http]: ::1 - - [25/Jul/2026:04:45:51 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:15:53 [http]: ::1 - - [25/Jul/2026:04:45:53 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:16:02 [http]: ::1 - - [25/Jul/2026:04:46:02 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:16:05 [http]: ::1 - - [25/Jul/2026:04:46:05 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:16:35 [http]: ::1 - - [25/Jul/2026:04:46:35 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:16:35 [http]: ::1 - - [25/Jul/2026:04:46:35 +0000] "GET /api/documents HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:16:42 [http]: ::1 - - [25/Jul/2026:04:46:42 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:16:44 [http]: ::1 - - [25/Jul/2026:04:46:44 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:16:44 [http]: ::1 - - [25/Jul/2026:04:46:44 +0000] "GET /api/documents HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:17:22 [http]: ::1 - - [25/Jul/2026:04:47:22 +0000] "PATCH /api/profile HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:18:01 [http]: ::1 - - [25/Jul/2026:04:48:01 +0000] "PATCH /api/profile HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:18:16 [http]: ::1 - - [25/Jul/2026:04:48:16 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 306 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:18:22 [debug]: Falling back to AI for field: 02frstname
+2026-07-25 10:18:22 [debug]: Falling back to AI for field: 03middle_i
+2026-07-25 10:18:22 [debug]: Falling back to AI for field: 20homephon
+2026-07-25 10:18:22 [debug]: Falling back to AI for field: 21workphon
+2026-07-25 10:18:22 [debug]: Falling back to AI for field: 23cellphon
+2026-07-25 10:18:22 [debug]: Falling back to AI for field: 25web_site
+2026-07-25 10:18:22 [debug]: Falling back to AI for field: 30_user_id
+2026-07-25 10:18:22 [debug]: Falling back to AI for field: 31password
+2026-07-25 10:18:22 [debug]: Falling back to AI for field: 40cc__type
+2026-07-25 10:18:22 [debug]: Falling back to AI for field: 41ccnumber
+2026-07-25 10:18:22 [debug]: Falling back to AI for field: 43cvc
+2026-07-25 10:18:22 [debug]: Falling back to AI for field: 42ccexp_mm
+2026-07-25 10:18:22 [debug]: Falling back to AI for field: 43ccexp_yy
+2026-07-25 10:18:22 [debug]: Falling back to AI for field: 44cc_uname
+2026-07-25 10:18:22 [debug]: Falling back to AI for field: 45ccissuer
+2026-07-25 10:18:22 [debug]: Falling back to AI for field: 46cccstsvc
+2026-07-25 10:18:22 [debug]: Falling back to AI for field: 61pers_ssn
+2026-07-25 10:18:22 [debug]: Falling back to AI for field: 62driv_lic
+2026-07-25 10:18:22 [debug]: Falling back to AI for field: 66mm
+2026-07-25 10:18:22 [debug]: Falling back to AI for field: 67dd
+2026-07-25 10:18:22 [debug]: Falling back to AI for field: 68yy
+2026-07-25 10:18:22 [debug]: Falling back to AI for field: 66pers_age
+2026-07-25 10:18:22 [debug]: Falling back to AI for field: 67birth_pl
+2026-07-25 10:18:22 [debug]: Falling back to AI for field: 68__income
+2026-07-25 10:18:22 [debug]: Falling back to AI for field: 71__custom
+2026-07-25 10:18:22 [debug]: Falling back to AI for field: 72__commnt
+2026-07-25 10:18:25 [debug]: AI classified field "31password" → null (0.9)
+2026-07-25 10:18:25 [debug]: AI classified field "66pers_age" → dateOfBirth (0.85)
+2026-07-25 10:18:25 [debug]: AI classified field "21workphon" → phone (0.85)
+2026-07-25 10:18:25 [debug]: AI classified field "03middle_i" → middleName (0.95)
+2026-07-25 10:18:25 [debug]: AI classified field "02frstname" → firstName (0.85)
+2026-07-25 10:18:25 [debug]: AI classified field "40cc__type" → null (0.9)
+2026-07-25 10:18:25 [debug]: AI classified field "41ccnumber" → null (0.95)
+2026-07-25 10:18:25 [debug]: AI classified field "30_user_id" → null (0.3)
+2026-07-25 10:18:25 [debug]: AI classified field "25web_site" → website (0.9)
+2026-07-25 10:18:26 [debug]: AI classified field "44cc_uname" → null (0.9)
+2026-07-25 10:18:26 [debug]: AI classified field "43ccexp_yy" → null (0)
+2026-07-25 10:18:26 [debug]: AI classified field "23cellphon" → null (0)
+2026-07-25 10:18:26 [debug]: AI classified field "71__custom" → null (0)
+2026-07-25 10:18:26 [debug]: AI classified field "67dd" → null (0)
+2026-07-25 10:18:26 [debug]: AI classified field "72__commnt" → null (1)
+2026-07-25 10:18:26 [debug]: AI classified field "42ccexp_mm" → null (0)
+2026-07-25 10:18:26 [debug]: AI classified field "61pers_ssn" → null (0.9)
+2026-07-25 10:18:27 [debug]: AI classified field "62driv_lic" → drivingLicenseNumber (0.9)
+2026-07-25 10:18:27 [debug]: AI classified field "66mm" → null (0.2)
+2026-07-25 10:18:28 [debug]: AI classified field "43cvc" → null (0.1)
+2026-07-25 10:18:29 [debug]: AI classified field "68yy" → null (0)
+2026-07-25 10:18:31 [debug]: Falling back to AI for field: 02frstname
+2026-07-25 10:18:31 [debug]: AI cache hit for fingerprint: 56246d92...
+2026-07-25 10:18:31 [debug]: Falling back to AI for field: 03middle_i
+2026-07-25 10:18:31 [debug]: AI cache hit for fingerprint: 26dcf910...
+2026-07-25 10:18:31 [debug]: Falling back to AI for field: 20homephon
+2026-07-25 10:18:31 [debug]: Falling back to AI for field: 21workphon
+2026-07-25 10:18:31 [debug]: AI cache hit for fingerprint: 60b49ef4...
+2026-07-25 10:18:31 [debug]: Falling back to AI for field: 23cellphon
+2026-07-25 10:18:31 [debug]: AI cache hit for fingerprint: c9f5239e...
+2026-07-25 10:18:31 [debug]: Falling back to AI for field: 25web_site
+2026-07-25 10:18:31 [debug]: AI cache hit for fingerprint: 5a236c47...
+2026-07-25 10:18:31 [debug]: Falling back to AI for field: 30_user_id
+2026-07-25 10:18:31 [debug]: AI cache hit for fingerprint: a57d31e0...
+2026-07-25 10:18:31 [debug]: Falling back to AI for field: 31password
+2026-07-25 10:18:31 [debug]: AI cache hit for fingerprint: 2f4883a1...
+2026-07-25 10:18:31 [debug]: Falling back to AI for field: 40cc__type
+2026-07-25 10:18:31 [debug]: AI cache hit for fingerprint: 5ad7f448...
+2026-07-25 10:18:31 [debug]: Falling back to AI for field: 41ccnumber
+2026-07-25 10:18:31 [debug]: AI cache hit for fingerprint: 33ddf084...
+2026-07-25 10:18:31 [debug]: Falling back to AI for field: 43cvc
+2026-07-25 10:18:31 [debug]: AI cache hit for fingerprint: d23e4f3b...
+2026-07-25 10:18:31 [debug]: Falling back to AI for field: 42ccexp_mm
+2026-07-25 10:18:31 [debug]: AI cache hit for fingerprint: e15a2f5a...
+2026-07-25 10:18:31 [debug]: Falling back to AI for field: 43ccexp_yy
+2026-07-25 10:18:31 [debug]: AI cache hit for fingerprint: f0e53588...
+2026-07-25 10:18:31 [debug]: Falling back to AI for field: 44cc_uname
+2026-07-25 10:18:31 [debug]: AI cache hit for fingerprint: 5ffbf97d...
+2026-07-25 10:18:31 [debug]: Falling back to AI for field: 45ccissuer
+2026-07-25 10:18:31 [debug]: Falling back to AI for field: 46cccstsvc
+2026-07-25 10:18:31 [debug]: Falling back to AI for field: 61pers_ssn
+2026-07-25 10:18:31 [debug]: AI cache hit for fingerprint: a4c891e1...
+2026-07-25 10:18:31 [debug]: Falling back to AI for field: 62driv_lic
+2026-07-25 10:18:31 [debug]: AI cache hit for fingerprint: be671abf...
+2026-07-25 10:18:31 [debug]: Falling back to AI for field: 66mm
+2026-07-25 10:18:31 [debug]: AI cache hit for fingerprint: f38b3e7d...
+2026-07-25 10:18:31 [debug]: Falling back to AI for field: 67dd
+2026-07-25 10:18:31 [debug]: AI cache hit for fingerprint: ea2d8917...
+2026-07-25 10:18:31 [debug]: Falling back to AI for field: 68yy
+2026-07-25 10:18:31 [debug]: AI cache hit for fingerprint: bea669ad...
+2026-07-25 10:18:31 [debug]: Falling back to AI for field: 66pers_age
+2026-07-25 10:18:31 [debug]: AI cache hit for fingerprint: 378a63c3...
+2026-07-25 10:18:31 [debug]: Falling back to AI for field: 67birth_pl
+2026-07-25 10:18:31 [debug]: Falling back to AI for field: 68__income
+2026-07-25 10:18:31 [debug]: Falling back to AI for field: 71__custom
+2026-07-25 10:18:31 [debug]: AI cache hit for fingerprint: 836eddc5...
+2026-07-25 10:18:31 [debug]: Falling back to AI for field: 72__commnt
+2026-07-25 10:18:31 [debug]: AI cache hit for fingerprint: 37ba5a97...
+2026-07-25 10:18:33 [debug]: AI classified field "20homephon" → phone (0.85)
+2026-07-25 10:18:33 [debug]: AI classified field "67birth_pl" → null (0)
+2026-07-25 10:18:33 [debug]: AI classified field "45ccissuer" → null (0.1)
+2026-07-25 10:18:35 [debug]: AI classified field "46cccstsvc" → null (0.1)
+2026-07-25 10:18:35 [debug]: AI classified field "68__income" → null (0)
+2026-07-25 10:18:35 [http]: ::1 - - [25/Jul/2026:04:48:35 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:18:35 [debug]: AI classified field "45ccissuer" → null (0.9)
+2026-07-25 10:18:36 [debug]: AI classified field "67birth_pl" → null (0)
+2026-07-25 10:18:36 [debug]: AI classified field "46cccstsvc" → null (0.1)
+2026-07-25 10:18:36 [debug]: AI classified field "68__income" → null (0.2)
+2026-07-25 10:18:39 [debug]: AI classified field "20homephon" → phone (0.8)
+2026-07-25 10:18:39 [http]: ::1 - - [25/Jul/2026:04:48:39 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:19:02 [http]: ::1 - - [25/Jul/2026:04:49:02 +0000] "GET /api/profile HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:19:37 [http]: ::1 - - [25/Jul/2026:04:49:37 +0000] "PATCH /api/profile HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:19:44 [debug]: Falling back to AI for field: 02frstname
+2026-07-25 10:19:44 [debug]: AI cache hit for fingerprint: 56246d92...
+2026-07-25 10:19:44 [debug]: Falling back to AI for field: 03middle_i
+2026-07-25 10:19:44 [debug]: AI cache hit for fingerprint: 26dcf910...
+2026-07-25 10:19:44 [debug]: Falling back to AI for field: 20homephon
+2026-07-25 10:19:44 [debug]: AI cache hit for fingerprint: 66b2414c...
+2026-07-25 10:19:44 [debug]: Falling back to AI for field: 21workphon
+2026-07-25 10:19:44 [debug]: AI cache hit for fingerprint: 60b49ef4...
+2026-07-25 10:19:44 [debug]: Falling back to AI for field: 23cellphon
+2026-07-25 10:19:44 [debug]: AI cache hit for fingerprint: c9f5239e...
+2026-07-25 10:19:44 [debug]: Falling back to AI for field: 25web_site
+2026-07-25 10:19:44 [debug]: AI cache hit for fingerprint: 5a236c47...
+2026-07-25 10:19:44 [debug]: Falling back to AI for field: 30_user_id
+2026-07-25 10:19:44 [debug]: AI cache hit for fingerprint: a57d31e0...
+2026-07-25 10:19:44 [debug]: Falling back to AI for field: 31password
+2026-07-25 10:19:44 [debug]: AI cache hit for fingerprint: 2f4883a1...
+2026-07-25 10:19:44 [debug]: Falling back to AI for field: 40cc__type
+2026-07-25 10:19:44 [debug]: AI cache hit for fingerprint: 5ad7f448...
+2026-07-25 10:19:44 [debug]: Falling back to AI for field: 41ccnumber
+2026-07-25 10:19:44 [debug]: AI cache hit for fingerprint: 33ddf084...
+2026-07-25 10:19:44 [debug]: Falling back to AI for field: 43cvc
+2026-07-25 10:19:44 [debug]: AI cache hit for fingerprint: d23e4f3b...
+2026-07-25 10:19:44 [debug]: Falling back to AI for field: 42ccexp_mm
+2026-07-25 10:19:44 [debug]: AI cache hit for fingerprint: e15a2f5a...
+2026-07-25 10:19:44 [debug]: Falling back to AI for field: 43ccexp_yy
+2026-07-25 10:19:44 [debug]: AI cache hit for fingerprint: f0e53588...
+2026-07-25 10:19:44 [debug]: Falling back to AI for field: 44cc_uname
+2026-07-25 10:19:44 [debug]: AI cache hit for fingerprint: 5ffbf97d...
+2026-07-25 10:19:44 [debug]: Falling back to AI for field: 45ccissuer
+2026-07-25 10:19:44 [debug]: AI cache hit for fingerprint: 1388c28d...
+2026-07-25 10:19:44 [debug]: Falling back to AI for field: 46cccstsvc
+2026-07-25 10:19:44 [debug]: AI cache hit for fingerprint: 007c67ca...
+2026-07-25 10:19:44 [debug]: Falling back to AI for field: 61pers_ssn
+2026-07-25 10:19:44 [debug]: AI cache hit for fingerprint: a4c891e1...
+2026-07-25 10:19:44 [debug]: Falling back to AI for field: 62driv_lic
+2026-07-25 10:19:44 [debug]: AI cache hit for fingerprint: be671abf...
+2026-07-25 10:19:44 [debug]: Falling back to AI for field: 66mm
+2026-07-25 10:19:44 [debug]: AI cache hit for fingerprint: f38b3e7d...
+2026-07-25 10:19:44 [debug]: Falling back to AI for field: 67dd
+2026-07-25 10:19:44 [debug]: AI cache hit for fingerprint: ea2d8917...
+2026-07-25 10:19:44 [debug]: Falling back to AI for field: 68yy
+2026-07-25 10:19:44 [debug]: AI cache hit for fingerprint: bea669ad...
+2026-07-25 10:19:44 [debug]: Falling back to AI for field: 66pers_age
+2026-07-25 10:19:44 [debug]: AI cache hit for fingerprint: 378a63c3...
+2026-07-25 10:19:44 [debug]: Falling back to AI for field: 67birth_pl
+2026-07-25 10:19:44 [debug]: AI cache hit for fingerprint: 06454804...
+2026-07-25 10:19:44 [debug]: Falling back to AI for field: 68__income
+2026-07-25 10:19:44 [debug]: AI cache hit for fingerprint: 5f77c71f...
+2026-07-25 10:19:44 [debug]: Falling back to AI for field: 71__custom
+2026-07-25 10:19:44 [debug]: AI cache hit for fingerprint: 836eddc5...
+2026-07-25 10:19:44 [debug]: Falling back to AI for field: 72__commnt
+2026-07-25 10:19:44 [debug]: AI cache hit for fingerprint: 37ba5a97...
+2026-07-25 10:19:44 [http]: ::1 - - [25/Jul/2026:04:49:44 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:20:20 [debug]: Falling back to AI for field: 02frstname
+2026-07-25 10:20:20 [debug]: AI cache hit for fingerprint: 56246d92...
+2026-07-25 10:20:20 [debug]: Falling back to AI for field: 03middle_i
+2026-07-25 10:20:20 [debug]: AI cache hit for fingerprint: 26dcf910...
+2026-07-25 10:20:20 [debug]: Falling back to AI for field: 20homephon
+2026-07-25 10:20:20 [debug]: AI cache hit for fingerprint: 66b2414c...
+2026-07-25 10:20:20 [debug]: Falling back to AI for field: 21workphon
+2026-07-25 10:20:20 [debug]: AI cache hit for fingerprint: 60b49ef4...
+2026-07-25 10:20:20 [debug]: Falling back to AI for field: 23cellphon
+2026-07-25 10:20:20 [debug]: AI cache hit for fingerprint: c9f5239e...
+2026-07-25 10:20:20 [debug]: Falling back to AI for field: 25web_site
+2026-07-25 10:20:20 [debug]: AI cache hit for fingerprint: 5a236c47...
+2026-07-25 10:20:20 [debug]: Falling back to AI for field: 30_user_id
+2026-07-25 10:20:20 [debug]: AI cache hit for fingerprint: a57d31e0...
+2026-07-25 10:20:20 [debug]: Falling back to AI for field: 31password
+2026-07-25 10:20:20 [debug]: AI cache hit for fingerprint: 2f4883a1...
+2026-07-25 10:20:20 [debug]: Falling back to AI for field: 40cc__type
+2026-07-25 10:20:20 [debug]: AI cache hit for fingerprint: 5ad7f448...
+2026-07-25 10:20:20 [debug]: Falling back to AI for field: 41ccnumber
+2026-07-25 10:20:20 [debug]: AI cache hit for fingerprint: 33ddf084...
+2026-07-25 10:20:20 [debug]: Falling back to AI for field: 43cvc
+2026-07-25 10:20:20 [debug]: AI cache hit for fingerprint: d23e4f3b...
+2026-07-25 10:20:20 [debug]: Falling back to AI for field: 42ccexp_mm
+2026-07-25 10:20:20 [debug]: AI cache hit for fingerprint: e15a2f5a...
+2026-07-25 10:20:20 [debug]: Falling back to AI for field: 43ccexp_yy
+2026-07-25 10:20:20 [debug]: AI cache hit for fingerprint: f0e53588...
+2026-07-25 10:20:20 [debug]: Falling back to AI for field: 44cc_uname
+2026-07-25 10:20:20 [debug]: AI cache hit for fingerprint: 5ffbf97d...
+2026-07-25 10:20:20 [debug]: Falling back to AI for field: 45ccissuer
+2026-07-25 10:20:20 [debug]: AI cache hit for fingerprint: 1388c28d...
+2026-07-25 10:20:20 [debug]: Falling back to AI for field: 46cccstsvc
+2026-07-25 10:20:20 [debug]: AI cache hit for fingerprint: 007c67ca...
+2026-07-25 10:20:20 [debug]: Falling back to AI for field: 61pers_ssn
+2026-07-25 10:20:20 [debug]: AI cache hit for fingerprint: a4c891e1...
+2026-07-25 10:20:20 [debug]: Falling back to AI for field: 62driv_lic
+2026-07-25 10:20:20 [debug]: AI cache hit for fingerprint: be671abf...
+2026-07-25 10:20:20 [debug]: Falling back to AI for field: 66mm
+2026-07-25 10:20:20 [debug]: AI cache hit for fingerprint: f38b3e7d...
+2026-07-25 10:20:20 [debug]: Falling back to AI for field: 67dd
+2026-07-25 10:20:20 [debug]: AI cache hit for fingerprint: ea2d8917...
+2026-07-25 10:20:20 [debug]: Falling back to AI for field: 68yy
+2026-07-25 10:20:20 [debug]: AI cache hit for fingerprint: bea669ad...
+2026-07-25 10:20:20 [debug]: Falling back to AI for field: 66pers_age
+2026-07-25 10:20:20 [debug]: AI cache hit for fingerprint: 378a63c3...
+2026-07-25 10:20:20 [debug]: Falling back to AI for field: 67birth_pl
+2026-07-25 10:20:20 [debug]: AI cache hit for fingerprint: 06454804...
+2026-07-25 10:20:20 [debug]: Falling back to AI for field: 68__income
+2026-07-25 10:20:20 [debug]: AI cache hit for fingerprint: 5f77c71f...
+2026-07-25 10:20:20 [debug]: Falling back to AI for field: 71__custom
+2026-07-25 10:20:20 [debug]: AI cache hit for fingerprint: 836eddc5...
+2026-07-25 10:20:20 [debug]: Falling back to AI for field: 72__commnt
+2026-07-25 10:20:20 [debug]: AI cache hit for fingerprint: 37ba5a97...
+2026-07-25 10:20:20 [http]: ::1 - - [25/Jul/2026:04:50:20 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:21:08 [debug]: Falling back to AI for field: CCV
+2026-07-25 10:21:08 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 10:21:10 [debug]: AI classified field "CCV" → null (0.3)
+2026-07-25 10:21:11 [debug]: AI classified field "Favorite Movie" → null (0)
+2026-07-25 10:21:11 [http]: ::1 - - [25/Jul/2026:04:51:11 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:21:14 [debug]: Falling back to AI for field: CCV
+2026-07-25 10:21:14 [debug]: AI cache hit for fingerprint: c1d2b1a6...
+2026-07-25 10:21:14 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 10:21:14 [debug]: AI cache hit for fingerprint: 6c0a2474...
+2026-07-25 10:21:14 [http]: ::1 - - [25/Jul/2026:04:51:14 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:21:41 [http]: ::1 - - [25/Jul/2026:04:51:41 +0000] "GET /uploads/d838f28c-a820-4f21-93cd-2a1dafd58897/3570bb8f-c5eb-4b79-9e55-31def844f0d0.pdf HTTP/1.1" 304 - "http://127.0.0.1:5500/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:21:56 [http]: ::1 - - [25/Jul/2026:04:51:56 +0000] "POST /api/submissions HTTP/1.1" 201 520 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:22:01 [debug]: Falling back to AI for field: 02frstname
+2026-07-25 10:22:01 [debug]: AI cache hit for fingerprint: 56246d92...
+2026-07-25 10:22:01 [debug]: Falling back to AI for field: 03middle_i
+2026-07-25 10:22:01 [debug]: AI cache hit for fingerprint: 26dcf910...
+2026-07-25 10:22:01 [debug]: Falling back to AI for field: 20homephon
+2026-07-25 10:22:01 [debug]: AI cache hit for fingerprint: 66b2414c...
+2026-07-25 10:22:01 [debug]: Falling back to AI for field: 21workphon
+2026-07-25 10:22:01 [debug]: AI cache hit for fingerprint: 60b49ef4...
+2026-07-25 10:22:01 [debug]: Falling back to AI for field: 23cellphon
+2026-07-25 10:22:01 [debug]: AI cache hit for fingerprint: c9f5239e...
+2026-07-25 10:22:01 [debug]: Falling back to AI for field: 25web_site
+2026-07-25 10:22:01 [debug]: AI cache hit for fingerprint: 5a236c47...
+2026-07-25 10:22:01 [debug]: Falling back to AI for field: 30_user_id
+2026-07-25 10:22:01 [debug]: AI cache hit for fingerprint: a57d31e0...
+2026-07-25 10:22:01 [debug]: Falling back to AI for field: 31password
+2026-07-25 10:22:01 [debug]: AI cache hit for fingerprint: 2f4883a1...
+2026-07-25 10:22:01 [debug]: Falling back to AI for field: 40cc__type
+2026-07-25 10:22:01 [debug]: AI cache hit for fingerprint: 5ad7f448...
+2026-07-25 10:22:01 [debug]: Falling back to AI for field: 41ccnumber
+2026-07-25 10:22:01 [debug]: AI cache hit for fingerprint: 33ddf084...
+2026-07-25 10:22:01 [debug]: Falling back to AI for field: 43cvc
+2026-07-25 10:22:01 [debug]: AI cache hit for fingerprint: d23e4f3b...
+2026-07-25 10:22:01 [debug]: Falling back to AI for field: 42ccexp_mm
+2026-07-25 10:22:01 [debug]: AI cache hit for fingerprint: e15a2f5a...
+2026-07-25 10:22:01 [debug]: Falling back to AI for field: 43ccexp_yy
+2026-07-25 10:22:01 [debug]: AI cache hit for fingerprint: f0e53588...
+2026-07-25 10:22:01 [debug]: Falling back to AI for field: 44cc_uname
+2026-07-25 10:22:01 [debug]: AI cache hit for fingerprint: 5ffbf97d...
+2026-07-25 10:22:01 [debug]: Falling back to AI for field: 45ccissuer
+2026-07-25 10:22:01 [debug]: AI cache hit for fingerprint: 1388c28d...
+2026-07-25 10:22:01 [debug]: Falling back to AI for field: 46cccstsvc
+2026-07-25 10:22:01 [debug]: AI cache hit for fingerprint: 007c67ca...
+2026-07-25 10:22:01 [debug]: Falling back to AI for field: 61pers_ssn
+2026-07-25 10:22:01 [debug]: AI cache hit for fingerprint: a4c891e1...
+2026-07-25 10:22:01 [debug]: Falling back to AI for field: 62driv_lic
+2026-07-25 10:22:01 [debug]: AI cache hit for fingerprint: be671abf...
+2026-07-25 10:22:01 [debug]: Falling back to AI for field: 66mm
+2026-07-25 10:22:01 [debug]: AI cache hit for fingerprint: f38b3e7d...
+2026-07-25 10:22:01 [debug]: Falling back to AI for field: 67dd
+2026-07-25 10:22:01 [debug]: AI cache hit for fingerprint: ea2d8917...
+2026-07-25 10:22:01 [debug]: Falling back to AI for field: 68yy
+2026-07-25 10:22:01 [debug]: AI cache hit for fingerprint: bea669ad...
+2026-07-25 10:22:01 [debug]: Falling back to AI for field: 66pers_age
+2026-07-25 10:22:01 [debug]: AI cache hit for fingerprint: 378a63c3...
+2026-07-25 10:22:01 [debug]: Falling back to AI for field: 67birth_pl
+2026-07-25 10:22:01 [debug]: AI cache hit for fingerprint: 06454804...
+2026-07-25 10:22:01 [debug]: Falling back to AI for field: 68__income
+2026-07-25 10:22:01 [debug]: AI cache hit for fingerprint: 5f77c71f...
+2026-07-25 10:22:01 [debug]: Falling back to AI for field: 71__custom
+2026-07-25 10:22:01 [debug]: AI cache hit for fingerprint: 836eddc5...
+2026-07-25 10:22:01 [debug]: Falling back to AI for field: 72__commnt
+2026-07-25 10:22:01 [debug]: AI cache hit for fingerprint: 37ba5a97...
+2026-07-25 10:22:01 [http]: ::1 - - [25/Jul/2026:04:52:01 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-25 10:22:25 [debug]: Falling back to AI for field: CCV
+2026-07-25 10:22:25 [debug]: AI cache hit for fingerprint: c1d2b1a6...
+2026-07-25 10:22:25 [debug]: Falling back to AI for field: Favorite Movie
+2026-07-25 10:22:25 [debug]: AI cache hit for fingerprint: 6c0a2474...
+2026-07-25 10:22:25 [http]: ::1 - - [25/Jul/2026:04:52:25 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"

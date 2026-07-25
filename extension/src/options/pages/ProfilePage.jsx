@@ -10,6 +10,7 @@ export default function ProfilePage() {
   const [error, setError] = useState('');
   const [expandedSection, setExpandedSection] = useState('Personal Information');
   const [showSensitive, setShowSensitive] = useState({});
+  const [newCustomField, setNewCustomField] = useState({ key: '', value: '', type: 'text', sensitive: false });
 
   useEffect(() => {
     getProfile()
@@ -22,14 +23,41 @@ export default function ProfilePage() {
     setProfile(prev => ({ ...prev, [key]: value }));
   };
 
-  const handleCustomFieldChange = (key, value) => {
-    setProfile(prev => ({
-      ...prev,
-      customFields: {
-        ...(prev.customFields || {}),
-        [key]: value
-      }
-    }));
+  const handleCustomFieldChange = (key, updates) => {
+    setProfile(prev => {
+      const current = prev.customFields?.[key];
+      const currentObj = typeof current === 'object' ? current : { value: current || '', type: 'text', sensitive: false };
+      return {
+        ...prev,
+        customFields: {
+          ...(prev.customFields || {}),
+          [key]: { ...currentObj, ...updates }
+        }
+      };
+    });
+  };
+
+  const handleDeleteCustomField = (key) => {
+    setProfile(prev => {
+      const newCustomFields = { ...prev.customFields };
+      delete newCustomFields[key];
+      return { ...prev, customFields: newCustomFields };
+    });
+  };
+
+  const handleAddCustomField = () => {
+    if (!newCustomField.key.trim()) {
+      setError('Custom field key is required');
+      return;
+    }
+    const key = newCustomField.key.toLowerCase().trim().replace(/[\s\W]+/g, '_');
+    handleCustomFieldChange(key, {
+      value: newCustomField.value,
+      type: newCustomField.type,
+      sensitive: newCustomField.sensitive
+    });
+    setNewCustomField({ key: '', value: '', type: 'text', sensitive: false });
+    setError('');
   };
 
   const handleSave = async () => {
@@ -155,46 +183,144 @@ export default function ProfilePage() {
         ))}
 
         {/* Custom Fields Section */}
-        {profile.customFields && Object.keys(profile.customFields).length > 0 && (
-          <div key="Custom Fields" className="card overflow-hidden">
-            <button
-              className="w-full flex items-center justify-between py-1 text-left"
-              onClick={() => setExpandedSection(s => s === 'Custom Fields' ? null : 'Custom Fields')}
-            >
-              <div className="flex items-center gap-2">
-                <span className="text-base">✨</span>
-                <span className="font-semibold text-slate-200 text-sm">Custom Fields</span>
-                <span className="badge bg-indigo-500/15 text-indigo-400 border border-indigo-500/20 text-xs">Auto-Captured</span>
-              </div>
-              <span className="text-slate-500 text-xs">{expandedSection === 'Custom Fields' ? '▲' : '▼'}</span>
-            </button>
+        <div key="Custom Fields" className="card overflow-hidden">
+          <button
+            className="w-full flex items-center justify-between py-1 text-left"
+            onClick={() => setExpandedSection(s => s === 'Custom Fields' ? null : 'Custom Fields')}
+          >
+            <div className="flex items-center gap-2">
+              <span className="text-base">✨</span>
+              <span className="font-semibold text-slate-200 text-sm">Custom Fields</span>
+              <span className="badge bg-indigo-500/15 text-indigo-400 border border-indigo-500/20 text-xs">Auto-Captured & Manual</span>
+            </div>
+            <span className="text-slate-500 text-xs">{expandedSection === 'Custom Fields' ? '▲' : '▼'}</span>
+          </button>
 
-            {expandedSection === 'Custom Fields' && (
-              <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {Object.keys(profile.customFields).map(key => {
-                  const isSaved = savedFields.has(`customFields.${key}`);
-                  const displayLabel = key.replace(/_/g, ' ');
-                  
-                  return (
-                    <div key={key}>
-                      <label className="label flex items-center justify-between">
-                        <span className="capitalize">{displayLabel}</span>
-                        {isSaved && <span className="text-emerald-400 text-xs">✓ Saved</span>}
-                      </label>
+          {expandedSection === 'Custom Fields' && (
+            <div className="mt-4 space-y-4">
+              {/* Existing Custom Fields */}
+              {profile.customFields && Object.keys(profile.customFields).length > 0 ? (
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {Object.keys(profile.customFields).map(key => {
+                    const isSaved = savedFields.has(`customFields.${key}`);
+                    const displayLabel = key.replace(/_/g, ' ');
+                    const cf = profile.customFields[key];
+                    const fieldObj = typeof cf === 'object' ? cf : { value: cf || '', type: 'text', sensitive: false };
+                    const showValue = showSensitive[`custom_${key}`];
+
+                    return (
+                      <div key={key} className="relative group border border-surface-border rounded-lg p-3 bg-surface-elevated/50">
+                        <div className="flex items-center justify-between mb-2">
+                          <label className="text-xs font-semibold text-slate-300 capitalize">{displayLabel}</label>
+                          <div className="flex items-center gap-2">
+                            {isSaved && <span className="text-emerald-400 text-[10px]">✓ Saved</span>}
+                            {fieldObj.sensitive && (
+                              <button
+                                onClick={() => setShowSensitive(s => ({ ...s, [`custom_${key}`]: !s[`custom_${key}`] }))}
+                                className="text-slate-500 hover:text-slate-300 text-[10px]"
+                              >
+                                {showValue ? '🙈 Hide' : '👁️ Show'}
+                              </button>
+                            )}
+                            <button
+                              onClick={() => handleDeleteCustomField(key)}
+                              className="text-red-400/70 hover:text-red-400 text-[10px]"
+                            >
+                              🗑️ Delete
+                            </button>
+                          </div>
+                        </div>
+                        <input
+                          type={fieldObj.sensitive && !showValue ? 'password' : fieldObj.type || 'text'}
+                          className={`input text-sm ${isSaved ? 'border-emerald-500/40' : ''}`}
+                          value={fieldObj.value}
+                          onChange={e => handleCustomFieldChange(key, { value: e.target.value })}
+                          placeholder={`Enter ${displayLabel}`}
+                        />
+                        <div className="flex items-center justify-between mt-2">
+                          <select
+                            className="bg-transparent text-xs text-slate-400 outline-none"
+                            value={fieldObj.type || 'text'}
+                            onChange={e => handleCustomFieldChange(key, { type: e.target.value })}
+                          >
+                            <option value="text">Text</option>
+                            <option value="email">Email</option>
+                            <option value="tel">Phone</option>
+                            <option value="number">Number</option>
+                            <option value="date">Date</option>
+                          </select>
+                          <label className="flex items-center gap-1 text-xs text-slate-400 cursor-pointer">
+                            <input
+                              type="checkbox"
+                              checked={!!fieldObj.sensitive}
+                              onChange={e => handleCustomFieldChange(key, { sensitive: e.target.checked })}
+                              className="rounded bg-surface border-surface-border text-primary-600 focus:ring-primary-500 h-3 w-3"
+                            />
+                            Encrypted
+                          </label>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              ) : (
+                <p className="text-xs text-slate-500 italic">No custom fields yet.</p>
+              )}
+
+              {/* Add New Custom Field Form */}
+              <div className="mt-4 pt-4 border-t border-surface-border">
+                <h4 className="text-sm font-semibold text-slate-300 mb-2">➕ Add New Field</h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 items-end">
+                  <div>
+                    <label className="label text-xs">Field Key</label>
+                    <input
+                      type="text"
+                      className="input py-1.5 text-sm"
+                      placeholder="e.g. Employee ID"
+                      value={newCustomField.key}
+                      onChange={e => setNewCustomField(prev => ({ ...prev, key: e.target.value }))}
+                    />
+                  </div>
+                  <div>
+                    <label className="label text-xs">Value</label>
+                    <input
+                      type={newCustomField.sensitive ? 'password' : newCustomField.type}
+                      className="input py-1.5 text-sm"
+                      placeholder="Value"
+                      value={newCustomField.value}
+                      onChange={e => setNewCustomField(prev => ({ ...prev, value: e.target.value }))}
+                    />
+                  </div>
+                  <div className="flex items-center gap-3 col-span-1 sm:col-span-2">
+                    <select
+                      className="input py-1.5 text-sm flex-1"
+                      value={newCustomField.type}
+                      onChange={e => setNewCustomField(prev => ({ ...prev, type: e.target.value }))}
+                    >
+                      <option value="text">Text</option>
+                      <option value="email">Email</option>
+                      <option value="tel">Phone</option>
+                      <option value="number">Number</option>
+                      <option value="date">Date</option>
+                    </select>
+                    <label className="flex items-center gap-1.5 text-sm text-slate-300 cursor-pointer whitespace-nowrap">
                       <input
-                        type="text"
-                        className={`input ${isSaved ? 'border-emerald-500/40' : ''}`}
-                        value={profile.customFields[key] || ''}
-                        onChange={e => handleCustomFieldChange(key, e.target.value)}
-                        placeholder={`Enter ${displayLabel}`}
+                        type="checkbox"
+                        checked={newCustomField.sensitive}
+                        onChange={e => setNewCustomField(prev => ({ ...prev, sensitive: e.target.checked }))}
+                        className="rounded bg-surface border-surface-border text-primary-600 focus:ring-primary-500 h-4 w-4"
                       />
-                    </div>
-                  );
-                })}
+                      Encrypted
+                    </label>
+                    <button onClick={handleAddCustomField} className="btn-secondary py-1.5 px-4 whitespace-nowrap">
+                      Add Field
+                    </button>
+                  </div>
+                </div>
               </div>
-            )}
-          </div>
-        )}
+            </div>
+          )}
+        </div>
       </div>
 
       {/* Save button */}

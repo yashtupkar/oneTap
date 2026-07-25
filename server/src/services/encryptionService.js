@@ -74,6 +74,15 @@ function encryptProfileSensitiveFields(profileData) {
       result[field] = encrypt(result[field]);
     }
   }
+  if (result.customFields) {
+    result.customFields = { ...result.customFields };
+    for (const key of Object.keys(result.customFields)) {
+      const cf = result.customFields[key];
+      if (cf && typeof cf === 'object' && cf.sensitive && cf.value) {
+        result.customFields[key] = { ...cf, value: encrypt(cf.value) };
+      }
+    }
+  }
   return result;
 }
 
@@ -88,6 +97,15 @@ function decryptProfileSensitiveFields(profileData) {
   for (const field of SENSITIVE_FIELDS) {
     if (result[field]) {
       result[field] = decrypt(result[field]);
+    }
+  }
+  if (result.customFields) {
+    result.customFields = { ...result.customFields };
+    for (const key of Object.keys(result.customFields)) {
+      const cf = result.customFields[key];
+      if (cf && typeof cf === 'object' && cf.sensitive && cf.value) {
+        result.customFields[key] = { ...cf, value: decrypt(cf.value) };
+      }
     }
   }
   return result;

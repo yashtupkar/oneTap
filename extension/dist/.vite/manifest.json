@@ -14,8 +14,15 @@
     "name": "client"
   },
   "_index-!~{004}~.js": {
-    "file": "assets/index-FqVEHhwj.css",
+    "file": "assets/index-C_UaycQS.css",
     "src": "_index-!~{004}~.js"
+  },
+  "_index-Dwh9RKyG.js": {
+    "file": "assets/index-Dwh9RKyG.js",
+    "name": "index",
+    "css": [
+      "assets/index-C_UaycQS.css"
+    ]
   },
   "_index-GQsQcuPN.js": {
     "file": "assets/index-GQsQcuPN.js",
@@ -24,28 +31,35 @@
       "assets/index-FqVEHhwj.css"
     ]
   },
+  "_index-q3NJ4i-J.js": {
+    "file": "assets/index-q3NJ4i-J.js",
+    "name": "index",
+    "css": [
+      "assets/index-CZMTChRU.css"
+    ]
+  },
   "index.jsx-loader.js": {
     "file": "assets/index.jsx-loader-5Mdid7ri.js",
     "src": "index.jsx-loader.js"
   },
   "options/index.html": {
-    "file": "assets/index.html-DyRbtxwp.js",
+    "file": "assets/index.html-DNOhJb3O.js",
     "name": "index.html",
     "src": "options/index.html",
     "isEntry": true,
     "imports": [
-      "_index-GQsQcuPN.js",
+      "_index-Dwh9RKyG.js",
       "_client-DhEz86-d.js",
       "_api-DIHikcqA.js"
     ]
   },
   "popup/index.html": {
-    "file": "assets/index.html-C6LVHHb4.js",
+    "file": "assets/index.html-CFII5Ta_.js",
     "name": "index.html",
     "src": "popup/index.html",
     "isEntry": true,
     "imports": [
-      "_index-GQsQcuPN.js",
+      "_index-Dwh9RKyG.js",
       "_client-DhEz86-d.js",
       "_api-DIHikcqA.js"
     ]

@@ -77,7 +77,7 @@ router.post('/', async (req, res, next) => {
           customKey = field.label.toLowerCase().trim().replace(/[\s\W]+/g, '_');
         }
         if (customKey) {
-          profileUpdates[`customFields.${customKey}`] = field.value;
+          profileUpdates[`customFields.${customKey}`] = { value: field.value, type: field.type || 'text', sensitive: false };
         }
       }
     }
