@@ -44,6 +44,16 @@ export default function Popup() {
   const [docSearch, setDocSearch] = useState('');
   const [copiedField, setCopiedField] = useState(null);
   
+  // Collapse state
+  const [collapsedCategories, setCollapsedCategories] = useState({});
+
+  const toggleCategory = (category) => {
+    setCollapsedCategories(prev => ({
+      ...prev,
+      [category]: !prev[category]
+    }));
+  };
+  
   // Status stats mock
   const [fieldsResolved] = useState(3);
 
@@ -287,6 +297,23 @@ export default function Popup() {
     }
   };
 
+  const handleViewDoc = async (id) => {
+    try {
+      const dIdRes = await getDeviceId();
+      const did = dIdRes.deviceId || dIdRes;
+      const s = settings || { serverUrl: 'http://localhost:3001' };
+      let url = `${s.serverUrl}/api/documents/${id}/view`;
+      if (token) {
+        url += `?token=${token}`;
+      } else {
+        url += `?deviceId=${did}`;
+      }
+      chrome.tabs.create({ url });
+    } catch (err) {
+      console.error('Failed to view doc', err);
+    }
+  };
+
   const profileCompleteness = () => {
     if (!profile) return 0;
     const fields = ['firstName', 'email', 'phone', 'city', 'country', 'currentJobTitle', 'skills'];
@@ -310,7 +337,7 @@ export default function Popup() {
   const renderAuth = () => (
     <div className="w-[360px] flex flex-col h-[450px] justify-center px-6 bg-surface animate-fade-in relative z-50 font-sans rounded-lg overflow-hidden text-zinc-200">
       <div className="text-center mb-6">
-        <div className="w-8 h-8 rounded-xl flex items-center justify-center mx-auto mb-3   ">
+        <div className="w-10 h-10 bg-indigo-500  p-2 rounded-xl flex items-center justify-center mx-auto mb-3   ">
           <img src="/icons/icon48.png" alt="App Icon" className="w-full h-full object-contain " />
         </div>
         <h2 className="text-lg font-bold text-zinc-100">{authMode === 'login' ? 'Welcome Back' : 'Create Account'}</h2>
@@ -480,7 +507,7 @@ export default function Popup() {
     const renderField = (f, isCustom) => {
       const isEditing = editingField === f.rawKey;
       return (
-        <div key={f.uniqueKey || f.rawKey} className="bg-surface-card p-3 rounded-xl border border-surface-border flex items-center justify-between group  transition-all">
+        <div key={f.uniqueKey || f.rawKey} className="bg-surface-elevated p-3 rounded-xl border border-surface-border flex items-center justify-between group transition-all">
           {isEditing ? (
             <div className="flex-1 flex gap-2 items-center">
               <input type="text" className="flex-1 bg-surface-elevated border border-primary-500 rounded px-2 py-1.5 text-[13px] text-zinc-200 outline-none" value={editFieldValue} onChange={e => setEditFieldValue(e.target.value)} autoFocus />
@@ -524,12 +551,8 @@ export default function Popup() {
     const uncategorizedCustomFields = customFields.filter(f => !PROFILE_SECTIONS.some(s => s.title === (f.category || 'Custom')));
 
     return (
-      <div className="space-y-6 animate-fade-in pb-4">
-        {!showAddField && (
-          <div className="flex items-center justify-end px-1 -mb-2">
-            <button onClick={() => setShowAddField(true)} className="text-[10px] font-bold text-primary-500 hover:text-primary-400 uppercase tracking-widest">+ Add Field</button>
-          </div>
-        )}
+      <div className="flex flex-col gap-4 animate-fade-in pb-4">
+
 
         {showAddField && (
            <div className="bg-surface-card p-4 rounded-xl mb-4 border border-surface-border">
@@ -571,82 +594,130 @@ export default function Popup() {
         )}
 
         {!showAddField && (
-          <div className="mb-4">
+          <div className="flex items-center gap-2">
             <input
               type="text"
               placeholder="Search fields..."
-              className="w-full bg-surface-elevated border border-surface-border rounded-lg p-2 text-[12px] text-zinc-200 outline-none focus:border-primary-500"
+              className="flex-1 bg-surface-elevated border border-surface-border rounded-lg p-2 text-[12px] text-zinc-200 outline-none focus:border-primary-500"
               value={profileSearch}
               onChange={e => setProfileSearch(e.target.value)}
             />
+            <button 
+              onClick={() => setShowAddField(true)} 
+              className="px-3 py-2 bg-primary-500 hover:bg-primary-600 text-white rounded-lg text-[11px] font-bold whitespace-nowrap transition-colors"
+            >
+              + Add Field
+            </button>
           </div>
         )}
 
-        {PROFILE_SECTIONS.map(section => {
-          const searchLower = profileSearch.toLowerCase();
-          const sFields = filledFields.filter(f => 
-            (section.isArray && f.rawKey === section.arrayKey) || 
-            (!section.isArray && section.fields.some(sf => sf.key === f.rawKey))
-          ).filter(f => f.label.toLowerCase().includes(searchLower) || f.value.toLowerCase().includes(searchLower));
-          const cFields = customFields.filter(f => (f.category || 'Custom') === section.title).filter(f => f.label.toLowerCase().includes(searchLower) || f.value.toLowerCase().includes(searchLower));
-          
-          if (sFields.length === 0 && cFields.length === 0) return null;
-
-          if (section.isArray) {
-            const groups = {};
-            sFields.forEach(f => {
-               if (!groups[f.arrayIndex]) groups[f.arrayIndex] = [];
-               groups[f.arrayIndex].push(f);
-            });
+        <div className="flex flex-col gap-2">
+          {PROFILE_SECTIONS.map(section => {
+            const searchLower = profileSearch.toLowerCase();
+            const sFields = filledFields.filter(f => 
+              (section.isArray && f.rawKey === section.arrayKey) || 
+              (!section.isArray && section.fields.some(sf => sf.key === f.rawKey))
+            ).filter(f => f.label.toLowerCase().includes(searchLower) || f.value.toLowerCase().includes(searchLower));
+            const cFields = customFields.filter(f => (f.category || 'Custom') === section.title).filter(f => f.label.toLowerCase().includes(searchLower) || f.value.toLowerCase().includes(searchLower));
             
+            if (sFields.length === 0 && cFields.length === 0) return null;
+
+            const isExpanded = !collapsedCategories[section.title] || profileSearch.trim() !== '';
+
+            if (section.isArray) {
+              const groups = {};
+              sFields.forEach(f => {
+                 if (!groups[f.arrayIndex]) groups[f.arrayIndex] = [];
+                 groups[f.arrayIndex].push(f);
+              });
+              
+              return (
+                <div key={section.title} className="bg-surface-card border border-surface-border rounded-xl overflow-hidden">
+                  <div 
+                    className="flex items-center justify-between p-3 bg-surface-card hover:bg-surface-elevated cursor-pointer transition-colors group"
+                    onClick={() => toggleCategory(section.title)}
+                  >
+                    <h3 className="text-[10px] font-bold text-zinc-400 tracking-widest uppercase flex items-center gap-2 group-hover:text-zinc-200 transition-colors">
+                      <span>{section.icon}</span> {section.title}
+                    </h3>
+                    <svg 
+                      className={`w-4 h-4 text-zinc-500 transition-transform duration-200 ${!isExpanded ? 'rotate-180' : ''}`} 
+                      viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+                    >
+                      <polyline points="18 15 12 9 6 15"></polyline>
+                    </svg>
+                  </div>
+                  {isExpanded && (
+                    <div className="flex flex-col gap-3 p-3 pt-0">
+                      {Object.keys(groups).sort((a, b) => Number(a) - Number(b)).map(indexStr => (
+                        <div key={indexStr} className="bg-primary-500/5 border border-primary-500/20 rounded-xl p-2 relative">
+                          <div className="absolute -top-2 right-4 px-2 py-0.5 bg-surface text-primary-400 text-[9px] font-bold uppercase tracking-wider rounded-full border border-primary-500/20">
+                            Entry {Number(indexStr) + 1}
+                          </div>
+                          <div className="grid grid-cols-1 gap-2 mt-1">
+                            {groups[indexStr].map(f => renderField(f, false))}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              );
+            }
+
             return (
-              <div key={section.title} className="mb-4">
-                <div className="flex items-center justify-between mb-3 px-1">
-                  <h3 className="text-[10px] font-bold text-zinc-500 tracking-widest uppercase flex items-center gap-2">
+              <div key={section.title} className="bg-surface-card border border-surface-border rounded-xl overflow-hidden">
+                <div 
+                  className="flex items-center justify-between p-3 bg-surface-card hover:bg-surface-elevated cursor-pointer transition-colors group"
+                  onClick={() => toggleCategory(section.title)}
+                >
+                  <h3 className="text-[10px] font-bold text-zinc-400 tracking-widest uppercase flex items-center gap-2 group-hover:text-zinc-200 transition-colors">
                     <span>{section.icon}</span> {section.title}
                   </h3>
+                  <svg 
+                    className={`w-4 h-4 text-zinc-500 transition-transform duration-200 ${!isExpanded ? 'rotate-180' : ''}`} 
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+                  >
+                    <polyline points="18 15 12 9 6 15"></polyline>
+                  </svg>
                 </div>
-                <div className="flex flex-col gap-3">
-                  {Object.keys(groups).sort((a, b) => Number(a) - Number(b)).map(indexStr => (
-                    <div key={indexStr} className="bg-primary-500/5 border border-primary-500/20 rounded-xl p-2 relative">
-                      <div className="absolute -top-2 right-4 px-2 py-0.5 bg-surface text-primary-400 text-[9px] font-bold uppercase tracking-wider rounded-full border border-primary-500/20">
-                        Entry {Number(indexStr) + 1}
-                      </div>
-                      <div className="grid grid-cols-1 gap-2 mt-1">
-                        {groups[indexStr].map(f => renderField(f, false))}
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                {isExpanded && (
+                  <div className="grid grid-cols-1 gap-2 p-3 pt-0">
+                    {sFields.map(f => renderField(f, false))}
+                    {cFields.map(f => renderField(f, true))}
+                  </div>
+                )}
               </div>
             );
-          }
+          })}
 
-          return (
-            <div key={section.title} className="mb-4">
-              <div className="flex items-center justify-between mb-3 px-1">
-                <h3 className="text-[10px] font-bold text-zinc-500 tracking-widest uppercase flex items-center gap-2">
-                  <span>{section.icon}</span> {section.title}
-                </h3>
+          {(uncategorizedCustomFields.length > 0 || (filledFields.length === 0 && customFields.length === 0)) && (() => {
+            const isUncatExpanded = !collapsedCategories['Uncategorized'] || profileSearch.trim() !== '';
+            return (
+              <div className="bg-surface-card border border-surface-border rounded-xl overflow-hidden">
+                <div 
+                  className="flex items-center justify-between p-3 bg-surface-card hover:bg-surface-elevated cursor-pointer transition-colors group"
+                  onClick={() => toggleCategory('Uncategorized')}
+                >
+                  <h3 className="text-[10px] font-bold text-zinc-400 tracking-widest uppercase flex items-center gap-2 group-hover:text-zinc-200 transition-colors">
+                    <span>✨</span> Uncategorized Custom Fields
+                  </h3>
+                  <svg 
+                    className={`w-4 h-4 text-zinc-500 transition-transform duration-200 ${!isUncatExpanded ? 'rotate-180' : ''}`} 
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+                  >
+                    <polyline points="18 15 12 9 6 15"></polyline>
+                  </svg>
+                </div>
+                {isUncatExpanded && (
+                  <div className="grid grid-cols-1 gap-2 p-3 pt-0">
+                    {uncategorizedCustomFields.filter(f => f.label.toLowerCase().includes(profileSearch.toLowerCase()) || f.value.toLowerCase().includes(profileSearch.toLowerCase())).length > 0 ? uncategorizedCustomFields.filter(f => f.label.toLowerCase().includes(profileSearch.toLowerCase()) || f.value.toLowerCase().includes(profileSearch.toLowerCase())).map(f => renderField(f, true)) : (profileSearch ? <p className="text-[11px] text-zinc-500 italic px-1">No matches found.</p> : <p className="text-[11px] text-zinc-500 italic px-1">No custom fields added.</p>)}
+                  </div>
+                )}
               </div>
-              <div className="grid grid-cols-1 gap-2">
-                {sFields.map(f => renderField(f, false))}
-                {cFields.map(f => renderField(f, true))}
-              </div>
-            </div>
-          );
-        })}
-
-        {(uncategorizedCustomFields.length > 0 || (filledFields.length === 0 && customFields.length === 0)) && (
-          <div>
-            <h3 className="text-[10px] font-bold text-zinc-500 tracking-widest uppercase mb-3 px-1 flex items-center gap-2">
-              <span>✨</span> Uncategorized Custom Fields
-            </h3>
-            <div className="grid grid-cols-1 gap-2">
-              {uncategorizedCustomFields.filter(f => f.label.toLowerCase().includes(profileSearch.toLowerCase()) || f.value.toLowerCase().includes(profileSearch.toLowerCase())).length > 0 ? uncategorizedCustomFields.filter(f => f.label.toLowerCase().includes(profileSearch.toLowerCase()) || f.value.toLowerCase().includes(profileSearch.toLowerCase())).map(f => renderField(f, true)) : (profileSearch ? <p className="text-[11px] text-zinc-500 italic px-1">No matches found.</p> : <p className="text-[11px] text-zinc-500 italic px-1">No custom fields added.</p>)}
-            </div>
-          </div>
-        )}
+            );
+          })()}
+        </div>
       </div>
     );
   };
@@ -670,18 +741,23 @@ export default function Popup() {
 
         <div className="flex items-center justify-between mb-3 px-1">
           <h3 className="text-[10px] font-bold text-zinc-500 tracking-widest uppercase">Your Documents</h3>
-          {!showAddDoc && <button onClick={() => setShowAddDoc(true)} className="text-[10px] font-bold text-primary-500 hover:text-primary-400 uppercase tracking-widest">+ Add</button>}
         </div>
 
         {!showAddDoc && documents.length > 0 && (
-          <div className="mb-4">
+          <div className="mb-4 flex items-center gap-2">
             <input
               type="text"
               placeholder="Search documents..."
-              className="w-full bg-surface-elevated border border-surface-border rounded-lg p-2 text-[12px] text-zinc-200 outline-none focus:border-primary-500"
+              className="flex-1 bg-surface-elevated border border-surface-border rounded-lg p-2 text-[12px] text-zinc-200 outline-none focus:border-primary-500"
               value={docSearch}
               onChange={e => setDocSearch(e.target.value)}
             />
+            <button 
+              onClick={() => setShowAddDoc(true)} 
+              className="px-3 py-2 bg-primary-500 hover:bg-primary-600 text-white rounded-lg text-[11px] font-bold whitespace-nowrap transition-colors"
+            >
+              + Add Doc
+            </button>
           </div>
         )}
 
@@ -702,7 +778,10 @@ export default function Popup() {
                     <div className="text-[11px] text-zinc-500 truncate">{doc.originalName} • {sizeKb} KB</div>
                   </div>
                 </div>
-                <div className="opacity-0 group-hover:opacity-100 transition-opacity pl-2">
+                <div className="opacity-0 group-hover:opacity-100 transition-opacity pl-2 flex items-center gap-2">
+                  <button onClick={() => handleViewDoc(doc._id)} className="text-zinc-400 hover:text-primary-400 transition-colors" title="View Document">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                  </button>
                   <button onClick={() => handleDeleteDoc(doc._id)} className="text-zinc-400 hover:text-red-400 transition-colors" title="Delete">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
                   </button>

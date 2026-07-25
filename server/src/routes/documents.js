@@ -182,4 +182,20 @@ router.get('/:id/download', async (req, res, next) => {
   }
 });
 
+/**
+ * GET /api/documents/:id/view
+ * Serve the file for viewing in the browser.
+ */
+router.get('/:id/view', async (req, res, next) => {
+  try {
+    const doc = await Document.findOne({ _id: req.params.id, deviceId: req.deviceId });
+    if (!doc) return res.status(404).json({ error: 'Document not found' });
+
+    const fullPath = path.join(uploadDir, doc.storagePath);
+    res.sendFile(fullPath, { headers: { 'Content-Type': doc.mimeType } });
+  } catch (err) {
+    next(err);
+  }
+});
+
 module.exports = router;

@@ -18,12 +18,12 @@ export default {
           800: '#9a3412',
           900: '#7c2d12',
         },
-        surface: {
-          DEFAULT: '#282828ff', // zinc-950
-          card: '#2b2b2dff', // zinc-900
-          elevated: '#323235ff', // zinc-800
-          border: '#3f3f46', // zinc-700
-        },
+    surface: {
+  DEFAULT: '#09090b',   // zinc-950 - App background
+  card: '#18181b',      // zinc-900 - Cards, sidebar
+  elevated: '#27272a',  // zinc-800 - Hovered cards, modals
+  border: '#3f3f46',    // zinc-700 - Borders/dividers
+},
         status: {
           filled: '#10b981',
           suggested: '#f59e0b',
