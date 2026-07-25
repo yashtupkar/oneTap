@@ -5,9 +5,9 @@
 /** Backend API base URL */
 export const API_BASE = 'http://localhost:3001/api';
 
-/** chrome.storage keys */
 export const STORAGE_KEYS = {
   DEVICE_ID: 'deviceId',
+  TOKEN: 'token',
   SETTINGS: 'settings',
   AI_CACHE: 'aiCache',
   ENABLED: 'autofillEnabled',
@@ -144,4 +144,8 @@ export const MSG = {
   RECORD_CORRECTION: 'RECORD_CORRECTION',
   GET_PROFILE: 'GET_PROFILE',
   UPDATE_PROFILE: 'UPDATE_PROFILE',
+  LOGIN: 'LOGIN',
+  REGISTER: 'REGISTER',
+  LOGOUT: 'LOGOUT',
+  GET_TOKEN: 'GET_TOKEN',
 };

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getSettings, updateSettings, getProfile, getDeviceId } from '../shared/api.js';
+import { getSettings, updateSettings, getProfile, getDeviceId, getToken, login, register, logout } from '../shared/api.js';
 
 const STATUS_DOT = {
   connected: 'bg-emerald-400',
@@ -15,19 +15,29 @@ export default function Popup() {
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState('home');
 
+  const [token, setToken] = useState(null);
+  const [authMode, setAuthMode] = useState('login'); // 'login' or 'register'
+  const [authEmail, setAuthEmail] = useState('');
+  const [authPassword, setAuthPassword] = useState('');
+  const [authError, setAuthError] = useState('');
+  const [authLoading, setAuthLoading] = useState(false);
+
   useEffect(() => {
     async function loadData() {
       try {
-        const [sRes, pRes, dRes] = await Promise.all([getSettings(), getProfile(), getDeviceId()]);
+        const [sRes, pRes, dRes, tRes] = await Promise.all([getSettings(), getProfile(), getDeviceId(), getToken()]);
         const s = sRes.settings || sRes;
         setSettings(s);
         setProfile(pRes.profile || null);
+        setToken(tRes.token || null);
         
         const did = dRes.deviceId || dRes;
         const url = s.serverUrl || 'http://localhost:3001';
         
         try {
-          const docRes = await fetch(`${url}/api/documents`, { headers: { 'X-Device-ID': did } });
+          const headers = { 'X-Device-ID': did };
+          if (tRes.token) headers['Authorization'] = `Bearer ${tRes.token}`;
+          const docRes = await fetch(`${url}/api/documents`, { headers });
           if (docRes.ok) {
             const docData = await docRes.json();
             setDocuments(docData.documents || []);
@@ -58,6 +68,49 @@ export default function Popup() {
     });
   };
 
+  const handleAuth = async (e) => {
+    e.preventDefault();
+    setAuthLoading(true);
+    setAuthError('');
+    try {
+      let res;
+      if (authMode === 'login') {
+        res = await login(authEmail, authPassword);
+      } else {
+        const did = await getDeviceId();
+        res = await register(authEmail, authPassword, did.deviceId || did);
+      }
+      if (res.error) {
+        setAuthError(res.error);
+      } else if (res.token) {
+        setToken(res.token);
+        // Reload data
+        const [pRes, dRes] = await Promise.all([getProfile(), getDeviceId()]);
+        setProfile(pRes.profile || null);
+        const did = dRes.deviceId || dRes;
+        const s = settings || { serverUrl: 'http://localhost:3001' };
+        try {
+          const docRes = await fetch(`${s.serverUrl}/api/documents`, { headers: { 'X-Device-ID': did, 'Authorization': `Bearer ${res.token}` } });
+          if (docRes.ok) {
+            const docData = await docRes.json();
+            setDocuments(docData.documents || []);
+          }
+        } catch (err) {}
+      }
+    } catch (err) {
+      setAuthError(err.message);
+    } finally {
+      setAuthLoading(false);
+    }
+  };
+
+  const handleLogout = async () => {
+    await logout();
+    setToken(null);
+    setProfile(null);
+    setDocuments([]);
+  };
+
   const profileCompleteness = () => {
     if (!profile) return 0;
     const fields = ['firstName', 'email', 'phone', 'city', 'country', 'currentJobTitle', 'skills'];
@@ -77,6 +130,70 @@ export default function Popup() {
   }
 
   const completeness = profileCompleteness();
+
+  const renderAuth = () => (
+    <div className="w-80 flex flex-col h-[500px] justify-center px-6 bg-surface animate-fade-in relative z-50 font-sans">
+      <div className="text-center mb-6">
+        <div className="w-12 h-12 bg-primary-600/20 rounded-xl flex items-center justify-center text-2xl mx-auto mb-3 border border-primary-500/20">⚡</div>
+        <h2 className="text-lg font-bold text-slate-100">{authMode === 'login' ? 'Welcome Back' : 'Create Account'}</h2>
+        <p className="text-[10px] text-slate-400 mt-1">
+          {authMode === 'login' ? 'Log in to access your secure profiles' : 'Sign up to sync your data securely'}
+        </p>
+      </div>
+
+      <form onSubmit={handleAuth} className="space-y-4">
+        {authError && (
+          <div className="p-2 bg-red-500/10 border border-red-500/20 rounded text-red-400 text-[10px] text-center">
+            {authError}
+          </div>
+        )}
+        <div>
+          <label className="block text-[10px] font-semibold text-slate-400 mb-1 uppercase tracking-wider">Email</label>
+          <input
+            type="email"
+            required
+            value={authEmail}
+            onChange={(e) => setAuthEmail(e.target.value)}
+            className="w-full bg-surface-elevated border border-surface-border rounded px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all"
+            placeholder="you@example.com"
+          />
+        </div>
+        <div>
+          <label className="block text-[10px] font-semibold text-slate-400 mb-1 uppercase tracking-wider">Password</label>
+          <input
+            type="password"
+            required
+            value={authPassword}
+            onChange={(e) => setAuthPassword(e.target.value)}
+            className="w-full bg-surface-elevated border border-surface-border rounded px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all"
+            placeholder="••••••••"
+          />
+        </div>
+        
+        <button
+          type="submit"
+          disabled={authLoading}
+          className="w-full bg-primary-600 hover:bg-primary-500 text-white font-bold py-2 rounded text-xs transition-colors disabled:opacity-50 mt-2"
+        >
+          {authLoading ? 'Please wait...' : (authMode === 'login' ? 'Sign In' : 'Create Account')}
+        </button>
+      </form>
+
+      <div className="mt-5 text-center">
+        <button
+          onClick={() => { setAuthMode(authMode === 'login' ? 'register' : 'login'); setAuthError(''); }}
+          className="text-[10px] text-primary-400 hover:text-primary-300 hover:underline"
+        >
+          {authMode === 'login' ? "Don't have an account? Sign up" : 'Already have an account? Log in'}
+        </button>
+      </div>
+    </div>
+  );
+
+  if (!token) {
+    return renderAuth();
+  }
+
 
   const renderHome = () => (
     <div className="space-y-3 animate-fade-in">
@@ -271,7 +388,9 @@ export default function Popup() {
 
       {/* Footer */}
       <div className="shrink-0 border-t border-surface-border p-3 flex justify-between items-center bg-surface-elevated/30">
-        <span className="text-xs text-slate-500 font-medium">Manage all settings</span>
+        <button onClick={handleLogout} className="text-xs text-red-400 hover:text-red-300 font-medium px-2 py-1 transition-colors">
+          Log out
+        </button>
         <button onClick={() => openOptions(activeTab === 'home' ? '' : activeTab)} className="btn-secondary py-1.5 px-4 text-xs font-semibold flex items-center gap-1.5">
           Open Options <span className="text-[10px]">⚙️</span>
         </button>

@@ -15,6 +15,7 @@ const profileRoutes = require('./routes/profile');
 const documentRoutes = require('./routes/documents');
 const submissionRoutes = require('./routes/submissions');
 const autofillRoutes = require('./routes/autofill');
+const authRoutes = require('./routes/auth');
 
 const app = express();
 const PORT = parseInt(process.env.PORT || '3001', 10);
@@ -61,6 +62,7 @@ app.use('/api/profile', profileRoutes);
 app.use('/api/documents', documentRoutes);
 app.use('/api/submissions', submissionRoutes);
 app.use('/api/autofill', autofillRoutes);
+app.use('/api/auth', authRoutes);
 
 // ── Health check ──────────────────────────────────────────────────────────────
 app.get('/api/health', (_req, res) => {

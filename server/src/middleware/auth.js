@@ -17,27 +17,27 @@ function generateToken(deviceId) {
  */
 function requireAuth(req, res, next) {
   const authHeader = req.headers.authorization;
-  // Also allow deviceId directly via header for simple anonymous sessions
-  const deviceIdHeader = req.headers['x-device-id'];
 
+  // First try to authenticate using the JWT token
+  if (authHeader && authHeader.startsWith('Bearer ')) {
+    const token = authHeader.slice(7);
+    try {
+      const payload = jwt.verify(token, JWT_SECRET);
+      req.deviceId = payload.deviceId;
+      return next();
+    } catch (err) {
+      return res.status(401).json({ error: 'Invalid or expired token' });
+    }
+  }
+
+  // Fallback to simple anonymous device session
+  const deviceIdHeader = req.headers['x-device-id'];
   if (deviceIdHeader) {
-    // Simple anonymous device session (no JWT required)
     req.deviceId = deviceIdHeader;
     return next();
   }
 
-  if (!authHeader || !authHeader.startsWith('Bearer ')) {
-    return res.status(401).json({ error: 'Missing or invalid Authorization header' });
-  }
-
-  const token = authHeader.slice(7);
-  try {
-    const payload = jwt.verify(token, JWT_SECRET);
-    req.deviceId = payload.deviceId;
-    next();
-  } catch (err) {
-    res.status(401).json({ error: 'Invalid or expired token' });
-  }
+  return res.status(401).json({ error: 'Missing Authorization or X-Device-ID header' });
 }
 
 module.exports = { requireAuth, generateToken };

@@ -67,9 +67,28 @@ export async function updateSettings(settings) {
   return sendToBackground(MSG.UPDATE_SETTINGS, { settings });
 }
 
-/** Get the device ID */
 export async function getDeviceId() {
   return sendToBackground(MSG.GET_DEVICE_ID);
+}
+
+/** Get the auth token */
+export async function getToken() {
+  return sendToBackground(MSG.GET_TOKEN);
+}
+
+/** Login */
+export async function login(email, password) {
+  return sendToBackground(MSG.LOGIN, { email, password });
+}
+
+/** Register */
+export async function register(email, password, deviceId) {
+  return sendToBackground(MSG.REGISTER, { email, password, deviceId });
+}
+
+/** Logout */
+export async function logout() {
+  return sendToBackground(MSG.LOGOUT);
 }
 
 // ── Direct API calls (used from background service worker) ────────────────────
@@ -82,17 +101,24 @@ export async function getDeviceId() {
  * @param {object} options - fetch options
  * @param {string} serverUrl - Backend server URL
  * @param {string} deviceId - Device ID for auth
+ * @param {string} token - Auth token
  * @returns {Promise<any>}
  */
-export async function apiRequest(path, options = {}, serverUrl, deviceId) {
+export async function apiRequest(path, options = {}, serverUrl, deviceId, token = null) {
   const url = `${serverUrl}/api${path}`;
+  const headers = {
+    'Content-Type': 'application/json',
+    'X-Device-ID': deviceId,
+    ...options.headers,
+  };
+
+  if (token) {
+    headers['Authorization'] = `Bearer ${token}`;
+  }
+
   const response = await fetch(url, {
     ...options,
-    headers: {
-      'Content-Type': 'application/json',
-      'X-Device-ID': deviceId,
-      ...options.headers,
-    },
+    headers,
   });
 
   if (!response.ok) {

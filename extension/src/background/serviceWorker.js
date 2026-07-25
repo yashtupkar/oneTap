@@ -70,11 +70,54 @@ async function handleMessage(message, sender) {
   const { type } = message;
   const settings = await getSettings();
   const deviceId = await getOrCreateDeviceId();
+  const token = await new Promise(resolve => chrome.storage.local.get(STORAGE_KEYS.TOKEN, d => resolve(d[STORAGE_KEYS.TOKEN])));
   const serverUrl = settings.serverUrl || 'http://localhost:3001';
 
   switch (type) {
     case MSG.GET_DEVICE_ID:
       return { deviceId };
+
+    case MSG.GET_TOKEN:
+      return { token };
+
+    case MSG.LOGIN: {
+      try {
+        const response = await apiRequest(
+          '/auth/login',
+          { method: 'POST', body: JSON.stringify({ email: message.email, password: message.password }) },
+          serverUrl,
+          deviceId
+        );
+        if (response.token) {
+          await new Promise(resolve => chrome.storage.local.set({ [STORAGE_KEYS.TOKEN]: response.token }, resolve));
+        }
+        return response;
+      } catch (err) {
+        return { error: err.message };
+      }
+    }
+
+    case MSG.REGISTER: {
+      try {
+        const response = await apiRequest(
+          '/auth/register',
+          { method: 'POST', body: JSON.stringify({ email: message.email, password: message.password, deviceId: message.deviceId }) },
+          serverUrl,
+          deviceId
+        );
+        if (response.token) {
+          await new Promise(resolve => chrome.storage.local.set({ [STORAGE_KEYS.TOKEN]: response.token }, resolve));
+        }
+        return response;
+      } catch (err) {
+        return { error: err.message };
+      }
+    }
+
+    case MSG.LOGOUT: {
+      await new Promise(resolve => chrome.storage.local.remove([STORAGE_KEYS.TOKEN], resolve));
+      return { success: true };
+    }
 
     case MSG.GET_SETTINGS:
       return { settings };
@@ -103,7 +146,8 @@ async function handleMessage(message, sender) {
             }),
           },
           serverUrl,
-          deviceId
+          deviceId,
+          token
         );
         return response;
       } catch (err) {
@@ -119,7 +163,8 @@ async function handleMessage(message, sender) {
           '/submissions',
           { method: 'POST', body: JSON.stringify({ url, domain, fields }) },
           serverUrl,
-          deviceId
+          deviceId,
+          token
         );
       } catch (err) {
         console.error('[AI Autofill] Submission save failed:', err.message);
@@ -137,7 +182,8 @@ async function handleMessage(message, sender) {
             body: JSON.stringify({ fieldDescriptor, oldProfileKey, newProfileKey, domain }),
           },
           serverUrl,
-          deviceId
+          deviceId,
+          token
         );
       } catch (err) {
         console.error('[AI Autofill] Correction failed:', err.message);
@@ -147,7 +193,7 @@ async function handleMessage(message, sender) {
 
     case MSG.GET_PROFILE: {
       try {
-        return await apiRequest('/profile', {}, serverUrl, deviceId);
+        return await apiRequest('/profile', {}, serverUrl, deviceId, token);
       } catch (err) {
         return { error: err.message };
       }
@@ -159,7 +205,8 @@ async function handleMessage(message, sender) {
           '/profile',
           { method: 'PATCH', body: JSON.stringify(message.profileData) },
           serverUrl,
-          deviceId
+          deviceId,
+          token
         );
       } catch (err) {
         return { error: err.message };
