@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { getDeviceId, getSettings } from '../../shared/api.js';
+import { getDeviceId, getSettings, getToken } from '../../shared/api.js';
 
 export default function MappingsPage() {
   const [mappings, setMappings] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [deviceId, setDeviceId] = useState('');
+  const [token, setToken] = useState(null);
   const [serverUrl, setServerUrl] = useState('http://localhost:3001');
 
   useEffect(() => {
@@ -19,7 +20,11 @@ export default function MappingsPage() {
         const url = settings.serverUrl || 'http://localhost:3001';
         setServerUrl(url);
 
-        await fetchMappings(url, dId.deviceId || dId);
+        const tokenRes = await getToken();
+        const t = tokenRes.token || tokenRes;
+        setToken(t || null);
+
+        await fetchMappings(url, dId.deviceId || dId, t || null);
       } catch (err) {
         setError('Failed to initialize: ' + err.message);
       } finally {
@@ -29,13 +34,12 @@ export default function MappingsPage() {
     init();
   }, []);
 
-  const fetchMappings = async (url, devId) => {
+  const fetchMappings = async (url, devId, t = null) => {
     try {
-      const response = await fetch(`${url}/api/autofill/mappings`, {
-        headers: {
-          'X-Device-ID': devId
-        }
-      });
+      const headers = { 'X-Device-ID': devId };
+      if (t) headers['Authorization'] = `Bearer ${t}`;
+
+      const response = await fetch(`${url}/api/autofill/mappings`, { headers });
       if (!response.ok) throw new Error('Failed to fetch mappings');
       const data = await response.json();
       setMappings(data.mappings || []);
@@ -48,11 +52,12 @@ export default function MappingsPage() {
     if (!confirm('Are you sure you want to delete this learned association?')) return;
 
     try {
+      const headers = { 'X-Device-ID': deviceId };
+      if (token) headers['Authorization'] = `Bearer ${token}`;
+
       const response = await fetch(`${serverUrl}/api/autofill/mappings/${id}`, {
         method: 'DELETE',
-        headers: {
-          'X-Device-ID': deviceId
-        }
+        headers
       });
       if (!response.ok) throw new Error('Failed to delete mapping');
       setMappings(prev => prev.filter(m => m._id !== id));

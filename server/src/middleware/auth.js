@@ -37,6 +37,22 @@ function requireAuth(req, res, next) {
     return next();
   }
 
+  // Third fallback: query params (used for download links in browser)
+  if (req.query.token) {
+    try {
+      const payload = jwt.verify(req.query.token, JWT_SECRET);
+      req.deviceId = payload.deviceId;
+      return next();
+    } catch (err) {
+      return res.status(401).json({ error: 'Invalid or expired token in query' });
+    }
+  }
+
+  if (req.query.deviceId) {
+    req.deviceId = req.query.deviceId;
+    return next();
+  }
+
   return res.status(401).json({ error: 'Missing Authorization or X-Device-ID header' });
 }
 

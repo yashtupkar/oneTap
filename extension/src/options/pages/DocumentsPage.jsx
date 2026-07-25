@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getDeviceId, getSettings } from '../../shared/api.js';
+import { getDeviceId, getSettings, getToken } from '../../shared/api.js';
 import { DOCUMENT_CATEGORIES } from '../../shared/constants.js';
 
 export default function DocumentsPage() {
@@ -8,6 +8,7 @@ export default function DocumentsPage() {
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState('');
   const [deviceId, setDeviceId] = useState('');
+  const [token, setToken] = useState(null);
   const [serverUrl, setServerUrl] = useState('http://localhost:3001');
 
   // Form states
@@ -27,7 +28,11 @@ export default function DocumentsPage() {
         const url = settings.serverUrl || 'http://localhost:3001';
         setServerUrl(url);
 
-        await fetchDocs(url, dId.deviceId || dId);
+        const tokenRes = await getToken();
+        const t = tokenRes.token || tokenRes;
+        setToken(t || null);
+
+        await fetchDocs(url, dId.deviceId || dId, t || null);
       } catch (err) {
         setError('Failed to initialize: ' + err.message);
       } finally {
@@ -37,13 +42,12 @@ export default function DocumentsPage() {
     init();
   }, []);
 
-  const fetchDocs = async (url, devId) => {
+  const fetchDocs = async (url, devId, t = null) => {
     try {
-      const response = await fetch(`${url}/api/documents`, {
-        headers: {
-          'X-Device-ID': devId
-        }
-      });
+      const headers = { 'X-Device-ID': devId };
+      if (t) headers['Authorization'] = `Bearer ${t}`;
+
+      const response = await fetch(`${url}/api/documents`, { headers });
       if (!response.ok) throw new Error('Failed to fetch documents');
       const data = await response.json();
       setDocuments(data.documents || []);
@@ -83,11 +87,12 @@ export default function DocumentsPage() {
     formData.append('isDefault', isDefault);
 
     try {
+      const headers = { 'X-Device-ID': deviceId };
+      if (token) headers['Authorization'] = `Bearer ${token}`;
+
       const response = await fetch(`${serverUrl}/api/documents`, {
         method: 'POST',
-        headers: {
-          'X-Device-ID': deviceId
-        },
+        headers,
         body: formData
       });
 
@@ -104,7 +109,7 @@ export default function DocumentsPage() {
       if (fileInput) fileInput.value = '';
 
       // Re-fetch docs
-      await fetchDocs(serverUrl, deviceId);
+      await fetchDocs(serverUrl, deviceId, token);
     } catch (err) {
       setError(err.message);
     } finally {
@@ -116,11 +121,12 @@ export default function DocumentsPage() {
     if (!confirm('Are you sure you want to delete this document?')) return;
 
     try {
+      const headers = { 'X-Device-ID': deviceId };
+      if (token) headers['Authorization'] = `Bearer ${token}`;
+
       const response = await fetch(`${serverUrl}/api/documents/${id}`, {
         method: 'DELETE',
-        headers: {
-          'X-Device-ID': deviceId
-        }
+        headers
       });
       if (!response.ok) throw new Error('Failed to delete document');
       setDocuments(prev => prev.filter(d => d._id !== id));
@@ -131,16 +137,19 @@ export default function DocumentsPage() {
 
   const handleSetDefault = async (doc) => {
     try {
+      const headers = {
+        'Content-Type': 'application/json',
+        'X-Device-ID': deviceId
+      };
+      if (token) headers['Authorization'] = `Bearer ${token}`;
+
       const response = await fetch(`${serverUrl}/api/documents/${doc._id}`, {
         method: 'PATCH',
-        headers: {
-          'Content-Type': 'application/json',
-          'X-Device-ID': deviceId
-        },
+        headers,
         body: JSON.stringify({ isDefault: true, category: doc.category })
       });
       if (!response.ok) throw new Error('Failed to update default');
-      await fetchDocs(serverUrl, deviceId);
+      await fetchDocs(serverUrl, deviceId, token);
     } catch (err) {
       setError(err.message);
     }
@@ -296,7 +305,7 @@ export default function DocumentsPage() {
                         </button>
                       )}
                       <a
-                        href={`${serverUrl}/api/documents/${doc._id}/download?deviceId=${deviceId}`}
+                        href={`${serverUrl}/api/documents/${doc._id}/download?${token ? `token=${token}` : `deviceId=${deviceId}`}`}
                         download
                         className="btn-secondary py-1 px-2.5 text-xs hover:border-primary-500/40 hover:text-primary-400 flex items-center gap-1"
                         target="_blank"
