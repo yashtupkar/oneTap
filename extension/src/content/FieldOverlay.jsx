@@ -452,7 +452,7 @@ const MONO = "'JetBrains Mono', 'SF Mono', ui-monospace, monospace";
  * @param {function} props.onEdit - Called when user edits/corrects the value
  * @param {function} props.onApply - Called to apply the suggestion
  */
-export function FieldOverlay({ suggestion, field, rect, onEdit, onApply }) {
+export function FieldOverlay({ suggestion, field, rect, onEdit, onApply, onMagicRewrite }) {
   const [expanded, setExpanded] = useState(false);
   const [editValue, setEditValue] = useState(suggestion?.value || '');
   const [isEditing, setIsEditing] = useState(false);
@@ -569,43 +569,81 @@ export function FieldOverlay({ suggestion, field, rect, onEdit, onApply }) {
   const confidence = suggestion?.confidence ? Math.round(suggestion.confidence * 100) : 0;
   const fieldLabel = field?.label || field?.name || field?.placeholder || 'This field';
 
-  // Don't render anything if there's no suggestion and the field is empty
-  if (localStatus === 'missing' && !hasValue) {
-    return null;
-  }
+  const showRewrite = (field?.type === 'text' || field?.type === 'textarea') && hasValue;
 
   const top = rect ? rect.top + window.scrollY - 24 : 0;
   const left = rect ? rect.right + window.scrollX - 22 : 0;
+  
+  const rewriteTop = rect ? rect.bottom + window.scrollY - 26 : 0;
+  const rewriteLeft = rect ? rect.right + window.scrollX - 26 : 0;
 
   const displayValue = suggestion?.isSensitive
     ? suggestion.value?.slice(0, 2) + ' •••• ' + suggestion.value?.slice(-2)
     : suggestion?.value;
 
   return (
-    <div
-      ref={overlayRef}
-      className="onetap-inline-btn"
-      onMouseEnter={() => {
-        isHovered.current = true;
-        setExpanded(true);
-      }}
-      onMouseLeave={() => {
-        isHovered.current = false;
-        if (document.activeElement !== field?.element) {
-          setExpanded(false);
-        }
-      }}
-      style={{
-        position: 'absolute',
-        top: `${top}px`,
-        left: `${left}px`,
-        zIndex: expanded ? 2147483645 : 2147483640,
-        fontFamily: FONT,
-        fontSize: '11px',
-        lineHeight: 1.2,
-      }}
-    >
-      {/* Status trigger chip */}
+    <>
+      {/* Rewrite Overlay Button inside field
+      {showRewrite && (
+        <div
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            onMagicRewrite?.();
+          }}
+          style={{
+            position: 'absolute',
+            top: `${rewriteTop}px`,
+            left: `${rewriteLeft}px`,
+            zIndex: 2147483640,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '20px',
+            height: '20px',
+            borderRadius: '50%',
+            background: ZINC[800],
+            border: `1px solid ${ZINC[600]}`,
+            color: '#e2e8f0',
+            cursor: 'pointer',
+            userSelect: 'none',
+            boxShadow: '0 1px 4px rgba(0,0,0,0.2)',
+            transition: 'all 0.15s ease',
+          }}
+          onMouseOver={(e) => { e.currentTarget.style.transform = 'scale(1.1)'; e.currentTarget.style.background = ACCENT; }}
+          onMouseOut={(e) => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.background = ZINC[800]; }}
+          title="Magic Rewrite"
+        >
+          <span style={{ fontSize: '11px' }}>✨</span>
+        </div>
+      )} */}
+
+      {/* Main Autofill Overlay outside field */}
+      {(localStatus !== 'missing' || hasValue) && (
+        <div
+          ref={overlayRef}
+          className="onetap-inline-btn"
+          onMouseEnter={() => {
+            isHovered.current = true;
+            setExpanded(true);
+          }}
+          onMouseLeave={() => {
+            isHovered.current = false;
+            if (document.activeElement !== field?.element) {
+              setExpanded(false);
+            }
+          }}
+          style={{
+            position: 'absolute',
+            top: `${top}px`,
+            left: `${left}px`,
+            zIndex: expanded ? 2147483645 : 2147483640,
+            fontFamily: FONT,
+            fontSize: '11px',
+            lineHeight: 1.2,
+          }}
+        >
+          {/* Status trigger chip */}
       <div
         onClick={handleApplyClick}
         style={{
@@ -928,7 +966,9 @@ export function FieldOverlay({ suggestion, field, rect, onEdit, onApply }) {
           to { opacity: 1; transform: translateY(0); }
         }
       `}</style>
-    </div>
+        </div>
+      )}
+    </>
   );
 }
 

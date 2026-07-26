@@ -280,4 +280,58 @@ function parseAIBatchResponse(content, customKeys, expectedLength) {
   }
 }
 
-module.exports = { classifyField, classifyFieldsBatch, clearCache };
+/**
+ * Calls the OpenRouter API to ask a general question about selected text.
+ *
+ * @param {string} prompt - The user's prompt or predefined action
+ * @param {string} selectedText - The text selected by the user
+ * @param {string} apiKey - OpenRouter API key
+ * @returns {Promise<{ result: string, error?: string }>}
+ */
+async function askAssistant(prompt, selectedText, apiKey) {
+  const key = apiKey || process.env.OPENROUTER_API_KEY;
+
+  if (!key) {
+    logger.warn('No OpenRouter API key provided — skipping AI assistant');
+    return { result: null, error: 'No API key configured' };
+  }
+
+  const systemPrompt = `You are a highly capable AI assistant embedded in a web browser extension. You help the user analyze, summarize, translate, or process text they select on a webpage. Keep your answers concise, helpful, and directly address the user's prompt.`;
+  const userPrompt = `Selected Text:\n"""\n${selectedText}\n"""\n\nTask: ${prompt}`;
+
+  try {
+    const response = await fetch(`${OPENROUTER_BASE}/chat/completions`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${key}`,
+        'Content-Type': 'application/json',
+        'HTTP-Referer': '',
+        'X-Title': '',
+      },
+      body: JSON.stringify({
+        model: DEFAULT_MODEL,
+        messages: [
+          { role: 'system', content: systemPrompt },
+          { role: 'user', content: userPrompt },
+        ],
+        max_tokens: 1500,
+        temperature: 0.5,
+      }),
+    });
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      throw new Error(`OpenRouter API error ${response.status}: ${errorText}`);
+    }
+
+    const data = await response.json();
+    const content = data.choices?.[0]?.message?.content?.trim() || '';
+    return { result: content };
+  } catch (err) {
+    logger.error(`AI assistant error: ${err.message}\\n${err.stack}`);
+    return { result: null, error: err.message };
+  }
+}
+
+module.exports = { classifyField, classifyFieldsBatch, clearCache, askAssistant };
+

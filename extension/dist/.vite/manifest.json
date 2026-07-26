@@ -5,12 +5,8 @@
     "src": "../../../../../../@crx/manifest",
     "isEntry": true
   },
-  "_api-BFNnCebU.js": {
-    "file": "assets/api-BFNnCebU.js",
-    "name": "api"
-  },
-  "_api-CkC3Xrwn.js": {
-    "file": "assets/api-CkC3Xrwn.js",
+  "_api-CbnjZMr_.js": {
+    "file": "assets/api-CbnjZMr_.js",
     "name": "api"
   },
   "_client-DhEz86-d.js": {
@@ -18,59 +14,59 @@
     "name": "client"
   },
   "_index-!~{004}~.js": {
-    "file": "assets/index-1RThRZWc.css",
+    "file": "assets/index-C851xYJx.css",
     "src": "_index-!~{004}~.js"
   },
-  "_index-CeUiTHaT.js": {
-    "file": "assets/index-CeUiTHaT.js",
+  "_index-C9iWPIHB.js": {
+    "file": "assets/index-C9iWPIHB.js",
     "name": "index",
     "css": [
-      "assets/index-1RThRZWc.css"
+      "assets/index-C851xYJx.css"
     ]
   },
   "index.jsx-loader.js": {
-    "file": "assets/index.jsx-loader-gTK1dItr.js",
+    "file": "assets/index.jsx-loader-COIRfkFr.js",
     "src": "index.jsx-loader.js"
   },
   "options/index.html": {
-    "file": "assets/index.html-yj6aQNBL.js",
+    "file": "assets/index.html-DFU7omUs.js",
     "name": "index.html",
     "src": "options/index.html",
     "isEntry": true,
     "imports": [
-      "_index-CeUiTHaT.js",
+      "_index-C9iWPIHB.js",
       "_client-DhEz86-d.js",
-      "_api-CkC3Xrwn.js"
+      "_api-CbnjZMr_.js"
     ]
   },
   "popup/index.html": {
-    "file": "assets/index.html-z-PiYaR7.js",
+    "file": "assets/index.html-DdAFwDRi.js",
     "name": "index.html",
     "src": "popup/index.html",
     "isEntry": true,
     "imports": [
-      "_index-CeUiTHaT.js",
+      "_index-C9iWPIHB.js",
       "_client-DhEz86-d.js",
-      "_api-CkC3Xrwn.js"
+      "_api-CbnjZMr_.js"
     ]
   },
   "src/background/serviceWorker.js": {
-    "file": "assets/serviceWorker.js-CrRK6gdQ.js",
+    "file": "assets/serviceWorker.js-DWQBfeTt.js",
     "name": "serviceWorker.js",
     "src": "src/background/serviceWorker.js",
     "isEntry": true,
     "imports": [
-      "_api-CkC3Xrwn.js"
+      "_api-CbnjZMr_.js"
     ]
   },
   "src/content/index.jsx": {
-    "file": "assets/index.jsx-dTZz24hj.js",
+    "file": "assets/index.jsx-anPzHWYC.js",
     "name": "index.jsx",
     "src": "src/content/index.jsx",
     "isEntry": true,
     "imports": [
       "_client-DhEz86-d.js",
-      "_api-CkC3Xrwn.js"
+      "_api-CbnjZMr_.js"
     ],
     "css": [
       "assets/index-D6mmBFxb.css"

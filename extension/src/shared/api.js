@@ -91,6 +91,11 @@ export async function logout() {
   return sendToBackground(MSG.LOGOUT);
 }
 
+/** Ask the AI assistant about selected text */
+export async function askAiAssistant(prompt, selectedText) {
+  return sendToBackground(MSG.ASK_AI_ASSISTANT, { prompt, selectedText });
+}
+
 // ── Direct API calls (used from background service worker) ────────────────────
 
 /**

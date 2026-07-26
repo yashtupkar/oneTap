@@ -213,6 +213,30 @@ async function handleMessage(message, sender) {
       }
     }
 
+    case MSG.ASK_AI_ASSISTANT: {
+      const { prompt, selectedText } = message;
+      try {
+        const response = await apiRequest(
+          '/ai/ask',
+          {
+            method: 'POST',
+            body: JSON.stringify({
+              prompt,
+              selectedText,
+              openrouterApiKey: settings.openrouterApiKey,
+            }),
+          },
+          serverUrl,
+          deviceId,
+          token
+        );
+        return response;
+      } catch (err) {
+        console.error('[AI Assistant] Request failed:', err.message);
+        return { result: null, error: err.message };
+      }
+    }
+
     case 'OPEN_OPTIONS': {
       chrome.runtime.openOptionsPage();
       return { success: true };

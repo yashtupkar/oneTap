@@ -11,7 +11,7 @@ import { detectAllFields, watchForNewFields } from './FormDetector.js';
 import { processSuggestions, applyFill } from './AutofillEngine.js';
 import { captureFormSubmissions, collectFieldValues } from './SubmissionCapture.js';
 import { FieldOverlay } from './FieldOverlay.jsx';
-
+import { TextSelectionAssistant } from './TextSelectionAssistant.jsx';
 import { GlobalFillButton } from './GlobalFillButton.jsx';
 import { fetchSuggestions, getSettings, saveSubmission } from '../shared/api.js';
 import { showToast } from './Toast.js';
@@ -24,6 +24,8 @@ let overlayRoots = new Map(); // fieldFingerprint → { container, root }
 
 let globalButtonRoot = null;
 let settings = null;
+let textSelectionRoot = null;
+let textSelectionContainer = null;
 
 // ── Initialize ────────────────────────────────────────────────────────────────
 
@@ -50,6 +52,9 @@ async function init() {
   if (settings.showOverlays) {
     renderGlobalButton();
   }
+
+  // Watch for text selection
+  document.addEventListener('mouseup', handleTextSelection);
 }
 
 
@@ -188,6 +193,11 @@ function renderOverlays(fields, fieldSuggestions) {
           rect={rect}
           onApply={() => handleApply(field, idx, suggestion)}
           onEdit={(newValue) => handleEdit(field, idx, suggestion, newValue)}
+          onMagicRewrite={() => {
+            if (field.element.value) {
+              renderTextSelectionUI(field.element.getBoundingClientRect(), field.element.value, true);
+            }
+          }}
         />
       );
       return;
@@ -226,6 +236,11 @@ function renderOverlays(fields, fieldSuggestions) {
           rect={rect}
           onApply={() => handleApply(field, idx, suggestion)}
           onEdit={(newValue) => handleEdit(field, idx, suggestion, newValue)}
+          onMagicRewrite={() => {
+            if (field.element.value) {
+              renderTextSelectionUI(field.element.getBoundingClientRect(), field.element.value, true);
+            }
+          }}
         />
       );
     });
@@ -246,6 +261,102 @@ function handleApply(field, idx, suggestion) {
 
 function handleEdit(field, idx, suggestion, newValue) {
   applyFill(field, newValue, suggestion);
+}
+
+// ── Text Selection UI ─────────────────────────────────────────────────────────
+
+function handleTextSelection(e) {
+  if (!settings || !settings.enabled) return;
+
+  // Ignore events that happen inside our own UI
+  if (textSelectionContainer && textSelectionContainer.contains(e.target)) {
+    return;
+  }
+
+  const isInputField = e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.isContentEditable;
+
+  setTimeout(() => {
+    let text = '';
+    let rect = null;
+
+    // Handle standard inputs/textareas
+    if (isInputField && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA')) {
+      const start = e.target.selectionStart;
+      const end = e.target.selectionEnd;
+      if (start !== undefined && end !== undefined && start !== end) {
+        text = e.target.value.substring(start, end).trim();
+        rect = e.target.getBoundingClientRect(); // Rough approximation for input/textarea
+      }
+    }
+
+    // Fallback to window.getSelection
+    if (!text) {
+      const selection = window.getSelection();
+      if (!selection || selection.isCollapsed) {
+        clearTextSelectionUI();
+        return;
+      }
+      text = selection.toString().trim();
+      
+      if (text && text.length >= 3) {
+        try {
+          const range = selection.getRangeAt(0);
+          rect = range.getBoundingClientRect();
+          if (rect.width === 0 || rect.height === 0) rect = null;
+          else {
+            let endRect = rect;
+            try {
+              const endRange = range.cloneRange();
+              endRange.collapse(false);
+              let tempRect = endRange.getBoundingClientRect();
+              
+              if (tempRect.width === 0 && tempRect.height === 0 && range.endOffset > 0) {
+                endRange.setStart(range.endContainer, range.endOffset - 1);
+                endRange.setEnd(range.endContainer, range.endOffset);
+                tempRect = endRange.getBoundingClientRect();
+              }
+              
+              if (tempRect.width > 0 || tempRect.height > 0) {
+                endRect = tempRect;
+              }
+            } catch(err) {}
+            rect = endRect;
+          }
+        } catch (err) {}
+      }
+    }
+
+    if (!text || text.length < 3 || !rect) {
+      clearTextSelectionUI();
+      return;
+    }
+
+    renderTextSelectionUI(rect, text, isInputField);
+  }, 10);
+}
+
+function renderTextSelectionUI(rect, text, isInputField = false) {
+  if (!textSelectionContainer) {
+    textSelectionContainer = document.createElement('div');
+    textSelectionContainer.id = 'ai-autofill-text-selection';
+    document.body.appendChild(textSelectionContainer);
+    textSelectionRoot = createRoot(textSelectionContainer);
+  }
+
+  textSelectionRoot.render(
+    <TextSelectionAssistant 
+      rect={rect} 
+      selectedText={text} 
+      isInputField={isInputField}
+      onDismiss={clearTextSelectionUI} 
+    />
+  );
+}
+
+function clearTextSelectionUI() {
+  if (textSelectionRoot) {
+    textSelectionRoot.render(null);
+  }
 }
 
 // ── Boot ──────────────────────────────────────────────────────────────────────

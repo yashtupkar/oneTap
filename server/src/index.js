@@ -16,6 +16,7 @@ const documentRoutes = require('./routes/documents');
 const submissionRoutes = require('./routes/submissions');
 const autofillRoutes = require('./routes/autofill');
 const authRoutes = require('./routes/auth');
+const aiRoutes = require('./routes/ai');
 
 const app = express();
 const PORT = parseInt(process.env.PORT || '3001', 10);
@@ -63,6 +64,7 @@ app.use('/api/documents', documentRoutes);
 app.use('/api/submissions', submissionRoutes);
 app.use('/api/autofill', autofillRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api/ai', aiRoutes);
 
 // ── Health check ──────────────────────────────────────────────────────────────
 app.get('/api/health', (_req, res) => {
