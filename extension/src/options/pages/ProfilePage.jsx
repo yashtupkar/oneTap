@@ -311,6 +311,17 @@ export default function ProfilePage() {
                               onChange={e => handleArrayFieldChange(section.arrayKey, index, fieldDef.key, e.target.value)}
                               placeholder={`Enter ${fieldDef.label.toLowerCase()}`}
                             />
+                          ) : fieldDef.type === 'select' ? (
+                            <select
+                              className="input"
+                              value={item[fieldDef.key] || ''}
+                              onChange={e => handleArrayFieldChange(section.arrayKey, index, fieldDef.key, e.target.value)}
+                            >
+                              <option value="">Select...</option>
+                              {fieldDef.options?.map(opt => (
+                                <option key={opt} value={opt}>{opt}</option>
+                              ))}
+                            </select>
                           ) : (
                             <input
                               type={fieldDef.type}

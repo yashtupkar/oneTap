@@ -26,12 +26,18 @@ const userProfileSchema = new mongoose.Schema(
     github: String,
 
     // ── Address ───────────────────────────────────────────────────────────────
-    addressLine1: String,
-    addressLine2: String,
-    city: String,
-    state: String,
-    postalCode: String,
-    country: String,
+    addresses: {
+      type: [{
+        addressType: String,
+        addressLine1: String,
+        addressLine2: String,
+        city: String,
+        state: String,
+        postalCode: String,
+        country: String
+      }],
+      default: []
+    },
 
     // ── Professional ──────────────────────────────────────────────────────────
     workExperience: {

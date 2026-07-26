@@ -71,6 +71,11 @@ router.post('/suggest', async (req, res, next) => {
         customKeys.push(`workExperience.${i}.jobTitle`, `workExperience.${i}.company`, `workExperience.${i}.location`, `workExperience.${i}.startDate`, `workExperience.${i}.endDate`, `workExperience.${i}.description`, `workExperience.${i}.skillsUsed`);
       });
     }
+    if (Array.isArray(profile.addresses)) {
+      profile.addresses.forEach((_, i) => {
+        customKeys.push(`addresses.${i}.addressType`, `addresses.${i}.addressLine1`, `addresses.${i}.addressLine2`, `addresses.${i}.city`, `addresses.${i}.state`, `addresses.${i}.postalCode`, `addresses.${i}.country`);
+      });
+    }
     
     const aiIndices = [];
     for (let i = 0; i < fields.length; i++) {
@@ -293,8 +298,9 @@ function buildSuggestion({ field, profileKey, value, confidence, source, reason,
   if (profile && profileKey && typeof profileKey === 'string') {
     const isEdu = profileKey.startsWith('educationHistory.');
     const isWork = profileKey.startsWith('workExperience.');
+    const isAddress = profileKey.startsWith('addresses.');
     
-    if (isEdu || isWork) {
+    if (isEdu || isWork || isAddress) {
       const parts = profileKey.split('.');
       if (parts.length >= 3) {
         const arrayName = parts[0];
@@ -305,8 +311,11 @@ function buildSuggestion({ field, profileKey, value, confidence, source, reason,
           status = 'suggested'; // Prevent auto-filling
           const uniqueOpts = new Map();
           arr.forEach((item, index) => {
-             const label = isEdu ? (item.degree || item.university || `Education ${index + 1}`) 
-                                 : (item.jobTitle || item.company || `Work ${index + 1}`);
+             let label = '';
+             if (isEdu) label = item.degree || item.university || `Education ${index + 1}`;
+             else if (isWork) label = item.jobTitle || item.company || `Work ${index + 1}`;
+             else if (isAddress) label = item.addressType || item.city || `Address ${index + 1}`;
+
              const val = item[fieldName] || '';
              const key = `${label}|${val}`;
              if (!uniqueOpts.has(key)) {

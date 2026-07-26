@@ -9,6 +9,10 @@
     "file": "assets/api-BFNnCebU.js",
     "name": "api"
   },
+  "_api-CkC3Xrwn.js": {
+    "file": "assets/api-CkC3Xrwn.js",
+    "name": "api"
+  },
   "_client-DhEz86-d.js": {
     "file": "assets/client-DhEz86-d.js",
     "name": "client"
@@ -29,44 +33,44 @@
     "src": "index.jsx-loader.js"
   },
   "options/index.html": {
-    "file": "assets/index.html-Cqyi5_XK.js",
+    "file": "assets/index.html-yj6aQNBL.js",
     "name": "index.html",
     "src": "options/index.html",
     "isEntry": true,
     "imports": [
       "_index-CeUiTHaT.js",
       "_client-DhEz86-d.js",
-      "_api-BFNnCebU.js"
+      "_api-CkC3Xrwn.js"
     ]
   },
   "popup/index.html": {
-    "file": "assets/index.html-tRVEcgj5.js",
+    "file": "assets/index.html-z-PiYaR7.js",
     "name": "index.html",
     "src": "popup/index.html",
     "isEntry": true,
     "imports": [
       "_index-CeUiTHaT.js",
       "_client-DhEz86-d.js",
-      "_api-BFNnCebU.js"
+      "_api-CkC3Xrwn.js"
     ]
   },
   "src/background/serviceWorker.js": {
-    "file": "assets/serviceWorker.js-sNuTF8ii.js",
+    "file": "assets/serviceWorker.js-CrRK6gdQ.js",
     "name": "serviceWorker.js",
     "src": "src/background/serviceWorker.js",
     "isEntry": true,
     "imports": [
-      "_api-BFNnCebU.js"
+      "_api-CkC3Xrwn.js"
     ]
   },
   "src/content/index.jsx": {
-    "file": "assets/index.jsx-BT6WVyMi.js",
+    "file": "assets/index.jsx-dTZz24hj.js",
     "name": "index.jsx",
     "src": "src/content/index.jsx",
     "isEntry": true,
     "imports": [
       "_client-DhEz86-d.js",
-      "_api-BFNnCebU.js"
+      "_api-CkC3Xrwn.js"
     ],
     "css": [
       "assets/index-D6mmBFxb.css"

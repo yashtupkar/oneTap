@@ -87,9 +87,12 @@ export const PROFILE_SECTIONS = [
     ],
   },
   {
-    title: 'Address',
+    title: 'Addresses',
     icon: '🏠',
+    isArray: true,
+    arrayKey: 'addresses',
     fields: [
+      { key: 'addressType', label: 'Address Type', type: 'select', options: ['Permanent', 'Temporary', 'Current', 'Office', 'Other'] },
       { key: 'addressLine1', label: 'Address Line 1', type: 'text' },
       { key: 'addressLine2', label: 'Address Line 2', type: 'text' },
       { key: 'city', label: 'City', type: 'text' },
