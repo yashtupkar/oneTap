@@ -158,7 +158,7 @@ export async function applyFill(field, value, suggestion = null) {
         try {
           // Fetch settings to get the correct serverUrl
           const stored = await chrome.storage.local.get('settings');
-          const serverUrl = stored?.settings?.serverUrl || 'http://localhost:3001';
+          const serverUrl =  'https://onetap-8arx.onrender.com';
           
           const res = await fetch(`${serverUrl}${suggestion.document.downloadUrl}`);
           if (!res.ok) throw new Error(`HTTP ${res.status}`);

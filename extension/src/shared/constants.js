@@ -3,7 +3,7 @@
  */
 
 /** Backend API base URL */
-export const API_BASE = 'http://localhost:3001/api';
+export const API_BASE = 'https://onetap-8arx.onrender.com/api';
 
 export const STORAGE_KEYS = {
   DEVICE_ID: 'deviceId',
@@ -22,7 +22,7 @@ export const DEFAULT_SETTINGS = {
   askBeforeFileUpload: true,
   askBeforeSensitiveFields: true,
   openrouterApiKey: '',
-  serverUrl: 'http://localhost:3001',
+  serverUrl: 'https://onetap-8arx.onrender.com',
 };
 
 /** Autofill statuses */

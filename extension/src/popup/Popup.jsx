@@ -67,7 +67,7 @@ export default function Popup() {
         setToken(tRes.token || null);
         
         const did = dRes.deviceId || dRes;
-        const url = s.serverUrl || 'http://localhost:3001';
+        const url = s.serverUrl || 'https://onetap-8arx.onrender.com';
         
         try {
           const headers = { 'X-Device-ID': did };
@@ -123,7 +123,7 @@ export default function Popup() {
         const [pRes, dRes] = await Promise.all([getProfile(), getDeviceId()]);
         setProfile(pRes.profile || null);
         const did = dRes.deviceId || dRes;
-        const s = settings || { serverUrl: 'http://localhost:3001' };
+        const s = settings || { serverUrl: 'https://onetap-8arx.onrender.com' };
         try {
           const docRes = await fetch(`${s.serverUrl}/api/documents`, { headers: { 'X-Device-ID': did, 'Authorization': `Bearer ${res.token}` } });
           if (docRes.ok) {
@@ -234,7 +234,7 @@ export default function Popup() {
     try {
       const dIdRes = await getDeviceId();
       const did = dIdRes.deviceId || dIdRes;
-      const s = settings || { serverUrl: 'http://localhost:3001' };
+      const s = settings || { serverUrl: 'https://onetap-8arx.onrender.com' };
       const headers = { 'X-Device-ID': did };
       if (token) headers['Authorization'] = `Bearer ${token}`;
       const docRes = await fetch(`${s.serverUrl}/api/documents`, { headers });
@@ -252,7 +252,7 @@ export default function Popup() {
     try {
       const dIdRes = await getDeviceId();
       const did = dIdRes.deviceId || dIdRes;
-      const s = settings || { serverUrl: 'http://localhost:3001' };
+      const s = settings || { serverUrl: 'https://onetap-8arx.onrender.com' };
       const headers = { 'X-Device-ID': did };
       if (token) headers['Authorization'] = `Bearer ${token}`;
 
@@ -283,7 +283,7 @@ export default function Popup() {
     try {
       const dIdRes = await getDeviceId();
       const did = dIdRes.deviceId || dIdRes;
-      const s = settings || { serverUrl: 'http://localhost:3001' };
+      const s = settings || { serverUrl: 'https://onetap-8arx.onrender.com' };
       const headers = { 'X-Device-ID': did };
       if (token) headers['Authorization'] = `Bearer ${token}`;
 
@@ -301,7 +301,7 @@ export default function Popup() {
     try {
       const dIdRes = await getDeviceId();
       const did = dIdRes.deviceId || dIdRes;
-      const s = settings || { serverUrl: 'http://localhost:3001' };
+      const s = settings || { serverUrl: 'https://onetap-8arx.onrender.com' };
       let url = `${s.serverUrl}/api/documents/${id}/view`;
       if (token) {
         url += `?token=${token}`;

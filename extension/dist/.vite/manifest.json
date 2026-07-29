@@ -5,8 +5,8 @@
     "src": "../../../../../../@crx/manifest",
     "isEntry": true
   },
-  "_api-CbnjZMr_.js": {
-    "file": "assets/api-CbnjZMr_.js",
+  "_api-D_cN_erW.js": {
+    "file": "assets/api-D_cN_erW.js",
     "name": "api"
   },
   "_client-DhEz86-d.js": {
@@ -25,48 +25,48 @@
     ]
   },
   "index.jsx-loader.js": {
-    "file": "assets/index.jsx-loader-COIRfkFr.js",
+    "file": "assets/index.jsx-loader-DFKWgf0X.js",
     "src": "index.jsx-loader.js"
   },
   "options/index.html": {
-    "file": "assets/index.html-DFU7omUs.js",
+    "file": "assets/index.html-CkL5WeWv.js",
     "name": "index.html",
     "src": "options/index.html",
     "isEntry": true,
     "imports": [
       "_index-C9iWPIHB.js",
       "_client-DhEz86-d.js",
-      "_api-CbnjZMr_.js"
+      "_api-D_cN_erW.js"
     ]
   },
   "popup/index.html": {
-    "file": "assets/index.html-DdAFwDRi.js",
+    "file": "assets/index.html-B2Zg6uaZ.js",
     "name": "index.html",
     "src": "popup/index.html",
     "isEntry": true,
     "imports": [
       "_index-C9iWPIHB.js",
       "_client-DhEz86-d.js",
-      "_api-CbnjZMr_.js"
+      "_api-D_cN_erW.js"
     ]
   },
   "src/background/serviceWorker.js": {
-    "file": "assets/serviceWorker.js-DWQBfeTt.js",
+    "file": "assets/serviceWorker.js-BY51rQK9.js",
     "name": "serviceWorker.js",
     "src": "src/background/serviceWorker.js",
     "isEntry": true,
     "imports": [
-      "_api-CbnjZMr_.js"
+      "_api-D_cN_erW.js"
     ]
   },
   "src/content/index.jsx": {
-    "file": "assets/index.jsx-anPzHWYC.js",
+    "file": "assets/index.jsx-Dycac5MY.js",
     "name": "index.jsx",
     "src": "src/content/index.jsx",
     "isEntry": true,
     "imports": [
       "_client-DhEz86-d.js",
-      "_api-CbnjZMr_.js"
+      "_api-D_cN_erW.js"
     ],
     "css": [
       "assets/index-D6mmBFxb.css"

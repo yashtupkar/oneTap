@@ -177,7 +177,7 @@ export default function PreferencesPage() {
               type="url"
               value={settings.serverUrl || ''}
               onChange={e => handleChange('serverUrl', e.target.value)}
-              placeholder="http://localhost:3001"
+              placeholder="https://onetap-8arx.onrender.com"
               className="input"
             />
             <p className="text-xs text-slate-500 mt-1">
