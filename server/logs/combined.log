@@ -1953,3 +1953,17 @@
 2026-07-26 18:01:51 [debug]: AI cache hit for fingerprint: ccca95b1...
 2026-07-26 18:01:51 [debug]: AI cache hit for fingerprint: 8977c5ff...
 2026-07-26 18:01:51 [http]: ::1 - - [26/Jul/2026:12:31:51 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-30 16:45:23 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-01.r0rqul9.mongodb.net
+2026-07-30 16:45:23 [info]: 🚀 Server running on http://localhost:3001
+2026-07-30 16:45:23 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
+2026-07-30 16:56:37 [http]: ::1 - - [30/Jul/2026:11:26:37 +0000] "GET /api/profile HTTP/1.1" 401 36 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-30 16:56:49 [http]: ::1 - - [30/Jul/2026:11:26:49 +0000] "POST /api/auth/login HTTP/1.1" 200 232 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-30 16:56:49 [http]: ::1 - - [30/Jul/2026:11:26:49 +0000] "GET /api/profile HTTP/1.1" 200 311 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-30 16:56:49 [http]: ::1 - - [30/Jul/2026:11:26:49 +0000] "GET /api/documents HTTP/1.1" 200 31 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-30 16:56:53 [http]: ::1 - - [30/Jul/2026:11:26:53 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-30 16:57:01 [http]: ::1 - - [30/Jul/2026:11:27:01 +0000] "PATCH /api/profile HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-30 16:57:04 [http]: ::1 - - [30/Jul/2026:11:27:04 +0000] "GET /api/profile HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-30 16:59:24 [http]: ::1 - - [30/Jul/2026:11:29:24 +0000] "PATCH /api/profile HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-30 17:04:30 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-02.r0rqul9.mongodb.net
+2026-07-30 17:04:30 [info]: 🚀 Server running on http://localhost:3001
+2026-07-30 17:04:30 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads

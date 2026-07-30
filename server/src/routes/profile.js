@@ -33,32 +33,19 @@ router.get('/', async (req, res, next) => {
  * PUT /api/profile
  * Creates or fully replaces the profile.
  */
-router.put(
-  '/',
-  [
-    body('email').optional().isEmail().withMessage('Invalid email'),
-    body('phone').optional().isMobilePhone('any').withMessage('Invalid phone'),
-    body('yearsOfExperience').optional().isFloat({ min: 0, max: 60 }).withMessage('Invalid experience'),
-  ],
-  async (req, res, next) => {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.status(400).json({ error: 'Validation failed', details: errors.array() });
-    }
-
-    try {
-      const data = encryptProfileSensitiveFields(req.body);
-      const profile = await UserProfile.findOneAndUpdate(
-        { deviceId: req.deviceId },
-        { ...data, deviceId: req.deviceId },
-        { new: true, upsert: true, runValidators: true }
-      );
-      res.json({ success: true, profile: decryptProfileSensitiveFields(profile) });
-    } catch (err) {
-      next(err);
-    }
+router.put('/', async (req, res, next) => {
+  try {
+    const data = encryptProfileSensitiveFields(req.body);
+    const profile = await UserProfile.findOneAndUpdate(
+      { deviceId: req.deviceId },
+      { ...data, deviceId: req.deviceId },
+      { new: true, upsert: true, runValidators: true }
+    );
+    res.json({ success: true, profile: decryptProfileSensitiveFields(profile) });
+  } catch (err) {
+    next(err);
   }
-);
+});
 
 /**
  * PATCH /api/profile

@@ -71,7 +71,7 @@ async function handleMessage(message, sender) {
   const settings = await getSettings();
   const deviceId = await getOrCreateDeviceId();
   const token = await new Promise(resolve => chrome.storage.local.get(STORAGE_KEYS.TOKEN, d => resolve(d[STORAGE_KEYS.TOKEN])));
-  const serverUrl = 'https://onetap-8arx.onrender.com';
+  const serverUrl = 'http://localhost:3001';
 
   switch (type) {
     case MSG.GET_DEVICE_ID:

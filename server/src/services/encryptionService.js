@@ -54,60 +54,84 @@ function decrypt(encryptedPayload) {
   }
 }
 
-/** Fields in UserProfile that should be encrypted at rest */
-const SENSITIVE_FIELDS = [
-  'passportNumber',
-  'panNumber',
-  'aadhaarNumber',
-  'drivingLicenseNumber',
-];
-
 /**
  * Encrypts all sensitive fields in a profile object before saving to DB.
- * @param {object} profileData
- * @returns {object} Profile with sensitive fields encrypted
+ * Uses the dynamic schemaDefinitions to find which fields are sensitive.
+ * @param {object} reqBody - Needs to have schemaDefinitions and profileData
+ * @returns {object} Profile object with sensitive fields encrypted
  */
-function encryptProfileSensitiveFields(profileData) {
-  const result = { ...profileData };
-  for (const field of SENSITIVE_FIELDS) {
-    if (result[field]) {
-      result[field] = encrypt(result[field]);
-    }
-  }
-  if (result.customFields) {
-    result.customFields = { ...result.customFields };
-    for (const key of Object.keys(result.customFields)) {
-      const cf = result.customFields[key];
-      if (cf && typeof cf === 'object' && cf.sensitive && cf.value) {
-        result.customFields[key] = { ...cf, value: encrypt(cf.value) };
-      }
-    }
-  }
-  return result;
+function encryptProfileSensitiveFields(reqBody) {
+  const schema = reqBody.schemaDefinitions || [];
+  let data = reqBody.profileData ? { ...reqBody.profileData } : {};
+  
+  schema.forEach(section => {
+     if (section.isArray) {
+        if (Array.isArray(data[section.id])) {
+           data[section.id] = data[section.id].map(item => {
+              let newItem = {...item};
+              (section.fields || []).forEach(f => {
+                 if (f.sensitive && newItem[f.key]) {
+                    newItem[f.key] = encrypt(newItem[f.key]);
+                 }
+              });
+              return newItem;
+           });
+        }
+     } else {
+        if (data[section.id]) {
+           let newObj = {...data[section.id]};
+           (section.fields || []).forEach(f => {
+              if (f.sensitive && newObj[f.key]) {
+                 newObj[f.key] = encrypt(newObj[f.key]);
+              }
+           });
+           data[section.id] = newObj;
+        }
+     }
+  });
+  
+  return { ...reqBody, profileData: data };
 }
 
 /**
  * Decrypts all sensitive fields in a profile object after reading from DB.
- * @param {object} profileData
+ * @param {object} profileDoc - Profile document from DB
  * @returns {object} Profile with sensitive fields decrypted
  */
-function decryptProfileSensitiveFields(profileData) {
-  if (!profileData) return profileData;
-  const result = profileData.toObject ? profileData.toObject({ flattenMaps: true }) : { ...profileData };
-  for (const field of SENSITIVE_FIELDS) {
-    if (result[field]) {
-      result[field] = decrypt(result[field]);
-    }
-  }
-  if (result.customFields) {
-    result.customFields = { ...result.customFields };
-    for (const key of Object.keys(result.customFields)) {
-      const cf = result.customFields[key];
-      if (cf && typeof cf === 'object' && cf.sensitive && cf.value) {
-        result.customFields[key] = { ...cf, value: decrypt(cf.value) };
-      }
-    }
-  }
+function decryptProfileSensitiveFields(profileDoc) {
+  if (!profileDoc) return profileDoc;
+  
+  const result = profileDoc.toObject ? profileDoc.toObject({ flattenMaps: true }) : { ...profileDoc };
+  const schema = result.schemaDefinitions || [];
+  let data = result.profileData ? { ...result.profileData } : {};
+
+  schema.forEach(section => {
+     if (section.isArray) {
+        if (Array.isArray(data[section.id])) {
+           data[section.id] = data[section.id].map(item => {
+              let newItem = {...item};
+              (section.fields || []).forEach(f => {
+                 if (f.sensitive && newItem[f.key]) {
+                    newItem[f.key] = decrypt(newItem[f.key]);
+                 }
+              });
+              return newItem;
+           });
+        }
+     } else {
+        if (data[section.id]) {
+           let newObj = {...data[section.id]};
+           (section.fields || []).forEach(f => {
+              if (f.sensitive && newObj[f.key]) {
+                 newObj[f.key] = decrypt(newObj[f.key]);
+              }
+           });
+           data[section.id] = newObj;
+        }
+     }
+  });
+
+  result.profileData = data;
   return result;
 }
 
@@ -116,5 +140,4 @@ module.exports = {
   decrypt,
   encryptProfileSensitiveFields,
   decryptProfileSensitiveFields,
-  SENSITIVE_FIELDS,
 };

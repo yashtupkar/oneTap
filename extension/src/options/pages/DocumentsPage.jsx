@@ -9,7 +9,7 @@ export default function DocumentsPage() {
   const [error, setError] = useState('');
   const [deviceId, setDeviceId] = useState('');
   const [token, setToken] = useState(null);
-  const [serverUrl, setServerUrl] = useState('https://onetap-8arx.onrender.com');
+  const [serverUrl, setServerUrl] = useState('http://localhost:3001');
 
   // Form states
   const [file, setFile] = useState(null);
@@ -25,7 +25,7 @@ export default function DocumentsPage() {
         
         const settingsRes = await getSettings();
         const settings = settingsRes.settings || settingsRes;
-        const url = 'https://onetap-8arx.onrender.com';
+        const url = 'http://localhost:3001';
         setServerUrl(url);
 
         const tokenRes = await getToken();

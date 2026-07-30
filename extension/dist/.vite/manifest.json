@@ -5,8 +5,8 @@
     "src": "../../../../../../@crx/manifest",
     "isEntry": true
   },
-  "_api-D_cN_erW.js": {
-    "file": "assets/api-D_cN_erW.js",
+  "_api-DvDo5zIg.js": {
+    "file": "assets/api-DvDo5zIg.js",
     "name": "api"
   },
   "_client-DhEz86-d.js": {
@@ -14,59 +14,59 @@
     "name": "client"
   },
   "_index-!~{004}~.js": {
-    "file": "assets/index-C851xYJx.css",
+    "file": "assets/index-dcLa2h5t.css",
     "src": "_index-!~{004}~.js"
   },
-  "_index-C9iWPIHB.js": {
-    "file": "assets/index-C9iWPIHB.js",
+  "_index-CKIIkegn.js": {
+    "file": "assets/index-CKIIkegn.js",
     "name": "index",
     "css": [
-      "assets/index-C851xYJx.css"
+      "assets/index-dcLa2h5t.css"
     ]
   },
   "index.jsx-loader.js": {
-    "file": "assets/index.jsx-loader-DFKWgf0X.js",
+    "file": "assets/index.jsx-loader-CfWiQBw7.js",
     "src": "index.jsx-loader.js"
   },
   "options/index.html": {
-    "file": "assets/index.html-CkL5WeWv.js",
+    "file": "assets/index.html-D08FYM-y.js",
     "name": "index.html",
     "src": "options/index.html",
     "isEntry": true,
     "imports": [
-      "_index-C9iWPIHB.js",
+      "_index-CKIIkegn.js",
       "_client-DhEz86-d.js",
-      "_api-D_cN_erW.js"
+      "_api-DvDo5zIg.js"
     ]
   },
   "popup/index.html": {
-    "file": "assets/index.html-B2Zg6uaZ.js",
+    "file": "assets/index.html-BSyHonNf.js",
     "name": "index.html",
     "src": "popup/index.html",
     "isEntry": true,
     "imports": [
-      "_index-C9iWPIHB.js",
+      "_index-CKIIkegn.js",
       "_client-DhEz86-d.js",
-      "_api-D_cN_erW.js"
+      "_api-DvDo5zIg.js"
     ]
   },
   "src/background/serviceWorker.js": {
-    "file": "assets/serviceWorker.js-BY51rQK9.js",
+    "file": "assets/serviceWorker.js-DwtY8m4q.js",
     "name": "serviceWorker.js",
     "src": "src/background/serviceWorker.js",
     "isEntry": true,
     "imports": [
-      "_api-D_cN_erW.js"
+      "_api-DvDo5zIg.js"
     ]
   },
   "src/content/index.jsx": {
-    "file": "assets/index.jsx-Dycac5MY.js",
+    "file": "assets/index.jsx-4-FTAKtl.js",
     "name": "index.jsx",
     "src": "src/content/index.jsx",
     "isEntry": true,
     "imports": [
       "_client-DhEz86-d.js",
-      "_api-D_cN_erW.js"
+      "_api-DvDo5zIg.js"
     ],
     "css": [
       "assets/index-D6mmBFxb.css"

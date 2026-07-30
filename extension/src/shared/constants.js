@@ -3,7 +3,7 @@
  */
 
 /** Backend API base URL */
-export const API_BASE = 'https://onetap-8arx.onrender.com/api';
+export const API_BASE = 'http://localhost:3001/api';
 
 export const STORAGE_KEYS = {
   DEVICE_ID: 'deviceId',
@@ -22,7 +22,7 @@ export const DEFAULT_SETTINGS = {
   askBeforeFileUpload: true,
   askBeforeSensitiveFields: true,
   openrouterApiKey: '',
-  serverUrl: 'https://onetap-8arx.onrender.com',
+  serverUrl: 'http://localhost:3001',
 };
 
 /** Autofill statuses */
@@ -59,11 +59,13 @@ export const DOCUMENT_CATEGORIES = [
   { value: 'other', label: 'Other Document', icon: '📎' },
 ];
 
-/** Profile field display config (for options page) */
-export const PROFILE_SECTIONS = [
+/** Default Profile Schema Definitions (for options page) */
+export const DEFAULT_SCHEMA_DEFINITIONS = [
   {
+    id: 'personal_info',
     title: 'Personal Information',
     icon: '👤',
+    isArray: false,
     fields: [
       { key: 'firstName', label: 'First Name', type: 'text' },
       { key: 'middleName', label: 'Middle Name', type: 'text' },
@@ -75,8 +77,10 @@ export const PROFILE_SECTIONS = [
     ],
   },
   {
+    id: 'contact_details',
     title: 'Contact Details',
     icon: '📞',
+    isArray: false,
     fields: [
       { key: 'email', label: 'Email Address', type: 'email' },
       { key: 'phone', label: 'Phone Number', type: 'tel' },
@@ -87,10 +91,10 @@ export const PROFILE_SECTIONS = [
     ],
   },
   {
+    id: 'addresses',
     title: 'Addresses',
     icon: '🏠',
     isArray: true,
-    arrayKey: 'addresses',
     fields: [
       { key: 'addressType', label: 'Address Type', type: 'select', options: ['Permanent', 'Temporary', 'Current', 'Office', 'Other'] },
       { key: 'addressLine1', label: 'Address Line 1', type: 'text' },
@@ -102,8 +106,10 @@ export const PROFILE_SECTIONS = [
     ],
   },
   {
+    id: 'professional_info',
     title: 'Professional Info',
     icon: '💼',
+    isArray: false,
     fields: [
       { key: 'yearsOfExperience', label: 'Years of Experience', type: 'number' },
       { key: 'skills', label: 'Skills (comma-separated)', type: 'text' },
@@ -113,10 +119,10 @@ export const PROFILE_SECTIONS = [
     ],
   },
   {
+    id: 'work_experience',
     title: 'Work Experience',
     icon: '🏢',
     isArray: true,
-    arrayKey: 'workExperience',
     fields: [
       { key: 'jobTitle', label: 'Job Title', type: 'text' },
       { key: 'company', label: 'Company', type: 'text' },
@@ -128,10 +134,10 @@ export const PROFILE_SECTIONS = [
     ],
   },
   {
+    id: 'education_history',
     title: 'Education History',
     icon: '🎓',
     isArray: true,
-    arrayKey: 'educationHistory',
     fields: [
       { key: 'degree', label: 'Degree', type: 'text' },
       { key: 'fieldOfStudy', label: 'Field of Study', type: 'text' },
@@ -142,9 +148,10 @@ export const PROFILE_SECTIONS = [
     ],
   },
   {
+    id: 'identity_documents',
     title: 'Identity Documents',
     icon: '🪪',
-    sensitive: true,
+    isArray: false,
     fields: [
       { key: 'passportNumber', label: 'Passport Number', type: 'text', sensitive: true },
       { key: 'panNumber', label: 'PAN Card Number', type: 'text', sensitive: true },

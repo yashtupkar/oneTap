@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getSettings, updateSettings, getProfile, updateProfile, getDeviceId, getToken, login, register, logout } from '../shared/api.js';
-import { PROFILE_SECTIONS } from '../shared/constants.js';
+import { DEFAULT_SCHEMA_DEFINITIONS } from '../shared/constants.js';
 
 const STATUS_DOT = {
   connected: 'bg-emerald-400',
@@ -67,7 +67,7 @@ export default function Popup() {
         setToken(tRes.token || null);
         
         const did = dRes.deviceId || dRes;
-        const url = s.serverUrl || 'https://onetap-8arx.onrender.com';
+        const url = s.serverUrl || 'http://localhost:3001';
         
         try {
           const headers = { 'X-Device-ID': did };
@@ -123,7 +123,7 @@ export default function Popup() {
         const [pRes, dRes] = await Promise.all([getProfile(), getDeviceId()]);
         setProfile(pRes.profile || null);
         const did = dRes.deviceId || dRes;
-        const s = settings || { serverUrl: 'https://onetap-8arx.onrender.com' };
+        const s = settings || { serverUrl: 'http://localhost:3001' };
         try {
           const docRes = await fetch(`${s.serverUrl}/api/documents`, { headers: { 'X-Device-ID': did, 'Authorization': `Bearer ${res.token}` } });
           if (docRes.ok) {
@@ -146,19 +146,21 @@ export default function Popup() {
     setDocuments([]);
   };
 
-  const handleUpdateField = async (key, value, isCustom = false, category = null) => {
+  const handleUpdateField = async (sectionId, key, value, arrayIndex = -1) => {
     if (!profile) return;
     try {
       let updatedProfile = { ...profile };
-      if (isCustom) {
-        const existingCategory = profile.customFields?.[key]?.category;
-        const categoryToSave = category || existingCategory || 'Custom';
-        updatedProfile.customFields = {
-          ...updatedProfile.customFields,
-          [key]: { value, type: 'text', sensitive: false, category: categoryToSave }
-        };
+      if (!updatedProfile.profileData) updatedProfile.profileData = {};
+      if (!updatedProfile.profileData[sectionId]) {
+         if (arrayIndex >= 0) updatedProfile.profileData[sectionId] = [];
+         else updatedProfile.profileData[sectionId] = {};
+      }
+      
+      if (arrayIndex >= 0) {
+         if (!updatedProfile.profileData[sectionId][arrayIndex]) updatedProfile.profileData[sectionId][arrayIndex] = {};
+         updatedProfile.profileData[sectionId][arrayIndex][key] = value;
       } else {
-        updatedProfile[key] = value;
+         updatedProfile.profileData[sectionId][key] = value;
       }
       setProfile(updatedProfile);
       await updateProfile(updatedProfile);
@@ -168,16 +170,19 @@ export default function Popup() {
     }
   };
 
-  const handleDeleteField = async (key, isCustom = false) => {
+  const handleDeleteField = async (sectionId, key, arrayIndex = -1) => {
     if (!profile) return;
     try {
       let updatedProfile = { ...profile };
-      if (isCustom) {
-        const newCustomFields = { ...updatedProfile.customFields };
-        delete newCustomFields[key];
-        updatedProfile.customFields = newCustomFields;
+      if (!updatedProfile.profileData) return;
+      if (arrayIndex >= 0) {
+         if (updatedProfile.profileData[sectionId] && updatedProfile.profileData[sectionId][arrayIndex]) {
+             delete updatedProfile.profileData[sectionId][arrayIndex][key];
+         }
       } else {
-        updatedProfile[key] = '';
+         if (updatedProfile.profileData[sectionId]) {
+             delete updatedProfile.profileData[sectionId][key];
+         }
       }
       setProfile(updatedProfile);
       await updateProfile(updatedProfile);
@@ -189,11 +194,42 @@ export default function Popup() {
   const handleAddField = async () => {
     if (!newFieldKey.trim() || !newFieldValue.trim()) return;
     const key = newFieldKey.toLowerCase().trim().replace(/[\s\W]+/g, '_');
-    const categoryToSave = newFieldCategory === 'Custom' ? (newFieldCustomCategory.trim() || 'Custom') : newFieldCategory;
-    await handleUpdateField(key, newFieldValue, true, categoryToSave);
+    let sectionId = newFieldCategory === 'Custom' ? newFieldCustomCategory.toLowerCase().trim().replace(/[\s\W]+/g, '_') || 'custom' : newFieldCategory;
+    
+    let updatedProfile = { ...profile };
+    let schemaDefs = updatedProfile.schemaDefinitions || DEFAULT_SCHEMA_DEFINITIONS;
+    let section = schemaDefs.find(s => s.id === sectionId);
+    
+    if (!section) {
+        section = { id: sectionId, title: newFieldCustomCategory || 'Custom', icon: '✨', isArray: false, fields: [] };
+        schemaDefs = [...schemaDefs, section];
+    } else {
+        schemaDefs = schemaDefs.map(s => s.id === sectionId ? { ...s } : s);
+        section = schemaDefs.find(s => s.id === sectionId);
+    }
+    
+    if (!section.fields) section.fields = [];
+    if (!section.fields.some(f => f.key === key)) {
+       section.fields.push({ key, label: newFieldKey, type: 'text', sensitive: false });
+    }
+    updatedProfile.schemaDefinitions = schemaDefs;
+
+    if (!updatedProfile.profileData) updatedProfile.profileData = {};
+    if (!updatedProfile.profileData[sectionId]) updatedProfile.profileData[sectionId] = section.isArray ? [{}] : {};
+    
+    if (section.isArray) {
+        if (updatedProfile.profileData[sectionId].length === 0) updatedProfile.profileData[sectionId].push({});
+        updatedProfile.profileData[sectionId][0][key] = newFieldValue;
+    } else {
+        updatedProfile.profileData[sectionId][key] = newFieldValue;
+    }
+
+    setProfile(updatedProfile);
+    await updateProfile(updatedProfile);
+    
     setNewFieldKey('');
     setNewFieldValue('');
-    setNewFieldCategory('Custom');
+    setNewFieldCategory('personal_info');
     setNewFieldCustomCategory('');
     setShowAddField(false);
   };
@@ -234,7 +270,7 @@ export default function Popup() {
     try {
       const dIdRes = await getDeviceId();
       const did = dIdRes.deviceId || dIdRes;
-      const s = settings || { serverUrl: 'https://onetap-8arx.onrender.com' };
+      const s = settings || { serverUrl: 'http://localhost:3001' };
       const headers = { 'X-Device-ID': did };
       if (token) headers['Authorization'] = `Bearer ${token}`;
       const docRes = await fetch(`${s.serverUrl}/api/documents`, { headers });
@@ -252,7 +288,7 @@ export default function Popup() {
     try {
       const dIdRes = await getDeviceId();
       const did = dIdRes.deviceId || dIdRes;
-      const s = settings || { serverUrl: 'https://onetap-8arx.onrender.com' };
+      const s = settings || { serverUrl: 'http://localhost:3001' };
       const headers = { 'X-Device-ID': did };
       if (token) headers['Authorization'] = `Bearer ${token}`;
 
@@ -283,7 +319,7 @@ export default function Popup() {
     try {
       const dIdRes = await getDeviceId();
       const did = dIdRes.deviceId || dIdRes;
-      const s = settings || { serverUrl: 'https://onetap-8arx.onrender.com' };
+      const s = settings || { serverUrl: 'http://localhost:3001' };
       const headers = { 'X-Device-ID': did };
       if (token) headers['Authorization'] = `Bearer ${token}`;
 
@@ -301,7 +337,7 @@ export default function Popup() {
     try {
       const dIdRes = await getDeviceId();
       const did = dIdRes.deviceId || dIdRes;
-      const s = settings || { serverUrl: 'https://onetap-8arx.onrender.com' };
+      const s = settings || { serverUrl: 'http://localhost:3001' };
       let url = `${s.serverUrl}/api/documents/${id}/view`;
       if (token) {
         url += `?token=${token}`;
@@ -315,10 +351,19 @@ export default function Popup() {
   };
 
   const profileCompleteness = () => {
-    if (!profile) return 0;
-    const fields = ['firstName', 'email', 'phone', 'city', 'country', 'currentJobTitle', 'skills'];
-    const filled = fields.filter(k => profile[k] && profile[k].length > 0).length;
-    return Math.round((filled / fields.length) * 100);
+    if (!profile || !profile.profileData) return 0;
+    const pd = profile.profileData;
+    const fields = [
+      pd.personal_info?.firstName, 
+      pd.contact_details?.email, 
+      pd.contact_details?.phone, 
+      pd.addresses?.[0]?.city, 
+      pd.addresses?.[0]?.country, 
+      pd.work_experience?.[0]?.jobTitle, 
+      pd.professional_info?.skills
+    ];
+    const filled = fields.filter(val => val && val.length > 0).length;
+    return Math.round((filled / 7) * 100);
   };
 
   if (loading) {
@@ -430,13 +475,14 @@ export default function Popup() {
       {profile && (
         <div className="bg-surface-card border border-surface-border rounded-xl p-2 flex items-center gap-4 ">
           <div className="w-8 h-8 bg-indigo-500 rounded-xl flex items-center justify-center text-lg font-bold text-white ">
-            {profile.firstName ? profile.firstName[0] : 'Y'}{profile.lastName ? profile.lastName[0] : 'T'}
+            {profile.profileData?.personal_info?.firstName ? profile.profileData.personal_info.firstName[0] : 'Y'}
+            {profile.profileData?.personal_info?.lastName ? profile.profileData.personal_info.lastName[0] : 'T'}
           </div>
           <div className="flex-1 min-w-0">
             <p className="text-[15px] font-bold text-zinc-100 truncate">
-              {profile.fullName || `${profile.firstName || ''} ${profile.lastName || ''}`.trim() || 'No name set'}
+              {profile.profileData?.personal_info?.fullName || `${profile.profileData?.personal_info?.firstName || ''} ${profile.profileData?.personal_info?.lastName || ''}`.trim() || 'No name set'}
             </p>
-            <p className="text-[11px] text-zinc-400 font-mono truncate">{profile.email || 'No email set'}</p>
+            <p className="text-[11px] text-zinc-400 font-mono truncate">{profile.profileData?.contact_details?.email || 'No email set'}</p>
           </div>
         </div>
       )}
@@ -459,12 +505,12 @@ export default function Popup() {
     if (!profile) return <div className="text-center text-sm text-zinc-500 mt-4">No profile data</div>;
     
     const filledFields = [];
-    const skipKeys = ['_id', 'deviceId', 'createdAt', 'updatedAt', 'customFields'];
-    for (const [key, val] of Object.entries(profile)) {
-      if (!skipKeys.includes(key) && val) {
+    const schemaDefs = profile.schemaDefinitions && profile.schemaDefinitions.length > 0 ? profile.schemaDefinitions : DEFAULT_SCHEMA_DEFINITIONS;
+    const pData = profile.profileData || {};
+
+    for (const [sectionId, val] of Object.entries(pData)) {
         if (Array.isArray(val) && val.length > 0) {
-          if (typeof val[0] === 'object') {
-            const sectionDef = PROFILE_SECTIONS.find(s => s.arrayKey === key);
+            const sectionDef = schemaDefs.find(s => s.id === sectionId);
             const fieldDefs = sectionDef ? sectionDef.fields : [];
             
             val.forEach((item, index) => {
@@ -472,46 +518,51 @@ export default function Popup() {
                 if (subVal && typeof subVal === 'string' && subVal.trim() !== '') {
                   const fieldDef = fieldDefs.find(f => f.key === subKey);
                   const niceLabel = fieldDef ? fieldDef.label : subKey;
+                  const isSensitive = fieldDef ? fieldDef.sensitive : false;
                   
                   filledFields.push({ 
-                    rawKey: key, 
-                    uniqueKey: `${key}_${index}_${subKey}`,
+                    sectionId,
+                    rawKey: subKey, 
+                    uniqueKey: `${sectionId}_${index}_${subKey}`,
                     label: niceLabel, 
                     value: subVal, 
                     isArrayObject: true,
-                    arrayIndex: index
+                    arrayIndex: index,
+                    sensitive: isSensitive
                   });
                 }
               }
             });
-          } else {
-            filledFields.push({ rawKey: key, uniqueKey: key, label: key, value: val.join(', ') });
-          }
-        } else if (typeof val === 'string' && val.trim() !== '') {
-          filledFields.push({ rawKey: key, uniqueKey: key, label: key, value: val });
+        } else if (typeof val === 'object' && val !== null) { 
+            const sectionDef = schemaDefs.find(s => s.id === sectionId);
+            const fieldDefs = sectionDef ? sectionDef.fields : [];
+            for (const [subKey, subVal] of Object.entries(val)) {
+                if (subVal && typeof subVal === 'string' && subVal.trim() !== '') {
+                  const fieldDef = fieldDefs.find(f => f.key === subKey);
+                  const niceLabel = fieldDef ? fieldDef.label : subKey;
+                  const isSensitive = fieldDef ? fieldDef.sensitive : false;
+                  filledFields.push({ 
+                    sectionId,
+                    rawKey: subKey, 
+                    uniqueKey: `${sectionId}_${subKey}`,
+                    label: niceLabel, 
+                    value: subVal,
+                    sensitive: isSensitive,
+                    isArrayObject: false
+                  });
+                }
+            }
         }
-      }
     }
 
-    const customFields = [];
-    if (profile.customFields) {
-      for (const [key, cf] of Object.entries(profile.customFields)) {
-        const val = typeof cf === 'object' ? cf.value : cf;
-        const isSensitive = typeof cf === 'object' ? cf.sensitive : false;
-        if (val) {
-          customFields.push({ rawKey: key, uniqueKey: key, label: key.replace(/_/g, ' '), value: val, sensitive: isSensitive });
-        }
-      }
-    }
-
-    const renderField = (f, isCustom) => {
-      const isEditing = editingField === f.rawKey;
+    const renderField = (f) => {
+      const isEditing = editingField === f.uniqueKey;
       return (
-        <div key={f.uniqueKey || f.rawKey} className="bg-surface-elevated p-3 rounded-xl border border-surface-border flex items-center justify-between group transition-all">
+        <div key={f.uniqueKey} className="bg-surface-elevated p-3 rounded-xl border border-surface-border flex items-center justify-between group transition-all">
           {isEditing ? (
             <div className="flex-1 flex gap-2 items-center">
               <input type="text" className="flex-1 bg-surface-elevated border border-primary-500 rounded px-2 py-1.5 text-[13px] text-zinc-200 outline-none" value={editFieldValue} onChange={e => setEditFieldValue(e.target.value)} autoFocus />
-              <button onClick={() => handleUpdateField(f.rawKey, editFieldValue, isCustom)} className="text-emerald-400 text-xs font-bold hover:text-emerald-300">Save</button>
+              <button onClick={() => handleUpdateField(f.sectionId, f.rawKey, editFieldValue, f.isArrayObject ? f.arrayIndex : -1)} className="text-emerald-400 text-xs font-bold hover:text-emerald-300">Save</button>
               <button onClick={() => setEditingField(null)} className="text-zinc-400 text-xs hover:text-zinc-200">Cancel</button>
             </div>
           ) : (
@@ -519,28 +570,23 @@ export default function Popup() {
               <div className="flex-1 min-w-0">
                 <div className="text-[10px] font-bold text-zinc-500 tracking-wider uppercase mb-0.5 flex items-center gap-2">
                    {f.isArrayObject ? f.label : f.label.replace(/([A-Z])/g, ' $1').trim()}
-                   {isCustom && <span className="text-[8px] bg-indigo-500/20 text-indigo-400 px-1 py-0.5 rounded uppercase tracking-wider">Custom</span>}
                 </div>
                 <div className="text-[13px] text-zinc-200 truncate">{f.sensitive ? '••••••••' : f.value}</div>
               </div>
               <div className="flex items-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity pl-2">
-                <button onClick={() => handleCopy(f.uniqueKey || f.rawKey, f.value)} className={`transition-colors ${copiedField === (f.uniqueKey || f.rawKey) ? 'text-emerald-400' : 'text-zinc-400 hover:text-blue-400'}`} title={copiedField === (f.uniqueKey || f.rawKey) ? 'Copied!' : 'Copy'}>
-                  {copiedField === (f.uniqueKey || f.rawKey) ? (
+                <button onClick={() => handleCopy(f.uniqueKey, f.value)} className={`transition-colors ${copiedField === f.uniqueKey ? 'text-emerald-400' : 'text-zinc-400 hover:text-blue-400'}`} title={copiedField === f.uniqueKey ? 'Copied!' : 'Copy'}>
+                  {copiedField === f.uniqueKey ? (
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                   ) : (
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
                   )}
                 </button>
-                {!f.isArrayObject && (
-                  <>
-                    <button onClick={() => { setEditingField(f.rawKey); setEditFieldValue(f.value); }} className="text-zinc-400 hover:text-primary-400 transition-colors" title="Edit">
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
-                    </button>
-                    <button onClick={() => handleDeleteField(f.rawKey, isCustom)} className="text-zinc-400 hover:text-red-400 transition-colors" title="Delete">
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
-                    </button>
-                  </>
-                )}
+                <button onClick={() => { setEditingField(f.uniqueKey); setEditFieldValue(f.value); }} className="text-zinc-400 hover:text-primary-400 transition-colors" title="Edit">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                </button>
+                <button onClick={() => handleDeleteField(f.sectionId, f.rawKey, f.isArrayObject ? f.arrayIndex : -1)} className="text-zinc-400 hover:text-red-400 transition-colors" title="Delete">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                </button>
               </div>
             </>
           )}
@@ -548,15 +594,12 @@ export default function Popup() {
       );
     };
 
-    const uncategorizedCustomFields = customFields.filter(f => !PROFILE_SECTIONS.some(s => s.title === (f.category || 'Custom')));
-
     return (
       <div className="flex flex-col gap-4 animate-fade-in pb-4">
 
-
         {showAddField && (
            <div className="bg-surface-card p-4 rounded-xl mb-4 border border-surface-border">
-             <h4 className="text-[13px] font-bold text-zinc-100 mb-3">Add Custom Field</h4>
+             <h4 className="text-[13px] font-bold text-zinc-100 mb-3">Add Field</h4>
              
              <div className="space-y-3">
                <div>
@@ -572,7 +615,7 @@ export default function Popup() {
                    onChange={e => setNewFieldCategory(e.target.value)}
                  >
                    <option value="Custom">Category: Custom</option>
-                   {PROFILE_SECTIONS.map(s => <option key={s.title} value={s.title}>Category: {s.title}</option>)}
+                   {schemaDefs.map(s => <option key={s.id} value={s.id}>Category: {s.title}</option>)}
                  </select>
                  {newFieldCategory === 'Custom' && (
                    <input 
@@ -612,15 +655,11 @@ export default function Popup() {
         )}
 
         <div className="flex flex-col gap-2">
-          {PROFILE_SECTIONS.map(section => {
+          {schemaDefs.map(section => {
             const searchLower = profileSearch.toLowerCase();
-            const sFields = filledFields.filter(f => 
-              (section.isArray && f.rawKey === section.arrayKey) || 
-              (!section.isArray && section.fields.some(sf => sf.key === f.rawKey))
-            ).filter(f => f.label.toLowerCase().includes(searchLower) || f.value.toLowerCase().includes(searchLower));
-            const cFields = customFields.filter(f => (f.category || 'Custom') === section.title).filter(f => f.label.toLowerCase().includes(searchLower) || f.value.toLowerCase().includes(searchLower));
+            const sFields = filledFields.filter(f => f.sectionId === section.id && (f.label.toLowerCase().includes(searchLower) || f.value.toLowerCase().includes(searchLower)));
             
-            if (sFields.length === 0 && cFields.length === 0) return null;
+            if (sFields.length === 0) return null;
 
             const isExpanded = !collapsedCategories[section.title] || profileSearch.trim() !== '';
 
@@ -632,7 +671,7 @@ export default function Popup() {
               });
               
               return (
-                <div key={section.title} className="bg-surface-card border border-surface-border rounded-xl overflow-hidden">
+                <div key={section.id} className="bg-surface-card border border-surface-border rounded-xl overflow-hidden">
                   <div 
                     className="flex items-center justify-between p-3 bg-surface-card hover:bg-surface-elevated cursor-pointer transition-colors group"
                     onClick={() => toggleCategory(section.title)}
@@ -655,7 +694,7 @@ export default function Popup() {
                             Entry {Number(indexStr) + 1}
                           </div>
                           <div className="grid grid-cols-1 gap-2 mt-1">
-                            {groups[indexStr].map(f => renderField(f, false))}
+                            {groups[indexStr].map(f => renderField(f))}
                           </div>
                         </div>
                       ))}
@@ -666,7 +705,7 @@ export default function Popup() {
             }
 
             return (
-              <div key={section.title} className="bg-surface-card border border-surface-border rounded-xl overflow-hidden">
+              <div key={section.id} className="bg-surface-card border border-surface-border rounded-xl overflow-hidden">
                 <div 
                   className="flex items-center justify-between p-3 bg-surface-card hover:bg-surface-elevated cursor-pointer transition-colors group"
                   onClick={() => toggleCategory(section.title)}
@@ -683,40 +722,12 @@ export default function Popup() {
                 </div>
                 {isExpanded && (
                   <div className="grid grid-cols-1 gap-2 p-3 pt-0">
-                    {sFields.map(f => renderField(f, false))}
-                    {cFields.map(f => renderField(f, true))}
+                    {sFields.map(f => renderField(f))}
                   </div>
                 )}
               </div>
             );
           })}
-
-          {(uncategorizedCustomFields.length > 0 || (filledFields.length === 0 && customFields.length === 0)) && (() => {
-            const isUncatExpanded = !collapsedCategories['Uncategorized'] || profileSearch.trim() !== '';
-            return (
-              <div className="bg-surface-card border border-surface-border rounded-xl overflow-hidden">
-                <div 
-                  className="flex items-center justify-between p-3 bg-surface-card hover:bg-surface-elevated cursor-pointer transition-colors group"
-                  onClick={() => toggleCategory('Uncategorized')}
-                >
-                  <h3 className="text-[10px] font-bold text-zinc-400 tracking-widest uppercase flex items-center gap-2 group-hover:text-zinc-200 transition-colors">
-                    <span>✨</span> Uncategorized Custom Fields
-                  </h3>
-                  <svg 
-                    className={`w-4 h-4 text-zinc-500 transition-transform duration-200 ${!isUncatExpanded ? 'rotate-180' : ''}`} 
-                    viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
-                  >
-                    <polyline points="18 15 12 9 6 15"></polyline>
-                  </svg>
-                </div>
-                {isUncatExpanded && (
-                  <div className="grid grid-cols-1 gap-2 p-3 pt-0">
-                    {uncategorizedCustomFields.filter(f => f.label.toLowerCase().includes(profileSearch.toLowerCase()) || f.value.toLowerCase().includes(profileSearch.toLowerCase())).length > 0 ? uncategorizedCustomFields.filter(f => f.label.toLowerCase().includes(profileSearch.toLowerCase()) || f.value.toLowerCase().includes(profileSearch.toLowerCase())).map(f => renderField(f, true)) : (profileSearch ? <p className="text-[11px] text-zinc-500 italic px-1">No matches found.</p> : <p className="text-[11px] text-zinc-500 italic px-1">No custom fields added.</p>)}
-                  </div>
-                )}
-              </div>
-            );
-          })()}
         </div>
       </div>
     );

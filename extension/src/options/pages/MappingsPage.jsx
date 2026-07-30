@@ -7,7 +7,7 @@ export default function MappingsPage() {
   const [error, setError] = useState('');
   const [deviceId, setDeviceId] = useState('');
   const [token, setToken] = useState(null);
-  const [serverUrl, setServerUrl] = useState('https://onetap-8arx.onrender.com');
+  const [serverUrl, setServerUrl] = useState('http://localhost:3001');
 
   useEffect(() => {
     async function init() {
@@ -17,7 +17,7 @@ export default function MappingsPage() {
         
         const settingsRes = await getSettings();
         const settings = settingsRes.settings || settingsRes;
-        const url = 'https://onetap-8arx.onrender.com';
+        const url = 'http://localhost:3001';
         setServerUrl(url);
 
         const tokenRes = await getToken();
