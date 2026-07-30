@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { getDeviceId, getSettings, getToken } from '../../shared/api.js';
 
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Loader2, Brain, Trash2, Database } from "lucide-react";
+
 export default function MappingsPage() {
   const [mappings, setMappings] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -17,7 +21,7 @@ export default function MappingsPage() {
         
         const settingsRes = await getSettings();
         const settings = settingsRes.settings || settingsRes;
-        const url = 'http://localhost:3001';
+        const url = settings.serverUrl || 'http://localhost:3001';
         setServerUrl(url);
 
         const tokenRes = await getToken();
@@ -69,116 +73,122 @@ export default function MappingsPage() {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-64">
-        <div className="w-8 h-8 border-2 border-primary-500 border-t-transparent rounded-full animate-spin" />
+        <Loader2 className="w-8 h-8 animate-spin text-primary" />
       </div>
     );
   }
 
   return (
-    <div className="max-w-4xl mx-auto p-6 animate-fade-in">
-      {/* Header */}
-      <div className="mb-6">
-        <h2 className="text-2xl font-bold text-white mb-1">Learned Mappings</h2>
-        <p className="text-sm text-slate-500">
+    <div className="max-w-5xl mx-auto p-6 animate-fade-in">
+      <div className="mb-8">
+        <h2 className="text-3xl font-bold text-foreground tracking-tight mb-2">Learned Mappings</h2>
+        <p className="text-muted-foreground">
           Review field associations the extension has learned from your past form submissions.
         </p>
       </div>
 
       {error && (
-        <div className="mb-6 p-3 bg-red-500/10 border border-red-500/20 rounded-lg text-red-400 text-sm">
+        <div className="mb-6 p-4 bg-destructive/10 border border-destructive/20 rounded-lg text-destructive text-sm font-medium">
           ⚠️ {error}
         </div>
       )}
 
       {mappings.length === 0 ? (
-        <div className="card text-center py-12 text-slate-500">
-          <span className="text-3xl block mb-2">🧠</span>
-          <p className="text-sm">No mappings learned yet.</p>
-          <p className="text-xs text-slate-600 mt-1">Submit your first form to teach the extension matching rules.</p>
-        </div>
+        <Card className="text-center py-12 border-dashed">
+          <CardContent>
+            <Brain className="w-12 h-12 text-muted-foreground/50 mx-auto mb-4" />
+            <p className="text-sm font-medium">No mappings learned yet.</p>
+            <p className="text-xs text-muted-foreground mt-1">Submit your first form to teach the extension matching rules.</p>
+          </CardContent>
+        </Card>
       ) : (
-        <div className="card overflow-hidden p-0">
+        <Card className="overflow-hidden">
+          <CardHeader className="bg-muted/30 border-b border-border py-4">
+             <CardTitle className="text-base flex items-center gap-2">
+               <Database className="w-4 h-4" /> Association Data
+             </CardTitle>
+          </CardHeader>
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse">
               <thead>
-                <tr className="bg-surface border-b border-surface-border text-[10px] font-semibold text-slate-500 uppercase tracking-wider">
-                  <th className="p-3 pl-4">Field Fingerprint / Label</th>
-                  <th className="p-3">Attributes</th>
-                  <th className="p-3">Profile Match</th>
-                  <th className="p-3">Confidence</th>
-                  <th className="p-3">Source</th>
-                  <th className="p-3">Activity</th>
-                  <th className="p-3 pr-4 text-right">Action</th>
+                <tr className="border-b border-border bg-muted/20 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                  <th className="p-4">Field Fingerprint / Label</th>
+                  <th className="p-4">Attributes</th>
+                  <th className="p-4">Profile Match</th>
+                  <th className="p-4">Confidence</th>
+                  <th className="p-4">Source</th>
+                  <th className="p-4">Activity</th>
+                  <th className="p-4 text-right">Action</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-surface-border text-xs">
+              <tbody className="divide-y divide-border text-sm">
                 {mappings.map(map => {
                   const hasLabel = map.fieldDescriptor?.label || map.fieldDescriptor?.placeholder || map.fieldDescriptor?.name;
                   const confidence = Math.round(map.confidence * 100);
 
                   return (
-                    <tr key={map._id} className="hover:bg-surface-elevated/40 transition-colors">
+                    <tr key={map._id} className="hover:bg-muted/50 transition-colors">
                       {/* Name / Label */}
-                      <td className="p-3 pl-4 font-medium text-slate-200">
-                        <div className="font-mono text-[10px] text-slate-500">{map.fieldFingerprint.slice(0, 8)}...</div>
-                        <div className="truncate max-w-[180px]">{hasLabel || <em className="text-slate-600">Unnamed</em>}</div>
+                      <td className="p-4 font-medium text-foreground">
+                        <div className="font-mono text-xs text-muted-foreground mb-1">{map.fieldFingerprint.slice(0, 8)}...</div>
+                        <div className="truncate max-w-[180px]">{hasLabel || <em className="text-muted-foreground">Unnamed</em>}</div>
                       </td>
 
                       {/* Attributes */}
-                      <td className="p-3 text-slate-400">
-                        <div className="space-y-0.5">
+                      <td className="p-4 text-muted-foreground text-xs">
+                        <div className="space-y-1">
                           {map.fieldDescriptor?.name && (
-                            <div><span className="text-slate-600 text-[10px]">name:</span> {map.fieldDescriptor.name}</div>
+                            <div><span className="font-semibold mr-1">name:</span> {map.fieldDescriptor.name}</div>
                           )}
                           {map.fieldDescriptor?.type && (
-                            <div><span className="text-slate-600 text-[10px]">type:</span> {map.fieldDescriptor.type}</div>
+                            <div><span className="font-semibold mr-1">type:</span> {map.fieldDescriptor.type}</div>
                           )}
                           {map.domain && (
-                            <div className="text-[10px] text-slate-500 italic">{map.domain}</div>
+                            <div className="text-muted-foreground/70 italic mt-1">{map.domain}</div>
                           )}
                         </div>
                       </td>
 
                       {/* Profile Key */}
-                      <td className="p-3 font-mono text-primary-400 font-semibold">{map.profileKey}</td>
+                      <td className="p-4 font-mono text-primary font-semibold text-xs">{map.profileKey}</td>
 
                       {/* Confidence */}
-                      <td className="p-3">
-                        <div className="flex items-center gap-1.5">
-                          <span className={`font-semibold ${
-                            confidence >= 80 ? 'text-emerald-400' : confidence >= 50 ? 'text-amber-400' : 'text-red-400'
-                          }`}>
-                            {confidence}%
-                          </span>
-                        </div>
+                      <td className="p-4">
+                        <span className={`font-semibold ${
+                          confidence >= 80 ? 'text-emerald-500' : confidence >= 50 ? 'text-amber-500' : 'text-destructive'
+                        }`}>
+                          {confidence}%
+                        </span>
                       </td>
 
                       {/* Source */}
-                      <td className="p-3">
-                        <span className={`badge text-[10px] ${
-                          map.source === 'user' ? 'bg-indigo-500/10 text-indigo-400 border border-indigo-500/20' :
-                          map.source === 'ai' ? 'bg-purple-500/10 text-purple-400 border border-purple-500/20' :
-                          'bg-slate-500/10 text-slate-400 border border-slate-500/20'
+                      <td className="p-4">
+                        <span className={`px-2 py-0.5 rounded-md text-[10px] font-semibold border ${
+                          map.source === 'user' ? 'bg-indigo-500/10 text-indigo-500 border-indigo-500/20' :
+                          map.source === 'ai' ? 'bg-purple-500/10 text-purple-500 border-purple-500/20' :
+                          'bg-slate-500/10 text-slate-500 border-slate-500/20'
                         }`}>
-                          {map.source}
+                          {map.source?.toUpperCase() || 'UNKNOWN'}
                         </span>
                       </td>
 
                       {/* Activity */}
-                      <td className="p-3 text-[10px] text-slate-500">
-                        <div>Confirmations: {map.confirmations}</div>
-                        <div>Corrections: {map.corrections}</div>
+                      <td className="p-4 text-xs text-muted-foreground space-y-1">
+                        <div><span className="font-semibold">Confirmations:</span> {map.confirmations}</div>
+                        <div><span className="font-semibold">Corrections:</span> {map.corrections}</div>
                       </td>
 
                       {/* Actions */}
-                      <td className="p-3 pr-4 text-right">
-                        <button
+                      <td className="p-4 text-right">
+                        <Button
+                          variant="ghost"
+                          size="icon"
                           onClick={() => handleDelete(map._id)}
-                          className="btn-danger p-1.5"
-                          title="Delete learned association"
+                          className="text-muted-foreground hover:text-destructive"
+                          title="Delete mapping"
                         >
-                          🗑️
-                        </button>
+                          <Trash2 className="w-4 h-4" />
+                        </Button>
                       </td>
                     </tr>
                   );
@@ -186,7 +196,7 @@ export default function MappingsPage() {
               </tbody>
             </table>
           </div>
-        </div>
+        </Card>
       )}
     </div>
   );
