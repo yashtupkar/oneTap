@@ -9,13 +9,15 @@
     "128": "icons/icon128.png"
   },
   "action": {
-    "default_popup": "popup/index.html",
     "default_icon": {
       "16": "icons/icon16.png",
       "48": "icons/icon48.png",
       "128": "icons/icon128.png"
     },
     "default_title": "AI Form Autofill"
+  },
+  "side_panel": {
+    "default_path": "sidepanel/index.html"
   },
   "options_ui": {
     "page": "options/index.html",
@@ -28,7 +30,7 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["src/content/index.jsx"],
+      "js": ["src/content/index.tsx"],
       "run_at": "document_idle",
       "all_frames": false
     }
@@ -38,7 +40,8 @@
     "activeTab",
     "scripting",
     "contextMenus",
-    "clipboardWrite"
+    "clipboardWrite",
+    "sidePanel"
   ],
   "host_permissions": [
     "<all_urls>"

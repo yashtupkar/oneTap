@@ -1,72 +1,74 @@
 {
   "../../../../../../@crx/manifest": {
-    "file": "assets/crx-manifest.js-C2-4bCTo.js",
+    "file": "assets/crx-manifest.js-DoOBUnbZ.js",
     "name": "crx-manifest.js",
     "src": "../../../../../../@crx/manifest",
     "isEntry": true
   },
-  "_api-D_cN_erW.js": {
-    "file": "assets/api-D_cN_erW.js",
-    "name": "api"
+  "_MappingsPage-!~{004}~.js": {
+    "file": "assets/MappingsPage-E_rmfckG.css",
+    "src": "_MappingsPage-!~{004}~.js"
   },
-  "_client-DhEz86-d.js": {
-    "file": "assets/client-DhEz86-d.js",
-    "name": "client"
-  },
-  "_index-!~{004}~.js": {
-    "file": "assets/index-C851xYJx.css",
-    "src": "_index-!~{004}~.js"
-  },
-  "_index-C9iWPIHB.js": {
-    "file": "assets/index-C9iWPIHB.js",
-    "name": "index",
+  "_MappingsPage-D1hak0Vj.js": {
+    "file": "assets/MappingsPage-D1hak0Vj.js",
+    "name": "MappingsPage",
+    "imports": [
+      "_client-DTl7Fbt_.js"
+    ],
     "css": [
-      "assets/index-C851xYJx.css"
+      "assets/MappingsPage-E_rmfckG.css"
     ]
   },
-  "index.jsx-loader.js": {
-    "file": "assets/index.jsx-loader-DFKWgf0X.js",
-    "src": "index.jsx-loader.js"
+  "_api-BLS26-6R.js": {
+    "file": "assets/api-BLS26-6R.js",
+    "name": "api"
+  },
+  "_client-DTl7Fbt_.js": {
+    "file": "assets/client-DTl7Fbt_.js",
+    "name": "client"
+  },
+  "index.tsx-loader.js": {
+    "file": "assets/index.tsx-loader-BHHt0uZz.js",
+    "src": "index.tsx-loader.js"
   },
   "options/index.html": {
-    "file": "assets/index.html-CkL5WeWv.js",
+    "file": "assets/index.html-BRAYSIo1.js",
     "name": "index.html",
     "src": "options/index.html",
     "isEntry": true,
     "imports": [
-      "_index-C9iWPIHB.js",
-      "_client-DhEz86-d.js",
-      "_api-D_cN_erW.js"
+      "_MappingsPage-D1hak0Vj.js",
+      "_client-DTl7Fbt_.js"
     ]
   },
-  "popup/index.html": {
-    "file": "assets/index.html-B2Zg6uaZ.js",
+  "sidepanel/index.html": {
+    "file": "assets/index.html-DCLPH6QJ.js",
     "name": "index.html",
-    "src": "popup/index.html",
+    "src": "sidepanel/index.html",
     "isEntry": true,
     "imports": [
-      "_index-C9iWPIHB.js",
-      "_client-DhEz86-d.js",
-      "_api-D_cN_erW.js"
+      "_MappingsPage-D1hak0Vj.js",
+      "_client-DTl7Fbt_.js",
+      "_api-BLS26-6R.js"
     ]
   },
   "src/background/serviceWorker.js": {
-    "file": "assets/serviceWorker.js-BY51rQK9.js",
+    "file": "assets/serviceWorker.js-jp81lE7u.js",
     "name": "serviceWorker.js",
     "src": "src/background/serviceWorker.js",
     "isEntry": true,
     "imports": [
-      "_api-D_cN_erW.js"
+      "_api-BLS26-6R.js"
     ]
   },
-  "src/content/index.jsx": {
-    "file": "assets/index.jsx-Dycac5MY.js",
-    "name": "index.jsx",
-    "src": "src/content/index.jsx",
+  "src/content/index.tsx": {
+    "file": "assets/index.tsx-BOVWFdUt.js",
+    "name": "index.tsx",
+    "src": "src/content/index.tsx",
     "isEntry": true,
     "imports": [
-      "_client-DhEz86-d.js",
-      "_api-D_cN_erW.js"
+      "_client-DTl7Fbt_.js",
+      "_api-BLS26-6R.js"
     ],
     "css": [
       "assets/index-D6mmBFxb.css"

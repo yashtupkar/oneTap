@@ -9,13 +9,15 @@
     "128": "icons/icon128.png"
   },
   "action": {
-    "default_popup": "popup/index.html",
     "default_icon": {
       "16": "icons/icon16.png",
       "48": "icons/icon48.png",
       "128": "icons/icon128.png"
     },
     "default_title": "AI Form Autofill"
+  },
+  "side_panel": {
+    "default_path": "sidepanel/index.html"
   },
   "options_ui": {
     "page": "options/index.html",
@@ -28,7 +30,7 @@
   "content_scripts": [
     {
       "js": [
-        "assets/index.jsx-loader-DAdLvxbf.js"
+        "assets/index.tsx-loader-BHHt0uZz.js"
       ],
       "matches": [
         "<all_urls>"
@@ -45,7 +47,8 @@
     "activeTab",
     "scripting",
     "contextMenus",
-    "clipboardWrite"
+    "clipboardWrite",
+    "sidePanel"
   ],
   "host_permissions": [
     "<all_urls>"
@@ -61,9 +64,9 @@
       "resources": [
         "assets/*",
         "icons/*",
-        "assets/client-DhEz86-d.js",
-        "assets/api-D_cN_erW.js",
-        "assets/index.jsx-Dycac5MY.js"
+        "assets/client-DTl7Fbt_.js",
+        "assets/api-BLS26-6R.js",
+        "assets/index.tsx-BOVWFdUt.js"
       ],
       "use_dynamic_url": false
     }

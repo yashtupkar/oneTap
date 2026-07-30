@@ -263,6 +263,11 @@ chrome.runtime.onInstalled.addListener(async (details) => {
     // Open options page on first install
     chrome.tabs.create({ url: chrome.runtime.getURL('options/index.html') });
   }
+
+  // Allow users to open the side panel by clicking on the action toolbar icon
+  if (chrome.sidePanel && chrome.sidePanel.setPanelBehavior) {
+    chrome.sidePanel.setPanelBehavior({ openPanelOnActionClick: true }).catch((error) => console.error(error));
+  }
 });
 
 // ── Context Menu ──────────────────────────────────────────────────────────────
