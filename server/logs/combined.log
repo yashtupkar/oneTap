@@ -1967,3 +1967,38 @@
 2026-07-30 17:04:30 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-02.r0rqul9.mongodb.net
 2026-07-30 17:04:30 [info]: 🚀 Server running on http://localhost:3001
 2026-07-30 17:04:30 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
+2026-07-30 17:12:21 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-01.r0rqul9.mongodb.net
+2026-07-30 17:12:22 [info]: 🚀 Server running on http://localhost:3001
+2026-07-30 17:12:22 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
+2026-07-30 17:13:20 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-00.r0rqul9.mongodb.net
+2026-07-30 17:13:20 [info]: 🚀 Server running on http://localhost:3001
+2026-07-30 17:13:20 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
+2026-07-30 17:15:09 [http]: ::1 - - [30/Jul/2026:11:45:09 +0000] "GET /api/profile HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-30 17:15:15 [http]: ::1 - - [30/Jul/2026:11:45:15 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-30 17:15:16 [http]: ::1 - - [30/Jul/2026:11:45:16 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-30 17:16:18 [http]: ::1 - - [30/Jul/2026:11:46:18 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-30 17:16:20 [http]: ::1 - - [30/Jul/2026:11:46:20 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-30 17:16:23 [http]: ::1 - - [30/Jul/2026:11:46:23 +0000] "GET /api/documents HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-30 17:16:27 [http]: ::1 - - [30/Jul/2026:11:46:27 +0000] "GET /api/autofill/mappings HTTP/1.1" 200 30 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-30 17:16:29 [http]: ::1 - - [30/Jul/2026:11:46:29 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-30 17:17:09 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-01.r0rqul9.mongodb.net
+2026-07-30 17:17:09 [info]: 🚀 Server running on http://localhost:3001
+2026-07-30 17:17:09 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
+2026-07-30 17:17:13 [http]: ::1 - - [30/Jul/2026:11:47:13 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-30 17:17:37 [http]: ::1 - - [30/Jul/2026:11:47:37 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-30 17:17:38 [http]: ::1 - - [30/Jul/2026:11:47:38 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-30 17:18:23 [http]: ::1 - - [30/Jul/2026:11:48:23 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-30 17:18:25 [http]: ::1 - - [30/Jul/2026:11:48:25 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-30 17:21:58 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-00.r0rqul9.mongodb.net
+2026-07-30 17:21:58 [info]: 🚀 Server running on http://localhost:3001
+2026-07-30 17:21:58 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
+2026-07-30 17:22:24 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-01.r0rqul9.mongodb.net
+2026-07-30 17:22:24 [info]: 🚀 Server running on http://localhost:3001
+2026-07-30 17:22:24 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
+2026-07-30 17:23:28 [http]: ::1 - - [30/Jul/2026:11:53:28 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-30 17:23:29 [http]: ::1 - - [30/Jul/2026:11:53:29 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-30 23:44:42 [info]: ✅ MongoDB connected: ac-b1tchrv-shard-00-00.r0rqul9.mongodb.net
+2026-07-30 23:44:42 [info]: 🚀 Server running on http://localhost:3001
+2026-07-30 23:44:42 [info]: 📁 Uploads: C:\Users\yasht\OneDrive\Desktop\oneTap\server\uploads
+2026-07-30 23:45:04 [http]: ::1 - - [30/Jul/2026:18:15:04 +0000] "GET /api/profile HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-30 23:45:09 [http]: ::1 - - [30/Jul/2026:18:15:09 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getSettings, updateSettings, getProfile, updateProfile, getDeviceId, getToken, login, register, logout } from '../shared/api.js';
-import { DEFAULT_SCHEMA_DEFINITIONS } from '../shared/constants.js';
+import { DEFAULT_SCHEMA_DEFINITIONS, mergeSchemaDefinitions } from '../shared/constants.js';
 
 const STATUS_DOT = {
   connected: 'bg-emerald-400',
@@ -197,7 +197,8 @@ export default function Popup() {
     let sectionId = newFieldCategory === 'Custom' ? newFieldCustomCategory.toLowerCase().trim().replace(/[\s\W]+/g, '_') || 'custom' : newFieldCategory;
     
     let updatedProfile = { ...profile };
-    let schemaDefs = updatedProfile.schemaDefinitions || DEFAULT_SCHEMA_DEFINITIONS;
+    let schemaDefs = updatedProfile.schemaDefinitions || [];
+    schemaDefs = mergeSchemaDefinitions(schemaDefs);
     let section = schemaDefs.find(s => s.id === sectionId);
     
     if (!section) {
@@ -505,7 +506,7 @@ export default function Popup() {
     if (!profile) return <div className="text-center text-sm text-zinc-500 mt-4">No profile data</div>;
     
     const filledFields = [];
-    const schemaDefs = profile.schemaDefinitions && profile.schemaDefinitions.length > 0 ? profile.schemaDefinitions : DEFAULT_SCHEMA_DEFINITIONS;
+    const schemaDefs = profile.schemaDefinitions ? mergeSchemaDefinitions(profile.schemaDefinitions) : mergeSchemaDefinitions([]);
     const pData = profile.profileData || {};
 
     for (const [sectionId, val] of Object.entries(pData)) {

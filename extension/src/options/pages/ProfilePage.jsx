@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getProfile, updateProfile } from '../../shared/api.js';
-import { DEFAULT_SCHEMA_DEFINITIONS } from '../../shared/constants.js';
+import { DEFAULT_SCHEMA_DEFINITIONS, mergeSchemaDefinitions } from '../../shared/constants.js';
 
 export default function ProfilePage() {
   const [schemaDefinitions, setSchemaDefinitions] = useState([]);
@@ -27,10 +27,8 @@ export default function ProfilePage() {
         let schemas = profile.schemaDefinitions || [];
         let data = profile.profileData || {};
         
-        // Initialization if empty
-        if (!schemas || schemas.length === 0) {
-          schemas = DEFAULT_SCHEMA_DEFINITIONS;
-        }
+        // Merge missing categories and fields from DEFAULT_SCHEMA_DEFINITIONS
+        schemas = mergeSchemaDefinitions(schemas);
         
         setSchemaDefinitions(schemas);
         setProfileData(data);
