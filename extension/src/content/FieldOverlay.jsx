@@ -25,7 +25,7 @@ export function FieldOverlay({ suggestion, field, rect, flattenedProfileData = [
   // Update status when new props arrive
   useEffect(() => {
     setLocalStatus(suggestion?.status || 'missing');
-  }, [suggestion]);
+  }, [suggestion?.status, suggestion]);
 
   // Bind to field events
   useEffect(() => {
@@ -93,8 +93,8 @@ export function FieldOverlay({ suggestion, field, rect, flattenedProfileData = [
     }
   };
 
-  const handleSelectOption = (optValue) => {
-    onEdit?.(optValue);
+  const handleSelectOption = (optValue, opt = null) => {
+    onEdit?.(optValue, opt);
     setLocalStatus('filled');
     setExpanded(false);
   };

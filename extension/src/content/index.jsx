@@ -36,6 +36,55 @@ async function init() {
     console.log('[AI Autofill] Disabled by user settings');
     return;
   }
+  
+  // Listen for group autofill events
+  window.addEventListener('ONETAP_FILL_GROUP', async (e) => {
+    const { groupId, sourceIdx } = e.detail;
+    if (sourceIdx === undefined || !groupId) return;
+    
+    const categoryId = groupId.split('_')[0];
+    
+    // Partition fields by repetition of profileKeys in this category
+    const partitions = [];
+    let currentPartition = [];
+    let currentSeen = new Set();
+    
+    for (let i = 0; i < allFields.length; i++) {
+      const sugg = suggestions[i];
+      if (sugg && sugg.profileKey && sugg.profileKey.startsWith(categoryId + '.')) {
+        if (currentSeen.has(sugg.profileKey)) {
+          partitions.push(currentPartition);
+          currentPartition = [];
+          currentSeen.clear();
+        }
+        currentPartition.push(i);
+        currentSeen.add(sugg.profileKey);
+      }
+    }
+    if (currentPartition.length > 0) partitions.push(currentPartition);
+    
+    const targetPartition = partitions.find(p => p.includes(sourceIdx));
+    if (!targetPartition) return;
+    
+    let filledCount = 0;
+    
+    for (const i of targetPartition) {
+      if (i === sourceIdx) continue;
+      const sugg = suggestions[i];
+      if (sugg && sugg.status === 'suggested' && sugg.options) {
+        const matchedOpt = sugg.options.find(o => o.groupId === groupId);
+        if (matchedOpt) {
+          await applyFill(allFields[i], matchedOpt.value, sugg);
+          sugg.status = 'filled';
+          filledCount++;
+        }
+      }
+    }
+    
+    if (filledCount > 0 && settings.showOverlays) {
+       renderOverlays(allFields, suggestions, flattenedProfileData);
+    }
+  });
 
   allFields = detectAllFields();
 
@@ -103,6 +152,7 @@ async function performLocalMatching(fields) {
           options.push({
             label: `${itemLabel} - ${def.label}`,
             value: value,
+            groupId: `${category.id}_${index}`
           });
         }
       });
@@ -170,6 +220,7 @@ async function performLocalMatching(fields) {
           extraOptionsMap[key].push({
             label: `${itemLabel} - ${label}`,
             value: value,
+            groupId: `${category.id}_${index}`
           });
         }
       }
@@ -489,7 +540,7 @@ function renderOverlays(fields, fieldSuggestions, flattenedProfileData = []) {
         rect={rect}
         flattenedProfileData={flattenedProfileData}
         onApply={() => handleApply(field, idx, suggestion)}
-        onEdit={(newValue) => handleEdit(field, idx, suggestion, newValue)}
+        onEdit={(newValue, opt) => handleEdit(field, idx, suggestion, newValue, opt)}
       />
     );
 
@@ -510,7 +561,7 @@ function renderOverlays(fields, fieldSuggestions, flattenedProfileData = []) {
           rect={rect}
           flattenedProfileData={flattenedProfileData}
           onApply={() => handleApply(field, idx, suggestion)}
-          onEdit={(newValue) => handleEdit(field, idx, suggestion, newValue)}
+          onEdit={(newValue, opt) => handleEdit(field, idx, suggestion, newValue, opt)}
           onMagicRewrite={() => {
             if (field.element.value) {
               renderTextSelectionUI(field.element.getBoundingClientRect(), field.element.value, true);
@@ -534,8 +585,12 @@ function handleApply(field, idx, suggestion) {
   applyFill(field, suggestion.value, suggestion);
 }
 
-function handleEdit(field, idx, suggestion, newValue) {
-  applyFill(field, newValue, suggestion);
+function handleEdit(field, idx, suggestion, newValue, opt) {
+  applyFill(field, newValue, suggestion).then(() => {
+    if (opt && opt.groupId) {
+      window.dispatchEvent(new CustomEvent('ONETAP_FILL_GROUP', { detail: { groupId: opt.groupId } }));
+    }
+  });
 }
 
 // ── Text Selection UI ─────────────────────────────────────────────────────────

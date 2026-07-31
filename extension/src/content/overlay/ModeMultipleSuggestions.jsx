@@ -21,7 +21,7 @@ export function ModeMultipleSuggestions({ options, onSelect }) {
         {options.map((opt, i) => (
           <div
             key={i}
-            onClick={() => onSelect(opt.value)}
+            onClick={() => onSelect(opt.value, opt)}
             style={{
               padding: '12px 16px',
               borderBottom: i === options.length - 1 ? 'none' : '1px solid #374151',

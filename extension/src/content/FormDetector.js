@@ -116,6 +116,8 @@ function getSelectOptions(select) {
  * @param {HTMLElement} el
  * @returns {FormField|null}
  */
+let fieldCounter = 0;
+
 export function buildFieldDescriptor(el) {
   const tag = el.tagName.toLowerCase();
   const type = (el.type || (tag === 'select' ? 'select' : 'textarea')).toLowerCase();
@@ -125,6 +127,10 @@ export function buildFieldDescriptor(el) {
   if (el.disabled || el.readOnly) return null;
 
   const label = getFieldLabel(el);
+  
+  if (!el.dataset.onetapId) {
+    el.dataset.onetapId = `f_${++fieldCounter}`;
+  }
 
   /** @type {FormField} */
   const field = {
@@ -135,7 +141,7 @@ export function buildFieldDescriptor(el) {
     placeholder: el.placeholder || '',
     type,
     value: el.value || '',
-    fingerprint: fingerprintField(el),
+    fingerprint: fingerprintField(el) + '|' + el.dataset.onetapId,
   };
 
   if (type === 'file') {

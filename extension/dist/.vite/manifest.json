@@ -13,6 +13,10 @@
     "file": "assets/api-BuHFg3vM.js",
     "name": "api"
   },
+  "_api-C9cRCb6e.js": {
+    "file": "assets/api-C9cRCb6e.js",
+    "name": "api"
+  },
   "_api-CbCTLTKa.js": {
     "file": "assets/api-CbCTLTKa.js",
     "name": "api"
@@ -97,7 +101,7 @@
     ]
   },
   "src/content/index.jsx": {
-    "file": "assets/index.jsx-BbpCahYr.js",
+    "file": "assets/index.jsx-3A9mfY4D.js",
     "name": "index.jsx",
     "src": "src/content/index.jsx",
     "isEntry": true,
