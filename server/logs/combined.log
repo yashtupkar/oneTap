@@ -2716,3 +2716,6 @@
 2026-07-31 12:09:36 [debug]: AI cache hit for fingerprint: 939bd9b3...
 2026-07-31 12:09:36 [debug]: AI cache hit for fingerprint: cf113212...
 2026-07-31 12:09:36 [http]: ::1 - - [31/Jul/2026:06:39:36 +0000] "POST /api/autofill/suggest HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-31 12:19:15 [http]: ::1 - - [31/Jul/2026:06:49:15 +0000] "GET /api/profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-31 12:19:15 [http]: ::1 - - [31/Jul/2026:06:49:15 +0000] "GET /api/documents HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+2026-07-31 12:19:24 [http]: ::1 - - [31/Jul/2026:06:49:24 +0000] "GET /api/documents HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
