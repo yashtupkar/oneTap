@@ -157,12 +157,10 @@ export async function applyFill(field, value, suggestion = null) {
       if (suggestion?.document?.downloadUrl) {
         try {
           // Fetch settings to get the correct serverUrl
-          const stored = await chrome.storage.local.get('settings');
-          const serverUrl =  'http://localhost:3001';
-          
-          const res = await fetch(`${serverUrl}${suggestion.document.downloadUrl}`);
-          if (!res.ok) throw new Error(`HTTP ${res.status}`);
-          const blob = await res.blob();
+          const serverUrl = import.meta.env.VITE_SERVER_URL || 'http://localhost:3001';
+          const response = await fetch(`${serverUrl}${suggestion.document.downloadUrl}`);
+          if (!response.ok) throw new Error(`HTTP ${response.status}`);
+          const blob = await response.blob();
           
           const file = new File([blob], suggestion.document.originalName, { type: suggestion.document.mimeType });
           const dataTransfer = new DataTransfer();

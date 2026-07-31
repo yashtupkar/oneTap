@@ -32,7 +32,7 @@ export default function DocumentsPage() {
         
         const settingsRes = await getSettings();
         const settings = settingsRes.settings || settingsRes;
-        const url = settings.serverUrl || 'http://localhost:3001';
+        const url = settings.serverUrl || import.meta.env.VITE_SERVER_URL || 'http://localhost:3001';
         setServerUrl(url);
 
         const tokenRes = await getToken();

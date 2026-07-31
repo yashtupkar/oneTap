@@ -3,7 +3,7 @@
  */
 
 /** Backend API base URL */
-export const API_BASE = 'http://localhost:3001/api';
+export const API_BASE = `${import.meta.env.VITE_SERVER_URL || 'http://localhost:3001'}/api`;
 
 export const STORAGE_KEYS = {
   DEVICE_ID: 'deviceId',
@@ -22,7 +22,7 @@ export const DEFAULT_SETTINGS = {
   askBeforeFileUpload: true,
   askBeforeSensitiveFields: true,
   openrouterApiKey: '',
-  serverUrl: 'http://localhost:3001',
+  serverUrl: import.meta.env.VITE_SERVER_URL || 'http://localhost:3001',
 };
 
 /** Autofill statuses */

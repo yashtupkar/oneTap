@@ -40,7 +40,7 @@
     "name": "client"
   },
   "_index-!~{004}~.js": {
-    "file": "assets/index-Cxe64onR.css",
+    "file": "assets/index-CC11em0T.css",
     "src": "_index-!~{004}~.js"
   },
   "_index-Y3QQgM0c.js": {
@@ -48,6 +48,13 @@
     "name": "index",
     "css": [
       "assets/index-Cxe64onR.css"
+    ]
+  },
+  "_index-zedPhS9l.js": {
+    "file": "assets/index-zedPhS9l.js",
+    "name": "index",
+    "css": [
+      "assets/index-CC11em0T.css"
     ]
   },
   "_user-BizJ1NST.js": {
@@ -69,24 +76,24 @@
     "src": "index.jsx-loader.js"
   },
   "options/index.html": {
-    "file": "assets/index.html-ni5HAUaV.js",
+    "file": "assets/index.html-BIoQxgkE.js",
     "name": "index.html",
     "src": "options/index.html",
     "isEntry": true,
     "imports": [
-      "_index-Y3QQgM0c.js",
+      "_index-zedPhS9l.js",
       "_client-Nv_rx3RH.js",
       "_api-Boi_bm7o.js",
       "_user-v8CNPthk.js"
     ]
   },
   "popup/index.html": {
-    "file": "assets/index.html-Bwm2GV47.js",
+    "file": "assets/index.html-CxaPycNw.js",
     "name": "index.html",
     "src": "popup/index.html",
     "isEntry": true,
     "imports": [
-      "_index-Y3QQgM0c.js",
+      "_index-zedPhS9l.js",
       "_client-Nv_rx3RH.js",
       "_api-Boi_bm7o.js"
     ]
@@ -101,7 +108,7 @@
     ]
   },
   "src/content/index.jsx": {
-    "file": "assets/index.jsx-3A9mfY4D.js",
+    "file": "assets/index.jsx-D2OoOzZ2.js",
     "name": "index.jsx",
     "src": "src/content/index.jsx",
     "isEntry": true,
