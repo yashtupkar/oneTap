@@ -13,10 +13,10 @@ export default function DocumentsPage() {
   const [documents, setDocuments] = useState([]);
   const [loading, setLoading] = useState(true);
   const [uploading, setUploading] = useState(false);
+  const [serverUrl, setServerUrl] = useState(import.meta.env.VITE_SERVER_URL || 'http://localhost:3001');
   const [error, setError] = useState('');
   const [deviceId, setDeviceId] = useState('');
   const [token, setToken] = useState(null);
-  const [serverUrl, setServerUrl] = useState('http://localhost:3001');
 
   // Form states
   const [file, setFile] = useState(null);
@@ -32,8 +32,8 @@ export default function DocumentsPage() {
         
         const settingsRes = await getSettings();
         const settings = settingsRes.settings || settingsRes;
-        const url = settings.serverUrl || import.meta.env.VITE_SERVER_URL || 'http://localhost:3001';
-        setServerUrl(url);
+        const url =  import.meta.env.VITE_SERVER_URL || 'http://localhost:3001';
+       
 
         const tokenRes = await getToken();
         const t = tokenRes.token || tokenRes;

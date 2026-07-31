@@ -143,18 +143,7 @@ export default function PreferencesPage() {
               </p>
             </div>
 
-            <div className="space-y-2">
-              <Label>Backend Connection URL</Label>
-              <Input
-                type="url"
-                value={settings.serverUrl || ''}
-                onChange={e => handleChange('serverUrl', e.target.value)}
-                placeholder="http://localhost:3001"
-              />
-              <p className="text-xs text-muted-foreground">
-                The address of your AI Form Autofill local Express server.
-              </p>
-            </div>
+           
           </CardContent>
         </Card>
 

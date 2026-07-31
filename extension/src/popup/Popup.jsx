@@ -59,7 +59,7 @@ export default function Popup() {
         setToken(tRes.token || null);
         
         const did = dRes.deviceId || dRes;
-        const url = s.serverUrl || 'http://localhost:3001';
+        const url =  import.meta.env.VITE_SERVER_URL || 'http://localhost:3001';
         
         try {
           const headers = { 'X-Device-ID': did };

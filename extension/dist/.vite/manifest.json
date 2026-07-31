@@ -36,7 +36,7 @@
     "src": "index.jsx-loader.js"
   },
   "options/index.html": {
-    "file": "assets/index.html-Q3zOq7TE.js",
+    "file": "assets/index.html-D7MSzYk0.js",
     "name": "index.html",
     "src": "options/index.html",
     "isEntry": true,
@@ -48,7 +48,7 @@
     ]
   },
   "popup/index.html": {
-    "file": "assets/index.html-VAk1WyaR.js",
+    "file": "assets/index.html-BNFG_JIA.js",
     "name": "index.html",
     "src": "popup/index.html",
     "isEntry": true,
