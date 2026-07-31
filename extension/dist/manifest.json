@@ -28,7 +28,7 @@
   "content_scripts": [
     {
       "js": [
-        "assets/index.jsx-loader-B4BqKM5O.js"
+        "assets/index.jsx-loader-DhridhId.js"
       ],
       "matches": [
         "<all_urls>"
@@ -36,7 +36,7 @@
       "run_at": "document_idle",
       "all_frames": false,
       "css": [
-        "assets/index-D6mmBFxb.css"
+        "assets/index-DuTbNKle.css"
       ]
     }
   ],
@@ -62,9 +62,9 @@
         "assets/*",
         "icons/*",
         "assets/client-Nv_rx3RH.js",
-        "assets/api-OFv72i6O.js",
-        "assets/more-horizontal-CcetfIfe.js",
-        "assets/index.jsx-DuIARyQi.js"
+        "assets/api-Boi_bm7o.js",
+        "assets/user-v8CNPthk.js",
+        "assets/index.jsx-BbpCahYr.js"
       ],
       "use_dynamic_url": false
     }

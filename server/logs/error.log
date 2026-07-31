@@ -481,3 +481,7 @@
     at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:119:30
     at async Promise.all (index 21)
     at async C:\Users\yasht\OneDrive\Desktop\oneTap\server\src\routes\autofill.js:61:25
+2026-07-31 02:26:57 [error]: Error: querySrv EREFUSED _mongodb._tcp.onetap.r0rqul9.mongodb.net
+    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:293:17)
+2026-07-31 02:26:58 [error]: Error: querySrv EREFUSED _mongodb._tcp.onetap.r0rqul9.mongodb.net
+    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:293:17)

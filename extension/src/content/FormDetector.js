@@ -165,11 +165,20 @@ export function detectAllFields() {
 
   const fields = [];
   const seen = new Set();
+  const seenRadioGroups = new Set();
 
   for (const el of elements) {
     if (!el.offsetParent && el.type !== 'hidden') continue; // Skip invisible elements
     const descriptor = buildFieldDescriptor(el);
     if (!descriptor) continue;
+    
+    if (descriptor.type === 'radio' && descriptor.groupName) {
+      if (seenRadioGroups.has(descriptor.groupName)) {
+        continue;
+      }
+      seenRadioGroups.add(descriptor.groupName);
+    }
+    
     if (seen.has(descriptor.fingerprint)) continue; // Dedup
     seen.add(descriptor.fingerprint);
     fields.push(descriptor);

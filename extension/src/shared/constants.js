@@ -224,6 +224,23 @@ export const DEFAULT_SCHEMA_DEFINITIONS = [
         validation: ""
       },
       {
+        key: "alternateEmail",
+        label: "Alternate Email",
+        type: "email",
+        aiAliases: [
+          "email",
+          "secondary email",
+          "other email"
+        ],
+        sensitive: false,
+        encrypted: false,
+        required: false,
+        autofillPriority: "MEDIUM",
+        helpText: "",
+        defaultValue: "",
+        validation: ""
+      },
+      {
         key: "phone",
         label: "Phone Number",
         type: "tel",
@@ -245,6 +262,7 @@ export const DEFAULT_SCHEMA_DEFINITIONS = [
         label: "Alternate Phone",
         type: "tel",
         aiAliases: [
+          "phone",
           "secondary phone",
           "home phone"
         ],
